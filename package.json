@@ -1,0 +1,32 @@
+{
+  "name": "wholesale-styleguide-scss",
+  "version": "0.0.1",
+  "description": "",
+  "homepage": "https://d1fhpltsebm6no.cloudfront.net/",
+  "main": "README.md",
+  "scripts": {
+    "prestart": "npm install"
+  },
+  "keywords": [
+    "toolkit",
+    "styleguide",
+    "framework",
+    "scaffold",
+    "patterns",
+    "library"
+  ],
+  "author": "Zalando Wholesale",
+  "licenses": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.bus.zalan.do/WholesaleDesignSystem/Styleguide.git"
+  },
+  "engines": {
+    "node": ">=0.10.0",
+    "npm": ">=2.0.0"
+  },
+  "dependencies": {
+    "bourbon": "4.2.6",
+    "bourbon-neat": "1.7.4"
+  }
+}
