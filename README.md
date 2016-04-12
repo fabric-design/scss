@@ -15,7 +15,6 @@ The design is based on ([bourbon.io](http://bourbon.io)):
 
 To change the design, we change the tokens or the components in `./refills/`.
 
-To add the new components FANCY, add them via a new FANCY.html file to `src/materials/`. 
 Add the styles as a new FANCY.scss file to `./custom/` and reference it in `./custom/_custom.scss`.
 
 ### Use the design/framework
