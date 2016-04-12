@@ -24,6 +24,9 @@ install the package
 
 `npm install git+ssh://github.bus.zalan.do/WholesaleDesignSystem/Styleguide-SCSS.git --save`
 
+**ATTENTION:**
+Git sometime removes the 'git+' prefix from the URL. If there are problems, check your package.json.
+
 use it in your styles
 
-`@import "node_modules/wholesale-styleguide-scss/"`
+`@import "node_modules/wholesale-styleguide-scss/index"`
