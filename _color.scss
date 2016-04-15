@@ -1,0 +1,64 @@
+$color: (
+  blue-1: #def5fe,
+  blue-2: #b0e6fb,
+  blue-3: #00abf2,
+
+  green-1: #a0eba6,
+  green-2: #1eb234,
+  green-3: #199d2c,
+
+  red-1: #fa9585,
+  red-2: #f44f41,
+  red-3: #e80012,
+
+  yellow-1: #ffdf85,
+  yellow-2: #ff9c18,
+  yellow-3: #ff8914,
+
+  gray-1: #fafcfd,
+  gray-2: #f2f7f9,
+  gray-3: #d9dde4,
+  gray-4: #d2d7e1,
+  gray-5: #babfcc,
+  gray-6: #979eab,
+  gray-7: #5e6979,
+  gray-8: #373e4b,
+
+  white: #ffffff,
+  black: #000000
+);
+
+@function color($name) {
+  @if map-has-key($color, $name) {
+    @return map-get($color, $name);
+  }
+  @error "The color '#{$name}' doesn't exist.";
+}
+
+@function blue($version) {
+  @return color(blue-#{$version});
+}
+
+@function red($version) {
+  @return color(red-#{$version});
+}
+
+@function green($version) {
+  @return color(green-#{$version});
+}
+
+@function yellow($version) {
+  @return color(yellow-#{$version});
+}
+
+@function gray($version) {
+  @return color(gray-#{$version});
+}
+
+@function white() {
+  @return color(white);
+}
+
+@function black() {
+  @return color(black);
+}
