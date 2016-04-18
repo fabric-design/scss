@@ -10,7 +10,7 @@ $debug: false !default;
 /**
  * Convert a pixel value to rem
  */
-@function px-to-rem($pixel) {
+@function convert-to-rem($pixel) {
   @return parse-int($pixel) / parse-int($rem-base) * 1rem;
 }
 
@@ -24,12 +24,12 @@ $debug: false !default;
   }
   // Convert the single value
   @if $amount == 1 {
-    @return px-to-rem(nth($values, 1));
+    @return convert-to-rem(nth($values, 1));
   }
   // Loop through the values and convert each one
   $rems: ();
   @for $i from 1 through $amount {
-    $rems: append($rems, px-to-rem(nth($values, $i)));
+    $rems: append($rems, convert-to-rem(nth($values, $i)));
   }
   @return $rems;
 }
