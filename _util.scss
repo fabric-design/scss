@@ -1,0 +1,35 @@
+$rem-base: 16px !default;
+$debug: false !default;
+/**
+ * Parse a numeric value from a string
+ */
+@function parse-int($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+/**
+ * Convert a pixel value to rem
+ */
+@function px-to-rem($pixel) {
+  @return parse-int($pixel) / parse-int($rem-base) * 1rem;
+}
+
+/**
+ * Convert a list of pixel values to rem values
+ */
+@function rem($values) {
+  $amount: length($values);
+  @if $debug {
+    @return $values;
+  }
+  // Convert the single value
+  @if $amount == 1 {
+    @return px-to-rem(nth($values, 1));
+  }
+  // Loop through the values and convert each one
+  $rems: ();
+  @for $i from 1 through $amount {
+    $rems: append($rems, px-to-rem(nth($values, $i)));
+  }
+  @return $rems;
+}
