@@ -16,6 +16,9 @@
   $radio-group-background-checked: darken($medium-gray-blue, 15%);
   $radio-group-color-checked: white;
   $radio-group-border-checked: darken($radio-group-background, 15%);
+  $radio-group-background-gray: $medium-gray-blue;
+  $radio-group-color-gray: $deep-blue;
+  $radio-group-border-gray: $light-gray;
 
   @include clearfix;
   input {
@@ -101,18 +104,18 @@
 .radio-group--gray {
   label {
     .radio-group-item {
-      background-color: $medium-gray-blue;
-      color: $deep-blue;
-      border-right-color: $light-gray;
+      background-color: $radio-group-background-gray;
+      color: $radio-group-color-gray;
+      border-right-color: $radio-group-border-gray;
 
       &:active,
       &:focus,
       &:hover {
-        background-color: darken($medium-gray-blue, 3%);
+        background-color: darken($radio-group-background-gray, 3%);
       }
     }
     input:checked + .radio-group-item {
-      background-color: darken($medium-gray-blue, 2%);
+      background-color: darken($radio-group-background-gray, 2%);
       color: $deep-blue;
     }
   }
