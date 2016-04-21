@@ -1,25 +1,25 @@
-.radio-group {  
-  $base-border-color: gainsboro !default;
-  $base-border-radius: 3px !default;
-  $base-line-height: 1.5em !default;
-  $base-spacing: 1.5em !default;
-  $base-font-size: 1em !default;
-  $base-background-color: white !default;
-  $action-color: #477DCA !default;
-  $dark-gray: #333 !default;
-  $large-screen: em(860) !default;
-  $base-font-color: $dark-gray !default;
-  $radio-group-background: $action-color;
-  $radio-group-color: white;
-  $radio-group-border: 1px solid lighten($faint-blue, 5%);
-  $radio-group-inner-border: 1px solid lighten($faint-blue, 5%);
-  $radio-group-background-checked: darken($medium-gray-blue, 15%);
-  $radio-group-color-checked: white;
-  $radio-group-border-checked: darken($radio-group-background, 15%);
-  $radio-group-background-gray: $medium-gray-blue;
-  $radio-group-color-gray: $deep-blue;
-  $radio-group-border-gray: $light-gray;
+$base-border-color: gainsboro !default;
+$base-border-radius: 3px !default;
+$base-line-height: 1.5em !default;
+$base-spacing: 1.5em !default;
+$base-font-size: 1em !default;
+$base-background-color: white !default;
+$action-color: #477DCA !default;
+$dark-gray: #333 !default;
+$large-screen: em(860) !default;
+$base-font-color: $dark-gray !default;
+$radio-group-background: $action-color;
+$radio-group-color: white;
+$radio-group-border: 1px solid lighten($faint-blue, 5%);
+$radio-group-inner-border: 1px solid lighten($faint-blue, 5%);
+$radio-group-background-checked: darken($medium-gray-blue, 15%);
+$radio-group-color-checked: white;
+$radio-group-border-checked: darken($radio-group-background, 15%);
+$radio-group-background-gray: $medium-gray-blue;
+$radio-group-color-gray: $deep-blue;
+$radio-group-border-gray: $light-gray;
 
+.radio-group {  
   @include clearfix;
   input {
     display: none;
