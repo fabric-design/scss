@@ -1,6 +1,6 @@
-#{$all-button-inputs},
-button {
+.button {
   @include appearance(none);
+  @include transition(all .4s);
   background-color: $action-color;
   border: none;
   border-radius: $base-border-radius;
@@ -10,22 +10,82 @@ button {
   font-family: $base-font-family;
   font-size: $base-font-size;
   -webkit-font-smoothing: antialiased;
-  font-weight: 600;
-  line-height: 1;
-  padding: 0.75em 1em;
+  line-height: 1.2;
+  padding: $spacing-x-small $spacing-medium;
   text-decoration: none;
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
+  box-shadow: 0 2px 2px 0 $medium-gray-blue;
+  outline: none;
 
-  &:hover,
-  &:focus {
-    background-color: darken($action-color, 15%);
-    color: #fff;
-  }
-
-  &:disabled {
+  &:disabled, &--disabled {
     cursor: not-allowed;
     opacity: 0.5;
+    box-shadow: 0 0 0 0!important;
   }
+
+  &:hover,
+  &:focus,
+  &:active,
+  &--hover,
+  &--focus {
+    box-shadow: 0 2px 1px 0px darken($medium-gray-blue, 15%);
+  }
+
+  &:active,
+  &:focus,
+  &--focus {
+    background-color: darken($action-color, 2%);
+    box-shadow: inset 0 1px 3px 0 $deep-blue;
+  }
+
+  &--large {
+    font-size: $font-size-heading;
+    padding: $small-spacing $spacing-large;
+  }
+
+  &--small {
+    font-size: $font-size-small;
+    padding: $spacing-xx-small $small-spacing;
+  }
+
+  &--gray {
+    background-color: $medium-gray-blue;
+    color: $deep-blue;
+    &:active,
+    &:focus,
+    &--focus {
+      background-color: darken($light-gray, 2%);
+    }
+  }
+
+  &--toggle {
+    @extend .button--gray;
+    &:active,
+    &:focus,
+    &.button--focus {
+      color: $brand-orange;
+      background-color: lighten($light-gray, 15%);
+    }
+    &:disabled,
+    &.button--disabled {
+      color: $deep-blue;
+    }
+  }
+
+  &--white {
+    background-color: lighten($faint-blue, 5%);
+    color: $action-color;
+    &:active,
+    &:focus,
+    &--focus {
+      background-color: darken($white, 2%);
+    }
+  }
+
+}
+
+#{$all-button-inputs} {
+  @extend .button;
 }
