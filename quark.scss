@@ -46,7 +46,8 @@ $ultra-light-gray: #f2f7f9;
 $warning-yellow: #ff9c18;
 $white: #ffffff;
 
-
+$primary-color: $cerulean;
+$secondary-color: $gallery;
 
 $base-font-family: acuminpro, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $heading-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -78,7 +79,7 @@ $color-icon-table-filter: #d2d7e1;
 $color-icon-table-header-sort: #5e6979;
 $color-text-table-column-header: #5e6979;
 $color-icon-input: #bbbfcc;
-$action-color: #00abf2;
+$action-color: $primary-color;
 $secondary-background-color: #f2f7f9;
 $color-button-primary: #00abf2;
 $color-background-table-row: #ffffff;
