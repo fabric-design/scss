@@ -1,3 +1,11 @@
+$input-text-color: $shuttle-gray;
+$input-background-color: $white;
+$input-border-color: $ghost;
+$input-shadow-color: lighten($input-border-color, 15%);
+$input-focused-border-color: $primary-color;
+$input-focused-shadow-color: lighten($input-focused-border-color, 40%);
+$input-disabled-background-color: $catskill-white;
+
 fieldset {
   background-color: $secondary-background-color;
   border: $base-border;
@@ -26,38 +34,32 @@ label {
   }
 }
 
-#{$all-text-inputs},
-select[multiple=multiple],
+input:not([type=radio]):not([type=checkbox]),
+select,
 textarea {
-  background-color: $base-background-color;
-  border: $base-border;
-  border-radius: $base-border-radius;
-  box-shadow: $form-box-shadow;
-  box-sizing: border-box;
-  font-family: $base-font-family;
-  font-size: $base-font-size;
-  margin-bottom: $base-spacing / 2;
-  padding: $base-spacing / 3;
-  transition: border-color;
-  width: 100%;
-
-  &:hover {
-    border-color: darken($base-border-color, 10%);
-  }
-
+  padding: rem(8px);
+  border: 1px solid $input-border-color;
+  box-shadow: inset 0 1px 2px 1px $input-shadow-color;
+  outline: none;
+  background-color: white;
+  height: rem(34px);
+  font-weight: normal;
+  transition: border-color .2s linear, box-shadow .2s linear;
   &:focus {
-    border-color: $action-color;
-    box-shadow: $form-box-shadow-focus;
-    outline: none;
+    border-color: $input-focused-border-color;
+    box-shadow: inset 0 1px 2px 1px $input-focused-shadow-color;
   }
-
   &:disabled {
-    background-color: darken($base-background-color, 6%);
-    cursor: not-allowed;
+    background-color: $input-disabled-background-color;
+  }
+}
 
-    &:hover {
-      border: $base-border;
-    }
+.input-wrapper {
+  position: relative;
+  .icon {
+    position: absolute;
+    top: 10px;
+    right: 8px;
   }
 }
 
@@ -66,7 +68,7 @@ textarea {
 }
 
 input[type="search"] {
-  @include appearance(none);
+  appearance: none;
 }
 
 input[type="checkbox"],
@@ -81,7 +83,6 @@ input[type="file"] {
 }
 
 select {
-  margin-bottom: $base-spacing;
   max-width: 100%;
   width: auto;
 }
