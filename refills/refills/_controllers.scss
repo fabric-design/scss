@@ -1,0 +1,154 @@
+//Imported from Zalando Dress Code: http://zalando.github.io/dress-code/02-atoms.html#checkboxes
+@mixin checkbox($controller-border-radius : 4px, $sibling-label-selector : ".label") {
+    display: none;
+
+    + #{$sibling-label-selector} {
+        display: inline-block;
+        position: relative;
+        margin-right: $base-spacing + 1;
+        margin-bottom: 0;
+        padding-left: $base-spacing + .5;
+        @include user-select(none);
+
+        &:before,
+        &:after {
+            position: absolute;
+            left: 0;
+            width: $base-spacing;
+            height: $base-spacing;
+            border: 2px solid $dark-mischka;
+            border-radius: $controller-border-radius;
+            background: #fff;
+            content: " ";
+        }
+
+        &:after {
+            top: .5rem;
+            left: .5rem;
+            width: $spacing-large;
+            height: $spacing-large;
+            opacity: 0;
+            @include transition((opacity, transform), (.2s, .1s), (linear, ease-in-out));
+            @include transform(scale3d(.5, .5, 1));
+        }
+    }
+
+    &:checked + #{$sibling-label-selector}:after {
+        opacity: 1;
+        @include transform(scale3d(1, 1, 1));
+    }
+
+    &:disabled + #{$sibling-label-selector} {
+        color: $ghost;
+        opacity: 0.75;
+
+        &:before,
+        &:after {
+            border-color: $ghost;
+        }
+    }
+
+    &[type="checkbox"] + #{$sibling-label-selector}:after {
+        @extend .icon-checkmark;
+        top: 0.2rem;
+        left: 0.2rem;
+        width: 1.2rem;
+        height: 1.2rem;
+        border: 0 none;
+    }
+
+    &[type="radio"] + #{$sibling-label-selector}:after {
+        top: 0.3rem;
+        left: 0.3rem;
+        width: .9rem;
+        height: .9rem;
+        background: $action-color;
+        border: none;
+    }
+
+    &:disabled + #{$sibling-label-selector} {
+        color: $ghost;
+
+        &:before,
+        &:after {
+            border-color: $ghost;
+        }
+
+        &:after {
+            @extend .icon-checkmark-alt;
+        }
+    }
+
+    + #{$sibling-label-selector} {
+        font-size: $base-font-size;
+        line-height: $base-line-height;
+        font-weight: normal;
+        text-transform: none;
+    }
+}
+
+@mixin switch($sibling-label-selector: ".label") {
+    &[type="checkbox"] + #{$sibling-label-selector} {
+        padding-left: 3.5rem;
+        line-height: $base-line-height + 1;
+
+        &:before,
+        &:after {
+            border: none;
+            @include transition((background-color, transform), (.1s, .3s), (linear, $ease-out-quart));
+        }
+
+        &:after {
+            width: 1.1rem;
+            height: 1.1rem;
+            border-radius: 1px;
+            background: $catskill-white;
+            opacity: 1;
+            border-radius: 50%;
+            margin-top: .45rem;
+            border: 1px solid $white;
+            box-shadow: $shadow-shallow-elevation;
+            @include transform(scale3d(1.6, 1.6, 1.6));
+        }
+
+        &:before {
+            background-color: $dark-mischka;
+            width: 3rem;
+            height: 1.3rem;
+            margin-top: .5rem;
+            border-radius: .65rem;
+        }
+
+    }
+
+    &:checked + #{$sibling-label-selector} {
+        &:after {
+            background: none;
+            background-color: $leaf-green;
+            @include transition((background-color, transform), (.1s, .1s), (linear, $ease-out-quart));
+            @include transform(translateX(1.5rem) scale3d(1.6, 1.6, 1.6));
+        }
+
+        &:before {
+            background-color: $madang;
+        }
+    }
+
+    &:disabled + #{$sibling-label-selector} {
+        &:after, &:before {
+            background-image: none!important;
+        }
+    }
+
+}
+
+.checkbox {
+    @include checkbox;
+}
+.checkbox-switch {
+    @include checkbox;
+    @include switch;
+}
+.radio {
+    @include checkbox(50%);
+}

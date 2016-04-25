@@ -15,6 +15,7 @@
 @import "refills-footer";
 @import "bourbon-nav";
 @import "refills-nav";
+@import "refills/icons";
 
 .refills-patterns {
   @import "refills/accordion-tabs";
@@ -46,6 +47,7 @@
   @import "refills/animate-info";
   @import "refills/badges";
   @import "refills/breadcrumbs";
+  @import "refills/controllers";
   @import "refills/radio-group";
   @import "refills/dropdown";
   @import "refills/expander";
