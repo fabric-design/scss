@@ -38,7 +38,7 @@
         opacity: 1;
     }
 
-    &[disabled] + #{$sibling-label-selector} {
+    &:disabled + #{$sibling-label-selector} {
         color: $light-gray;
         opacity: 0.5;
 
@@ -70,7 +70,7 @@
         border: none;
     }
 
-    &[disabled] + #{$sibling-label-selector} {
+    &:disabled + #{$sibling-label-selector} {
         color: $light-gray;
 
         &:before,
@@ -91,7 +91,7 @@
     }
 }
 
-@mixin checkbox--alt($sibling-label-selector: ".label") {
+@mixin switch($sibling-label-selector: ".label") {
     &[type="checkbox"] + #{$sibling-label-selector} {
         padding-left: 3.2rem;
         line-height: $base-line-height + 1;
@@ -138,7 +138,7 @@
         }
     }
 
-    &[disabled] + #{$sibling-label-selector} {
+    &:disabled + #{$sibling-label-selector} {
         &:after, &:before {
             background-image: none!important;
         }
@@ -151,7 +151,7 @@
 }
 .checkbox-switch {
     @include checkbox;
-    @include checkbox--alt;
+    @include switch;
 }
 .radio {
     @include checkbox(50%);
