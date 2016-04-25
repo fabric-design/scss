@@ -1,5 +1,5 @@
 //Imported from Zalando Dress Code: http://zalando.github.io/dress-code/02-atoms.html#checkboxes
-@mixin dc-checkbox($controller-border-radius : 4px, $sibling-label-selector : ".dc-label") {
+@mixin checkbox($controller-border-radius : 4px, $sibling-label-selector : ".label") {
     display: none;
 
     + #{$sibling-label-selector} {
@@ -91,7 +91,7 @@
     }
 }
 
-@mixin dc-checkbox--alt($sibling-label-selector: ".dc-label") {
+@mixin checkbox--alt($sibling-label-selector: ".label") {
     &[type="checkbox"] + #{$sibling-label-selector} {
         padding-left: 3.2rem;
         line-height: $base-line-height + 1;
@@ -108,7 +108,7 @@
             height: 1.1rem;
             transform: scale3d(1.6, 1.6, 1.6);
             border-radius: 1px;
-            background: #E7ECF3;
+            background: $table-gray;
             opacity: 1;
             border-radius: 50%;
             margin-top: .45rem;
@@ -116,7 +116,7 @@
         }
 
         &:before {
-            background-color: #D2D7E1;
+            background-color: $medium-gray-blue;
             width: 3rem;
             height: 1.3rem;
             margin-top: .5rem;
@@ -130,11 +130,11 @@
             transform: translateX(1.5rem) scale3d(1.6, 1.6, 1.6);
             transition: background-color .1s linear, transform .1s cubic-bezier(.105, .420, .425, 1);
             background: none;
-            background-color: #1EB234;
+            background-color: $success-green;
         }
 
         &:before {
-            background-color: #A0EBA6;
+            background-color: $light-green;
         }
     }
 
@@ -146,12 +146,13 @@
 
 }
 
-.dc-checkbox {
-    @include dc-checkbox;
+.checkbox {
+    @include checkbox;
 }
-.dc-checkbox--alt {
-    @include dc-checkbox--alt;
+.checkbox-switch {
+    @include checkbox;
+    @include checkbox--alt;
 }
-.dc-radio {
-    @include dc-checkbox(50%);
+.radio {
+    @include checkbox(50%);
 }
