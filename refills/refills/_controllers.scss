@@ -8,7 +8,7 @@
         margin-right: $base-spacing + 1;
         margin-bottom: 0;
         padding-left: $base-spacing + .5;
-        user-select: none;
+        @include user-select(none);
 
         &:before,
         &:after {
@@ -27,15 +27,15 @@
             left: .5rem;
             width: $spacing-large;
             height: $spacing-large;
-            transform: scale3d(.5, .5, 1);
-            transition: transform .1s ease-in-out, opacity .2s linear;
             opacity: 0;
+            @include transition((opacity, transform), (.2s, .1s), (linear, ease-in-out));
+            @include transform(scale3d(.5, .5, 1));
         }
     }
 
     &:checked + #{$sibling-label-selector}:after {
-        transform: scale3d(1, 1, 1);
         opacity: 1;
+        @include transform(scale3d(1, 1, 1));
     }
 
     &:disabled + #{$sibling-label-selector} {
@@ -89,20 +89,18 @@
 
 @mixin switch($sibling-label-selector: ".label") {
     &[type="checkbox"] + #{$sibling-label-selector} {
-        padding-left: 3.2rem;
+        padding-left: 3.5rem;
         line-height: $base-line-height + 1;
 
         &:before,
         &:after {
-            transition: background-color .3s linear,
-            transform .1s cubic-bezier(.105, .420, .425, 1);
             border: none;
+            @include transition((background-color, transform), (.1s, .3s), (linear, $ease-out-quart));
         }
 
         &:after {
             width: 1.1rem;
             height: 1.1rem;
-            transform: scale3d(1.6, 1.6, 1.6);
             border-radius: 1px;
             background: $catskill-white;
             opacity: 1;
@@ -110,6 +108,7 @@
             margin-top: .45rem;
             border: 1px solid $white;
             box-shadow: $shadow-shallow-elevation;
+            @include transform(scale3d(1.6, 1.6, 1.6));
         }
 
         &:before {
@@ -124,10 +123,10 @@
 
     &:checked + #{$sibling-label-selector} {
         &:after {
-            transform: translateX(1.5rem) scale3d(1.6, 1.6, 1.6);
-            transition: background-color .1s linear, transform .1s cubic-bezier(.105, .420, .425, 1);
             background: none;
             background-color: $leaf-green;
+            @include transition((background-color, transform), (.1s, .1s), (linear, $ease-out-quart));
+            @include transform(translateX(1.5rem) scale3d(1.6, 1.6, 1.6));
         }
 
         &:before {
