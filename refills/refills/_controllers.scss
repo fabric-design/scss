@@ -109,6 +109,7 @@
             border-radius: 50%;
             margin-top: .45rem;
             border: 1px solid $white;
+            box-shadow: $shadow-shallow-elevation;
         }
 
         &:before {
