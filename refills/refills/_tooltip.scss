@@ -1,107 +1,103 @@
 .tooltip-item {
-  display: inline-block;
-  position: relative;
-
-  &:focus,
-  &:hover .tooltip {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .tooltip {
-    @include transition (all 0.2s ease-in-out);
-    min-width: 8.5rem;
-    background: $tooltip-background;
-    border: $tooltip-arrow-width/2 solid $tooltip-border-color;
-    border-radius: $base-border-radius;
-    font-size: $font-size-small; // Make sure you use -webkit-backface-visibility: hidden; on the body element to prevent 1px nudging bugs.
-    line-height: $base-line-height;
-    margin: 0 auto;
-    max-width: $tooltip-max-width;
-    opacity: 0;
-    padding: $spacing-x-small $spacing-large;
-    text-align: center;
-    visibility: hidden;
-    z-index: z("upper");
-
-		&:after, &:before {
-			border: solid transparent;
-			content: " ";
-			height: 0;
-			width: 0;
-			pointer-events: none;
-		}
-
-		&:after {
-			border-color: rgba(136, 183, 213, 0);
-			border-width: $tooltip-arrow-width + 1;
-		}
-		&:before {
-			border-color: rgba(194, 225, 245, 0);
-			border-width: ($tooltip-arrow-width*1.5 + 2);
-      //margin-top: -($tooltip-arrow-width*1.5 + 2)*2;
-			margin-left: -($tooltip-arrow-width*1.5 + 1)/2;
-		}
-
-    &--bottom {
-      @include position(absolute, 100% null null 0);
-      margin-top: 10px;
-      &:before, &:after {
-        @include position(absolute, null null 100% 50%);
-      }
-      &:after {
-        border-bottom-color: $tooltip-background;
-      }
-      &:before {
-        border-bottom-color: $tooltip-border-color;
-      }
+    display: inline-block;
+    position: relative;
+    &:focus,
+    &:hover .tooltip {
+        opacity: 1;
+        visibility: visible;
     }
-
-    &--top {
-      @include position(absolute, null null 100% 0);
-      margin-bottom: 10px;
-      &:before, &:after {
-        @include position(absolute, 100% null null 50%);
-      }
-      &:after {
-        border-top-color: $tooltip-background;
-      }
-      &:before {
-        border-top-color: $tooltip-border-color;
-      }
+    .tooltip {
+        @include transition (all 0.2s ease-in-out);
+        min-width: 8.5rem;
+        background: $tooltip-background;
+        border: $tooltip-arrow-width/2 solid $tooltip-border-color;
+        border-radius: $base-border-radius;
+        font-size: $font-size-small; // Make sure you use -webkit-backface-visibility: hidden; on the body element to prevent 1px nudging bugs.
+        line-height: $base-line-height;
+        margin: 0 auto;
+        max-width: $tooltip-max-width;
+        opacity: 0;
+        padding: $spacing-x-small $spacing-large;
+        text-align: center;
+        visibility: hidden;
+        z-index: z("upper");
+        &:after,
+        &:before {
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            pointer-events: none;
+        }
+        &:after {
+            border-color: rgba(136, 183, 213, 0);
+            border-width: $tooltip-arrow-width + 1;
+        }
+        &:before {
+            border-color: rgba(194, 225, 245, 0);
+            border-width: ($tooltip-arrow-width*1.5 + 2);
+            //margin-top: -($tooltip-arrow-width*1.5 + 2)*2;
+            margin-left: -($tooltip-arrow-width*1.5 + 1)/2;
+        }
+        &--bottom {
+            @include position(absolute, 100% null null 0);
+            margin-top: 10px;
+            &:after,
+            &:before {
+                @include position(absolute, null null 100% 50%);
+            }
+            &:after {
+                border-bottom-color: $tooltip-background;
+            }
+            &:before {
+                border-bottom-color: $tooltip-border-color;
+            }
+        }
+        &--top {
+            @include position(absolute, null null 100% 0);
+            margin-bottom: 10px;
+            &:after,
+            &:before {
+                @include position(absolute, 100% null null 50%);
+            }
+            &:after {
+                border-top-color: $tooltip-background;
+            }
+            &:before {
+                border-top-color: $tooltip-border-color;
+            }
+        }
+        &--right {
+            @include position(absolute, 0 null null 100%);
+            margin-left: 6px;
+            &:after,
+            &:before {
+                @include position(absolute, .5rem 100% null null);
+            }
+            &:after {
+                border-right-color: $tooltip-background;
+            }
+            &:before {
+                border-right-color: $tooltip-border-color;
+                margin-top: -2px;
+            }
+        }
+        &--left {
+            @include position(absolute, 0 100% null null);
+            margin-right: 6px;
+            &:after,
+            &:before {
+                @include position(absolute, .5rem null null 100%);
+            }
+            &:after {
+                border-left-color: $tooltip-background;
+            }
+            &:before {
+                border-left-color: $tooltip-border-color;
+                margin-top: -2px;
+                margin-left: 0;
+                margin-right: -($tooltip-arrow-width*1.5 + 1)/2;
+            }
+        }
     }
-
-    &--right {
-      @include position(absolute, 0 null null 100%);
-      margin-left: 6px;
-      &:before, &:after {
-        @include position(absolute, .5rem 100% null null);
-      }
-      &:after {
-        border-right-color: $tooltip-background;
-      }
-      &:before {
-        border-right-color: $tooltip-border-color;
-        margin-top: -2px;
-      }
-    }
-
-    &--left {
-      @include position(absolute, 0 100% null null);
-      margin-right: 6px;
-      &:before, &:after {
-        @include position(absolute, .5rem null null 100%);
-      }
-      &:after {
-        border-left-color: $tooltip-background;
-      }
-      &:before {
-        border-left-color: $tooltip-border-color;
-        margin-top: -2px;
-        margin-left: 0;
-        margin-right: -($tooltip-arrow-width*1.5 + 1)/2;
-      }
-    }
-
-  }
 }
