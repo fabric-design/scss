@@ -66,6 +66,14 @@ $base-spacing: 1.5rem;
 $base-border-radius: 4px;
 $border-radius-container: 2px;
 $base-z-index: 1;
+$z-layers: (
+  "goku":            9001,
+  "shoryuken":       8000,
+  "upper":             10,
+  "default":            1,
+  "below":             -1,
+  "bottomless-pit": -9000
+);
 $base-font-color: $bright-gray;
 $color-text-link: $cerulean;
 $color-text-inverse: $white;
