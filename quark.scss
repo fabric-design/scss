@@ -126,3 +126,8 @@ $refills-highlight-color: $cerulean;
 $refills-white-shadow: 0 1px 1px transparentize($white, 0.6);
 $refills-medium-screen: em(640);
 $refills-large-screen: em(860);
+//Tooltip Settings
+$tooltip-background: $pattens-blue;
+$tooltip-border-color: $cerulean;
+$tooltip-max-width: 16em;
+$tooltip-arrow-width: 2px;
