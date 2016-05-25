@@ -10,9 +10,9 @@
   $dropdown-description-color: lighten($dropdown-color, 40%);
   $dropdown-border: 1px solid silver;
   $dropdown-background: $base-background-color;
-  $dropdown-background-hover: $color-background-dropdown-option-hover;
+  $dropdown-background-hover: darken($dropdown-background, 3%);
   $dropdown-inner-border: 1px solid silver;
-  $dropdown-height: 2rem;
+  $dropdown-height: 40px;
   $dropdown-padding: 1em;
   $dropdown-distance-from-menu: 50px;
   $dropdown-arrow-top-distance: 0;
@@ -56,12 +56,12 @@
     font-size: 0.7em;
     line-height: $dropdown-height;
     margin: 0;
-    padding: 0 ($dropdown-padding * 2) 0 $dropdown-padding;
+    padding: 0 ($dropdown-padding * 2.5) 0 ($dropdown-padding / 2);
     position: relative;
 
     @include media($large-screen) {
       font-size: 1em;
-      padding: 0 ($dropdown-padding * 2) 0 $dropdown-padding;
+      padding: 0 ($dropdown-padding * 2.5) 0 ($dropdown-padding / 2);
     }
   }
 
@@ -81,9 +81,9 @@
   .dropdown-menu {
     @include transition (all 0.2s ease-in-out);
     background: $dropdown-background;
-    // border-radius: $base-border-radius;
-    // border: $dropdown-border;
-    box-shadow: 0 2px 10px rgba(black,0.4);
+    border-radius: $base-border-radius;
+    border: $dropdown-border;
+    box-shadow: 0 2px 2px transparentize(black, 0.8);
     color: $dropdown-color;
     cursor: pointer;
     display: none;
@@ -100,16 +100,16 @@
       @include position(absolute, 0 1em 0 0);
       color: $dropdown-background;
       content: "\25b2";
-      font-size: 1.2em;
+      font-size: 1.4em;
       pointer-events: none;
       text-shadow: 0 -2px 2px transparentize(black, 0.7);
-      top: -0.9em;
+      top: -0.7em;
     }
   }
 
   .dropdown-menu li {
-    // border-bottom: $dropdown-inner-border;
-    color: $dropdown-color;
+    border-bottom: $dropdown-inner-border;
+    color: $dropdown-color; 
     list-style: none;
     padding: $dropdown-padding / 2;
   }
