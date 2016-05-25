@@ -53,14 +53,12 @@
     border-bottom: $dropdown-border;
     cursor: pointer;
     float: right;
-    font-size: 0.7em;
     line-height: $dropdown-height;
     margin: 0;
     padding: 0 ($dropdown-padding * 2) 0 $dropdown-padding;
     position: relative;
 
     @include media($large-screen) {
-      font-size: 1em;
       padding: 0 ($dropdown-padding * 2) 0 $dropdown-padding;
     }
   }
@@ -98,7 +96,6 @@
       @include position(absolute, 0 1em 0 0);
       color: $dropdown-background;
       content: "\25b2";
-      font-size: 1.2em;
       pointer-events: none;
       text-shadow: 0 -2px 2px transparentize(black, 0.7);
       top: -0.9em;
