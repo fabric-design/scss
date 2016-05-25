@@ -26,10 +26,10 @@ form.search-bar {
     border-bottom-left-radius: 0;
     box-shadow: none;
     float: right;
-    height: calc(2rem + 2px); // line-height + padding + border of input
+    height: calc(1rem + 2 * 0.5rem + 2px); // line-height + padding + border of input
 
     img {
-      height: 16px;
+      height: 1rem;
     }
   }
 
@@ -56,7 +56,7 @@ form.search-bar {
       border-top-right-radius: 0;
       border: 1px solid $color-border-input-default;
       border-right: 0;
-      box-shadow: inset 0px 1px 3px 0px $input-shadow-color;
+      box-shadow: $input-shadow-inset;
     }
 
     .dropdown-menu {
