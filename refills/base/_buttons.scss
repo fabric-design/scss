@@ -44,14 +44,14 @@ $button-shadows: (
   &:hover,
   &:focus,
   &:active,
-  &.button-hover,
-  &.button-focus {
+  &.is-hovered,
+  &.is-focused {
     box-shadow: map-get($button-shadows, hover) darken($shadow, 15%);
   }
 
   &:active,
   &:focus,
-  &.button-focus {
+  &.is-focused {
     background-color: darken($background, 2%);
     box-shadow: map-get($button-shadows, active) darken($shadow, 25%);
   }
@@ -80,38 +80,38 @@ $button-shadows: (
     @include button-base;
     @include button-style($button-background, $button-color, $button-shadow-color);
     @include button-medium;
-    &.button-large {
+    &.mod-large {
       @include button-large;
     }
-    &.button-small {
+    &.mod-small {
       @include button-small;
     }
-    &:disabled, &.button-disabled {
+    &:disabled, &.is-disabled {
       @include button-disabled;
     }
-    &.button-secondary {
+    &.mod-secondary {
       @include button-style($secondary-color, $shuttle-gray, $button-shadow-color);
     }
-    &.button-toggle {
+    &.is-toggled {
       @include button-style($secondary-color, $shuttle-gray, $button-shadow-color);
       &:active,
       &:focus,
-      &.button-focus {
+      &.is-focused {
         color: $west-side;
         background-color: lighten($ghost, 15%);
       }
       &:disabled,
-      &.button-disabled {
+      &.is-disabled {
         color: $shuttle-gray;
       }
     }
-    &.button-flat {
+    &.mod-flat {
       @include button-style(transparent, $primary-color, $button-color);
       &:hover,
       &:focus,
       &:active,
-      &.button-hover,
-      &.button-focus {
+      &.is-hovered,
+      &.is-focused {
         background-color: darken($white, 2%);
       }
     }
