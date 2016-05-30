@@ -1,6 +1,5 @@
 form.search-bar {
   position: relative;
-  // box-shadow: 0 1px 1px 0 $medium-gray-blue;
   border-radius: 0 4px 4px 0;
 
   .search-bar-input-container {
@@ -39,7 +38,7 @@ form.search-bar {
     }
 
     button[type=submit] {
-      @include position(absolute, 0em 0em 0em null);
+      @include position(absolute, 0 0 0 null);
       background: none;
       box-shadow: none;
     }
