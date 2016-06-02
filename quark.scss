@@ -74,7 +74,7 @@ $z-layers: (
   "below":             -1,
   "bottomless-pit": -9000
 );
-$base-font-color: $bright-gray;
+$base-font-color: $shuttle-gray;
 $color-text-link: $cerulean;
 $color-text-inverse: $white;
 $color-text-success: $forest-green;
@@ -97,7 +97,6 @@ $color-background-table-filters: $catskill-white;
 $color-background-progress-bar: $dark-mischka;
 $base-background-color: $white;
 $shadow-shallow-elevation: 0 2px 2px 0 rgba($ghost, 0.65);
-$shadow-inset-shadow: inset 0 1px 1px 0 rgba($black, 0.22), inset 0 2px 4px 0 rgba($santas-gray, 0.65);
 $recessed-paper-shadow-primary: inset 0 1px 2px 0 rgba($black, 0.19);
 $recessed-paper-shadow-secondary: inset 0 1px 14px 0 rgba($black, 0.08);
 $form-box-shadow: inset 0 1px 3px rgba($black, 0.06);
@@ -131,3 +130,8 @@ $tooltip-background: $pattens-blue;
 $tooltip-border-color: $cerulean;
 $tooltip-max-width: 16em;
 $tooltip-arrow-width: 2px;
+
+//Input Variables
+$input-border-color: $color-border-input-default;
+$input-shadow-color: lighten($input-border-color, 15%);
+$input-shadow-inset: inset 0px 1px 3px 0px $input-shadow-color;
