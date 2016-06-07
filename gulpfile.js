@@ -15,21 +15,25 @@ var iconfontCss = require('gulp-iconfont-css');
 var fs = require('fs');
 var path = require('path');
 
-gulp.task('icons', function(){
+gulp.task('icons', function(done){
     var iconsFoldersPath = 'icons/svg/';
     var folders = getFolders(iconsFoldersPath);
 
-    var tasks = folders.map(function(folder) {
+    folders.map(function(folder) {
         var fontName = folder.split('/').pop().replace(' ','-').toLowerCase();
-        return gulp.src(path.join(iconsFoldersPath, folder, '/**/*.svg'))
+        gulp.src(path.join(iconsFoldersPath, folder, '/**/*.svg'))
             .pipe(iconfontCss({
-                fontName: fontName
+                fontName: fontName,
+                targetPath: `_icons_${fontName}.scss`,
+                cssClass: `icon-${fontName.substr(0,3)}`
             }))
             .pipe(iconfont({
                 fontName: fontName
             }))
             .pipe(gulp.dest('icons/'));
     });
+
+    done();
 });
 
 
@@ -46,10 +50,10 @@ gulp.task('sass', function () {
 gulp.task('watch', function() {
     gulp.watch('icons/svg/**/*.{svg}', {
         ignoreInitial: false
-    }, ['icons']);
-  return gulp.watch('./**/*.{html,scss}', {
-    ignoreInitial: false
-  }, ['sass']);
+    }, gulp.series('icons'));
+    gulp.watch('./**/*.{html,scss}', {
+        ignoreInitial: false
+    }, gulp.series('sass'));
 })
 
 // utils
