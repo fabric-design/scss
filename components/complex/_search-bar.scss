@@ -1,0 +1,65 @@
+form.search-bar {
+  position: relative;
+  border-radius: 0 4px 4px 0;
+
+  .search-bar-input-container {
+    overflow: auto;
+  }
+  input[type=search] {
+    @include appearance(none);
+    @include transition(border-color);
+    box-sizing: border-box;
+    display: block;
+    font-size: $base-font-size;
+    margin: 0;
+    padding: 0 $spacing-x-small;
+    position: relative;
+    width: 100%;
+    border-radius: 0;
+  }
+
+  button[type=submit] {
+    outline: none;
+    padding: 5px 10px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    box-shadow: none;
+    float: right;
+    height: calc(1rem + 2 * 0.5rem + 2px); // line-height + padding + border of input
+
+    img {
+      height: 1rem;
+    }
+  }
+
+  &.search-bar-subtile {
+    .search-bar-input-container {
+      overflow: visible;
+    }
+
+    button[type=submit] {
+      @include position(absolute, 0 0 0 null);
+      background: none;
+      box-shadow: none;
+    }
+  }
+
+  .dropdown {
+    float: left;
+
+    .dropdown-button {
+      background: none;
+      border-top-left-radius: $base-border-radius;
+      border-bottom-left-radius: $base-border-radius;
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+      border: 1px solid $color-border-input-default;
+      border-right: 0;
+      box-shadow: $input-shadow-inset;
+    }
+
+    .dropdown-menu {
+      left: 0;
+    }
+  }
+}
