@@ -5,7 +5,9 @@
   "homepage": "https://d1fhpltsebm6no.cloudfront.net/",
   "main": "README.md",
   "scripts": {
-    "prestart": "npm install"
+    "prestart": "npm install",
+    "watch": "gulp watch",
+    "serve": "lite-server"
   },
   "keywords": [
     "toolkit",
@@ -28,5 +30,15 @@
   "dependencies": {
     "bourbon": "4.2.6",
     "bourbon-neat": "1.7.4"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-flatmap": "^1.0.0",
+    "gulp-iconfont": "^8.0.0",
+    "gulp-iconfont-css": "^2.1.0",
+    "gulp-sass": "^2.3.1",
+    "gulp-watch": "^4.3.6",
+    "lite-server": "^2.2.0"
   }
 }
