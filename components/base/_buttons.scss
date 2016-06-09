@@ -1,91 +1,119 @@
-.button {
-  @include appearance(none);
-  @include transition(all .4s);
-  background-color: $action-color;
-  border: none;
-  border-radius: $base-border-radius;
-  color: #fff;
+$export-button-html: true !default;
+
+$button-color: $white !default;
+$button-background: $primary-color !default;
+$button-shadow-color: $dark-mischka !default;
+$button-border-radius: $base-border-radius !default;
+$button-padding: 0.5em 1em !default;
+$button-sizes: (
+  small: $font-size-small,
+  medium: $base-font-size,
+  large: $font-size-heading
+) !default;
+$button-shadows: (
+  normal: 0 2px 1px 0px,
+  hover: 0 2px 1px 0px,
+  active: inset 0 1px 3px 0,
+  disabled: 0 0 0 0
+) !default;
+
+@mixin button-base() {
+  font-family: $base-font-family;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1;
+  text-decoration: none;
+  text-align: center;
+  user-select: none;
+  border: 1px solid transparent;
+  border-radius: $button-border-radius;
+  padding: $button-padding;
   cursor: pointer;
   display: inline-block;
-  font-family: $base-font-family;
-  font-size: $base-font-size;
-  -webkit-font-smoothing: antialiased;
-  line-height: 1.2;
-  padding: $spacing-x-small $spacing-medium;
-  text-decoration: none;
-  user-select: none;
   vertical-align: middle;
   white-space: nowrap;
-  box-shadow: 0 2px 2px 0 $medium-gray-blue;
   outline: none;
+  @include appearance(none);
+  @include transition(all .4s);
+}
 
-  &:disabled, &--disabled {
-    cursor: not-allowed;
-    opacity: 0.5;
-    box-shadow: 0 0 0 0!important;
-  }
+@mixin button-style($background, $foreground, $shadow) {
+  background-color: $background;
+  color: $foreground;
+  box-shadow: map-get($button-shadows, normal) $shadow;
 
   &:hover,
   &:focus,
   &:active,
-  &--hover,
-  &--focus {
-    box-shadow: 0 2px 1px 0px darken($medium-gray-blue, 15%);
+  &.is-hovered,
+  &.is-focused {
+    box-shadow: map-get($button-shadows, hover) darken($shadow, 15%);
   }
 
   &:active,
   &:focus,
-  &--focus {
-    background-color: darken($action-color, 2%);
-    box-shadow: inset 0 1px 3px 0 $deep-blue;
+  &.is-focused {
+    background-color: darken($background, 2%);
+    box-shadow: map-get($button-shadows, active) darken($shadow, 25%);
   }
-
-  &--large {
-    font-size: $font-size-heading;
-    padding: $small-spacing $spacing-large;
-  }
-
-  &--small {
-    font-size: $font-size-small;
-    padding: $spacing-xx-small $small-spacing;
-  }
-
-  &--gray {
-    background-color: $medium-gray-blue;
-    color: $deep-blue;
-    &:active,
-    &:focus,
-    &--focus {
-      background-color: darken($light-gray, 2%);
-    }
-  }
-
-  &--toggle {
-    @extend .button--gray;
-    &:active,
-    &:focus,
-    &.button--focus {
-      color: $brand-orange;
-      background-color: lighten($light-gray, 15%);
-    }
-    &:disabled,
-    &.button--disabled {
-      color: $deep-blue;
-    }
-  }
-
-  &--white {
-    background-color: lighten($faint-blue, 5%);
-    color: $action-color;
-    &:active,
-    &:focus,
-    &--focus {
-      background-color: darken($white, 2%);
-    }
-  }
-
 }
 
-#{$all-button-inputs} {
-  @extend .button;
+@mixin button-small() {
+  font-size: map-get($button-sizes, small);
+}
+
+@mixin button-medium() {
+  font-size: map-get($button-sizes, medium);
+}
+
+@mixin button-large() {
+  font-size: map-get($button-sizes, large);
+}
+
+@mixin button-disabled() {
+  cursor: not-allowed;
+  opacity: 0.5;
+  box-shadow: map-get($button-shadows, disabled);
+}
+
+@if $export-button-html {
+  #{$all-button-inputs} {
+    @include button-base;
+    @include button-style($button-background, $button-color, $button-shadow-color);
+    @include button-medium;
+    &.mod-large {
+      @include button-large;
+    }
+    &.mod-small {
+      @include button-small;
+    }
+    &:disabled, &.is-disabled {
+      @include button-disabled;
+    }
+    &.mod-secondary {
+      @include button-style($secondary-color, $shuttle-gray, $button-shadow-color);
+    }
+    &.is-toggled {
+      @include button-style($secondary-color, $shuttle-gray, $button-shadow-color);
+      &:active,
+      &:focus,
+      &.is-focused {
+        color: $west-side;
+        background-color: lighten($ghost, 15%);
+      }
+      &:disabled,
+      &.is-disabled {
+        color: $shuttle-gray;
+      }
+    }
+    &.mod-flat {
+      @include button-style(transparent, $primary-color, $button-color);
+      &:hover,
+      &:focus,
+      &:active,
+      &.is-hovered,
+      &.is-focused {
+        background-color: darken($white, 2%);
+      }
+    }
+  }
 }

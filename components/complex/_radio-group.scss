@@ -19,7 +19,7 @@ $radio-group-background-gray: $medium-gray-blue;
 $radio-group-color-gray: $deep-blue;
 $radio-group-border-gray: $light-gray;
 
-.radio-group {  
+.radio-group {
   @include clearfix;
   input {
     display: none;
@@ -43,7 +43,7 @@ $radio-group-border-gray: $light-gray;
       font-size: $base-font-size;
       font-weight: normal;
       line-height: 1;
-      padding: 0.75em 1em;
+      padding: $button-padding;
       width: 100%;
 
       @include media($large-screen) {
