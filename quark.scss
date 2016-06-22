@@ -49,21 +49,21 @@ $secondary-color: $gallery;
 
 $base-font-family: acuminpro, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $heading-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$base-font-size: 1rem;
-$font-size-small: 0.8125rem;
-$font-size-heading: 1.4375rem;
-$base-line-height: 1.4375rem;
-$heading-line-height: 1.2rem;
-$spacing-xx-small: 0.375rem;
-$spacing-x-small: 0.5rem;
-$small-spacing: 0.6875rem;
-$spacing-medium: 0.8125rem;
-$spacing-large: 1rem;
-$spacing-x-large: 1.1875rem;
-$spacing-xx-large: 1.4375rem;
-$spacing-navigation-items: 2rem;
-$base-spacing: 1.5rem;
-$base-border-radius: 4px;
+$base-font-size: 1rem; // 16px
+$font-size-small: 0.8125rem; // 13px
+$font-size-heading: 1.4375rem; // 23px
+$base-line-height: 1.4375rem; // 23px
+$heading-line-height: 1.2rem; // 19.2px
+$spacing-xx-small: 0.375rem; // 6px
+$spacing-x-small: 0.5rem; // 8px
+$small-spacing: 0.6875rem; // 11px
+$spacing-medium: 0.8125rem; // 13px
+$spacing-large: 1rem; // 16px
+$spacing-x-large: 1.1875rem; // 19px
+$spacing-xx-large: 1.4375rem; // 23px
+$spacing-navigation-items: 2rem; // 32px
+$base-spacing: 1.5rem; // 24
+$base-border-radius: 3px;
 $border-radius-container: 2px;
 $base-z-index: 1;
 $elevation0: none;
