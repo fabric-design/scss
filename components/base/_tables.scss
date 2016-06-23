@@ -1,6 +1,6 @@
 $table-border-color: $gallery;
 $table-header-background-color: $catskill-white;
-$table-header-color: $santas-gray;
+$table-header-color: $shuttle-gray;
 $table-header-border-color: $mischka;
 $table-header-row-border-bottom-color: $black-squeeze;
 $table-header-row-border-top-color: $catskill-white;
@@ -39,6 +39,10 @@ $table-row-border-color: darken($catskill-white, 5%);
   }
 }
 
+.table-actions {
+  margin: 20px 0 11px;
+}
+
 table {
   width: 100%;
   border: 1px solid $table-border-color;
@@ -59,13 +63,14 @@ table {
       border-bottom: 1px solid $table-header-border-color;
     }
     tr:first-child {
-      text-transform: uppercase;
       th {
         padding: rem(8px 11px);
         white-space: nowrap;
+        text-align: left;
         label {
           font-size: 13px;
           font-weight: normal;
+          text-transform: uppercase;
           display: inline-block;
           margin: 0;
         }
