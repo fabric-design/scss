@@ -1,3 +1,4 @@
+$export-form-css: true !default;
 $input-text-color: $shuttle-gray !default;
 $input-background-color: $white !default;
 $input-border-color: $ghost !default;
@@ -6,83 +7,124 @@ $input-focused-border-color: $primary-color !default;
 $input-focused-shadow-color: lighten($input-focused-border-color, 40%) !default;
 $input-disabled-background-color: $catskill-white !default;
 
-fieldset {
-  background-color: $secondary-background-color;
-  border: $base-border;
-  margin: 0 0 $small-spacing;
-  padding: $base-spacing;
+@mixin input-box($bg-color, $border-color, $shadow, $focus-border, $focus-shadow, $disabled-color) {
+    padding: rem(8px);
+    border: 1px solid $input-border-color;
+    box-shadow: $input-shadow-inset;
+    box-sizing: border-box;
+    outline: none;
+    background-color: white;
+    height: rem(34px);
+    font-weight: normal;
+    transition: border-color .2s linear, box-shadow .2s linear;
+    &:focus {
+        border-color: $input-focused-border-color;
+        box-shadow: inset 0 1px 3px 0px $input-focused-shadow-color;
+    }
+    &:disabled {
+        background-color: $input-disabled-background-color;
+    }
 }
 
-input,
-label,
-select {
-  display: block;
-  font-family: $base-font-family;
-  font-size: $base-font-size;
+@mixin default-input {
+    @include input-box(
+        $bg-color: $input-background-color,
+        $border-color: $input-border-color,
+        $shadow: $input-shadow-color,
+        $focus-border: $input-focused-border-color,
+        $focus-shadow: $input-focused-shadow-color,
+        $disabled-color: $input-disabled-background-color
+    );
 }
 
-label {
-  font-weight: 600;
-  margin-bottom: $small-spacing / 2;
+@if $export-form-css {
 
-  &.required::after {
-    content: "*";
-  }
+    fieldset {
+        background-color: $secondary-background-color;
+        border: $base-border;
+        margin: 0 0 $small-spacing;
+        padding: $base-spacing;
+    }
 
-  abbr {
-    display: none;
-  }
-}
+    input,
+    label,
+    select {
+        display: block;
+        font-family: $base-font-family;
+        font-size: $base-font-size;
+    }
 
-input:not([type=radio]):not([type=checkbox]),
-select,
-textarea {
-  padding: rem(8px);
-  border: 1px solid $input-border-color;
-  box-shadow: $input-shadow-inset;
-  outline: none;
-  background-color: white;
-  height: rem(34px);
-  font-weight: normal;
-  transition: border-color .2s linear, box-shadow .2s linear;
-  &:focus {
-    border-color: $input-focused-border-color;
-    box-shadow: inset 0 1px 3px 0px $input-focused-shadow-color;
-  }
-  &:disabled {
-    background-color: $input-disabled-background-color;
-  }
-}
+    label {
+        font-weight: 600;
+        margin-bottom: $small-spacing / 2;
 
-.input-wrapper {
-  position: relative;
-  .icon {
-    position: absolute;
-    top: 10px;
-    right: 8px;
-  }
-}
+        &.required::after {
+            content: "*";
+        }
 
-textarea {
-  resize: vertical;
-}
+        abbr {
+            display: none;
+        }
+    }
 
-input[type="search"] {
-  appearance: none;
-}
+    input:not([type=radio]):not([type=checkbox]),
+    select,
+    textarea {
+        @include input-box(
+            $bg-color: $input-background-color,
+            $border-color: $input-border-color,
+            $shadow: $input-shadow-color,
+            $focus-border: $input-focused-border-color,
+            $focus-shadow: $input-focused-shadow-color,
+            $disabled-color: $input-disabled-background-color
+        )
+    }
 
-input[type="checkbox"],
-input[type="radio"] {
-  display: inline;
-  margin-right: $small-spacing / 2;
-}
+    .input-wrapper {
+        position: relative;
+        .icon {
+            position: absolute;
+            top: 10px;
+            right: 8px;
+        }
+    }
 
-input[type="file"] {
-  padding-bottom: $small-spacing;
-  width: 100%;
-}
+    textarea {
+        resize: vertical;
+    }
 
-select {
-  max-width: 100%;
-  width: auto;
+    input[type="search"] {
+        appearance: none;
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+        margin-right: $small-spacing / 2;
+    }
+
+    input[type="file"] {
+        padding-bottom: $small-spacing;
+        width: 100%;
+    }
+
+    select {
+        max-width: 100%;
+        width: auto;
+    }
+
+    .select-box {
+        @include input-box(
+            $bg-color: $input-background-color,
+            $border-color: $input-border-color,
+            $shadow: $input-shadow-color,
+            $focus-border: $input-focused-border-color,
+            $focus-shadow: $input-focused-shadow-color,
+            $disabled-color: $input-disabled-background-color
+        );
+        -webkit-appearance: menulist-button;
+        -moz-appearance: menulist-button;
+        padding-right: rem(20px);
+        cursor: pointer;
+        user-select: none;
+    }
 }
