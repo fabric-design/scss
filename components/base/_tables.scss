@@ -1,14 +1,14 @@
-$table-border-color: $gallery;
+$table-border-color: $ghost;
 $table-header-background-color: $catskill-white;
 $table-header-color: $santas-gray;
 $table-header-border-color: $mischka;
-$table-header-row-border-bottom-color: $black-squeeze;
+$table-header-row-border-bottom-color: transparentize($ghost, 0.7);
 $table-header-row-border-top-color: $catskill-white;
 $table-body-color: $bright-gray;
 $table-row-even: $white;
 $table-row-odd: $catskill-white;
 $table-row-hover-color: $pattens-blue;
-$table-row-border-color: darken($catskill-white, 5%);
+$table-row-border-color: transparentize($ghost, 0.7);
 
 .sort {
   position: relative;
