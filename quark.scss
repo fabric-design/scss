@@ -63,9 +63,20 @@ $spacing-x-large: 1.1875rem; // 19px
 $spacing-xx-large: 1.4375rem; // 23px
 $spacing-navigation-items: 2rem; // 32px
 $base-spacing: 1.5rem; // 24
-$base-border-radius: 4px;
+$base-border-radius: 3px;
 $border-radius-container: 2px;
 $base-z-index: 1;
+$elevation0: none;
+$elevation1: 0 1px 3px rgba($black, 0.12), 0 1px 2px rgba($black, 0.24);
+$elevation2: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+$elevation3: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+$elevation4: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+$elevation5: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+$elevation-shadows: (
+  "resting": $elevation1,
+  "raised": $elevation2,
+  "floating": $elevation5
+);
 $z-layers: (
   "goku":            9001,
   "shoryuken":       8000,
@@ -96,7 +107,8 @@ $color-background-accordion-segment: $dark-mischka;
 $color-background-table-filters: $catskill-white;
 $color-background-progress-bar: $dark-mischka;
 $base-background-color: $white;
-$shadow-shallow-elevation: 0 2px 2px 0 rgba($ghost, 0.65);
+$shadow-shallow-elevation: map-get($elevation-shadows, "resting");
+$shadow-inset-shadow: inset 0 1px 1px 0 rgba($black, 0.22), inset 0 2px 4px 0 rgba($santas-gray, 0.65);
 $recessed-paper-shadow-primary: inset 0 1px 2px 0 rgba($black, 0.19);
 $recessed-paper-shadow-secondary: inset 0 1px 14px 0 rgba($black, 0.08);
 $form-box-shadow: inset 0 1px 3px rgba($black, 0.06);
