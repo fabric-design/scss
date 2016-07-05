@@ -1,7 +1,7 @@
 @import "../../quark";
 
 body {
-  @include font-feature-settings("kern", "liga", "pnum");
+  font-feature-settings: "kern", "liga", "pnum";
   color: $base-font-color;
   font-family: $base-font-family;
   font-size: $base-font-size;
