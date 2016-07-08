@@ -99,22 +99,21 @@
         }
 
         &:after {
-            width: rem(16px);
-            height: rem(16px);
-            background: $mischka;
+            width: rem(14px);
+            height: rem(14px);
+            background: $gallery;
             opacity: 1;
-            border-radius: 50%;
-            margin-top: .45rem;
-            border: 1px solid $white;
+            border-radius: rem(7px);
+            margin-top: rem(8px);
             box-shadow: $shadow-shallow-elevation;
             @include transform(scale3d(1.6, 1.6, 1.6));
         }
 
         &:before {
             background-color: $dark-mischka;
-            width: rem(16px);
-            height: rem(16px);
-            margin-top: rem(4px);
+            width: rem(41px);
+            height: rem(14px);
+            margin-top: rem(12px);
             border-radius: rem(8px);
         }
 
@@ -125,7 +124,7 @@
             background: none;
             background-color: $leaf-green;
             @include transition((background-color, transform), (.1s, .1s), (linear, $ease-out-quart));
-            @include transform(translateX(1.5rem) scale3d(1.6, 1.6, 1.6));
+            @include transform(translateX(rem(20)) scale3d(1.6, 1.6, 1.6));
         }
 
         &:before {
