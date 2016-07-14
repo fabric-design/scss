@@ -19,6 +19,7 @@ $dropdown-hover-background-color: $pattens-blue !default;
   transition: height .125s ease;
   will-change: height;
   overflow: hidden;
+  z-index: 3;
 }
 
 @mixin dropdown() {
@@ -63,16 +64,15 @@ $dropdown-hover-background-color: $pattens-blue !default;
 }
 
 @if $export-dropdown-css {
-  drop-down-menu {
+  .dropdown-menu {
     display: block;
   }
-
   .dropdown {
     position: relative;
     display: inline-block;
     .dropdown-container {
       @include dropdown-container($dropdown-background-color, $dropdown-shadow-color);
-      > drop-down-menu {
+      .dropdown-root-menu {
         right: 0;
         left: auto;
       }
@@ -83,13 +83,16 @@ $dropdown-hover-background-color: $pattens-blue !default;
         }
       }
     }
-    drop-down-menu {
+    .dropdown-trigger {
+      cursor: pointer;
+    }
+    .dropdown-menu {
       @include dropdown();
       &.mod-menu-open,
       &.mod-sub-open {
         left: 0;
       }
-      &.mod-sub-open > ul > .dropdown-item > .text {
+      &.mod-sub-open > .dropdown-item > .text {
         opacity: 0;
         z-index: -1;
       }
@@ -105,24 +108,24 @@ $dropdown-hover-background-color: $pattens-blue !default;
     .dropdown-container.animate-close {
       animation: closeContainer .2s ease-in-out forwards;
     }
-    drop-down-menu.animate-in > ul > .dropdown-item > .text {
+    .dropdown-menu.animate-in > .dropdown-item > .text {
       animation: dropDownIn .3s cubic-bezier(.32, .97, .71, .95) .0s forwards;
     }
-    drop-down-menu.animate-out > ul > .dropdown-item > .text {
+    .dropdown-menu.animate-out > .dropdown-item > .text {
       animation: dropDownOut .3s cubic-bezier(.53, 1.49, 1, .87) forwards;
     }
-    drop-down-menu.animate-sub-in > ul > .dropdown-item > .text {
+    .dropdown-menu.animate-sub-in > .dropdown-item > .text {
       animation: dropDownSubIn .3s cubic-bezier(.32, .97, .71, .95) .0s forwards;
     }
-    drop-down-menu.animate-sub-out > ul > .dropdown-item > .text {
+    .dropdown-menu.animate-sub-out > .dropdown-item > .text {
       animation: dropDownSubOut .3s cubic-bezier(.53, 1.49, 1, .87) forwards;
     }
-    drop-down-menu.animate-in,
-    drop-down-menu.animate-out,
-    drop-down-menu.animate-sub-in,
-    drop-down-menu.animate-sub-out {
+    .dropdown-menu.animate-in,
+    .dropdown-menu.animate-out,
+    .dropdown-menu.animate-sub-in,
+    .dropdown-menu.animate-sub-out {
       @for $i from 1 through 20 {
-        > ul > .dropdown-item:nth-child(#{$i}) > .text {
+        > .dropdown-item:nth-child(#{$i}) > .text {
           animation-delay: #{$i * .025s};
         }
       }
