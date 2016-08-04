@@ -27,7 +27,6 @@ header.navigation {
 
   .navigation-wrapper {
     @include clearfix;
-    @include outer-container;
     position: relative;
     z-index: 9999;
   }
@@ -69,13 +68,9 @@ header.navigation {
   // Nav menu
 
   nav {
-    float: none;
     min-height: $navigation-height;
     z-index: 9999999;
-
-    @include media ($horizontal-bar-mode) {
-      float: left;
-    }
+    float: right;
   }
 
   ul.navigation-menu {
