@@ -123,6 +123,7 @@ $input-disabled-background-color: $catskill-white !default;
     );
     -webkit-appearance: menulist-button;
     -moz-appearance: menulist-button;
+    box-shadow: none;
     padding-right: rem(20px);
     cursor: pointer;
     user-select: none;
