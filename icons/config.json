@@ -167,6 +167,20 @@
       "src": "elusive"
     },
     {
+      "uid": "7cad8fde2c3232174e3237d384463626",
+      "css": "warning-triangle",
+      "code": 59473,
+      "src": "custom_icons",
+      "selected": true,
+      "svg": {
+        "path": "M1140.2 940.4L605.7 18.3A36.6 36.6 0 0 0 542.1 18.3L4.9 945A36.6 36.6 0 0 0 36.6 1000H1111.7A36.6 36.6 0 0 0 1140.2 940.4ZM100.2 926.7L573.9 109.7 1047.6 926.7H100.2ZM515.5 860H630.6V749.3H516.2ZM515.5 664.5H630.6V329.3H516.2Z",
+        "width": 1148
+      },
+      "search": [
+        "warning_triangle"
+      ]
+    },
+    {
       "uid": "72dda02ee1c3e34a9095483153421058",
       "css": "alarm_clock",
       "code": 59392,
@@ -1200,20 +1214,6 @@
       },
       "search": [
         "warning_circle_inverse"
-      ]
-    },
-    {
-      "uid": "7cad8fde2c3232174e3237d384463626",
-      "css": "warning_triangle",
-      "code": 59473,
-      "src": "custom_icons",
-      "selected": false,
-      "svg": {
-        "path": "M1140.2 940.4L605.7 18.3A36.6 36.6 0 0 0 542.1 18.3L4.9 945A36.6 36.6 0 0 0 36.6 1000H1111.7A36.6 36.6 0 0 0 1140.2 940.4ZM100.2 926.7L573.9 109.7 1047.6 926.7H100.2ZM515.5 860H630.6V749.3H516.2ZM515.5 664.5H630.6V329.3H516.2Z",
-        "width": 1148
-      },
-      "search": [
-        "warning_triangle"
       ]
     },
     {
