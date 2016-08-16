@@ -1,4 +1,4 @@
-$export-button-html: true !default;
+$export-button-css: true !default;
 
 $button-color: $white !default;
 $button-background: $primary-color !default;
@@ -75,7 +75,7 @@ $button-shadows: (
   box-shadow: map-get($button-shadows, disabled);
 }
 
-@if $export-button-html {
+@if $export-button-css {
   #{$all-button-inputs} {
     @include button-base;
     @include button-style($button-background, $button-color, $button-shadow-color);
