@@ -78,6 +78,7 @@ table {
         sort {
           position: absolute;
           right: rem(15px);
+          z-index: 1;
         }
       }
       th:not(:last-child) {
