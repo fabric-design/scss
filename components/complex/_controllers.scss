@@ -58,10 +58,10 @@
     }
 
     &[type="radio"] + #{$sibling-label-selector}:after {
-        top: 0.3rem;
-        left: 0.3rem;
-        width: .9rem;
-        height: .9rem;
+        top: rem(6px);
+        left: rem(6px);
+        width: rem(12px);
+        height: rem(12px);
         background: $action-color;
         border: none;
     }
