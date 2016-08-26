@@ -2,12 +2,14 @@ $include-icon-css: true !default;
 $use-embedded-font: false !default;
 $font-path: 'icons/font/' !default;
 // Icon uni-codes
+$icon-cross-thin: '\00d7';
 $icon-attention-alt: '\e800';
 $icon-check: '\e801';
 $icon-cancel-circled: '\e802';
 $icon-ok: '\e803';
 $icon-checkmark-circle: '\e816';
 $icon-cross: '\e804';
+$icon-zalando: '\e805';
 $icon-lightbulb: '\e831';
 $icon-magnifying-glass-cute: '\e836';
 $icon-pencil-stroke: '\e842';
@@ -79,6 +81,9 @@ $icon-sort-up: '\f0de';
     }
     .icon-cross:before {
         content: $icon-cross;
+    }
+    .icon-zalando:before {
+        content: $icon-zalando;
     }
     .icon-lightbulb:before {
         content: $icon-lightbulb;
