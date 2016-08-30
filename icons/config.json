@@ -201,6 +201,18 @@
       ]
     },
     {
+      "uid": "d2c6b59d9a239140cb76be0627480855",
+      "css": "dot",
+      "code": 59398,
+      "src": "entypo"
+    },
+    {
+      "uid": "130380e481a7defc690dfb24123a1f0c",
+      "css": "circle",
+      "code": 61713,
+      "src": "fontawesome"
+    },
+    {
       "uid": "72dda02ee1c3e34a9095483153421058",
       "css": "alarm_clock",
       "code": 59392,
