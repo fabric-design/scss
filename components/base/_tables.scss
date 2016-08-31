@@ -64,9 +64,10 @@ table {
     }
     tr:first-child {
       th {
-        padding: rem(8px 11px);
+        padding: rem(8px 25px 8px 11px);
         white-space: nowrap;
         text-align: left;
+        position: relative;
         label {
           font-size: 13px;
           font-weight: normal;
@@ -74,9 +75,9 @@ table {
           display: inline-block;
           margin: 0;
         }
-        sort {
-          float: right;
-          margin-left: rem(10px);
+        .sort {
+          position: absolute;
+          right: rem(10px);
         }
       }
       th:not(:last-child) {
@@ -97,11 +98,15 @@ table {
   }
   tbody {
     color: $shuttle-gray;
-    tr:nth-of-type(1n) td {
+    tr:nth-of-type(even) td {
+      background-color: $table-row-odd;
+      border-bottom: 1px solid $table-row-border-color;
+    }
+    tr:nth-of-type(odd) td,
+    tr.pagination-row td {
       background-color: $table-row-even;
     }
-    tr:nth-of-type(2n) td {
-      background-color: $table-row-odd;
+    tr:nth-last-child(2) td {
       border-bottom: 1px solid $table-row-border-color;
     }
     td {
