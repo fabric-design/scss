@@ -35,7 +35,7 @@
     "bourbon-neat": "1.7.4"
   },
   "devDependencies": {
-    "gulp": "^3.9.1",
+    "gulp": "github:gulpjs/gulp#4.0",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-flatmap": "^1.0.0",
     "gulp-iconfont": "^8.0.0",
