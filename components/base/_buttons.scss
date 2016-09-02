@@ -76,7 +76,11 @@ $button-shadows: (
 }
 
 @if $export-button-css {
-  #{$all-button-inputs} {
+  .button,
+  button,
+  input[type="reset"],
+  input[type="button"],
+  input[type="submit"] {
     @include button-base;
     @include button-style($button-background, $button-color, $button-shadow-color);
     @include button-medium;
