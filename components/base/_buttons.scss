@@ -120,4 +120,10 @@ $button-shadows: (
       }
     }
   }
+  .file-button {
+    font-weight: normal;
+    input[type="file"] {
+      display: none;
+    }
+  }
 }
