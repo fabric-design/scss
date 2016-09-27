@@ -16,17 +16,17 @@
             left: 0;
             width: $base-spacing;
             height: $base-spacing;
-            border: 2px solid $dark-mischka;
+            border: 2px solid $santas-gray;
             border-radius: $controller-border-radius;
             background: #fff;
             content: " ";
         }
 
         &:after {
-            top: .5rem;
-            left: .5rem;
-            width: $spacing-large;
-            height: $spacing-large;
+            top: rem(3px);
+            left: rem(3px);
+            width: $base-spacing - rem(6px);
+            height: $base-spacing - rem(6px);
             opacity: 0;
             @include transition((opacity, transform), (.2s, .1s), (linear, ease-in-out));
             @include transform(scale3d(.5, .5, 1));
@@ -58,10 +58,10 @@
     }
 
     &[type="radio"] + #{$sibling-label-selector}:after {
-        top: 0.3rem;
-        left: 0.3rem;
-        width: .9rem;
-        height: .9rem;
+        top: rem(6px);
+        left: rem(6px);
+        width: rem(12px);
+        height: rem(12px);
         background: $action-color;
         border: none;
     }
@@ -99,24 +99,22 @@
         }
 
         &:after {
-            width: 1.1rem;
-            height: 1.1rem;
-            border-radius: 1px;
-            background: $catskill-white;
+            width: rem(14px);
+            height: rem(14px);
+            background: $gallery;
             opacity: 1;
-            border-radius: 50%;
-            margin-top: .45rem;
-            border: 1px solid $white;
+            border-radius: rem(7px);
+            margin-top: rem(8px);
             box-shadow: $shadow-shallow-elevation;
             @include transform(scale3d(1.6, 1.6, 1.6));
         }
 
         &:before {
             background-color: $dark-mischka;
-            width: 3rem;
-            height: 1.3rem;
-            margin-top: .5rem;
-            border-radius: .65rem;
+            width: rem(41px);
+            height: rem(14px);
+            margin-top: rem(12px);
+            border-radius: rem(8px);
         }
 
     }
@@ -126,7 +124,7 @@
             background: none;
             background-color: $leaf-green;
             @include transition((background-color, transform), (.1s, .1s), (linear, $ease-out-quart));
-            @include transform(translateX(1.5rem) scale3d(1.6, 1.6, 1.6));
+            @include transform(translateX(rem(20)) scale3d(1.6, 1.6, 1.6));
         }
 
         &:before {
