@@ -30,9 +30,9 @@ $input-disabled-background-color: $catskill-white !default;
   @include input-box(
       $bg-color: $input-background-color,
       $border-color: $input-border-color,
-      $shadow: $input-shadow-color,
-      $focus-border: $input-focused-border-color,
-      $focus-shadow: $input-focused-shadow-color,
+      $shadow-color: $input-shadow-color,
+      $focus-border-color: $input-focused-border-color,
+      $focus-shadow-color: $input-focused-shadow-color,
       $disabled-color: $input-disabled-background-color
   );
 }
@@ -79,9 +79,9 @@ $input-disabled-background-color: $catskill-white !default;
     @include input-box(
         $bg-color: $input-background-color,
         $border-color: $input-border-color,
-        $shadow: $input-shadow-color,
-        $focus-border: $input-focused-border-color,
-        $focus-shadow: $input-focused-shadow-color,
+        $shadow-color: $input-shadow-color,
+        $focus-border-color: $input-focused-border-color,
+        $focus-shadow-color: $input-focused-shadow-color,
         $disabled-color: $input-disabled-background-color
     )
   }
