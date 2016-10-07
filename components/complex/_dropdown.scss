@@ -70,6 +70,7 @@ $dropdown-hover-background-color: $pattens-blue !default;
   .dropdown {
     position: relative;
     display: inline-block;
+    vertical-align: middle;
     .dropdown-container {
       @include dropdown-container($dropdown-background-color, $dropdown-shadow-color);
       .dropdown-root-menu {
