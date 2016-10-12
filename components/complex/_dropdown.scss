@@ -20,6 +20,10 @@ $dropdown-hover-background-color: $pattens-blue !default;
   will-change: height;
   overflow: hidden;
   z-index: 3;
+  &.left {
+    right: auto;
+    left: 0;
+  }
 }
 
 @mixin dropdown() {
