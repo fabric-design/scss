@@ -16,7 +16,7 @@ $dropdown-hover-background-color: $pattens-blue !default;
   background-color: $background-color;
   border-radius: 3px;
   box-shadow: 0 2px 6px $shadow-color;
-  transition: height .125s ease;
+  transition: height .25s ease;
   will-change: height;
   overflow: hidden;
   z-index: 3;
@@ -115,16 +115,16 @@ $dropdown-hover-background-color: $pattens-blue !default;
       animation: closeContainer .2s ease-in-out forwards;
     }
     .dropdown-menu.animate-in > .dropdown-item > .text {
-      animation: dropDownIn .3s cubic-bezier(.32, .97, .71, .95) .0s forwards;
+      animation: dropDownIn .3s cubic-bezier(.53, 1.49, 1, .87) .0s forwards;
     }
     .dropdown-menu.animate-out > .dropdown-item > .text {
-      animation: dropDownOut .3s cubic-bezier(.53, 1.49, 1, .87) forwards;
+      animation: dropDownOut .3s cubic-bezier(.32, .97, .71, .95) .05s forwards;
     }
     .dropdown-menu.animate-sub-in > .dropdown-item > .text {
-      animation: dropDownSubIn .3s cubic-bezier(.32, .97, .71, .95) .0s forwards;
+      animation: dropDownSubIn .3s cubic-bezier(.53, 1.49, 1, .87) .0s forwards;
     }
     .dropdown-menu.animate-sub-out > .dropdown-item > .text {
-      animation: dropDownSubOut .3s cubic-bezier(.53, 1.49, 1, .87) forwards;
+      animation: dropDownSubOut .3s cubic-bezier(.32, .97, .71, .95) .05s forwards;
     }
     .dropdown-menu.animate-in,
     .dropdown-menu.animate-out,
@@ -132,7 +132,7 @@ $dropdown-hover-background-color: $pattens-blue !default;
     .dropdown-menu.animate-sub-out {
       @for $i from 1 through 20 {
         > .dropdown-item:nth-child(#{$i}) > .text {
-          animation-delay: #{$i * .025s};
+          animation-delay: #{$i * .035s};
         }
       }
     }
