@@ -58,10 +58,10 @@
     }
 
     &[type="radio"] + #{$sibling-label-selector}:after {
-        top: .3rem;
-        left: .3rem;
-        width: 1.125rem;
-        height: 1.125rem;
+        top: rem(6px);
+        left: rem(6px);
+        width: rem(16px);
+        height: rem(16px);
         background: $action-color;
         border: none;
         vertical-align: middle;

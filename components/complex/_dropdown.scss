@@ -27,9 +27,11 @@ $dropdown-hover-background-color: $pattens-blue !default;
 }
 
 @mixin dropdown() {
+  display: block;
   position: absolute;
   top: 0;
   left: 100%;
+  margin: 0;
   padding: rem(5px 0);
   width: 100%;
 }
@@ -42,6 +44,7 @@ $dropdown-hover-background-color: $pattens-blue !default;
   line-height: 2;
   cursor: pointer;
   padding: rem(8px 30px 8px 13px);
+  box-sizing: border-box;
   white-space: nowrap;
   width: 100%;
   display: block;
@@ -63,14 +66,11 @@ $dropdown-hover-background-color: $pattens-blue !default;
   right: rem(20px);
   background: linear-gradient(-45deg, rgba($white, 0) 50%, $white 50%);
   transform: rotate(45deg);
-  z-index: 2;
+  z-index: 3;
   box-shadow: -1px -1px 1px $gallery;
 }
 
 @if $export-dropdown-css {
-  .dropdown-menu {
-    display: block;
-  }
   .dropdown {
     position: relative;
     display: inline-block;
@@ -103,6 +103,7 @@ $dropdown-hover-background-color: $pattens-blue !default;
       }
     }
     .dropdown-item {
+      list-style: none;
       .text {
         @include dropdown-item($dropdown-font-color, $dropdown-font-family, $dropdown-hover-background-color);
       }
