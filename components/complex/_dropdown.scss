@@ -1,9 +1,10 @@
 $export-dropdown-css: true !default;
-$dropdown-background-color: $white !default;
 $dropdown-shadow-color: $asphalt !default;
 $dropdown-font-color: $base-font-color !default;
 $dropdown-font-family: $base-font-family !default;
-$dropdown-hover-background-color: $sail !default;
+$dropdown-background-color: $white !default;
+$dropdown-background-color-accent: $earl-gray !default;
+$dropdown-background-color-active: $arctica !default;
 
 @mixin dropdown-container($background-color, $shadow-color) {
   position: absolute;
@@ -36,7 +37,7 @@ $dropdown-hover-background-color: $sail !default;
   width: 100%;
 }
 
-@mixin dropdown-item($font-color, $font-family, $hover-bg-color) {
+@mixin dropdown-item($font-color, $font-family, $accent-bg-color, $active-bg-color) {
   position: relative;
   font-size: rem(14px);
   color: $font-color;
@@ -52,22 +53,25 @@ $dropdown-hover-background-color: $sail !default;
   text-overflow: ellipsis;
   font-weight: normal;
   &:hover,
+  &.is-selected {
+    background-color: $accent-bg-color;
+  }
   &.is-active {
-    background-color: $hover-bg-color;
+    background-color: $active-bg-color;
   }
 }
 
-@mixin dropdown-arrow() {
+@mixin dropdown-arrow($container-background-color, $container-shadow-color) {
   display: none;
   position: absolute;
   width: rem(10px);
   height: rem(10px);
   bottom: rem(-25px);
   right: rem(20px);
-  background: linear-gradient(-45deg, rgba($white, 0) 50%, $white 50%);
+  background: linear-gradient(-45deg, rgba($container-background-color, 0) 50%, $container-background-color 50%);
   transform: rotate(45deg);
   z-index: 3;
-  box-shadow: -1px -1px 1px $earl-gray;
+  box-shadow: -1px -1px 1px lighten($container-shadow-color, 15%);
 }
 
 @if $export-dropdown-css {
@@ -109,11 +113,16 @@ $dropdown-hover-background-color: $sail !default;
     .dropdown-item {
       list-style: none;
       .text {
-        @include dropdown-item($dropdown-font-color, $dropdown-font-family, $dropdown-hover-background-color);
+        @include dropdown-item(
+          $dropdown-font-color,
+          $dropdown-font-family,
+          $dropdown-background-color-accent,
+          $dropdown-background-color-active
+        );
       }
     }
     .dropdown-arrow {
-      @include dropdown-arrow();
+      @include dropdown-arrow($dropdown-background-color, $dropdown-shadow-color);
     }
     .dropdown-container.animate-close {
       animation: closeContainer .2s ease-in-out forwards;
