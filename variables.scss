@@ -14,7 +14,7 @@ $madang: #A0EBA6; // madang
 $forest-green: #1EB234; // leaf-green
 $kohpayam: #188F2A; // forest-green
 
-$artica: #DEF5FE; // pattens-blue
+$arctica: #DEF5FE; // pattens-blue
 $sail: #B0D6FB; // french-pass
 $heaven: #00ABF2; // cerulean
 $liverleaf: #008DC9; //
@@ -30,7 +30,7 @@ $miroschka: #D5D7DE; //
 $ghost: #CBCDD5; // ghost
 $french-gray: #BDBFC7; //
 
-$bombay: #ACAD85; //
+$bombay: #ACADB5; //
 $santas-gray: #9B9BA3; // santas-gray
 $jumbo: #8B8A91;
 $heron: #7a7980;
@@ -40,23 +40,8 @@ $abbey: #454547;
 $shark: #272829;
 $black: #000000;
 
-// TODO: Remove those colors. They don't match the style guide
-$brand-orange: $west-side;
-$dark-gray-blue: $bright-gray;
-$deep-blue: $shuttle-gray;
-$error-red: $flamingo;
-$faint-blue: $pattens-blue;
-$ghost-gray: $santas-gray;
-$light-gray: $ghost;
-$medium-gray-blue: $dark-mischka;
-$primary-blue: $cerulean;
-$success-green: $leaf-green;
-$table-gray: $catskill-white;
-$ultra-light-gray: $catskill-white;
-$warning-yellow: $tree-poppy;
-
-$primary-color: $cerulean;
-$secondary-color: $gallery;
+$primary-color: $liverleaf;
+$secondary-color: $earl-gray;
 
 $base-font-family: 'acumin-pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $heading-font-family: 'acumin-pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -96,27 +81,27 @@ $z-layers: (
   "below":             -1,
   "bottomless-pit": -9000
 );
-$base-font-color: $shuttle-gray;
-$color-text-link: $cerulean;
+$base-font-color: $asphalt;
+$color-text-link: $liverleaf;
 $color-text-inverse: $white;
-$color-text-success: $forest-green;
+$color-text-success: $kohpayam;
 $color-text-error: $flamingo;
-$color-text-button-secondary: $shuttle-gray;
-$color-text-button-action: $cerulean;
-$color-icon-table-filter: $dark-mischka;
-$color-icon-table-header-sort: $shuttle-gray;
-$color-text-table-column-header: $shuttle-gray;
-$color-icon-input: $ghost;
+$color-text-button-secondary: $asphalt;
+$color-text-button-action: $liverleaf;
+$color-icon-table-filter: $miroschka;
+$color-icon-table-header-sort: $asphalt;
+$color-text-table-column-header: $asphalt;
+$color-icon-input: $french-gray;
 $action-color: $primary-color;
-$secondary-background-color: $catskill-white;
-$color-button-primary: $cerulean;
+$secondary-background-color: $catkin;
+$color-button-primary: $liverleaf;
 $color-background-table-row: $white;
-$color-background-table-row-alt: $catskill-white;
-$color-background-table-row-hover: $pattens-blue;
-$color-background-dropdown-option-hover: $pattens-blue;
-$color-background-accordion-segment: $dark-mischka;
-$color-background-table-filters: $catskill-white;
-$color-background-progress-bar: $dark-mischka;
+$color-background-table-row-alt: $catkin;
+$color-background-table-row-hover: $sail;
+$color-background-dropdown-option-hover: $sail;
+$color-background-accordion-segment: $miroschka;
+$color-background-table-filters: $catkin;
+$color-background-progress-bar: $miroschka;
 $base-background-color: $white;
 $shadow-shallow-elevation: map-get($elevation-shadows, "resting");
 $shadow-inset-shadow: inset 0 1px 1px 0 rgba($black, 0.22), inset 0 2px 4px 0 rgba($santas-gray, 0.65);
@@ -125,34 +110,30 @@ $recessed-paper-shadow-secondary: inset 0 1px 14px 0 rgba($black, 0.08);
 $form-box-shadow: inset 0 1px 3px rgba($black, 0.06);
 $form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3);
 $base-border-color: $black;
-$color-border-table-row-secondary: $catskill-white;
+$color-border-table-row-secondary: $catkin;
 $base-border: 1px solid $base-border-color;
 $color-border-table: 1px solid $base-border-color;
-$color-border-progress-bar: $ghost;
-$color-border-input-default: $ghost;
-$color-border-input-highlight: $cerulean;
-$color-border-input-warning: $tree-poppy;
+$color-border-progress-bar: $french-gray;
+$color-border-input-default: $french-gray;
+$color-border-input-highlight: $liverleaf;
+$color-border-input-warning: $zalando-orange;
 $color-border-input-error: $black;
 $refills-serif: 'Lusitana', 'Georgia', 'Cambria', 'Times New Roman', 'Times', serif;
 $refills-narrow-sans: 'Oswald', sans-serif;
 $refills-second-serif: 'Georgia', 'Cambria', 'Times New Roman', 'Times', serif;
 $refills-nav-height: 60px;
 $refills-body-background-color: $white;
-$refills-color: $bright-gray;
-$refills-accent-color: $cerulean;
+$refills-color: $shark;
+$refills-accent-color: $liverleaf;
 $refills-logo-color: $black;
-$refills-anchor-color: $cerulean;
-$refills-hero-background: $ghost;
+$refills-anchor-color: $liverleaf;
+$refills-hero-background: $french-gray;
 $refills-secondary-anchor-color: $black;
-$refills-highlight-color: $cerulean;
+$refills-highlight-color: $liverleaf;
 $refills-white-shadow: 0 1px 1px transparentize($white, 0.6);
 $refills-medium-screen: em(640);
 $refills-large-screen: em(860);
 //Tooltip Settings
-$tooltip-background: $pattens-blue;
-$tooltip-border-color: $cerulean;
-$tooltip-max-width: 16em;
-$tooltip-arrow-width: 2px;
 
 //Input Variables
 $input-border-color: $color-border-input-default;

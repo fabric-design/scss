@@ -1,14 +1,14 @@
-$table-border-color: $gallery;
-$table-header-background-color: $catskill-white;
-$table-header-color: $shuttle-gray;
+$table-border-color: $earl-gray;
+$table-header-background-color: $catkin;
+$table-header-color: $asphalt;
 $table-header-border-color: $mischka;
-$table-header-row-border-bottom-color: $black-squeeze;
-$table-header-row-border-top-color: $catskill-white;
-$table-body-color: $bright-gray;
+$table-header-row-border-bottom-color: $athens-gray;
+$table-header-row-border-top-color: $catkin;
+$table-body-color: $shark;
 $table-row-even: $white;
-$table-row-odd: $catskill-white;
-$table-row-hover-color: $pattens-blue;
-$table-row-border-color: darken($catskill-white, 5%);
+$table-row-odd: $catkin;
+$table-row-hover-color: $sail;
+$table-row-border-color: darken($catkin, 5%);
 
 .sort {
   position: relative;
@@ -100,7 +100,7 @@ table {
     }
   }
   tbody {
-    color: $shuttle-gray;
+    color: $asphalt;
     tr:nth-of-type(even) td {
       background-color: $table-row-odd;
       border-bottom: 1px solid $table-row-border-color;

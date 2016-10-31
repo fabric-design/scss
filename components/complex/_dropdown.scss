@@ -1,9 +1,9 @@
 $export-dropdown-css: true !default;
 $dropdown-background-color: $white !default;
-$dropdown-shadow-color: $shuttle-gray !default;
+$dropdown-shadow-color: $asphalt !default;
 $dropdown-font-color: $base-font-color !default;
 $dropdown-font-family: $base-font-family !default;
-$dropdown-hover-background-color: $pattens-blue !default;
+$dropdown-hover-background-color: $sail !default;
 
 @mixin dropdown-container($background-color, $shadow-color) {
   position: absolute;
@@ -67,7 +67,7 @@ $dropdown-hover-background-color: $pattens-blue !default;
   background: linear-gradient(-45deg, rgba($white, 0) 50%, $white 50%);
   transform: rotate(45deg);
   z-index: 3;
-  box-shadow: -1px -1px 1px $gallery;
+  box-shadow: -1px -1px 1px $earl-gray;
 }
 
 @if $export-dropdown-css {
@@ -77,6 +77,10 @@ $dropdown-hover-background-color: $pattens-blue !default;
     vertical-align: middle;
     .dropdown-container {
       @include dropdown-container($dropdown-background-color, $dropdown-shadow-color);
+      &.left .dropdown-arrow {
+        left: rem(20px);
+        right: auto;
+      }
       .dropdown-root-menu {
         right: 0;
         left: auto;

@@ -1,11 +1,11 @@
 $export-form-css: true !default;
-$input-text-color: $shuttle-gray !default;
+$input-text-color: $asphalt !default;
 $input-background-color: $white !default;
-$input-border-color: $ghost !default;
+$input-border-color: $french-gray !default;
 $input-shadow-color: lighten($input-border-color, 15%) !default;
 $input-focused-border-color: $primary-color !default;
 $input-focused-shadow-color: lighten($input-focused-border-color, 40%) !default;
-$input-disabled-background-color: $catskill-white !default;
+$input-disabled-background-color: $catkin !default;
 
 @mixin input-box($bg-color, $border-color, $shadow-color, $focus-border-color, $focus-shadow-color, $disabled-color) {
   padding: rem(8px);
