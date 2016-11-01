@@ -1,12 +1,13 @@
 $export-dropdown-css: true !default;
-$dropdown-shadow-color: $asphalt !default;
+$dropdown-shadow: map-get($elevation-shadows, raised) !default;
+$dropdown-arrow-shadow-color: rgba(0, 0, 0, .16) !default; // $elevation2 color 1
 $dropdown-font-color: $base-font-color !default;
 $dropdown-font-family: $base-font-family !default;
 $dropdown-background-color: $white !default;
 $dropdown-background-color-accent: $earl-gray !default;
 $dropdown-background-color-active: $arctica !default;
 
-@mixin dropdown-container($background-color, $shadow-color) {
+@mixin dropdown-container($background-color, $shadow) {
   position: absolute;
   top: 100%;
   right: 0;
@@ -15,8 +16,8 @@ $dropdown-background-color-active: $arctica !default;
   height: 0;
   display: none;
   background-color: $background-color;
-  border-radius: 3px;
-  box-shadow: 0 2px 6px $shadow-color;
+  border-radius: 2px;
+  box-shadow: $shadow;
   transition: height .25s ease;
   will-change: height;
   overflow: hidden;
@@ -53,7 +54,7 @@ $dropdown-background-color-active: $arctica !default;
   text-overflow: ellipsis;
   font-weight: normal;
   &:hover,
-  &.is-selected {
+  &.is-focused {
     background-color: $accent-bg-color;
   }
   &.is-active {
@@ -71,16 +72,15 @@ $dropdown-background-color-active: $arctica !default;
   background: linear-gradient(-45deg, rgba($container-background-color, 0) 50%, $container-background-color 50%);
   transform: rotate(45deg);
   z-index: 3;
-  box-shadow: -1px -1px 1px lighten($container-shadow-color, 15%);
+  box-shadow: -1px -1px 1px lighten($container-shadow-color, 45%);
 }
 
 @if $export-dropdown-css {
   .dropdown {
     position: relative;
-    display: inline-block;
-    vertical-align: middle;
+    display: block;
     .dropdown-container {
-      @include dropdown-container($dropdown-background-color, $dropdown-shadow-color);
+      @include dropdown-container($dropdown-background-color, $dropdown-shadow);
       &.left .dropdown-arrow {
         left: rem(20px);
         right: auto;
@@ -122,7 +122,7 @@ $dropdown-background-color-active: $arctica !default;
       }
     }
     .dropdown-arrow {
-      @include dropdown-arrow($dropdown-background-color, $dropdown-shadow-color);
+      @include dropdown-arrow($dropdown-background-color, $dropdown-arrow-shadow-color);
     }
     .dropdown-container.animate-close {
       animation: closeContainer .2s ease-in-out forwards;
