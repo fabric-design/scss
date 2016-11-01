@@ -1,3 +1,6 @@
+$ribbon-background: $action-color !default;
+$ribbon-size: 85px !default;
+
 .ribbon-box {
   @include size(100px);
   border: 1px solid #bbb;
@@ -5,10 +8,6 @@
 }
 
 .ribbon-wrapper {
-  $action-color: #477dca !default;
-  $ribbon-background: $action-color;
-  $ribbon-size: 85px;
-
   @include size($ribbon-size);
   overflow: hidden;
   position: absolute;
