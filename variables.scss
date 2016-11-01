@@ -1,37 +1,37 @@
 // Color codes for
 $egg-white: #FFF6C4; // solomie
-$grandis: #FFD77E; //
+$grandis: #FFD77E;
 $west-side: #FF9C0F; // west-side
-$zalando-orange: #FF6900; //
+$zalando-orange: #FF6900;
 
-$pippin: #FFDDDB; //
-$gerlandine: #FA9585; // gerlandine
-$flamingo: #F44F41; // flamingo
-$mojo: #C74236; //
+$pippin: #FFDDDB;
+$geraldine: #FA9585;
+$flamingo: #F44F41;
+$mojo: #C74236;
 
 $snowy-mint: #C9FFD1;
-$madang: #A0EBA6; // madang
-$forest-green: #1EB234; // leaf-green
-$kohpayam: #188F2A; // forest-green
+$madang: #A0EBA6;
+$forest-green: #1EB234;
+$kohpayam: #188F2A;
 
 $arctica: #DEF5FE; // pattens-blue
 $sail: #B0D6FB; // french-pass
 $heaven: #00ABF2; // cerulean
-$liverleaf: #008DC9; //
+$liverleaf: #008DC9;
 
-$white: #FFFFFF; //
+$white: #FFFFFF;
 $athens-gray: #FAFBFC; // black-squeeze
 $catkin: #F5F6F9; // catskill-white
-$silver: #F0F1F6; //
-$earl-gray: #E9EAEF; //
+$silver: #F0F1F6;
+$earl-gray: #E9EAEF;
 
-$mischka: #E1E2E8; // mischka
-$miroschka: #D5D7DE; //
-$ghost: #CBCDD5; // ghost
-$french-gray: #BDBFC7; //
+$mischka: #E1E2E8;
+$miroschka: #D5D7DE;
+$ghost: #CBCDD5;
+$french-gray: #BDBFC7;
 
-$bombay: #ACADB5; //
-$santas-gray: #9B9BA3; // santas-gray
+$bombay: #ACADB5
+$santas-gray: #9B9BA3;
 $jumbo: #8B8A91;
 $heron: #7a7980;
 
@@ -39,6 +39,19 @@ $asphalt: #626166;
 $abbey: #454547;
 $shark: #272829;
 $black: #000000;
+
+//BOF: Backward compatibility
+$solomie: $egg-white;
+$shuttle-gray: $asphalt;
+$bright-gray: $shark;
+$catskill-white: $catkin;
+$dark-mischka: $miroschka;
+$black-squeeze: $athens-gray;
+$leaf-green: $forest-green;
+$french-pass: $sail;
+$pattens-blue: $arctica;
+$cerulean: $heaven;
+//EOF: Backward compatibility
 
 $primary-color: $liverleaf;
 $secondary-color: $earl-gray;
