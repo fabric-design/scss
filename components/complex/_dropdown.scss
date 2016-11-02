@@ -68,7 +68,7 @@ $dropdown-background-color-active: $arctica !default;
   width: rem(10px);
   height: rem(10px);
   bottom: rem(-25px);
-  right: rem(20px);
+  left: rem(20px);
   background: linear-gradient(-45deg, rgba($container-background-color, 0) 50%, $container-background-color 50%);
   transform: rotate(45deg);
   z-index: 3;
@@ -81,9 +81,9 @@ $dropdown-background-color-active: $arctica !default;
     display: block;
     .dropdown-container {
       @include dropdown-container($dropdown-background-color, $dropdown-shadow);
-      &.left .dropdown-arrow {
-        left: rem(20px);
-        right: auto;
+      &.right + .dropdown-arrow {
+        right: rem(20px);
+        left: auto;
       }
       .dropdown-root-menu {
         right: 0;
