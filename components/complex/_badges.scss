@@ -1,31 +1,15 @@
-$badge-font-size: 0.75em !default;
+$badge-font-size: $font-size-small !default;
 
-@mixin badge($color: $miroschka) {
-  background-color: $color;
-  border-radius: $badge-font-size * 5;
-  color: darken($color, 60%);
+@mixin badge($color: $heaven, $bgcolor: $arctica ) {
+  background-color: $bgcolor;
+  border-radius: 50%;
+  color: $color;
   display: inline-block;
   font-size: $badge-font-size;
   line-height: 1;
-  padding: 0.4em 1.2em;
+  padding: $spacing-xx-small $small-spacing;
 }
 
-.badge {
+.wsds-badge {
   @include badge;
-}
-
-.badge-alert {
-  @include badge($alert-color);
-}
-
-.badge-error {
-  @include badge($error-color);
-}
-
-.badge-notice {
-  @include badge($notice-color);
-}
-
-.badge-success {
-  @include badge($success-color);
 }
