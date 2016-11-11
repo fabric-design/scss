@@ -10,6 +10,7 @@ $badge-font-size: $font-size-small !default;
   padding: $spacing-xx-small $small-spacing;
 }
 
-.wsds-badge {
+.wsds-filter-badge {
   @include badge;
+  }
 }
