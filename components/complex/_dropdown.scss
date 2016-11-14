@@ -3,6 +3,7 @@ $dropdown-shadow: map-get($elevation-shadows, raised) !default;
 $dropdown-arrow-shadow-color: rgba(0, 0, 0, .16) !default; // $elevation2 color 1
 $dropdown-font-color: $base-font-color !default;
 $dropdown-font-family: $base-font-family !default;
+$dropdown-separator-color: $earl-gray !default;
 $dropdown-background-color: $white !default;
 $dropdown-background-color-accent: $earl-gray !default;
 $dropdown-background-color-active: $arctica !default;
@@ -62,6 +63,18 @@ $dropdown-background-color-active: $arctica !default;
   }
 }
 
+@mixin dropdown-item-separator($border-color) {
+  height: 0;
+  border-bottom: 1px solid $border-color;
+  list-style: none;
+}
+
+@mixin dropdown-submit($border-color) {
+  padding: $spacing-medium;
+  border-top: 1px solid $border-color;
+  text-align: right;
+}
+
 @mixin dropdown-arrow($container-background-color, $container-shadow-color) {
   display: none;
   position: absolute;
@@ -114,12 +127,18 @@ $dropdown-background-color-active: $arctica !default;
       list-style: none;
       .text {
         @include dropdown-item(
-          $dropdown-font-color,
-          $dropdown-font-family,
-          $dropdown-background-color-accent,
-          $dropdown-background-color-active
+                $dropdown-font-color,
+                $dropdown-font-family,
+                $dropdown-background-color-accent,
+                $dropdown-background-color-active
         );
       }
+    }
+    .dropdown-item-separator {
+      @include dropdown-item-separator($dropdown-separator-color);
+    }
+    .dropdown-submit {
+      @include dropdown-submit($dropdown-separator-color);
     }
     .dropdown-arrow {
       @include dropdown-arrow($dropdown-background-color, $dropdown-arrow-shadow-color);
@@ -133,10 +152,12 @@ $dropdown-background-color-active: $arctica !default;
     .dropdown-menu.animate-out > .dropdown-item > .text {
       animation: dropDownOut .3s cubic-bezier(.32, .97, .71, .95) .05s forwards;
     }
-    .dropdown-menu.animate-sub-in > .dropdown-item > .text {
+    .dropdown-menu.animate-sub-in > .dropdown-item > .text,
+    .dropdown-menu.animate-sub-in > .dropdown-item-separator {
       animation: dropDownSubIn .3s cubic-bezier(.53, 1.49, 1, .87) .0s forwards;
     }
-    .dropdown-menu.animate-sub-out > .dropdown-item > .text {
+    .dropdown-menu.animate-sub-out > .dropdown-item > .text,
+    .dropdown-menu.animate-sub-out > .dropdown-item-separator {
       animation: dropDownSubOut .3s cubic-bezier(.32, .97, .71, .95) .05s forwards;
     }
     .dropdown-menu.animate-in,
