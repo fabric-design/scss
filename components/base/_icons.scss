@@ -51,23 +51,27 @@ $icon-circle: '\f111';
     }
 }
 
+@mixin icon-base() {
+    font-family: $icon-font-name;
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    display: inline-block;
+    text-decoration: inherit;
+    text-align: center;
+    font-variant: normal;
+    text-transform: none;
+    font-size: 150%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 @if $include-icon-css {
     .icon, [class^="icon-"], [class*=" icon-"] {
         line-height: 1rem;
     }
     .icon:before, [class^="icon-"]:before, [class*=" icon-"]:before {
-        font-family: $icon-font-name;
-        font-style: normal;
-        font-weight: normal;
-        speak: none;
-        display: inline-block;
-        text-decoration: inherit;
-        text-align: center;
-        font-variant: normal;
-        text-transform: none;
-        font-size: 150%;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
+        @include icon-base;
     }
     .icon16 {
         width: rem(16px);
