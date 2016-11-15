@@ -58,6 +58,9 @@ $dropdown-background-color-active: $arctica !default;
   &.is-focused {
     background-color: $accent-bg-color;
   }
+  &.is-disabled {
+    color: lighten($font-color, 30%);
+  }
   &.is-active {
     background-color: $active-bg-color;
   }
