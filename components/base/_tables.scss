@@ -21,11 +21,9 @@ $table-row-border-color: darken($catkin, 5%);
     cursor: pointer;
     &.icon-desc {
       top: rem(13px);
-      z-index: 1;
     }
     &.icon-asc {
       top: 0;
-      z-index: 2;
     }
     &:hover {
       opacity: 1;
