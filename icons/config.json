@@ -300,7 +300,7 @@
     },
     {
       "uid": "1e4fa8ae6a4868f6c6e27642bd09d7ad",
-      "css": "zalando-logo",
+      "css": "zalando",
       "code": 59397,
       "src": "custom_icons",
       "selected": true,
@@ -309,7 +309,7 @@
         "width": 885
       },
       "search": [
-        "zalando-logo"
+        "zalando"
       ]
     },
     {

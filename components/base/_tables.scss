@@ -20,11 +20,11 @@ $table-row-border-color: darken($catkin, 5%);
     position: absolute;
     cursor: pointer;
     &.icon-desc {
-      top: rem(6px);
+      top: rem(13px);
       z-index: 1;
     }
     &.icon-asc {
-      top: rem(3px);
+      top: 0;
       z-index: 2;
     }
     &:hover {
