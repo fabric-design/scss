@@ -67,6 +67,7 @@ $input-disabled-background-color: $catkin !default;
     }
   }
 
+  input:not([type]),
   input[type=text],
   input[type=url],
   input[type=password],
