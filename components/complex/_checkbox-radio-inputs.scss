@@ -39,12 +39,12 @@
     }
 
     &:disabled + #{$sibling-label-selector} {
-        color: $ghost;
+        color: $french-gray;
         opacity: 0.75;
 
         &:before,
         &:after {
-            border-color: $ghost;
+            border-color: $french-gray;
         }
     }
 
@@ -68,11 +68,11 @@
     }
 
     &:disabled + #{$sibling-label-selector} {
-        color: $ghost;
+        color: $french-gray;
 
         &:before,
         &:after {
-            border-color: $ghost;
+            border-color: $french-gray;
         }
 
         &:after {
@@ -102,7 +102,7 @@
         &:after {
             width: rem(14px);
             height: rem(14px);
-            background: $gallery;
+            background: $earl-gray;
             opacity: 1;
             border-radius: rem(7px);
             margin-top: rem(8px);
@@ -111,7 +111,7 @@
         }
 
         &:before {
-            background-color: $dark-mischka;
+            background-color: $miroschka;
             width: rem(41px);
             height: rem(14px);
             margin-top: rem(12px);
@@ -123,7 +123,7 @@
     &:checked + #{$sibling-label-selector} {
         &:after {
             background: none;
-            background-color: $leaf-green;
+            background-color: $kohpayam;
             @include transition((background-color, transform), (.1s, .1s), (linear, $ease-out-quart));
             @include transform(translateX(rem(20)) scale3d(1.6, 1.6, 1.6));
         }

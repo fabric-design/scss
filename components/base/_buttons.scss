@@ -2,7 +2,7 @@ $export-button-css: true !default;
 
 $button-color: $white !default;
 $button-background: $primary-color !default;
-$button-shadow-color: $dark-mischka !default;
+$button-shadow-color: $miroschka !default;
 $button-border-radius: $base-border-radius !default;
 $button-padding: 0.5em 1em !default;
 $button-sizes: (
@@ -94,19 +94,19 @@ $button-shadows: (
       @include button-disabled;
     }
     &.mod-secondary {
-      @include button-style($secondary-color, $shuttle-gray, $button-shadow-color);
+      @include button-style($secondary-color, $asphalt, $button-shadow-color);
     }
     &.is-toggled {
-      @include button-style($secondary-color, $shuttle-gray, $button-shadow-color);
+      @include button-style($secondary-color, $asphalt, $button-shadow-color);
       &:active,
       &:focus,
       &.is-focused {
-        color: $west-side;
-        background-color: lighten($ghost, 15%);
+        color: $zalando-orange;
+        background-color: lighten($french-gray, 15%);
       }
       &:disabled,
       &.is-disabled {
-        color: $shuttle-gray;
+        color: $asphalt;
       }
     }
     &.mod-flat {
