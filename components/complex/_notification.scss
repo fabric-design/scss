@@ -1,0 +1,82 @@
+$export-notification-css: true !default;
+
+@if $export-notification-css {
+    .notification {
+        padding: rem(16px);
+        width: rem(400px);
+        min-height: rem(70px);
+        box-sizing: border-box;
+        box-shadow: map-get($elevation-shadows, raised);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        cursor: pointer;
+        font-family: $base-font-family;
+        font-size: $base-font-size;
+        color: $base-font-color;
+        background-color: $silver;
+        border-left: 3px solid $bombay;
+        .icons {
+            flex: rem(48px) 0 0;
+            .icon {
+                font-size: rem(32px);
+                display: none;
+            }
+        }
+        .content {
+            flex: auto 1 1;
+            padding: rem(1px 0); // Work around for scroll bar in firefox
+            margin: auto;
+            max-height: rem(260px);
+            overflow: auto;
+            .title {
+                font-size: rem(16px);
+                line-height: rem(16px);
+                font-weight: bold;
+            }
+            .description {
+                font-size: rem(13px);
+                line-height: rem(14px);
+                margin: 0;
+            }
+            &.has-description .title {
+                margin-bottom: rem(8px);
+            }
+        }
+        &.info {
+            .icons {
+                display: none;
+            }
+        }
+        &.warning {
+            border-left-color: $west-side;
+            .icons .icon-warning {
+                color: $west-side;
+                display: block;
+                &:before {
+                    content: $icon-warning-triangle;
+                }
+            }
+        }
+        &.success {
+            border-left-color: $forest-green;
+            .icons .icon-success {
+                color: $forest-green;
+                display: block;
+                &:before {
+                    content: $icon-checkmark-circle;
+                }
+            }
+        }
+        &.error {
+            border-left-color: $flamingo;
+            .icons .icon-error {
+                color: $flamingo;
+                display: block;
+                &:before {
+                    content: $icon-cancel-circled;
+                }
+            }
+        }
+    }
+}
