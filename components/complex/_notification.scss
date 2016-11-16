@@ -25,7 +25,6 @@ $export-notification-css: true !default;
         }
         .content {
             flex: auto 1 1;
-            padding: rem(1px 0); // Work around for scroll bar in firefox
             margin: auto;
             max-height: rem(260px);
             overflow: auto;
@@ -37,6 +36,7 @@ $export-notification-css: true !default;
             .description {
                 font-size: rem(13px);
                 line-height: rem(14px);
+                padding-bottom: rem(4px);
                 margin: 0;
             }
             &.has-description .title {
