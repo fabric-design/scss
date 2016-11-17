@@ -1,9 +1,17 @@
 $export-notification-css: true !default;
+$notification-width: rem(400px) !default;
+$notification-font-color: $base-font-color !default;
+$notification-font-size: $base-font-size !default;
+$notification-background-color: $silver !default;
+$notification-info-color: $bombay !default;
+$notification-warning-color: $west-side !default;
+$notification-success-color: $forest-green !default;
+$notification-error-color: $flamingo !default;
 
 @if $export-notification-css {
     .notification {
         padding: rem(16px);
-        width: rem(400px);
+        width: $notification-width;
         min-height: rem(70px);
         box-sizing: border-box;
         box-shadow: map-get($elevation-shadows, raised);
@@ -12,10 +20,10 @@ $export-notification-css: true !default;
         align-items: center;
         cursor: pointer;
         font-family: $base-font-family;
-        font-size: $base-font-size;
-        color: $base-font-color;
-        background-color: $silver;
-        border-left: 3px solid $bombay;
+        font-size: $notification-font-size;
+        color: $notification-font-color;
+        background-color: $notification-background-color;
+        border-left: 3px solid $notification-info-color;
         .icons {
             flex: rem(48px) 0 0;
             .icon {
@@ -49,9 +57,9 @@ $export-notification-css: true !default;
             }
         }
         &.warning {
-            border-left-color: $west-side;
+            border-left-color: $notification-warning-color;
             .icons .icon-warning {
-                color: $west-side;
+                color: $notification-warning-color;
                 display: block;
                 &:before {
                     content: $icon-warning-triangle;
@@ -59,9 +67,9 @@ $export-notification-css: true !default;
             }
         }
         &.success {
-            border-left-color: $forest-green;
+            border-left-color: $notification-success-color;
             .icons .icon-success {
-                color: $forest-green;
+                color: $notification-success-color;
                 display: block;
                 &:before {
                     content: $icon-checkmark-circle;
@@ -69,9 +77,9 @@ $export-notification-css: true !default;
             }
         }
         &.error {
-            border-left-color: $flamingo;
+            border-left-color: $notification-error-color;
             .icons .icon-error {
-                color: $flamingo;
+                color: $notification-error-color;
                 display: block;
                 &:before {
                     content: $icon-cancel-circled;
