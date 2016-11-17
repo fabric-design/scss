@@ -1,0 +1,90 @@
+$export-notification-css: true !default;
+$notification-width: rem(400px) !default;
+$notification-font-color: $base-font-color !default;
+$notification-font-size: $base-font-size !default;
+$notification-background-color: $silver !default;
+$notification-info-color: $bombay !default;
+$notification-warning-color: $west-side !default;
+$notification-success-color: $forest-green !default;
+$notification-error-color: $flamingo !default;
+
+@if $export-notification-css {
+    .notification {
+        padding: rem(16px);
+        width: $notification-width;
+        min-height: rem(70px);
+        box-sizing: border-box;
+        box-shadow: map-get($elevation-shadows, raised);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        cursor: pointer;
+        font-family: $base-font-family;
+        font-size: $notification-font-size;
+        color: $notification-font-color;
+        background-color: $notification-background-color;
+        border-left: 3px solid $notification-info-color;
+        .icons {
+            flex: rem(48px) 0 0;
+            .icon {
+                font-size: rem(32px);
+                display: none;
+            }
+        }
+        .content {
+            flex: auto 1 1;
+            margin: auto;
+            max-height: rem(260px);
+            overflow: auto;
+            .title {
+                font-size: rem(16px);
+                line-height: rem(16px);
+                font-weight: bold;
+            }
+            .description {
+                font-size: rem(13px);
+                line-height: rem(14px);
+                padding-bottom: rem(4px);
+                margin: 0;
+            }
+            &.has-description .title {
+                margin-bottom: rem(8px);
+            }
+        }
+        &.info {
+            .icons {
+                display: none;
+            }
+        }
+        &.warning {
+            border-left-color: $notification-warning-color;
+            .icons .icon-warning {
+                color: $notification-warning-color;
+                display: block;
+                &:before {
+                    content: $icon-warning-triangle;
+                }
+            }
+        }
+        &.success {
+            border-left-color: $notification-success-color;
+            .icons .icon-success {
+                color: $notification-success-color;
+                display: block;
+                &:before {
+                    content: $icon-checkmark-circle;
+                }
+            }
+        }
+        &.error {
+            border-left-color: $notification-error-color;
+            .icons .icon-error {
+                color: $notification-error-color;
+                display: block;
+                &:before {
+                    content: $icon-cancel-circled;
+                }
+            }
+        }
+    }
+}
