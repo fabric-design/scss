@@ -20,12 +20,10 @@ $table-row-border-color: darken($catkin, 5%);
     position: absolute;
     cursor: pointer;
     &.icon-desc {
-      top: rem(6px);
-      z-index: 1;
+      top: rem(13px);
     }
     &.icon-asc {
-      top: rem(3px);
-      z-index: 2;
+      top: 0;
     }
     &:hover {
       opacity: 1;
@@ -52,6 +50,9 @@ table {
     border-bottom: 1px solid $table-header-border-color;
     background-color: $table-header-background-color;
     color: $table-header-color;
+    th {
+      text-align: left;
+    }
     tr:not(:last-child) th {
       border-bottom: 1px solid $table-header-row-border-bottom-color;
     }
@@ -66,7 +67,6 @@ table {
       th {
         padding: rem(8px 25px 8px 11px);
         white-space: nowrap;
-        text-align: left;
         position: relative;
         label {
           font-size: rem(13px);
