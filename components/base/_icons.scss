@@ -3,25 +3,31 @@ $use-embedded-font: false !default;
 $icon-font-path: 'icons/font/' !default;
 $icon-font-name: 'fontello';
 // Icon uni-codes
-$icon-cross-thin: '\00d7';
-$icon-attention-alt: '\e800';
-$icon-check: '\e801';
-$icon-cancel-circled: '\e802';
-$icon-ok: '\e803';
-$icon-checkmark-circle: '\e816';
-$icon-cross: '\e804';
-$icon-zalando: '\e805';
-$icon-lightbulb: '\e831';
-$icon-magnifying-glass-cute: '\e836';
-$icon-pencil-stroke: '\e842';
-$icon-power: '\e845';
-$icon-warning-circle: '\e84f';
-$icon-warning-triangle: '\e851';
-$icon-cancel-circle: '\e854';
-$icon-info-circled-alt: '\f086';
-$icon-filter: '\f0b0';
-$icon-sort-down: '\f0dd';
-$icon-sort-up: '\f0de';
+$icon-filter: '\e800';
+$icon-sort-down: '\e801';
+$icon-zalando-logo: '\e805';
+$icon-dot: '\e806';
+$icon-ok: '\e807';
+$icon-power: '\e832';
+$icon-warning-circle: '\e833';
+$icon-check: '\e855';
+$icon-info-circled-alt: '\e856';
+$icon-attention-alt: '\e857';
+$icon-cancel-circled: '\e858';
+$icon-magnifiying-glass: '\e859';
+$icon-pencil-stroke: '\e85a';
+$icon-sort-up: '\e85b';
+$icon-warning-triangle: '\e85c';
+$icon-cross: '\e85d';
+$icon-bell: '\e85e';
+$icon-calendar: '\e85f';
+$icon-gear: '\e860';
+$icon-heart: '\e861';
+$icon-home: '\e862';
+$icon-locked: '\e863';
+$icon-paperclip: '\e864';
+$icon-lightbulb: '\e865';
+$icon-checkmark-circle: '\e866';
 $icon-circle: '\f111';
 
 @if not $use-embedded-font {
@@ -45,71 +51,55 @@ $icon-circle: '\f111';
     }
 }
 
+@mixin icon-base() {
+    font-family: $icon-font-name;
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    display: inline-block;
+    text-decoration: inherit;
+    text-align: center;
+    font-variant: normal;
+    text-transform: none;
+    font-size: 150%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 @if $include-icon-css {
     .icon, [class^="icon-"], [class*=" icon-"] {
         line-height: 1rem;
     }
     .icon:before, [class^="icon-"]:before, [class*=" icon-"]:before {
-        font-family: $icon-font-name;
-        font-style: normal;
-        font-weight: normal;
-        speak: none;
-        display: inline-block;
-        text-decoration: inherit;
-        width: 1em;
-        text-align: center;
-        font-variant: normal;
-        text-transform: none;
-        line-height: 1em;
-        margin-right: .2em;
-        margin-left: .2em;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
+        @include icon-base;
     }
-    .icon-attention-alt:before {
-        content: $icon-attention-alt;
+    .icon16 {
+        width: rem(16px);
+        height: rem(16px);
+        line-height: rem(16px);
+        font-size: rem(16px);
+        text-indent: -2px;
     }
-    .icon-check:before {
-        content: $icon-check;
+    .icon24 {
+        width: rem(24px);
+        height: rem(24px);
+        line-height: rem(24px);
+        font-size: rem(24px);
+        text-indent: -3px;
     }
-    .icon-cancel-circled:before {
-        content: $icon-cancel-circled;
+    .icon32 {
+        width: rem(32px);
+        height: rem(32px);
+        line-height: rem(32px);
+        font-size: rem(32px);
+        text-indent: -4px;
     }
-    .icon-ok:before {
-        content: $icon-ok;
-    }
-    .icon-checkmark-circle:before {
-        content: $icon-checkmark-circle;
-    }
-    .icon-cross:before {
-        content: $icon-cross;
-    }
-    .icon-zalando:before {
-        content: $icon-zalando;
-    }
-    .icon-lightbulb:before {
-        content: $icon-lightbulb;
-    }
-    .icon-magnifying-glass-cute:before {
-        content: $icon-magnifying-glass-cute;
-    }
-    .icon-pencil-stroke:before {
-        content: $icon-pencil-stroke;
-    }
-    .icon-power:before {
-        content: $icon-power;
-    }
-    .icon-warning-circle:before {
-        content: $icon-warning-circle;
-    }
-    .icon-warning-triangle:before {
-        content: $icon-warning-triangle;
-    }
-    .icon-cancel-circle:before {
-        content: $icon-cancel-circle;
-    }
-    .icon-info-circled-alt:before {
-        content: $icon-info-circled-alt;
+    .icon48 {
+        width: rem(48px);
+        height: rem(48px);
+        line-height: rem(48px);
+        font-size: rem(48px);
+        text-indent: -5px;
     }
     .icon-filter:before {
         content: $icon-filter;
@@ -117,8 +107,77 @@ $icon-circle: '\f111';
     .icon-sort-down:before {
         content: $icon-sort-down;
     }
+    .icon-zalando:before {
+        content: $icon-zalando-logo;
+    }
+    .icon-dot:before {
+        content: $icon-dot;
+    }
+    .icon-ok:before {
+        content: $icon-ok;
+    }
+    .icon-power:before {
+        content: $icon-power;
+    }
+    .icon-warning-circle:before {
+        content: $icon-warning-circle;
+    }
+    .icon-check:before {
+        content: $icon-check;
+    }
+    .icon-info-circled-alt:before {
+        content: $icon-info-circled-alt;
+    }
+    .icon-attention-alt:before {
+        content: $icon-attention-alt;
+    }
+    .icon-cancel-circled:before {
+        content: $icon-cancel-circled;
+    }
+    .icon-magnifiying-glass:before {
+        content: $icon-magnifiying-glass;
+    }
+    .icon-pencil-stroke:before {
+        content: $icon-pencil-stroke;
+    }
     .icon-sort-up:before {
         content: $icon-sort-up;
+    }
+    .icon-warning-triangle:before {
+        content: $icon-warning-triangle;
+    }
+    .icon-cross:before {
+        content: $icon-cross;
+    }
+    .icon-bell:before {
+        content: $icon-bell;
+    }
+    .icon-calendar:before {
+        content: $icon-calendar;
+    }
+    .icon-gear:before {
+        content: $icon-gear;
+    }
+    .icon-heart:before {
+        content: $icon-heart;
+    }
+    .icon-home:before {
+        content: $icon-home;
+    }
+    .icon-locked:before {
+        content: $icon-locked;
+    }
+    .icon-paperclip:before {
+        content: $icon-paperclip;
+    }
+    .icon-lightbulb:before {
+        content: $icon-lightbulb;
+    }
+    .icon-checkmark-circle:before {
+        content: $icon-checkmark-circle;
+    }
+    .icon-circle:before {
+        content: $icon-circle;
     }
 
     /**
@@ -131,6 +190,9 @@ $icon-circle: '\f111';
         vertical-align: middle;
         position: relative;
         line-height: 1em;
+        &:before {
+            font-size: 100%;
+        }
         span:before,
         span:after {
             content: $icon-circle;

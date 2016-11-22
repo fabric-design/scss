@@ -122,6 +122,8 @@ $button-shadows: (
   }
   .file-button {
     font-weight: normal;
+    display: inline-block;
+    vertical-align: middle;
     input[type="file"] {
       display: none;
     }
