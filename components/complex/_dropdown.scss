@@ -73,7 +73,7 @@ $dropdown-background-color-active: $arctica !default;
 }
 
 @mixin dropdown-submit($border-color) {
-  padding: $spacing-medium;
+  padding: $spacing-medium $spacing-medium $spacing-x-small;
   border-top: 1px solid $border-color;
   text-align: right;
 }
