@@ -143,6 +143,14 @@ $dropdown-background-color-active: $arctica !default;
     .dropdown-submit {
       @include dropdown-submit($dropdown-separator-color);
     }
+    .dropdown-filter {
+      padding: rem(3px 8px 8px);
+      input[type=text] {
+        @include default-input();
+        width: 100%;
+        height: rem(28px); // Line height of dropdown-item
+      }
+    }
     .dropdown-arrow {
       @include dropdown-arrow($dropdown-background-color, $dropdown-arrow-shadow-color);
     }
