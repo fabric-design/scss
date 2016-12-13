@@ -29,6 +29,8 @@ $icon-paperclip: '\e864';
 $icon-lightbulb: '\e865';
 $icon-checkmark-circle: '\e866';
 $icon-circle: '\f111';
+$icon-right: '\e836';
+$icon-left: '\e835';
 
 @if not $use-embedded-font {
     @font-face {
@@ -178,6 +180,12 @@ $icon-circle: '\f111';
     }
     .icon-circle:before {
         content: $icon-circle;
+    }
+    .icon-right:before {
+        content: $icon-right;
+    }
+    .icon-left:before {
+        content: $icon-left;
     }
 
     /**
