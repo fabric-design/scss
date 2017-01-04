@@ -17,7 +17,7 @@ h6 {
   font-size: $font-size-heading;
   line-height: $heading-line-height;
   margin: rem(23px 10px);
-  color: $shuttle-gray;
+  color: $jumbo;
 }
 
 p {
@@ -43,6 +43,7 @@ a {
 
 hr {
   border-bottom: $base-border;
+  border-color: $santas-gray;
   border-left: none;
   border-right: none;
   border-top: none;
@@ -53,4 +54,12 @@ img,
 picture {
   margin: 0;
   max-width: 100%;
+}
+
+.wsds-section-header {
+	color: $jumbo;
+	display: block;
+	font-size: $font-size-large;
+	line-height: $heading-line-height;
+	width: 100%;
 }

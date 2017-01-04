@@ -1,28 +1,28 @@
 $export-form-css: true !default;
-$input-text-color: $shuttle-gray !default;
+$input-text-color: $asphalt !default;
 $input-background-color: $white !default;
-$input-border-color: $ghost !default;
+$input-border-color: $french-gray !default;
 $input-shadow-color: lighten($input-border-color, 15%) !default;
 $input-focused-border-color: $primary-color !default;
 $input-focused-shadow-color: lighten($input-focused-border-color, 40%) !default;
-$input-disabled-background-color: $catskill-white !default;
+$input-disabled-background-color: $catkin !default;
 
-@mixin input-box($bg-color, $border-color, $shadow, $focus-border, $focus-shadow, $disabled-color) {
+@mixin input-box($bg-color, $border-color, $shadow-color, $focus-border-color, $focus-shadow-color, $disabled-color) {
   padding: rem(8px);
-  border: 1px solid $input-border-color;
-  box-shadow: $input-shadow-inset;
+  border: 1px solid $border-color;
+  box-shadow: inset 0px 1px 3px 0px $shadow-color;
   box-sizing: border-box;
   outline: none;
-  background-color: white;
+  background-color: $bg-color;
   height: rem(34px);
   font-weight: normal;
   transition: border-color .2s linear, box-shadow .2s linear;
   &:focus {
-    border-color: $input-focused-border-color;
-    box-shadow: inset 0 1px 3px 0px $input-focused-shadow-color;
+    border-color: $focus-border-color;
+    box-shadow: inset 0 1px 3px 0px $focus-shadow-color;
   }
   &:disabled {
-    background-color: $input-disabled-background-color;
+    background-color: $disabled-color;
   }
 }
 
@@ -30,9 +30,9 @@ $input-disabled-background-color: $catskill-white !default;
   @include input-box(
       $bg-color: $input-background-color,
       $border-color: $input-border-color,
-      $shadow: $input-shadow-color,
-      $focus-border: $input-focused-border-color,
-      $focus-shadow: $input-focused-shadow-color,
+      $shadow-color: $input-shadow-color,
+      $focus-border-color: $input-focused-border-color,
+      $focus-shadow-color: $input-focused-shadow-color,
       $disabled-color: $input-disabled-background-color
   );
 }
@@ -67,16 +67,23 @@ $input-disabled-background-color: $catskill-white !default;
     }
   }
 
-  input:not([type=radio]):not([type=checkbox]),
+  input:not([type]),
+  input[type=text],
+  input[type=url],
+  input[type=password],
+  input[type=tel],
+  input[type=number],
+  input[type=color],
+  input[type=email],
   select,
   textarea {
     @include input-box(
-      $bg-color: $input-background-color,
-      $border-color: $input-border-color,
-      $shadow: $input-shadow-color,
-      $focus-border: $input-focused-border-color,
-      $focus-shadow: $input-focused-shadow-color,
-      $disabled-color: $input-disabled-background-color
+        $bg-color: $input-background-color,
+        $border-color: $input-border-color,
+        $shadow-color: $input-shadow-color,
+        $focus-border-color: $input-focused-border-color,
+        $focus-shadow-color: $input-focused-shadow-color,
+        $disabled-color: $input-disabled-background-color
     )
   }
 
@@ -113,19 +120,29 @@ $input-disabled-background-color: $catskill-white !default;
   }
 
   .select-box {
-    @include input-box(
-      $bg-color: $input-background-color,
-      $border-color: $input-border-color,
-      $shadow: $input-shadow-color,
-      $focus-border: $input-focused-border-color,
-      $focus-shadow: $input-focused-shadow-color,
-      $disabled-color: $input-disabled-background-color
-    );
-    -webkit-appearance: menulist-button;
-    -moz-appearance: menulist-button;
-    box-shadow: none;
-    padding-right: rem(20px);
+    padding: rem(8px 20px 8px 8px);
+    border: 1px solid $input-border-color;
+    box-sizing: border-box;
+    background-color: $input-background-color;
+    height: rem(34px);
+    line-height: rem(17px);
+    font-weight: normal;
+    position: relative;
+    display: block;
     cursor: pointer;
+    -webkit-user-select: none;
     user-select: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    &:after {
+      content: '';
+      position: absolute;
+      right: rem(7px);
+      top: 50%;
+      margin-top: rem(-2px);
+      border: 4px solid rgba(0, 0, 0, 0);
+      border-top-color: $input-border-color;
+    }
   }
 }

@@ -1,11 +1,14 @@
 $export-dropdown-css: true !default;
-$dropdown-background-color: $white !default;
-$dropdown-shadow-color: $shuttle-gray !default;
+$dropdown-shadow: map-get($elevation-shadows, raised) !default;
+$dropdown-arrow-shadow-color: rgba(0, 0, 0, .16) !default; // $elevation2 color 1
 $dropdown-font-color: $base-font-color !default;
 $dropdown-font-family: $base-font-family !default;
-$dropdown-hover-background-color: $pattens-blue !default;
+$dropdown-separator-color: $earl-gray !default;
+$dropdown-background-color: $white !default;
+$dropdown-background-color-accent: $earl-gray !default;
+$dropdown-background-color-active: $arctica !default;
 
-@mixin dropdown-container($background-color, $shadow-color) {
+@mixin dropdown-container($background-color, $shadow) {
   position: absolute;
   top: 100%;
   right: 0;
@@ -14,23 +17,29 @@ $dropdown-hover-background-color: $pattens-blue !default;
   height: 0;
   display: none;
   background-color: $background-color;
-  border-radius: 3px;
-  box-shadow: 0 2px 6px $shadow-color;
-  transition: height .125s ease;
+  border-radius: 2px;
+  box-shadow: $shadow;
+  transition: height .25s ease;
   will-change: height;
   overflow: hidden;
   z-index: 3;
+  &.left {
+    right: auto;
+    left: 0;
+  }
 }
 
 @mixin dropdown() {
+  display: block;
   position: absolute;
   top: 0;
   left: 100%;
+  margin: 0;
   padding: rem(5px 0);
   width: 100%;
 }
 
-@mixin dropdown-item($font-color, $font-family, $hover-bg-color) {
+@mixin dropdown-item($font-color, $font-family, $accent-bg-color, $active-bg-color) {
   position: relative;
   font-size: rem(14px);
   color: $font-color;
@@ -38,6 +47,7 @@ $dropdown-hover-background-color: $pattens-blue !default;
   line-height: 2;
   cursor: pointer;
   padding: rem(8px 30px 8px 13px);
+  box-sizing: border-box;
   white-space: nowrap;
   width: 100%;
   display: block;
@@ -45,33 +55,52 @@ $dropdown-hover-background-color: $pattens-blue !default;
   text-overflow: ellipsis;
   font-weight: normal;
   &:hover,
+  &.is-focused {
+    background-color: $accent-bg-color;
+  }
+  &.is-disabled {
+    color: lighten($font-color, 30%);
+  }
   &.is-active {
-    background-color: $hover-bg-color;
+    background-color: $active-bg-color;
   }
 }
 
-@mixin dropdown-arrow() {
+@mixin dropdown-item-separator($border-color) {
+  height: 0;
+  border-bottom: 1px solid $border-color;
+  list-style: none;
+}
+
+@mixin dropdown-submit($border-color) {
+  padding: $spacing-medium;
+  border-top: 1px solid $border-color;
+  text-align: right;
+}
+
+@mixin dropdown-arrow($container-background-color, $container-shadow-color) {
   display: none;
   position: absolute;
   width: rem(10px);
   height: rem(10px);
   bottom: rem(-25px);
-  right: rem(20px);
-  background: linear-gradient(-45deg, rgba($white, 0) 50%, $white 50%);
+  left: rem(20px);
+  background: linear-gradient(-45deg, rgba($container-background-color, 0) 50%, $container-background-color 50%);
   transform: rotate(45deg);
-  z-index: 2;
-  box-shadow: -1px -1px 1px $gallery;
+  z-index: 3;
+  box-shadow: -1px -1px 1px lighten($container-shadow-color, 45%);
 }
 
 @if $export-dropdown-css {
-  .dropdown-menu {
-    display: block;
-  }
   .dropdown {
     position: relative;
-    display: inline-block;
+    display: block;
     .dropdown-container {
-      @include dropdown-container($dropdown-background-color, $dropdown-shadow-color);
+      @include dropdown-container($dropdown-background-color, $dropdown-shadow);
+      &.right + .dropdown-arrow {
+        right: rem(20px);
+        left: auto;
+      }
       .dropdown-root-menu {
         right: 0;
         left: auto;
@@ -98,27 +127,41 @@ $dropdown-hover-background-color: $pattens-blue !default;
       }
     }
     .dropdown-item {
+      list-style: none;
       .text {
-        @include dropdown-item($dropdown-font-color, $dropdown-font-family, $dropdown-hover-background-color);
+        @include dropdown-item(
+                $dropdown-font-color,
+                $dropdown-font-family,
+                $dropdown-background-color-accent,
+                $dropdown-background-color-active
+        );
       }
     }
+    .dropdown-item-separator {
+      @include dropdown-item-separator($dropdown-separator-color);
+    }
+    .dropdown-submit {
+      @include dropdown-submit($dropdown-separator-color);
+    }
     .dropdown-arrow {
-      @include dropdown-arrow();
+      @include dropdown-arrow($dropdown-background-color, $dropdown-arrow-shadow-color);
     }
     .dropdown-container.animate-close {
       animation: closeContainer .2s ease-in-out forwards;
     }
     .dropdown-menu.animate-in > .dropdown-item > .text {
-      animation: dropDownIn .3s cubic-bezier(.32, .97, .71, .95) .0s forwards;
+      animation: dropDownIn .3s cubic-bezier(.53, 1.49, 1, .87) .0s forwards;
     }
     .dropdown-menu.animate-out > .dropdown-item > .text {
-      animation: dropDownOut .3s cubic-bezier(.53, 1.49, 1, .87) forwards;
+      animation: dropDownOut .3s cubic-bezier(.32, .97, .71, .95) .05s forwards;
     }
-    .dropdown-menu.animate-sub-in > .dropdown-item > .text {
-      animation: dropDownSubIn .3s cubic-bezier(.32, .97, .71, .95) .0s forwards;
+    .dropdown-menu.animate-sub-in > .dropdown-item > .text,
+    .dropdown-menu.animate-sub-in > .dropdown-item-separator {
+      animation: dropDownSubIn .3s cubic-bezier(.53, 1.49, 1, .87) .0s forwards;
     }
-    .dropdown-menu.animate-sub-out > .dropdown-item > .text {
-      animation: dropDownSubOut .3s cubic-bezier(.53, 1.49, 1, .87) forwards;
+    .dropdown-menu.animate-sub-out > .dropdown-item > .text,
+    .dropdown-menu.animate-sub-out > .dropdown-item-separator {
+      animation: dropDownSubOut .3s cubic-bezier(.32, .97, .71, .95) .05s forwards;
     }
     .dropdown-menu.animate-in,
     .dropdown-menu.animate-out,
@@ -126,7 +169,7 @@ $dropdown-hover-background-color: $pattens-blue !default;
     .dropdown-menu.animate-sub-out {
       @for $i from 1 through 20 {
         > .dropdown-item:nth-child(#{$i}) > .text {
-          animation-delay: #{$i * .025s};
+          animation-delay: #{$i * .035s};
         }
       }
     }
