@@ -1,3 +1,8 @@
+$tooltip-background: $sail !default;
+$tooltip-border-color: $liverleaf !default;
+$tooltip-max-width: 16em !default;
+$tooltip-arrow-width: 2px !default;
+
 .tooltip-item {
     display: inline-block;
     position: relative;
