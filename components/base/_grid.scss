@@ -7,8 +7,8 @@ $include-grid-css: true !default;
 $default-float: left !default;
 $opposite-direction: right !default;
 $row-width: 100% !default;
-$total-columns: 12 !default;
-$column-gutter: 19px !default;
+$total-columns: 24 !default;
+$column-gutter: rem(19px) !default;
 $last-child-float: $opposite-direction !default;
 
 $small-up: screen !default;
