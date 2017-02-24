@@ -135,6 +135,9 @@ $dropdown-background-color-active: $arctica !default;
                 $dropdown-background-color-accent,
                 $dropdown-background-color-active
         );
+        .icon {
+          margin-right: rem(5px);
+        }
       }
     }
     .dropdown-item-separator {
