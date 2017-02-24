@@ -4,37 +4,39 @@ $icon-font-path: 'icons/font/' !default;
 $icon-font-name: 'fontello';
 // Icon uni-codes
 
-$icon-filter: '\e800';
-$icon-sort-down: '\e801';
-$icon-arrow_right_circle: '\e802';
-$icon-zalando: '\e805';
-$icon-dot: '\e806';
-$icon-ok: '\e807';
-$icon-arrow_left_circle: '\e831';
-$icon-power: '\e832';
-$icon-warning-circle: '\e833';
-$icon-x: '\e834';
-$icon-left: '\e835';
-$icon-right: '\e836';
-$icon-check: '\e855';
-$icon-info-circled-alt: '\e856';
-$icon-attention-alt: '\e857';
-$icon-cancel-circled: '\e858';
-$icon-magnifiying-glass: '\e859';
-$icon-pencil-stroke: '\e85a';
-$icon-sort-up: '\e85b';
-$icon-warning-triangle: '\e85c';
-$icon-cross: '\e85d';
-$icon-bell: '\e85e';
-$icon-calendar: '\e85f';
-$icon-gear: '\e860';
-$icon-heart: '\e861';
-$icon-home: '\e862';
-$icon-locked: '\e863';
-$icon-paperclip: '\e864';
-$icon-lightbulb: '\e865';
-$icon-checkmark-circle: '\e866';
-$icon-circle: '\f111';
+$icons: (
+    filter: '\e800',
+    sort-down: '\e801',
+    arrow_right_circle: '\e802',
+    zalando: '\e805',
+    dot: '\e806',
+    ok: '\e807',
+    arrow_left_circle: '\e831',
+    power: '\e832',
+    warning-circle: '\e833',
+    x: '\e834',
+    left: '\e835',
+    right: '\e836',
+    check: '\e855',
+    info-circled-alt: '\e856',
+    attention-alt: '\e857',
+    cancel-circled: '\e858',
+    magnifiying-glass: '\e859',
+    pencil-stroke: '\e85a',
+    sort-up: '\e85b',
+    warning-triangle: '\e85c',
+    cross: '\e85d',
+    bell: '\e85e',
+    calendar: '\e85f',
+    gear: '\e860',
+    heart: '\e861',
+    home: '\e862',
+    locked: '\e863',
+    paperclip: '\e864',
+    lightbulb: '\e865',
+    checkmark-circle: '\e866',
+    circle: '\f111',
+);
 
 @if not $use-embedded-font {
     @font-face {
@@ -107,89 +109,11 @@ $icon-circle: '\f111';
         font-size: rem(48px);
         text-indent: -5px;
     }
-    .icon-filter:before {
-        content: $icon-filter;
-    }
-    .icon-sort-down:before {
-        content: $icon-sort-down;
-    }
-    .icon-zalando:before {
-        content: $icon-zalando;
-    }
-    .icon-dot:before {
-        content: $icon-dot;
-    }
-    .icon-ok:before {
-        content: $icon-ok;
-    }
-    .icon-power:before {
-        content: $icon-power;
-    }
-    .icon-warning-circle:before {
-        content: $icon-warning-circle;
-    }
-    .icon-check:before {
-        content: $icon-check;
-    }
-    .icon-info-circled-alt:before {
-        content: $icon-info-circled-alt;
-    }
-    .icon-attention-alt:before {
-        content: $icon-attention-alt;
-    }
-    .icon-cancel-circled:before {
-        content: $icon-cancel-circled;
-    }
-    .icon-magnifiying-glass:before {
-        content: $icon-magnifiying-glass;
-    }
-    .icon-pencil-stroke:before {
-        content: $icon-pencil-stroke;
-    }
-    .icon-sort-up:before {
-        content: $icon-sort-up;
-    }
-    .icon-warning-triangle:before {
-        content: $icon-warning-triangle;
-    }
-    .icon-cross:before {
-        content: $icon-cross;
-    }
-    .icon-bell:before {
-        content: $icon-bell;
-    }
-    .icon-calendar:before {
-        content: $icon-calendar;
-    }
-    .icon-gear:before {
-        content: $icon-gear;
-    }
-    .icon-heart:before {
-        content: $icon-heart;
-    }
-    .icon-home:before {
-        content: $icon-home;
-    }
-    .icon-locked:before {
-        content: $icon-locked;
-    }
-    .icon-paperclip:before {
-        content: $icon-paperclip;
-    }
-    .icon-lightbulb:before {
-        content: $icon-lightbulb;
-    }
-    .icon-checkmark-circle:before {
-        content: $icon-checkmark-circle;
-    }
-    .icon-circle:before {
-        content: $icon-circle;
-    }
-    .icon-right:before {
-        content: $icon-right;
-    }
-    .icon-left:before {
-        content: $icon-left;
+    // Generate icon classes
+    @each $name, $code in $icons {
+        .#{$name}:before {
+            content: $code;
+        }
     }
 
     /**
@@ -207,7 +131,7 @@ $icon-circle: '\f111';
         }
         span:before,
         span:after {
-            content: $icon-circle;
+            content: map-get($icons, circle);
             font-family: $icon-font-name;
             display: block;
             position: absolute;
