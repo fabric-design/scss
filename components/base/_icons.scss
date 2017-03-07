@@ -111,7 +111,7 @@ $icons: (
     }
     // Generate icon classes
     @each $name, $code in $icons {
-        .#{$name}:before {
+        .icon-#{$name}:before {
             content: $code;
         }
     }
