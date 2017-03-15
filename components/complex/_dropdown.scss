@@ -73,7 +73,7 @@ $dropdown-background-color-active: $arctica !default;
 }
 
 @mixin dropdown-submit($border-color) {
-  padding: $spacing-medium;
+  padding: $spacing-medium $spacing-medium $spacing-x-small;
   border-top: 1px solid $border-color;
   text-align: right;
 }
@@ -135,6 +135,9 @@ $dropdown-background-color-active: $arctica !default;
                 $dropdown-background-color-accent,
                 $dropdown-background-color-active
         );
+        .icon {
+          margin-right: rem(5px);
+        }
       }
     }
     .dropdown-item-separator {
@@ -142,6 +145,13 @@ $dropdown-background-color-active: $arctica !default;
     }
     .dropdown-submit {
       @include dropdown-submit($dropdown-separator-color);
+    }
+    .dropdown-input {
+      padding: rem(3px 8px 8px);
+      input[type=text] {
+        width: 100%;
+        height: rem(28px); // Line height of dropdown-item
+      }
     }
     .dropdown-arrow {
       @include dropdown-arrow($dropdown-background-color, $dropdown-arrow-shadow-color);
