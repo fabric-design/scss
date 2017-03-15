@@ -29,6 +29,7 @@ node_modules
 # Intellij
 .idea
 **/*.iml
+.vscode
 
 # Demo
 /demo/index.css
