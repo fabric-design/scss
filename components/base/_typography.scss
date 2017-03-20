@@ -1,5 +1,8 @@
 body {
-  font-feature-settings: "kern", "liga", "pnum";
+  font-variant-numeric: tabular-nums;
+  -moz-font-feature-settings: "tnum";
+  -webkit-font-feature-settings: "tnum";
+  font-feature-settings: "kern", "liga", "tnum";
   color: $base-font-color;
   font-family: $base-font-family;
   font-size: $base-font-size;
