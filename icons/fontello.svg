@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg">
-<metadata>Copyright (C) 2016 by original authors @ fontello.com</metadata>
+<metadata>Copyright (C) 2017 by original authors @ fontello.com</metadata>
 <defs>
 <font id="fontello" horiz-adv-x="1000" >
 <font-face font-family="fontello" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
@@ -12,7 +12,7 @@
 
 <glyph glyph-name="arrow_right_circle" unicode="&#xe802;" d="M442 181a18 18 0 0 0-12 30l139 139-139 139a18 18 0 0 0 25 25l151-152a18 18 0 0 0 0-24l-151-152a17 17 0 0 0-13-5z m400 169a343 343 0 1 1-342-342 343 343 0 0 1 343 342z m-35 0a308 308 0 1 0-307 308 308 308 0 0 0 308-308z" horiz-adv-x="1000" />
 
-<glyph glyph-name="zalando-logo" unicode="&#xe805;" d="M836 458c-65 88-156 173-274 250 0 0-1 1-1 1-119 75-231 119-333 137-63 11-93-2-107-11-13-9-39-31-62-97-36-106-57-235-58-387 0 0 0-1 0-1 1-152 22-282 58-388 23-66 49-88 62-97 14-9 44-22 107-10 102 18 214 62 333 137 0 0 1 0 1 0 118 77 209 163 274 250 40 55 45 91 45 108 0 18-5 53-45 108" horiz-adv-x="885" />
+<glyph glyph-name="zalando" unicode="&#xe805;" d="M836 458c-65 88-156 173-274 250 0 0-1 1-1 1-119 75-231 119-333 137-63 11-93-2-107-11-13-9-39-31-62-97-36-106-57-235-58-387 0 0 0-1 0-1 1-152 22-282 58-388 23-66 49-88 62-97 14-9 44-22 107-10 102 18 214 62 333 137 0 0 1 0 1 0 118 77 209 163 274 250 40 55 45 91 45 108 0 18-5 53-45 108" horiz-adv-x="885" />
 
 <glyph glyph-name="dot" unicode="&#xe806;" d="M110 460q46 0 78-32t32-78q0-44-32-77t-78-33-78 33-32 77q0 46 32 78t78 32z" horiz-adv-x="220" />
 

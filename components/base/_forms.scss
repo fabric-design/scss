@@ -16,7 +16,7 @@ $input-disabled-background-color: $catkin !default;
   background-color: $bg-color;
   height: rem(34px);
   font-weight: normal;
-  transition: border-color .2s linear, box-shadow .2s linear;
+  transition: border-color .15s linear, box-shadow .15s linear;
   &:focus {
     border-color: $focus-border-color;
     box-shadow: inset 0 1px 3px 0px $focus-shadow-color;
