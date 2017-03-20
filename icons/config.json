@@ -423,6 +423,20 @@
       "search": [
         "warning-triangle"
       ]
+    },
+    {
+      "uid": "1866fd6b6890ad2619930cbf696f554b",
+      "css": "checkmark-checkbox",
+      "code": 59422,
+      "src": "custom_icons",
+      "selected": true,
+      "svg": {
+        "path": "M425.6 713.8H425.6A35.6 35.6 0 0 1 400.6 723.8H400.6A35.6 35.6 0 0 1 375 711.3L196.9 513.1A35.6 35.6 0 1 1 250 465.6L401.9 636.3 750 286.9A35.6 35.6 0 1 1 800.6 337.5L425.6 712.5Z",
+        "width": 1000
+      },
+      "search": [
+        "checkmark-checkbox"
+      ]
     }
   ]
 }
