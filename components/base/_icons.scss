@@ -82,6 +82,8 @@ $icons: (
     }
     .icon:before, [class^="icon-"]:before, [class*=" icon-"]:before {
         @include icon-base;
+        margin: 0;
+        margin-top: -25%;
     }
     .icon16 {
         width: rem(16px);
