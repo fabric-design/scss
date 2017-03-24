@@ -77,10 +77,13 @@ $icons: (
 
 @if $include-icon-css {
     .icon, [class^="icon-"], [class*=" icon-"] {
+        @include icon-base;
         line-height: 1rem;
     }
     .icon:before, [class^="icon-"]:before, [class*=" icon-"]:before {
         @include icon-base;
+        margin: 0;
+        margin-top: -25%;
     }
     .icon16 {
         width: rem(16px);
