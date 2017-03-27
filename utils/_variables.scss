@@ -1,3 +1,4 @@
+@import 'spacings';
 // Color codes for
 $egg-white: #FFF6C4; // solomie
 $grandis: #FFD77E;
@@ -51,15 +52,6 @@ $font-size-large: 1.1875rem;
 $font-size-heading: 1.5rem; // 24px
 $base-line-height: 1.5rem; // 24px
 $heading-line-height: 2rem; // 32px
-$spacing-xx-small: 0.25rem; // 4px
-$spacing-x-small: 0.5rem; // 8px
-$small-spacing: 0.75rem; // 12px
-$spacing-medium: 1rem; // 16px
-$spacing-large: 1.5rem; // 24px
-$spacing-x-large: 2rem; // 32px
-$spacing-xx-large: 4rem; // 64px
-$spacing-navigation-items: 2rem; // 32px
-$base-spacing: 1.5rem; // 24
 $base-border-radius: 3px;
 $border-radius-container: 2px;
 $base-z-index: 1;
