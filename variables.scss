@@ -72,6 +72,7 @@ $elevation5: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 $elevation-shadows: (
   "resting": $elevation1,
   "raised": $elevation2,
+  "hovering": $elevation3,
   "floating": $elevation5
 );
 $z-layers: (
