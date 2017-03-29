@@ -4,11 +4,17 @@
 <ul class="icon-list">
     <li><span class="icon-filter icon24"></span><span class="text">.icon-filter</span></li>
     <li><span class="icon-sort-down icon24"></span><span class="text">.icon-sort-down</span></li>
+    <li><span class="icon-arrow_right_circle icon24"></span><span class="text">.icon-arrow_right_circle</span></li>
     <li><span class="icon-zalando icon24"></span><span class="text">.icon-zalando</span></li>
     <li><span class="icon-dot icon24"></span><span class="text">.icon-dot</span></li>
     <li><span class="icon-ok icon24"></span><span class="text">.icon-ok</span></li>
+    <li><span class="icon-checkmark-checkbox icon24"></span><span class="text">.icon-checkmark-checkbox</span></li>
+    <li><span class="icon-arrow_left_circle icon24"></span><span class="text">.icon-arrow_left_circle</span></li>
     <li><span class="icon-power icon24"></span><span class="text">.icon-power</span></li>
     <li><span class="icon-warning-circle icon24"></span><span class="text">.icon-warning-circle</span></li>
+    <li><span class="icon-x icon24"></span><span class="text">.icon-x</span></li>
+    <li><span class="icon-left icon24"></span><span class="text">.icon-left</span></li>
+    <li><span class="icon-right icon24"></span><span class="text">.icon-right</span></li>
     <li><span class="icon-check icon24"></span><span class="text">.icon-check</span></li>
     <li><span class="icon-info-circled-alt icon24"></span><span class="text">.icon-info-circled-alt</span></li>
     <li><span class="icon-attention-alt icon24"></span><span class="text">.icon-attention-alt</span></li>
@@ -28,8 +34,6 @@
     <li><span class="icon-lightbulb icon24"></span><span class="text">.icon-lightbulb</span></li>
     <li><span class="icon-checkmark-circle icon24"></span><span class="text">.icon-checkmark-circle</span></li>
     <li><span class="icon-circle icon24"></span><span class="text">.icon-circle</span></li>
-    <li><span class="icon-right icon24"></span><span class="text">.icon-right</span></li>
-    <li><span class="icon-left icon24"></span><span class="text">.icon-left</span></li>
 </ul>
 ## Icon sizes
 Our icons are in general displayed in one of 4 sizes. Those can be 16x16, 24x24, 32x32 or 48x48 pixels.
