@@ -22,7 +22,7 @@ $tooltip-arrow-width: 2px !default;
         margin: 0 auto;
         max-width: $tooltip-max-width;
         opacity: 0;
-        padding: $spacing-x-small $spacing-large;
+        padding: $space-xs $space-l;
         text-align: center;
         visibility: hidden;
         z-index: z("upper");
