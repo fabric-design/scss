@@ -1,5 +1,5 @@
 $export-notification-css: true !default;
-$notification-width: rem(400px) !default;
+$notification-width: rem(368px) !default;
 $notification-font-color: $base-font-color !default;
 $notification-font-size: $base-font-size !default;
 $notification-background-color: $silver !default;
@@ -10,9 +10,10 @@ $notification-error-color: $flamingo !default;
 
 @if $export-notification-css {
     .notification {
-        padding: rem(16px);
-        width: $notification-width;
+        @include clearfix();
+        @include inset-spacing("m");
         min-height: rem(70px);
+        width: $notification-width;
         box-sizing: border-box;
         box-shadow: map-get($elevation-shadows, raised);
         display: flex;
@@ -23,28 +24,45 @@ $notification-error-color: $flamingo !default;
         font-size: $notification-font-size;
         color: $notification-font-color;
         background-color: $notification-background-color;
-        border-left: 3px solid $notification-info-color;
+        border-left: $space-xxs solid $notification-info-color;
+        transition: opacity .5s ease-out;
+        &.is-hidden {
+            opacity: 0;
+        }
         .icons {
-            flex: rem(48px) 0 0;
+            float: left;
+            width: $heading-line-height;
+            height: $heading-line-height;
+            margin: $space-inline-m;
             .icon {
-                font-size: rem(32px);
+                font-size: rem(48px);
+                line-height: $heading-line-height;
                 display: none;
+                &:before {
+                    margin-top: 0;
+                    font-size: 100%;
+                    margin-left: -$space-xs;
+                }
             }
         }
         .content {
             flex: auto 1 1;
             margin: auto;
             max-height: rem(260px);
+            padding: $space-inline-xl;
             overflow: auto;
             .title {
-                font-size: rem(16px);
-                line-height: rem(16px);
+                font-size: $base-font-size;
+                line-height: $base-font-size;
                 font-weight: bold;
+                &.is-standalone {
+                    padding: $space-xs 0;
+                }
             }
             .description {
-                font-size: rem(13px);
-                line-height: rem(14px);
-                padding-bottom: rem(4px);
+                font-size: $font-size-small;
+                line-height: $base-font-size;
+                padding: $space-xxs 0;
                 margin: 0;
             }
             &.has-description .title {
