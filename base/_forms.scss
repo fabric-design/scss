@@ -42,7 +42,7 @@ $input-disabled-background-color: $catkin !default;
   fieldset {
     background-color: $secondary-background-color;
     border: $base-border;
-    margin: 0 0 $small-spacing;
+    margin: 0 0 $space-s;
     padding: $base-spacing;
   }
 
@@ -56,7 +56,7 @@ $input-disabled-background-color: $catkin !default;
 
   label {
     font-weight: 600;
-    margin-bottom: $small-spacing / 2;
+    margin-bottom: $space-s / 2;
 
     &.required::after {
       content: "*";
@@ -106,11 +106,11 @@ $input-disabled-background-color: $catkin !default;
 
   input[type="checkbox"],
   input[type="radio"] {
-    margin-right: $small-spacing / 2;
+    margin-right: $space-s / 2;
   }
 
   input[type="file"] {
-    padding-bottom: $small-spacing;
+    padding-bottom: $space-s;
     width: 100%;
   }
 
