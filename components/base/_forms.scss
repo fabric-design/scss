@@ -48,7 +48,8 @@ $input-disabled-background-color: $catkin !default;
 
   input,
   label,
-  select {
+  select,
+  textarea {
     display: block;
     font-family: $base-font-family;
     font-size: $base-font-size;
@@ -116,6 +117,8 @@ $input-disabled-background-color: $catkin !default;
 
   select {
     max-width: 100%;
+    padding-top: 0;
+    padding-bottom: 0;
     width: auto;
   }
 
