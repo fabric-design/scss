@@ -100,7 +100,7 @@ $notification-error-color: $flamingo !default;
                 color: $notification-error-color;
                 display: block;
                 &:before {
-                    content: map-get($icons, cancel-circled);
+                    content: map-get($icons, cross);
                 }
             }
         }
