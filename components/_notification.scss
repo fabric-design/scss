@@ -9,6 +9,19 @@ $notification-success-color: $forest-green !default;
 $notification-error-color: $flamingo !default;
 
 @if $export-notification-css {
+    .ws-notification-wrapper {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+    }
+    .ws-notification-list {
+        margin: $space-default;
+    }
+    .ws-notification-list .notification {
+        display: block;
+        margin: $space-stack-m;
+        max-height: 300px;
+    }
     .notification {
         @include clearfix();
         @include inset-spacing("m");
