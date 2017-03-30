@@ -6,12 +6,7 @@ The Wholesale-Design-System UI toolkit is a highly-modular design system for rap
 
 **Change the design**
 
-The design is based on ([bourbon.io](http://bourbon.io)):
-
-* Bourbon 4.2.x (Mixins)
-* Neat 1.7.x (Grid)
-* Refills (Components)
-* Bitters (Basic Variables)
+TBC
 
 To change the design, we change the tokens or the components in `./refills/`.
 
