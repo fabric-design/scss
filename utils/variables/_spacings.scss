@@ -3,19 +3,9 @@ $space-xxs: 0.25rem; // 4px
 $space-xs: 0.5rem; // 8px
 $space-s: 0.75rem; // 12px
 $space-m: 1rem; // 16px
-$space-default: $space-m;
 $space-l: 1.5rem; // 24px
 $space-xl: 2rem; // 32px
 $space-xxl: 4rem; // 64px
-
-//Old Variables Name (Temp)
-$spacing-xx-small: $space-xxs;
-$spacing-x-small: $space-xs;
-$small-spacing: $space-s;
-$spacing-medium: $space-m;
-$spacing-large: $space-l;
-$spacing-x-large: $space-xl;
-$spacing-xx-large: $space-xxl;
 
 //Inset Spacing
 $inset-spacing-m: $space-m;
@@ -82,6 +72,3 @@ $space-inline-m: 0 $space-m 0 0;
 $space-inline-l: 0 $space-l 0 0;
 $space-inline-xl: 0 $space-xl 0 0;
 $space-inline-xxl: 0 $space-xxl 0 0;
-
-$spacing-navigation-items: $space-xl; // 32px
-$base-spacing: $space-default; // 16px

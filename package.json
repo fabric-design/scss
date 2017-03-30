@@ -5,9 +5,7 @@
   "homepage": "https://d1fhpltsebm6no.cloudfront.net/",
   "main": "README.md",
   "scripts": {
-    "prestart": "npm install",
-    "watch": "gulp watch",
-    "serve": "lite-server"
+    "prestart": "npm install"
   },
   "keywords": [
     "toolkit",
@@ -21,7 +19,7 @@
   "licenses": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.bus.zalan.do/WholesaleDesignSystem/Styleguide.git"
+    "url": "https://github.com/wholesale-design-system/scss.git"
   },
   "engines": {
     "node": ">=0.10.0",
@@ -32,14 +30,8 @@
   },
   "devDependencies": {
     "gulp": "github:gulpjs/gulp#4.0",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-flatmap": "^1.0.0",
-    "gulp-iconfont": "^8.0.0",
-    "gulp-iconfont-css": "^2.1.0",
     "gulp-sass": "^2.3.1",
     "gulp-stylelint": "^3.9.0",
-    "gulp-watch": "^4.3.6",
-    "lite-server": "^2.2.0",
     "stylelint": "^7.9.0",
     "stylelint-config-sass-guidelines": "^2.0.0",
     "stylelint-scss": "^1.4.3"

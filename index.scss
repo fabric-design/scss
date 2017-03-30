@@ -1,5 +1,20 @@
-@import "utils/variables";
-@import "utils/helpers";
-@import "utils/grid";
-@import "base/base";
-@import "components/all";
+@import 'utils/variables';
+@import 'utils/helpers';
+@import 'utils/grid';
+@import 'utils/normalize';
+@import 'utils/typography';
+
+@import 'atoms/icons';
+@import 'atoms/badges';
+@import 'atoms/buttons';
+@import 'atoms/checkbox-radio-inputs';
+@import 'atoms/forms';
+@import 'atoms/switch';
+
+@import 'molecules/dropdown';
+@import 'molecules/pagination';
+@import 'molecules/radio-group';
+@import 'molecules/tables';
+@import 'molecules/tooltip';
+
+@import 'organisms/navigation';

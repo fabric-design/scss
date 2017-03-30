@@ -40,7 +40,7 @@ $input-disabled-background-color: $catkin !default;
 @if $export-form-css {
 
   fieldset {
-    background-color: $secondary-background-color;
+    background-color: $catkin;
     border: $base-border;
     margin: 0 0 $space-s;
     padding: $base-spacing;
