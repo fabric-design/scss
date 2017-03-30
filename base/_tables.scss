@@ -45,7 +45,8 @@ table {
   width: 100%;
   border: 1px solid $table-border-color;
   border-radius: 2px;
-  border-collapse: separate;
+  border-collapse: collapse;
+  line-height: $base-font-size;
   thead {
     border-bottom: 1px solid $table-header-border-color;
     background-color: $table-header-background-color;
@@ -65,7 +66,8 @@ table {
     }
     tr:first-child {
       th {
-        padding: rem(8px 25px 8px 11px);
+        padding: 0 $space-xl 0 $space-m;
+        line-height: $space-xl;
         white-space: nowrap;
         position: relative;
         label {
@@ -78,6 +80,7 @@ table {
         .sort {
           position: absolute;
           right: rem(15px);
+          top: rem(3px);
           z-index: 1;
         }
       }
@@ -111,7 +114,11 @@ table {
       border-bottom: 1px solid $table-row-border-color;
     }
     td {
-      padding: rem(8px 11px);
+      padding: 0 $space-xl 0 $space-m;
+      line-height: $space-xl;
+    }
+    tr.pagination-row td {
+      @include inset-spacing-stretch(l);
     }
   }
 }

@@ -65,11 +65,11 @@ $icons: (
     font-weight: normal;
     speak: none;
     display: inline-block;
+    vertical-align: top;
     text-decoration: inherit;
     text-align: center;
     font-variant: normal;
     text-transform: none;
-    font-size: 150%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -77,6 +77,8 @@ $icons: (
 @if $include-icon-css {
     .icon, [class^="icon-"], [class*=" icon-"] {
         line-height: 1rem;
+        display: inline-block;
+        vertical-align: middle;
     }
     .icon:before, [class^="icon-"]:before, [class*=" icon-"]:before {
         @include icon-base;
@@ -86,28 +88,24 @@ $icons: (
         height: rem(16px);
         line-height: rem(16px);
         font-size: rem(16px);
-        text-indent: -2px;
     }
     .icon24 {
         width: rem(24px);
         height: rem(24px);
         line-height: rem(24px);
         font-size: rem(24px);
-        text-indent: -3px;
     }
     .icon32 {
         width: rem(32px);
         height: rem(32px);
         line-height: rem(32px);
         font-size: rem(32px);
-        text-indent: -4px;
     }
     .icon48 {
         width: rem(48px);
         height: rem(48px);
         line-height: rem(48px);
         font-size: rem(48px);
-        text-indent: -5px;
     }
     // Generate icon classes
     @each $name, $code in $icons {
