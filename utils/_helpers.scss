@@ -68,12 +68,26 @@ $debug: false !default;
 @mixin user-select($value: none) {
   @include prefixer(user-select, $value, webkit moz ms spec);
 }
-// @todo
-@mixin media($query) {
-  @media #{$query} {
-    @content;
+
+/**
+ * Wraps content with a media query for specific break point
+ * @param $breakpoint One value of map $breakpoints
+ */
+@mixin media($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media #{map-get($breakpoints, $breakpoint)} {
+      @content;
+    }
+  }
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
   }
 }
+
 @mixin clearfix {
   &::after {
     clear: both;
