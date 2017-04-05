@@ -145,7 +145,7 @@ $debug: false !default;
 @mixin transform-style($style: flat) {
   @include prefixer(transform-style, $style, webkit moz ms o spec);
 }
-@mixin outer-container($local-max-width: $max-width) {
+@mixin outer-container($local-max-width: 1200px) {
   @include clearfix;
   max-width: $local-max-width;
   margin: {
