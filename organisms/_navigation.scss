@@ -12,7 +12,7 @@ header.navigation {
   $navigation-active-link-color: transparentize(white, 0.5);
   $navigation-submenu-padding: 1em;
   $navigation-submenu-width: 12em;
-  $horizontal-bar-mode: $large-up;
+  $horizontal-bar-mode: medium;
 
   background-color: $navigation-background;
   border-bottom: 1px solid darken($navigation-background, 10);
