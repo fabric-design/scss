@@ -17,7 +17,9 @@ after_success:
   - git config --global user.email "travis@travis-ci.org"
   - git config --global user.name "Travis CI"
   - git clone https://${STYLEGUIDE_TOKEN}@github.com/wholesale-design-system/styleguide.git -b gh-pages .sg-tmp && cd .sg-tmp
+  - pwd
   - npm install
   - npm link ../
+  - ls -la node_modules
   - au build && au publish \ --commit "${TRAVIS_COMMIT}" \ --repo "${TRAVIS_REPO_SLUG}/${BRANCH}" --target "${TARGET}"
   - cd .. && rm -rf .sg-tmp
