@@ -1,0 +1,22 @@
+language: node_js
+node_js:
+  - '7'
+env:
+  matrix:
+    - BRANCH=$(test "${TRAVIS_PULL_REQUEST}" == "false" && echo "${TRAVIS_BRANCH}" || echo "${TRAVIS_PULL_REQUEST_BRANCH}")
+      TARGET=$(test "${BRANCH}" == "master" && echo "" || echo "${TRAVIS_REPO_SLUG}/${BRANCH}")
+  global:
+    secure: WRuMQyCWG5fEmljoB0bZAXAeSV6GQmKYcidbT0hlshazfwtXJHevBvuSCBDogjEtmH/e8xEBcjbdc8D24SNF6Ezu3Wl4t2mW8VIVn0HU6OATW9boYW3zR/f5VTImGsdi1mjRA6FRSBZVUYA+WNFRgnUo3+YXQ1MrU+XA0c7r7HFIDqxyIuSQVn2y9DPuxNHRdeKiHXdmIHJz9/OzBN7AXJB2RvrJ4dAvWbZBVINb6BQ25YG+zqwfAajSPwbEULtcigvCc8w2X+p/PwzfGTIVWxtKtCI1kZFQeAsYH2tP2pM0dcdxzv1i0HiGlA5O6n9EqPzxqePVQGC2F8LA/poXBVuGchumvvbdyGS+0AlfqgIry09slFHerwz7mXISZ9apeF8sWzGiVtXkVpdDfnQdbNrvpplD5wNSccleBm+HumNsQd+/pYq8tlCo0bX67rx+hcR2dnaK0SMQGAZLENohVQu25LUh92pHeepu+pZ2kYoPNKhKLos0HxESFrxYtsbudkMn5VZqMk4CJwF7U0z4zxJlQttDKq7LtY7+6W4NZpXHB3NU/dij+GE84l47dUMqbC+OTiNKVX+pLNDyx3f8F7/xmyYaOuErqrPYxVOOEb7/jCma/bg5LOC4Dc9UY8aLxfcmVnluU0xpj5bb/syJtm9qMkUEJ/SXdgwSKfNNd3I=
+before_script:
+  - npm install -g gulp aurelia-cli
+  - npm install
+script:
+  - gulp sass
+  - gulp lint-sass
+after_success:
+  - git config --global user.email "travis@travis-ci.org"
+  - git config --global user.name "Travis CI"
+  - git clone https://${STYLEGUIDE_TOKEN}@github.com/wholesale-design-system/styleguide.git -b  .sg-tmp && cd .sg-tmp
+  - npm install && npm link ..
+  - au build && au publish \ --commit "${TRAVIS_COMMIT}" \ --repo "${TRAVIS_REPO_SLUG}/${BRANCH}" --target "${TARGET}"
+  - cd .. && rm -rf .sg-tmp
