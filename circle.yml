@@ -19,7 +19,7 @@ dependencies:
   override:
     - npm install -g gulp-cli aurelia-cli
     - npm install
-    - cd styleguide && npm install && npm link ..
+    - cd styleguide && npm install && npm link ../
 
 compile:
   override:
