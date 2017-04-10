@@ -14,6 +14,8 @@ general:
 checkout:
   post:
     - git clone git@github.com:wholesale-design-system/styleguide.git -b travis
+    - git config --global user.email circleci@circleci
+    - git config --global user.name "${CIRCLE_PROJECT_USERNAME}"
 
 dependencies:
   override:
