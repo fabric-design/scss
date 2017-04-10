@@ -1,5 +1,8 @@
 body {
-  font-feature-settings: "kern", "liga", "pnum";
+  font-variant-numeric: tabular-nums;
+  -moz-font-feature-settings: "tnum";
+  -webkit-font-feature-settings: "tnum";
+  font-feature-settings: "kern", "liga", "tnum";
   color: $base-font-color;
   font-family: $base-font-family;
   font-size: $base-font-size;
@@ -25,14 +28,14 @@ p {
 }
 
 a {
-  color: $action-color;
+  color: $primary-color;
   text-decoration: none;
   transition: color 0.1s linear;
 
   &:active,
   &:focus,
   &:hover {
-    color: darken($action-color, 15%);
+    color: darken($primary-color, 15%);
   }
 
   &:active,

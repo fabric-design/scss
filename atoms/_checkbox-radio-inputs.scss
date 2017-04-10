@@ -49,7 +49,8 @@
     }
 
     &[type="checkbox"] + #{$sibling-label-selector}:after {
-        @extend .icon-checkmark;
+        content: map-get($icons, ok);
+        font-family: 'fontello';
         top: .3rem;
         left: .3rem;
         width: 1.125rem;
@@ -62,7 +63,7 @@
         left: rem(6px);
         width: rem(16px);
         height: rem(16px);
-        background: $action-color;
+        background: $primary-color;
         border: none;
         vertical-align: middle;
     }
@@ -76,7 +77,8 @@
         }
 
         &:after {
-            @extend .icon-checkmark-alt;
+            content: map-get($icons, ok);
+            font-family: 'fontello';
         }
     }
 
@@ -96,7 +98,7 @@
         &:before,
         &:after {
             border: none;
-            @include transition((background-color, transform), (.1s, .3s), (linear, $ease-out-quart));
+            @include transition((background-color, transform), (.1s, .3s), (linear, ease-out));
         }
 
         &:after {
@@ -106,7 +108,7 @@
             opacity: 1;
             border-radius: rem(7px);
             margin-top: rem(8px);
-            box-shadow: $shadow-shallow-elevation;
+            box-shadow: map-get($elevation-shadows, "resting");
             @include transform(scale3d(1.6, 1.6, 1.6));
         }
 
@@ -124,7 +126,7 @@
         &:after {
             background: none;
             background-color: $kohpayam;
-            @include transition((background-color, transform), (.1s, .1s), (linear, $ease-out-quart));
+            @include transition((background-color, transform), (.1s, .1s), (linear, ease-out));
             @include transform(translateX(rem(20)) scale3d(1.6, 1.6, 1.6));
         }
 

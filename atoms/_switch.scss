@@ -5,8 +5,8 @@ $switch-radius: $switch-height !default;
 $knob-size: $switch-height - ($switch-padding * 2) !default;
 $knob-radius: $switch-height - ($switch-padding * 2) !default;
 $knob-width: $knob-size !default;
-$switch-background: $base-background-color !default;
-$switch-border-background: darken($base-background-color, 9%) !default;
+$switch-background: $white !default;
+$switch-border-background: darken($white, 9%) !default;
 $switch-shadow: 0 2px 5px transparentize(black, 0.6) !default;
 
 .label-switch {
@@ -59,7 +59,7 @@ $switch-shadow: 0 2px 5px transparentize(black, 0.6) !default;
 
     &:checked {
       + .checkbox {
-        background: $action-color;
+        background: $primary-color;
 
         &:before {
           @include transform(scale(0));
