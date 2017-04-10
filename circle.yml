@@ -4,7 +4,7 @@ machine:
   node:
     version: 7.8.0
   environment:
-    TARGET: $(test "${CIRCLE_BRANCH}" == "master" && echo "" || echo "${CIRCLE_PROJECT_REPONAME}/${CIRCLE_BRANCH}")
+    TARGET: $(test "${CIRCLE_BRANCH}" == "master" && echo "" || echo ${CIRCLE_PROJECT_REPONAME}/${CIRCLE_BRANCH})
 
 general:
   branches:
@@ -38,5 +38,5 @@ deployment:
     commands:
       - au build:
           pwd: styleguide
-      - au publish --commit ${CIRCLE_SHA1} --repo ${CIRCLE_PROJECT_REPONAME}/${CIRCLE_BRANCH} --target ${TARGET}:
+      - au publish --commit ${CIRCLE_SHA1} --repo "${CIRCLE_PROJECT_REPONAME}/${CIRCLE_BRANCH}" --target "${TARGET}":
           pwd: styleguide
