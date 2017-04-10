@@ -19,6 +19,7 @@ dependencies:
   override:
     - npm install -g gulp-cli aurelia-cli
     - npm install
+    - cd styleguide && npm install && npm link ..
 
 compile:
   override:
@@ -32,12 +33,8 @@ deployment:
   master:
     branch: /.*/
     commands:
-      - cd styleguide; \
-        npm install && npm link ../; \
-        ls -la scripts && ls -la src/app; \
-        au build;\
-        ls -la scripts;\
-        au publish --commit "${CIRCLE_SHA1}" --repo "${CIRCLE_PROJECT_REPONAME}/${CIRCLE_BRANCH}" --target "${TARGET}";
+      - au build
+      - au publish --commit "${CIRCLE_SHA1}" --repo "${CIRCLE_PROJECT_REPONAME}/${CIRCLE_BRANCH}" --target "${TARGET}";
 
 
 
