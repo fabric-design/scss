@@ -20,7 +20,7 @@ dependencies:
     - npm install -g gulp-cli aurelia-cli
     - npm install
     - npm install && npm link ../
-          pwd: styleguide
+        pwd: styleguide
 
 compile:
   override:
