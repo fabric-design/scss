@@ -13,7 +13,7 @@ general:
 
 checkout:
   post:
-    - git clone https://${STYLEGUIDE_TOKEN}@github.com/wholesale-design-system/styleguide.git -b travis
+    - git clone git@github.com:wholesale-design-system/styleguide.git -b travis
 
 dependencies:
   override:
