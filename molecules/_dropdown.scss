@@ -3,16 +3,16 @@ $dropdown-shadow: map-get($elevation-shadows, raised) !default;
 $dropdown-arrow-shadow-color: rgba(0, 0, 0, .16) !default; // $elevation2 color 1
 $dropdown-font-color: $base-font-color !default;
 $dropdown-font-family: $base-font-family !default;
+$dropdown-color-active: $heaven !default;
 $dropdown-separator-color: $earl-gray !default;
 $dropdown-background-color: $white !default;
 $dropdown-background-color-accent: $earl-gray !default;
-$dropdown-background-color-active: $arctica !default;
 
 @mixin dropdown-container($background-color, $shadow) {
   position: absolute;
   top: 100%;
   right: 0;
-  width: rem(200px);
+  width: rem(180px);
   margin-top: rem(20px);
   height: 0;
   display: none;
@@ -35,21 +35,24 @@ $dropdown-background-color-active: $arctica !default;
   top: 0;
   left: 100%;
   margin: 0;
-  padding: rem(5px 0);
+  padding: $space-m;
   width: 100%;
+  list-style: none;
+  box-sizing: border-box;
 }
 
-@mixin dropdown-item($font-color, $font-family, $accent-bg-color, $active-bg-color) {
+@mixin dropdown-item($font-color, $font-family, $active-color, $accent-bg-color) {
   position: relative;
   font-size: rem(14px);
   color: $font-color;
   font-family: $font-family;
-  line-height: 2;
+  line-height: $space-xl;
+  height: $space-xl;
+  margin: 0 (-$space-m); // Remove dropdown spacing for border and bg color
+  padding: 0 ($space-m + $space-m) 0 $space-m; // container spacing plus spacing for icons
   cursor: pointer;
-  padding: rem(8px 30px 8px 13px);
   box-sizing: border-box;
   white-space: nowrap;
-  width: 100%;
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -62,19 +65,28 @@ $dropdown-background-color-active: $arctica !default;
     color: lighten($font-color, 30%);
   }
   &.is-active {
-    background-color: $active-bg-color;
+    font-weight: bold;
+    color: $active-color;
+    &:after {
+      content: map-get($icons, ok);
+      @include icon-base();
+      font-size: rem(16px);
+      position: absolute;
+      right: 1rem;
+    }
   }
 }
 
 @mixin dropdown-item-separator($border-color) {
   height: 0;
+  margin: 0 (-$space-m); // Span dropdown spacing for border and bg color
   border-bottom: 1px solid $border-color;
   list-style: none;
 }
 
 @mixin dropdown-submit($border-color) {
-  padding: $space-m $space-m $space-xs;
-  border-top: 1px solid $border-color;
+  margin: 0 (-$space-m); // Span dropdown spacing for border and bg color
+  padding: $space-s $space-m $space-s $space-m;
   text-align: right;
 }
 
@@ -127,17 +139,32 @@ $dropdown-background-color-active: $arctica !default;
       }
     }
     .dropdown-item {
-      list-style: none;
       .text {
         @include dropdown-item(
                 $dropdown-font-color,
                 $dropdown-font-family,
-                $dropdown-background-color-accent,
-                $dropdown-background-color-active
+                $dropdown-color-active,
+                $dropdown-background-color-accent
         );
         .icon {
-          margin-right: rem(5px);
+          width: $space-m;
+          margin-right: $space-s;
         }
+      }
+      &.has-children > .text:after {
+        content: map-get($icons, right);
+        @include icon-base();
+        font-size: rem(16px);
+        position: absolute;
+        right: 1rem;
+      }
+    }
+    .dropdown-child-menu {
+      .dropdown-item:not(.dropdown-parent-item) > .text {
+        padding-left: $space-m + $space-m + $space-s; // Container + Icon + Icon space
+      }
+      .dropdown-parent-item + .dropdown-item-separator {
+        margin: $space-xs (-$space-m);
       }
     }
     .dropdown-item-separator {
@@ -147,10 +174,16 @@ $dropdown-background-color-active: $arctica !default;
       @include dropdown-submit($dropdown-separator-color);
     }
     .dropdown-input {
-      padding: rem(3px 8px 8px);
+      padding-bottom: $space-s;
       input[type=text] {
         width: 100%;
-        height: rem(28px); // Line height of dropdown-item
+        height: $space-xl; // Line height of dropdown-item
+      }
+      ~ .dropdown-item > .text {
+        padding-left: $space-m + $space-s;
+      }
+      + .dropdown-submit {
+        padding-top: 0; // Only use spacing of input
       }
     }
     .dropdown-arrow {
