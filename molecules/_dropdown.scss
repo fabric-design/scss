@@ -1,4 +1,5 @@
 $export-dropdown-css: true !default;
+$dropdown-width: rem(180px) !default;
 $dropdown-shadow: map-get($elevation-shadows, raised) !default;
 $dropdown-arrow-shadow-color: rgba(0, 0, 0, .16) !default; // $elevation2 color 1
 $dropdown-font-color: $base-font-color !default;
@@ -8,11 +9,11 @@ $dropdown-separator-color: $earl-gray !default;
 $dropdown-background-color: $white !default;
 $dropdown-background-color-accent: $earl-gray !default;
 
-@mixin dropdown-container($background-color, $shadow) {
+@mixin dropdown-container($width, $background-color, $shadow) {
   position: absolute;
   top: 100%;
   right: 0;
-  width: rem(180px);
+  width: $width;
   margin-top: rem(20px);
   height: 0;
   display: none;
@@ -108,7 +109,7 @@ $dropdown-background-color-accent: $earl-gray !default;
     position: relative;
     display: block;
     .dropdown-container {
-      @include dropdown-container($dropdown-background-color, $dropdown-shadow);
+      @include dropdown-container($dropdown-width, $dropdown-background-color, $dropdown-shadow);
       &.right + .dropdown-arrow {
         right: rem(20px);
         left: auto;
@@ -152,9 +153,8 @@ $dropdown-background-color-accent: $earl-gray !default;
         }
       }
       &.has-children > .text:after {
-        content: map-get($icons, right);
-        @include icon-base();
-        font-size: rem(16px);
+        @include icon(right);
+        line-height: inherit;
         position: absolute;
         right: 1rem;
       }

@@ -59,6 +59,10 @@ $icons: (
     }
 }
 
+/**
+ * Includes basic css rules for icons like font family, vertical alignment and antialiasing
+ * @param $size Size of icon
+ */
 @mixin icon-base() {
     font-family: $icon-font-name;
     font-style: normal;
@@ -74,6 +78,30 @@ $icons: (
     -moz-osx-font-smoothing: grayscale;
 }
 
+/**
+ * Includes css rules to define the icon width and height
+ * @param $size Size of icon
+ */
+@mixin icon-size($size) {
+    width: $size;
+    height: $size;
+    line-height: $size;
+    font-size: $size;
+}
+
+/**
+ * Includes all icon relevant css rules like font family, size and color
+ * @param $name Icon name from icon map
+ * @param $size Size of icon
+ * @param $color Color of icon
+ */
+@mixin icon($name, $size: $base-font-size, $color: inherit) {
+    @include icon-base();
+    @include icon-size($size);
+    content: map-get($icons, $name);
+    color: $color;
+}
+
 @if $include-icon-css {
     .icon, [class^="icon-"], [class*=" icon-"] {
         line-height: 1rem;
@@ -84,28 +112,16 @@ $icons: (
         @include icon-base;
     }
     .icon16 {
-        width: rem(16px);
-        height: rem(16px);
-        line-height: rem(16px);
-        font-size: rem(16px);
+        @include icon-size(16);
     }
     .icon24 {
-        width: rem(24px);
-        height: rem(24px);
-        line-height: rem(24px);
-        font-size: rem(24px);
+        @include icon-size(24);
     }
     .icon32 {
-        width: rem(32px);
-        height: rem(32px);
-        line-height: rem(32px);
-        font-size: rem(32px);
+        @include icon-size(32);
     }
     .icon48 {
-        width: rem(48px);
-        height: rem(48px);
-        line-height: rem(48px);
-        font-size: rem(48px);
+        @include icon-size(48);
     }
     // Generate icon classes
     @each $name, $code in $icons {
