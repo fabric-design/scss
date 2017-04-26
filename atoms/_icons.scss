@@ -112,16 +112,16 @@ $icons: (
         @include icon-base;
     }
     .icon16 {
-        @include icon-size(16);
+        @include icon-size(1rem);
     }
     .icon24 {
-        @include icon-size(24);
+        @include icon-size(1.5rem);
     }
     .icon32 {
-        @include icon-size(32);
+        @include icon-size(2rem);
     }
     .icon48 {
-        @include icon-size(48);
+        @include icon-size(3rem);
     }
     // Generate icon classes
     @each $name, $code in $icons {
