@@ -103,6 +103,7 @@ table {
   }
   tbody {
     color: $asphalt;
+    font-size: rem(15px);
     tr:nth-of-type(even) td {
       background-color: $table-row-odd;
       border-bottom: 1px solid $table-row-border-color;
