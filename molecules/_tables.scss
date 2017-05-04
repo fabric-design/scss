@@ -20,7 +20,7 @@ $table-row-border-color: darken($catkin, 5%);
     position: absolute;
     cursor: pointer;
     &.icon-desc {
-      top: rem(16px);
+      top: $base-font-size;
     }
     &.icon-asc {
       top: 0;
