@@ -54,7 +54,7 @@ table {
     tr {
       th {
         padding: 0 $space-xl 0 $space-m;
-        line-height: $space-xl - .125rem; // Somehow the line height doesn't match the target 2rem height
+        line-height: $space-m;
         white-space: nowrap;
         position: relative;
         text-align: left;
@@ -64,7 +64,11 @@ table {
           font-weight: normal;
           text-transform: uppercase;
           display: inline-block;
+          vertical-align: top;
           margin: 0;
+          width: 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
         .sort {
           display: inline-block;
