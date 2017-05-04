@@ -66,7 +66,7 @@ table {
           display: inline-block;
           vertical-align: top;
           margin: 0;
-          width: 100%;
+          max-width: 100%;
           overflow: hidden;
           text-overflow: ellipsis;
         }
