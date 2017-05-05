@@ -1,0 +1,39 @@
+$include-checkbox-css: true !default;
+$checkbox-size: $space-m !default;
+$checkbox-icon-color: $primary-color !default;
+$checkbox-border-color: $french-gray !default;
+$checkbox-border-radius: rem(3px) !default;
+$checkbox-background-color: $white !default;
+$checkbox-disabled-icon-color: $mischka !default;
+$checkbox-disabled-border-color: $miroschka !default;
+
+/**
+ * Includes css for a checkbox without label
+ * @param $size The width and height of the checkbox
+ * @param $icon-color Color of check mark icon
+ * @param $disabled-icon-color Color of check mark icon when checkbox is disabled
+ */
+@mixin checkbox-toggle($size, $icon-color, $disabled-icon-color) {
+  &:after {
+    @include icon(checkmark-checkbox, $size, $icon-color);
+    margin: ($size / -4) 0 0 ($size / -4);
+  }
+  &:disabled:after,
+  &.is-disabled:after {
+    color: $disabled-icon-color;
+  }
+}
+
+@if $include-checkbox-css {
+  // Simple checkbox styles
+  input[type=checkbox]:not(.mod-switch) {
+    @include toggle-base(
+        $checkbox-size,
+        $checkbox-background-color,
+        $checkbox-border-color,
+        $checkbox-border-radius,
+        $checkbox-disabled-border-color
+    );
+    @include checkbox-toggle($checkbox-size, $checkbox-icon-color, $checkbox-disabled-icon-color);
+  }
+}

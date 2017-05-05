@@ -105,11 +105,6 @@ $input-disabled-background-color: $catkin !default;
     appearance: none;
   }
 
-  input[type="checkbox"],
-  input[type="radio"] {
-    margin-right: $space-s / 2;
-  }
-
   input[type="file"] {
     padding-bottom: $space-s;
     width: 100%;
