@@ -7,6 +7,10 @@ machine:
     TARGET: $(test "${CIRCLE_BRANCH}" == "master" && echo "" || echo ${CIRCLE_PROJECT_REPONAME}/${CIRCLE_BRANCH})
 
 general:
+  artifacts:
+      - "styleguide/index.html"
+      - "styleguide/scripts"
+      - "styleguide/src/style/assets"
   branches:
     ignore:
       - gh-pages
