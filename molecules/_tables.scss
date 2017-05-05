@@ -20,7 +20,7 @@ $table-row-border-color: darken($catkin, 5%);
     position: absolute;
     cursor: pointer;
     &.icon-desc {
-      top: rem(13px);
+      top: $base-font-size;
     }
     &.icon-asc {
       top: 0;
@@ -51,37 +51,41 @@ table {
     border-bottom: 1px solid $table-header-border-color;
     background-color: $table-header-background-color;
     color: $table-header-color;
-    th {
-      text-align: left;
-    }
-    tr:not(:last-child) th {
-      border-bottom: 1px solid $table-header-row-border-bottom-color;
-    }
-    tr:not(:first-child) th {
-      border-top: 1px solid $table-header-row-border-top-color;
-      background-color: darken($table-header-background-color, 3%);
-    }
-    tr:last-child th {
-      border-bottom: 1px solid $table-header-border-color;
-    }
-    tr:first-child {
+    tr {
       th {
         padding: 0 $space-xl 0 $space-m;
         line-height: $space-xl;
         white-space: nowrap;
         position: relative;
+        text-align: left;
+        border-bottom: 1px solid $table-header-border-color;
         label {
           font-size: rem(13px);
           font-weight: normal;
           text-transform: uppercase;
           display: inline-block;
+          vertical-align: top;
           margin: 0;
+          max-width: 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
         .sort {
+          display: inline-block;
+          vertical-align: top;
+        }
+        .filter {
           position: absolute;
-          right: rem(15px);
-          top: rem(3px);
-          z-index: 1;
+          right: $space-xs;
+          top: rem(-2px);
+          .dropdown-trigger,
+          .flatpickr-input {
+            color: inherit;
+          }
+          &.is-active .dropdown-trigger,
+          &.is-active .flatpickr-input {
+            color: $primary-color;
+          }
         }
       }
       th:not(:last-child) {
@@ -102,6 +106,7 @@ table {
   }
   tbody {
     color: $asphalt;
+    font-size: rem(15px);
     tr:nth-of-type(even) td {
       background-color: $table-row-odd;
       border-bottom: 1px solid $table-row-border-color;
