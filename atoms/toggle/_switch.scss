@@ -1,0 +1,100 @@
+$include-switch-css: true !default;
+$switch-track-height: rem(12px);
+$switch-track-width: rem(30px);
+$switch-track-color: $miroschka !default;
+$switch-track-color-checked: $madang !default;
+$switch-track-color-disabled: $earl-gray !default;
+$switch-track-color-disabled-checked: $snowy-mint !default;
+$switch-knob-size: rem(16px);
+$switch-knob-shadow: $elevation1;
+$switch-knob-color: $mischka !default;
+$switch-knob-color-checked: $forest-green !default;
+$switch-knob-color-disabled: $mischka !default;
+$switch-knob-color-disabled-checked: $madang !default;
+
+/**
+ * Includes css for a basic switch toggle without specifying the colors
+ * @param $track-width Width of track element
+ * @param $track-height Height of track element
+ * @param $knob-size The width and height of the knob element
+ * @param $knob-shadow The box shadow of the knob element
+ */
+@mixin switch-toggle($track-width, $track-height, $knob-size, $knob-shadow) {
+  // We made the real input 1/2 of switch size and align it vertical and horizontal centered to don't overflow behind the layers
+  // This causes the :before and :after containers to have a wrong positioning which will be 1/4 from top and left
+  // We calculate here the negative margin to adjust the position to the correct one
+  $top-alignment: $track-height / 4;
+  $left-alignment: $track-width / 4;
+  // Additionally to the general top alignment of the :after container we have to adjust the height to position the
+  // knob centered on the track.
+  $knob-top-alignment: $top-alignment + (($knob-size - $track-height) / 2);
+
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  outline: none;
+  width: $track-width / 2; // Make real control smaller to don't overflow behind overlays
+  height: $track-height / 2;
+  margin-left: $left-alignment; // Align real control centered behind layers above
+  cursor: pointer;
+  &:before {
+    content: '';
+    display: block;
+    width: $track-width;
+    height: $track-height;
+    margin: (-$top-alignment) 0 0 (-$left-alignment);
+    border-radius: $track-height;
+    box-sizing: border-box;
+    transition: background .1s linear;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    top: -$knob-top-alignment;
+    left: -$left-alignment;
+    width: $knob-size;
+    height: $knob-size;
+    box-shadow: $knob-shadow;
+    border-radius: 50%;
+    transition: transform .1s linear, background .1s linear;
+  }
+}
+
+/**
+ * Includes colors of track and knob for a switch toggle
+ * @param $track-color The color of the track behind the knob
+ * @param $knob-color The color of the knob element
+ */
+@mixin switch-color($track-color, $knob-color) {
+  &:before {
+    background: $track-color;
+  }
+  &:after {
+    background: $knob-color;
+  }
+}
+
+@if $include-switch-css {
+  input[type=checkbox].mod-switch {
+    @include switch-toggle($switch-track-width, $switch-track-height, $switch-knob-size, $switch-knob-shadow);
+    @include switch-color($switch-track-color, $switch-knob-color);
+    &:checked,
+    &.is-checked {
+      @include switch-color($switch-track-color-checked, $switch-knob-color-checked);
+      &:after {
+        transform: translate3d($switch-track-width - $switch-knob-size, 0, 0);
+      }
+    }
+    &:disabled,
+    &.is-disabled {
+      @include switch-color($switch-track-color-disabled, $switch-knob-color-disabled);
+      &:after {
+        box-shadow: none;
+      }
+      &:checked,
+      &.is-checked {
+        @include switch-color($switch-track-color-disabled-checked, $switch-knob-color-disabled-checked);
+      }
+    }
+  }
+}

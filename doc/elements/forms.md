@@ -52,39 +52,50 @@ To mark an input as **required** add the required class to the label
 <input type="text" value="yes"/>
 ```
 
-## Switches
+## Toggles
 We support common checkboxes, radio buttons and on/off switches
 
-**Checkboxes** constis of an label and an input element. Don't forget to add the class .label and for attribute to the label, 
-the class .checkbox and an id to the input.
+**Checkboxes** consists of an label and an input element. Important is that the label is placed directly after the input element.
+For better user experience you should add an id attribute on the input and reference on it via an from attribute on the label.
 
-<input type="checkbox" class="checkbox" id="vote" name="vote" checked />
-<label class="label" for="vote">Is wholesale sexy?</label>
+<input type="checkbox" id="vote" name="vote" checked />
+<label for="vote">Is wholesale sexy?</label>
 ```html
-<input type="checkbox" class="checkbox" id="vote" name="vote" checked />
-<label class="label" for="vote">Is wholesale sexy?</label>
+<input type="checkbox" id="vote" name="vote" checked />
+<label for="vote">Is wholesale sexy?</label>
 ```
 
-**Radio buttons** behave the same like checkboxes. You have to add the class *.radio* and an *id* to the input.
-The label requires the class *.label* and the for attribute to forward the clicks to the input.
+**Radio buttons**  markup looks similar to checkboxes except that you specify the type as 'radio' and that you add a name to create a radio group. 
 
-<input type="radio" class="radio" name="action" value="rockz" id="rockz" checked/>
-<label class="label" for="rockz">Wholesale rockz</label>
-<input type="radio" class="radio" name="action" value="sux" id="sux"/>
-<label class="label" for="sux">Wholesale sux</label>
+<input type="radio" name="action" value="rockz" id="rockz" checked/>
+<label for="rockz">Wholesale rockz</label>
+<input type="radio" name="action" value="sux" id="sux"/>
+<label for="sux">Wholesale sux</label>
 ```html
-<input type="radio" class="radio" name="action" value="nothing" id="nothing" checked/>
-<label class="label" for="nothing">Do nothing</label>
-<input type="radio" class="radio" name="action" value="something" id="something"/>
-<label class="label" for="something">Do something</label>
+<input type="radio" name="action" value="nothing" id="nothing" checked/>
+<label for="nothing">Do nothing</label>
+<input type="radio" name="action" value="something" id="something"/>
+<label for="something">Do something</label>
 ```
 
-**Switches** requires the input to be from type *checkbox* and to have the class *.checkbox-switch*.
-The label requires the class *.label*. For better user experience you should link the label and the input using id and for attributes.
+**Switches** requires the input to be from type *checkbox* and to have the class *.mod-switch*.
 
-<input type="checkbox" class="checkbox-switch" id="switch"/>
-<label class="label" for="switch">Off/On</label>
+<input type="checkbox" class="mod-switch" id="switch"/>
+<label for="switch">Off/On</label>
 ```html
-<input type="checkbox" class="checkbox-switch" id="switch"/>
-<label class="label" for="switch">Off/On</label>
+<input type="checkbox" class="mod-switch" id="switch"/>
+<label for="switch">Off/On</label>
+```
+
+**Reverse order** of input and label, so the label is on the right side of the toggle, can be done by wrapping the toggle and label with the class *.mod-toggle-reverse*.
+
+<div class="mod-toggle-reverse">
+	<input type="checkbox" class="mod-switch" id="switch2"/>
+	<label for="switch2">Off/On</label>
+</div>
+```html
+<div class="mod-toggle-reverse">
+	<input type="checkbox" class="mod-switch" id="switch2"/>
+	<label for="switch2">Off/On</label>
+</div>
 ```
