@@ -1,15 +1,36 @@
+$include-badge-css: true !default;
+$badge-color: $heaven !default;
+$badge-background-color: $arctica !default;
 $badge-font-size: $font-size-small !default;
 
-@mixin badge($color: $heaven, $bgcolor: $arctica ) {
-  background-color: $bgcolor;
-  border-radius: 50%;
+/**
+ * Includes css for a badge without icon
+ * $font-size Size value for font size
+ * $color Color value for the font
+ * $background-color Color for background
+ */
+@mixin badge($font-size, $color, $background-color) {
+  background-color: $background-color;
+  // Percent refer to width and height of element which leads to an ellipse in most cases (width > height)
+  // Therefore we use fixed length values which will leads the browser to use a square for curve calculation
+  border-radius: 9999px;
   color: $color;
   display: inline-block;
-  font-size: $badge-font-size;
+  font-size: $font-size;
   line-height: 1;
   padding: $space-xxs $space-s;
+  margin-right: $space-xxs;
 }
 
-.wsds-filter-badge {
-  @include badge;
+@if $include-badge-css {
+  .badge {
+    @include badge($badge-font-size, $badge-color, $badge-background-color);
+    .icon,
+    [class^="icon-"],
+    [class*=" icon"] {
+      // Fix some spacings and sizes
+      margin: rem(-1px -4px 0 0);
+      cursor: pointer;
+    }
+  }
 }
