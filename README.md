@@ -1,5 +1,9 @@
 # Wholesale-Design-System
 
+[![CircleCI](https://circleci.com/gh/wholesale-design-system/scss.svg?style=svg)](https://circleci.com/gh/wholesale-design-system/scss)
+[![Styleguide](https://img.shields.io/github/issues/wholesale-design-system/scss.svg)](https://github.com/wholesale-design-system/components/issues)
+[![GitHub contributors](https://img.shields.io/github/contributors/wholesale-design-system/scss.svg)]()
+
 ## Motivation
 
 At Zalando Wholesale we are developing a lot of web applications from small to mid-complex. As we are developing them in different cross-functional teams we wanted to guarantee the same look and feel in all of our applications independent from people and their development background. For guaranteeing same UI across applications and development teams we are developing a component-based Styleguide which provides a SCSS library and (P)React based components which can be all used independently.
