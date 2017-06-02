@@ -107,6 +107,7 @@ $button-shadows: (
       &:disabled,
       &.is-disabled {
         color: $asphalt;
+        cursor: not-allowed;
       }
     }
     &.mod-flat {

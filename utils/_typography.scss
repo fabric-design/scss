@@ -42,6 +42,11 @@ a {
   &:focus {
     outline: none;
   }
+
+  &.is-disabled {
+    color: $sail;
+    cursor: not-allowed;
+  }
 }
 
 hr {

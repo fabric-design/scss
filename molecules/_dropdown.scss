@@ -127,6 +127,9 @@ $dropdown-background-color-accent: $earl-gray !default;
     }
     .dropdown-trigger {
       cursor: pointer;
+      &.is-disabled {
+        cursor: not-allowed;
+      }
     }
     .dropdown-menu {
       @include dropdown();
