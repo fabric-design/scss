@@ -1,7 +1,7 @@
 $base-spacing: $space-m; // 16px
 
-$primary-color: $heaven;
-$secondary-color: $earl-gray;
+$primary-color: $heaven !default;
+$secondary-color: $earl-gray !default;
 
 $base-font-family: 'acumin-pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $heading-font-family: 'acumin-pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
