@@ -2,6 +2,7 @@
 
 ## Space Fundamentals
 It's based on [Eight Shapes 'Space In Design System'](https://medium.com/eightshapes-llc/space-in-design-systems-188bcbae0d62)
+![Fabric Spacings](https://cloud.githubusercontent.com/assets/1137569/24362344/c41ecc34-130c-11e7-9937-e1fcc5722900.png "Fabric Spacings")
 
 ```scss
 $space-xxs: 0.25rem; // 4px
@@ -35,7 +36,7 @@ $space-xxl: 4rem; // 64px
 ```scss
 @include inset-spacing-stretch("xs");
 @include inset-spacing-stretch("s");
-@include inset-spacing-stretch("m");
+@include inset-spacing-stre tch("m");
 @include inset-spacing-stretch("l");
 ```
 
