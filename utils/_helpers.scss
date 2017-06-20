@@ -68,41 +68,26 @@ $debug: false !default;
 @mixin user-select($value: none) {
   @include prefixer(user-select, $value, webkit moz ms spec);
 }
-@mixin media($query, $total-columns: $grid-columns) {
-  @if length($query) == 1 {
-    @media screen and ($default-feature: nth($query, 1)) {
-      $default-grid-columns: $grid-columns;
-      $grid-columns: $total-columns !global;
+
+/**
+ * Wraps content with a media query for specific break point
+ * @param $breakpoint One value of map $breakpoints
+ */
+@mixin media($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media #{map-get($breakpoints, $breakpoint)} {
       @content;
-      $grid-columns: $default-grid-columns !global;
-    }
-  } @else {
-    $loop-to: length($query);
-    $media-query: "screen and ";
-    $default-grid-columns: $grid-columns;
-    $grid-columns: $total-columns !global;
-
-    @if is-not(is-even(length($query))) {
-      $grid-columns: nth($query, $loop-to) !global;
-      $loop-to: $loop-to - 1;
-    }
-
-    $i: 1;
-    @while $i <= $loop-to {
-      $media-query: $media-query + "(" + nth($query, $i) + ": " + nth($query, $i + 1) + ") ";
-
-      @if ($i + 1) < $loop-to {
-        $media-query: $media-query + "and ";
-      }
-
-      $i: $i + 2;
-    }
-    @media #{$media-query} {
-      @content;
-      $grid-columns: $default-grid-columns !global;
     }
   }
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
 }
+
 @mixin clearfix {
   &::after {
     clear: both;
@@ -160,7 +145,7 @@ $debug: false !default;
 @mixin transform-style($style: flat) {
   @include prefixer(transform-style, $style, webkit moz ms o spec);
 }
-@mixin outer-container($local-max-width: $max-width) {
+@mixin outer-container($local-max-width: 1200px) {
   @include clearfix;
   max-width: $local-max-width;
   margin: {

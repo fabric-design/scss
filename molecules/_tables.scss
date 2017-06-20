@@ -1,0 +1,129 @@
+$table-border-color: $earl-gray;
+$table-header-background-color: $catkin;
+$table-header-color: $asphalt;
+$table-header-border-color: $mischka;
+$table-header-row-border-bottom-color: $athens-gray;
+$table-header-row-border-top-color: $catkin;
+$table-body-color: $shark;
+$table-row-even: $white;
+$table-row-odd: $catkin;
+$table-row-hover-color: $sail;
+$table-row-border-color: darken($catkin, 5%);
+
+.sort {
+  position: relative;
+  width: rem(10px);
+  .icon-asc,
+  .icon-desc {
+    vertical-align: middle;
+    opacity: .4;
+    position: absolute;
+    cursor: pointer;
+    &.icon-desc {
+      top: $base-font-size;
+    }
+    &.icon-asc {
+      top: 0;
+    }
+    &:hover {
+      opacity: 1;
+    }
+  }
+  &.asc .icon-asc {
+    opacity: 1;
+  }
+  &.desc .icon-desc {
+    opacity: 1;
+  }
+}
+
+.table-actions {
+  margin: rem(20px 0 11px);
+}
+
+table {
+  width: 100%;
+  border: 1px solid $table-border-color;
+  border-radius: 2px;
+  border-collapse: collapse;
+  line-height: $base-font-size;
+  thead {
+    border-bottom: 1px solid $table-header-border-color;
+    background-color: $table-header-background-color;
+    color: $table-header-color;
+    tr {
+      th {
+        padding: 0 $space-xl 0 $space-m;
+        line-height: $space-xl;
+        white-space: nowrap;
+        position: relative;
+        text-align: left;
+        border-bottom: 1px solid $table-header-border-color;
+        label {
+          font-size: rem(13px);
+          font-weight: normal;
+          text-transform: uppercase;
+          display: inline-block;
+          vertical-align: top;
+          margin: 0;
+          max-width: 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .sort {
+          display: inline-block;
+          vertical-align: top;
+        }
+        .filter {
+          position: absolute;
+          right: $space-xs;
+          top: rem(-2px);
+          .dropdown-trigger,
+          .flatpickr-input {
+            color: inherit;
+          }
+          &.is-active .dropdown-trigger,
+          &.is-active .flatpickr-input {
+            color: $primary-color;
+          }
+        }
+      }
+      th:not(:last-child) {
+        border-right: 1px solid $table-row-border-color;
+      }
+      th:first-child {
+        border-top-left-radius: 2px;
+      }
+      th:last-child {
+        border-top-right-radius: 2px;
+      }
+    }
+    tr:not(:first-child) {
+      th {
+        padding: rem(5px 4px);
+      }
+    }
+  }
+  tbody {
+    color: $asphalt;
+    font-size: rem(15px);
+    tr:nth-of-type(even) td {
+      background-color: $table-row-odd;
+      border-bottom: 1px solid $table-row-border-color;
+    }
+    tr:nth-of-type(odd) td,
+    tr.pagination-row td {
+      background-color: $table-row-even;
+    }
+    tr:nth-last-child(2) td {
+      border-bottom: 1px solid $table-row-border-color;
+    }
+    td {
+      padding: 0 $space-xl 0 $space-m;
+      line-height: $space-xl;
+    }
+    tr.pagination-row td {
+      @include inset-spacing-stretch(l);
+    }
+  }
+}

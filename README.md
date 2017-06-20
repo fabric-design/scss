@@ -1,31 +1,57 @@
 # Wholesale-Design-System
 
-The Wholesale-Design-System UI toolkit is a highly-modular design system for rapid web page development. It contains different materials that can be assembled into more complex page layouts.
+[![CircleCI](https://circleci.com/gh/wholesale-design-system/scss.svg?style=svg)](https://circleci.com/gh/wholesale-design-system/scss)
+[![Styleguide](https://img.shields.io/github/issues/wholesale-design-system/scss.svg)](https://github.com/wholesale-design-system/components/issues)
+[![GitHub contributors](https://img.shields.io/github/contributors/wholesale-design-system/scss.svg)]()
 
-### Modifying
+## Motivation
 
-**Change the design**
+At Zalando Wholesale we are developing a lot of web applications from small to mid-complex. As we are developing them in different cross-functional teams we wanted to guarantee the same look and feel in all of our applications independent from people and their development background. For guaranteeing same UI across applications and development teams we are developing a component-based Styleguide which provides a SCSS library and (P)React based components which can be all used independently.
 
-The design is based on ([bourbon.io](http://bourbon.io)):
+This repository contains our scss styles. 
 
-* Bourbon 4.2.x (Mixins)
-* Neat 1.7.x (Grid)
-* Refills (Components)
-* Bitters (Basic Variables)
+### Core Concepts
 
-To change the design, we change the tokens or the components in `./refills/`.
+#### Folder structure
 
-Add the styles as a new FANCY.scss file to `./custom/` and reference it in `./custom/_custom.scss`.
+Our SCSS styles are organized based on the [atomic design pattern](http://bradfrost.com/blog/post/atomic-web-design/) which allows us a much clearer description and separation of our styles. We also believe that for the development of components atomic design gives a much clearer separation.
+
+Therefore we have a clear folder structure:
+
+- `Atoms` - styles to the basic building blocks of our design. Basically all HTML Tags such as form, label, button, icons.
+- `Molecules` - Molecules are groups of atoms combined together to create smallest compunds of our Design. Based on molecules further complex compositions can be created. Molecules can be dropdowns , tooltips or pagination elements.
+- `Organisms` - Organisms are combined from a group of molecules and form a complex, still distinct part of an interface, e.g. a navigation header with a logo, links and a search field. 
+- `doc` - General documentation of our styleguide (in Markdown). They are later consumed by the [styleguide](https://github.com/wholesale-design-system/styleguide) and displayed in the associated styleguide web application.
+- `utils`- utility functions for our SCSS library like variables, grid settings or other helper mixins.
+
+#### Linting
+
+Different people are working on our SCSS library and to ensure a common syntax and coding style we are using the PostCSS library [stylelint](https://github.com/stylelint/stylelint) which lints our SCSS code against a set of rules. Currently, we are using an existing [OSS ruleset](https://github.com/bjankord/stylelint-config-sass-guidelines). 
+
+You can lint your SCSS code 
+
+`gulp lint-scss`
+
+It runs styleint with the SCSS ruleset and breaks for any given linting error.
 
 ### Use the design/framework
 
-install the package
+You can install the package via
 
 `npm install git+ssh://github.bus.zalan.do/WholesaleDesignSystem/Styleguide-SCSS.git --save`
 
-**ATTENTION:**
-Git sometime removes the 'git+' prefix from the URL. If there are problems, check your package.json.
-
-use it in your styles
+If you want to use the whole SCSS library you can just import the index SCSS file 
 
 `@import "node_modules/wholesale-styleguide-scss/index"`
+
+### Contributing
+
+Our Zalando Wholesale Styleguide is in active development and we welcome any contributions and feedback. See our [Contributing.md](Contributing.md) for detailed information on how to contribute.
+
+### LICENSE
+
+The MIT License (MIT)
+
+Copyright (c) 2017 Zalando SE
+
+[LICENSE](LICENSE)

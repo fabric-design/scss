@@ -1,0 +1,95 @@
+$include-toggle-base-css: true !default;
+$toggle-font-size: rem(13px);
+$toggle-label-color: $bombay !default;
+$toggle-disabled-label-color: $ghost !default;
+
+/**
+ * Create a toggle base where the real control is 1/2 smaller to don't overflow behind the layers on top of it
+ * @param $size The width and height of the toggle
+ * @param $background-color The color for the toggle background
+ * @param $border-color Color of toggle border
+ * @param $border-radius Radius of toggle
+ * @param $disabled-border-color Color of toggle border when the toggle is disabled
+ */
+@mixin toggle-base($size, $background-color, $border-color, $border-radius, $disabled-border-color) {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  outline: none;
+  width: $size / 2; // Make real control smaller to don't overflow behind overlays
+  height: $size / 2;
+  margin-left: $size / 4; // Adjust negative margin of overlays
+  cursor: pointer;
+  &:before {
+    content: '';
+    display: block;
+    width: $size;
+    height: $size;
+    margin: ($size / -4) 0 0 ($size / -4);
+    background: $background-color;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    box-sizing: border-box;
+  }
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transform-origin: center;
+    transform: scale(.2);
+    transition: opacity .1s linear .05s, transform .15s linear;
+  }
+  &:checked:after,
+  &.is-checked:after {
+    opacity: 1;
+    transform: scale(1);
+    transition-delay: 0s, 0s;
+    transition-timing-function: linear, cubic-bezier(0.69, 1.95, 0.68, 1.44);
+  }
+  &:disabled:before,
+  &.is-disabled:before {
+    border-color: $disabled-border-color;
+  }
+}
+
+/**
+ * Includes css for the label beside a checkbox, radio or switch control
+ * @param $font-size Size value of label font
+ * @param $color Label font color
+ */
+@mixin toggle-label($font-size, $color) {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: $font-size;
+  font-weight: 600;
+  color: $color;
+  margin: 0 $space-xs; // Remove the space created from font white space
+}
+
+@if $include-toggle-base-css {
+  input[type=checkbox],
+  input[type=radio] {
+    & + label {
+      @include toggle-label($toggle-font-size, $toggle-label-color);
+    }
+    &:disabled,
+    &.is-disabled {
+      & + label {
+        color: $toggle-disabled-label-color;
+      }
+    }
+  }
+  .mod-toggle-reverse {
+    display: flex;
+    align-items: center;
+    input[type=checkbox],
+    input[type=radio] {
+      order: 2;
+      & + label {
+        order: 1;
+        margin: 0 $space-xs 0 0;
+      }
+    }
+  }
+}

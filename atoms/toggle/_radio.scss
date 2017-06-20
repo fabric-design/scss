@@ -1,0 +1,42 @@
+$include-radio-css: true !default;
+$radio-size: $space-m !default;
+$radio-icon-color: $primary-color !default;
+$radio-border-color: $french-gray !default;
+$radio-border-radius: rem(3px) !default;
+$radio-background-color: $white !default;
+$radio-disabled-icon-color: $mischka !default;
+$radio-disabled-border-color: $miroschka !default;
+
+/**
+ * Includes css for a radio without label
+ * @param $size The width and height of the radio
+ * @param $border-radius Radius of bubble that indicates the checked sate
+ * @param $icon-color Color of check mark icon
+ * @param $disabled-icon-color Color of check mark icon when radio is disabled
+ */
+@mixin radio-toggle($size, $border-radius, $icon-color, $disabled-icon-color) {
+  &:after {
+    content: '';
+    background-color: $icon-color;
+    width: $size / 2;
+    height: $size / 2;
+    border-radius: $border-radius;
+  }
+  &:disabled:after,
+  &.is-disabled:after {
+    background-color: $disabled-icon-color;
+  }
+}
+
+@if $include-radio-css {
+  input[type=radio] {
+    @include toggle-base(
+        $radio-size,
+        $radio-background-color,
+        $radio-border-color,
+        50%,
+        $radio-disabled-border-color
+    );
+    @include radio-toggle($radio-size, 50%, $radio-icon-color, $radio-disabled-icon-color);
+  }
+}

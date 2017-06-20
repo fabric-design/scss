@@ -1,0 +1,24 @@
+.pagination {
+  float: right;
+  font-size: rem(14px);
+  line-height: rem(14px);
+  .current {
+    color: $primary-color;
+  }
+  .separator {
+    margin: 0 2px;
+  }
+  .separator,
+  .total {
+    color: $miroschka;
+  }
+  .total {
+    margin-right: 20px;
+  }
+  a {
+    color: $asphalt;
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
