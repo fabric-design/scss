@@ -110,6 +110,9 @@ $dropdown-background-color-accent: $earl-gray !default;
     display: block;
     .dropdown-container {
       @include dropdown-container($dropdown-width, $dropdown-background-color, $dropdown-shadow);
+      &.wide {
+        width: 100%;
+      }
       &.right + .dropdown-arrow {
         right: rem(20px);
         left: auto;

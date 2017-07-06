@@ -1,7 +1,9 @@
 $export-button-css: true !default;
 
 $button-color: $white !default;
-$button-background: $primary-color !default;
+$button-color-disabled: $arctica !default;
+$button-background: $heaven !default;
+$button-background-disabled: $sail !default;
 $button-shadow-color: $miroschka !default;
 $button-border-radius: $base-border-radius !default;
 $button-padding: 0.5em 1em !default;
@@ -11,10 +13,10 @@ $button-sizes: (
   large: $font-size-heading
 ) !default;
 $button-shadows: (
-  normal: 0 2px 1px 0px,
-  hover: 0 2px 1px 0px,
-  active: inset 0 1px 3px 0,
-  disabled: 0 0 0 0
+  normal: $paper-shadow-1,
+  hover: $paper-shadow-2,
+  active: none,
+  disabled: none
 ) !default;
 
 @mixin button-base() {
@@ -33,27 +35,21 @@ $button-shadows: (
   white-space: nowrap;
   outline: none;
   @include appearance(none);
-  @include transition(all .4s);
+  @include transition(all .2s);
 }
 
-@mixin button-style($background, $foreground, $shadow) {
+@mixin button-style($background, $foreground) {
   background-color: $background;
   color: $foreground;
-  box-shadow: map-get($button-shadows, normal) $shadow;
-
+  box-shadow: map-get($button-shadows, normal);
   &:hover,
-  &:focus,
-  &:active,
-  &.is-hovered,
-  &.is-focused {
-    box-shadow: map-get($button-shadows, hover) darken($shadow, 15%);
+  &.is-hovered {
+    box-shadow: map-get($button-shadows, hover);
   }
-
   &:active,
-  &:focus,
-  &.is-focused {
+  &.is-active {
     background-color: darken($background, 2%);
-    box-shadow: map-get($button-shadows, active) darken($shadow, 25%);
+    box-shadow: map-get($button-shadows, active);
   }
 }
 
@@ -69,9 +65,10 @@ $button-shadows: (
   font-size: map-get($button-sizes, large);
 }
 
-@mixin button-disabled() {
+@mixin button-disabled($color, $background) {
   cursor: not-allowed;
-  opacity: 0.5;
+  color: $color;
+  background-color: $background;
   box-shadow: map-get($button-shadows, disabled);
 }
 
@@ -82,7 +79,7 @@ $button-shadows: (
   input[type="button"],
   input[type="submit"] {
     @include button-base;
-    @include button-style($button-background, $button-color, $button-shadow-color);
+    @include button-style($button-background, $button-color);
     @include button-medium;
     &.mod-large {
       @include button-large;
@@ -91,18 +88,16 @@ $button-shadows: (
       @include button-small;
     }
     &:disabled, &.is-disabled {
-      @include button-disabled;
+      @include button-disabled($button-color-disabled, $button-background-disabled);
     }
     &.mod-secondary {
-      @include button-style($secondary-color, $asphalt, $button-shadow-color);
+      @include button-style($secondary-color, $asphalt);
     }
-    &.is-toggled {
-      @include button-style($secondary-color, $asphalt, $button-shadow-color);
+    &.mod-toggle {
+      @include button-style($secondary-color, $asphalt);
       &:active,
-      &:focus,
-      &.is-focused {
-        color: $zalando-orange;
-        background-color: lighten($french-gray, 15%);
+      &.is-active {
+        box-shadow: $paper-shadow-4;
       }
       &:disabled,
       &.is-disabled {
@@ -111,14 +106,20 @@ $button-shadows: (
       }
     }
     &.mod-flat {
-      @include button-style(transparent, $primary-color, $button-color);
+      @include button-style(transparent, $primary-color);
+      box-shadow: none;
       &:hover,
-      &:focus,
-      &:active,
-      &.is-hovered,
-      &.is-focused {
-        background-color: darken($white, 2%);
+      &.is-hovered {
+        box-shadow: $paper-shadow-1;
+        background-color: $catkin;
       }
+      &:active,
+      &.is-active {
+        box-shadow: none;
+      }
+    }
+    &.mod-collapse {
+      padding: 0;
     }
   }
   .file-button {

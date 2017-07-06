@@ -35,10 +35,10 @@ A **secondary button** isn't as import as a primary one, so it shouldn't call as
 
 A button could also just contain an **icon**
 
-<button class="mod-secondary"><span class="icon-pencil-stroke icon16"></span></button>
+<button class="mod-secondary mod-collapse"><span class="icon-pencil-stroke icon32"></span></button>
 ```html
-<button class="mod-secondary">
-    <span class="icon-pencil-stroke icon16"></span>
+<button class="mod-secondary mod-collapse">
+    <span class="icon-pencil-stroke icon32"></span>
 </button>
 ```
 
@@ -52,18 +52,18 @@ Buttons can have different states which can be represented using classes.
 <button class="is-disabled">Disabled button</button>
 ```
 
-**Focused**
+**Active**
 
-<button class="is-focused">Focused button</button>
+<button class="is-active">Active button</button>
 ```html
-<button class="is-focused">Focused button</button>
+<button class="is-active">Active button</button>
 ```
 
 **Toggled**
 
-<button class="is-toggled">Toggled button</button>
+<button class="mod-toggle is-active">Toggled button</button>
 ```html
-<button class="is-toggled">Toggled button</button>
+<button class="mod-toggle is-active">Toggled button</button>
 ```
 
 ## Button sizes

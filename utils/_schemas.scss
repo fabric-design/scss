@@ -1,0 +1,38 @@
+
+$schemas: (
+  'berry': ($lavender-bush, $viola, $currant, $strawberry, $raspberry, $brambleberry),
+  'purple': ($blue-chalk, $light-wisteria, $purple, $dark-lavender, $royal-purple, $dark-purple),
+  'violet': ($white-pionter, $prelude, $verbena, $orchid, $violet, $plum),
+  'petrol': ($clear-day, $sinbad, $smaragd, $aruba, $cadet, $chrysocolla),
+  'water-blue': ($mountain-spring, $creek, $river, $lake, $sea, $ocean),
+  'animal-green': ($tokey, $camelion, $frog, $viper, $turtle, $crocodile),
+  'plant-green': ($lichen, $moose, $amsterdam, $shemrock, $avocado, $pine),
+  'jeans': ($porcelain, $bilboa-flower, $iris, $admiral, $indigo, $midnight),
+  'warm-blue': ($titan-white, $perfume, $burgundy-glow, $azure, $royal-blue, $persian-blue),
+  'grey-blue': ($selago, $spindle, $polo-blue, $polo-blue, $lynch, $fjord),
+  'blue': ($arctica, $sail, $heaven, $liverleaf, $deep-blue, $bahama-blue),
+  'orange': ($egg-white, $grandis, $west-side, $zalando-orange, $tiger, $rust)
+);
+$schema: 'blue' !default;
+
+/**
+ * Get a color via it's index from the color schemas
+ * @param int $number The index of the color inside the schema
+ * @param string $schema-name The name of the schema
+ */
+@function schema-color($number, $schema-name: $schema) {
+  @if not map-has-key($schemas, $schema-name) {
+    @error 'Schema #{$schema-name} does not exist';
+  }
+  @if length(map-get($schemas, $schema-name)) < $number {
+    @error 'Schema #{$schema-name} has no color #{$number}';
+  }
+  @return nth(map-get($schemas, $schema-name), $number)
+}
+
+$primary-color: schema-color(3);
+$button-color-disabled: schema-color(1) !default;
+$button-background: $primary-color !default;
+$button-background-disabled: schema-color(2) !default;
+$badge-color: $primary-color !default;
+$badge-background-color: schema-color(1) !default;

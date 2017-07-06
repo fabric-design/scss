@@ -1,4 +1,7 @@
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+*, *:before, *:after {
+  box-sizing: border-box;
+}
 
 /**
  * 1. Set default font family to sans-serif.
@@ -88,6 +91,12 @@ template {
 
 a {
   background-color: transparent;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 /**
