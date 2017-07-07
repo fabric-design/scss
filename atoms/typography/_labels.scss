@@ -1,0 +1,32 @@
+$include-label-css: true !default;;
+$label-font-size: $font-size-small !default;
+$label-color: $fjord !default;
+$label-disabled-color: $polo-blue !default;
+
+@if $include-label-css {
+  label {
+    color: $label-color;
+    font-size: $label-font-size;
+    line-height: $space-m;
+    font-weight: normal;
+    text-transform: uppercase;
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    &.mod-large {
+      line-height: $space-l;
+    }
+    &.mod-xlarge {
+      line-height: $space-xl;
+    }
+    &.mod-xxlarge {
+      line-height: $space-xxl;
+    }
+  }
+  *:disabled + label,
+  .is-disabled + label,
+  label.is-disabled {
+    color: $label-disabled-color;
+  }
+}
