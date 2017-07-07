@@ -1,7 +1,4 @@
 $include-toggle-base-css: true !default;
-$toggle-font-size: rem(13px);
-$toggle-label-color: $bombay !default;
-$toggle-disabled-label-color: $ghost !default;
 
 /**
  * Create a toggle base where the real control is 1/2 smaller to don't overflow behind the layers on top of it
@@ -53,31 +50,14 @@ $toggle-disabled-label-color: $ghost !default;
   }
 }
 
-/**
- * Includes css for the label beside a checkbox, radio or switch control
- * @param $font-size Size value of label font
- * @param $color Label font color
- */
-@mixin toggle-label($font-size, $color) {
-  display: inline-block;
-  vertical-align: middle;
-  font-size: $font-size;
-  font-weight: 600;
-  color: $color;
-  margin: 0 $space-xs; // Remove the space created from font white space
-}
 
 @if $include-toggle-base-css {
   input[type=checkbox],
   input[type=radio] {
     & + label {
-      @include toggle-label($toggle-font-size, $toggle-label-color);
-    }
-    &:disabled,
-    &.is-disabled {
-      & + label {
-        color: $toggle-disabled-label-color;
-      }
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 $space-xs; // Remove the space created from font white space
     }
   }
   .mod-toggle-reverse {

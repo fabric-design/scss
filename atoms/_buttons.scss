@@ -13,8 +13,8 @@ $button-sizes: (
   large: $font-size-heading
 ) !default;
 $button-shadows: (
-  normal: $paper-shadow-1,
-  hover: $paper-shadow-2,
+  normal: $paper-shadow-2,
+  hover: $paper-shadow-3,
   active: none,
   disabled: none
 ) !default;
@@ -97,7 +97,7 @@ $button-shadows: (
       @include button-style($secondary-color, $asphalt);
       &:active,
       &.is-active {
-        box-shadow: $paper-shadow-4;
+        box-shadow: map-get($button-shadows, hover);
       }
       &:disabled,
       &.is-disabled {
@@ -110,7 +110,7 @@ $button-shadows: (
       box-shadow: none;
       &:hover,
       &.is-hovered {
-        box-shadow: $paper-shadow-1;
+        box-shadow: $paper-shadow-2;
         background-color: $catkin;
       }
       &:active,

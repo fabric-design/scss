@@ -47,7 +47,6 @@ $input-disabled-background-color: $catkin !default;
   }
 
   input,
-  label,
   select,
   textarea {
     display: block;
@@ -56,13 +55,9 @@ $input-disabled-background-color: $catkin !default;
   }
 
   label {
-    font-weight: 600;
-    margin-bottom: $space-s / 2;
-
     &.required::after {
       content: "*";
     }
-
     abbr {
       display: none;
     }
