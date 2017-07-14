@@ -3,7 +3,6 @@
 @import 'utils/helpers';
 @import 'utils/grid';
 @import 'utils/normalize';
-@import 'utils/typography';
 
 @import 'atoms/icons';
 @import 'atoms/badges';
@@ -11,7 +10,7 @@
 @import 'atoms/cards';
 @import 'atoms/forms';
 @import 'atoms/toggles';
-@import 'atoms/typography/labels';
+@import 'atoms/typography';
 
 @import 'molecules/dropdown';
 @import 'molecules/pagination';

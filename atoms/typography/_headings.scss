@@ -1,0 +1,31 @@
+$include-heading-css: true !default;
+$heading-font-family: 'acumin-pro-semi-condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+$heading-color: $fjord !default;
+$heading-font-size-small: 1rem !default;
+$heading-font-size-large: 2rem !default;
+$heading-line-height-small: 2rem !default; // 32px
+$heading-line-height-large: 2rem !default; // 32px
+
+@if $include-heading-css {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $heading-font-family;
+    font-weight: 300;
+    margin: 0;
+    color: $heading-color;
+  }
+  // Large heading
+  h2 {
+    font-size: $heading-font-size-large;
+    line-height: $heading-line-height-large;
+  }
+  // Small heading
+  h4 {
+    font-size: $heading-font-size-small;
+    line-height: $heading-line-height-small;
+  }
+}

@@ -1,0 +1,28 @@
+$include-anchor-css: true !default;
+$anchor-color: $primary-color !default;
+$anchor-hover-color: $deep-blue !default;
+$anchor-disabled-color: $sail !default;
+
+@if $include-anchor-css {
+  a {
+    color: $anchor-color;
+    text-decoration: none;
+    transition: color 0.1s linear;
+
+    &:active,
+    &:focus,
+    &:hover {
+      color: $anchor-hover-color;
+    }
+
+    &:active,
+    &:focus {
+      outline: none;
+    }
+
+    &.is-disabled {
+      color: $anchor-disabled-color;
+      cursor: not-allowed;
+    }
+  }
+}
