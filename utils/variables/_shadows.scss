@@ -17,13 +17,10 @@ $elevation-shadows: (
     "floating": $elevation5
 );
 
-$paper-shadow-1: 0 1px 3px rgba($black, 0.12),
+$paper-shadow-1: inset 0 2px 3px rgba($asphalt, 0.30);
+$paper-shadow-2: 0 1px 3px rgba($black, 0.12),
                  0 1px 2px rgba($black, 0.24);
-$paper-shadow-2: 0 3px 6px rgba($black, 0.16),
+$paper-shadow-3: 0 3px 6px rgba($black, 0.16),
                  0 3px 6px rgba($black, 0.23);
-$paper-shadow-3: 0 15px 12px rgba($black, 0.22),
-                 0 19px 38px rgba($black, 0.30);
-$paper-shadow-4: inset 0 2px 3px rgba($asphalt, 0.30);
-$paper-shadow-5: inset 0 1px 7px rgba($black, 0.10);
-$paper-shadow-6: 0 10px 20px rgba($black, 0.19),
+$paper-shadow-4: 0 10px 20px rgba($black, 0.19),
                  0 6px 6px rgba($black, 0.23);

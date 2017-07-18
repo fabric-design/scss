@@ -4,9 +4,9 @@ $primary-color: $heaven !default;
 $secondary-color: $earl-gray !default;
 
 $base-font-family: 'acumin-pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$heading-font-family: 'acumin-pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $base-font-size: 1rem; // 16px
-$base-font-color: $asphalt;
+$base-line-height: 1.5rem; // 24px
+$base-font-color: $abbey;
 
 // @todo is there a border color we always use?
 $base-border-color: $black;
@@ -15,7 +15,4 @@ $base-border-radius: 3px;
 
 // @todo typo variables like font size, line height, and so on has to be defined and reimplemented
 $font-size-small: 0.8125rem; // 13px
-$font-size-large: 1.1875rem;
-$font-size-heading: 1.5rem; // 24px
-$base-line-height: 1.5rem; // 24px
-$heading-line-height: 2rem; // 32px
+$font-size-large: 1.5rem; // 24px

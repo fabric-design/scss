@@ -1,0 +1,29 @@
+@import "typography/headings";
+@import "typography/labels";
+@import "typography/anchors";
+
+body {
+  font-variant-numeric: tabular-nums;
+  -moz-font-feature-settings: "tnum";
+  -webkit-font-feature-settings: "tnum";
+  font-feature-settings: "kern", "liga", "tnum";
+  color: $base-font-color;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  -webkit-font-smoothing: antialiased;
+  line-height: $base-line-height;
+}
+
+p {
+  margin: 0 0 $space-s;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  color: $base-font-color;
+}
+
+img,
+picture {
+  margin: 0;
+  max-width: 100%;
+}

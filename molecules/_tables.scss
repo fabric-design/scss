@@ -60,15 +60,9 @@ table {
         text-align: left;
         border-bottom: 1px solid $table-header-border-color;
         label {
-          font-size: rem(13px);
-          font-weight: normal;
-          text-transform: uppercase;
           display: inline-block;
           vertical-align: top;
           margin: 0;
-          max-width: 100%;
-          overflow: hidden;
-          text-overflow: ellipsis;
         }
         .sort {
           display: inline-block;

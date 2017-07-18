@@ -1,5 +1,5 @@
 $export-dropdown-css: true !default;
-$dropdown-width: rem(180px) !default;
+$dropdown-width: rem(200px) !default;
 $dropdown-shadow: map-get($elevation-shadows, raised) !default;
 $dropdown-arrow-shadow-color: rgba(0, 0, 0, .16) !default; // $elevation2 color 1
 $dropdown-font-color: $base-font-color !default;
@@ -110,7 +110,7 @@ $dropdown-background-color-accent: $earl-gray !default;
     display: block;
     .dropdown-container {
       @include dropdown-container($dropdown-width, $dropdown-background-color, $dropdown-shadow);
-      &.wide {
+      &.mod-wide {
         width: 100%;
       }
       &.right + .dropdown-arrow {

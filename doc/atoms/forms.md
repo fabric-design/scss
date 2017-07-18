@@ -36,19 +36,19 @@ A simple **text input** can have the types text, url, password, tel, number, col
 ## Labels
 All of our labels are displayed above the inputs
 
-<label>Does wholesale rock?</label>
+<label class="mod-large">Does wholesale rock?</label>
 <input type="text" value="yes"/>
 ```html
-<label>Does wholesale rock?</label>
+<label class="mod-large">Does wholesale rock?</label>
 <input type="text" value="yes"/>
 ```
 
 To mark an input as **required** add the required class to the label
 
-<label class="required">Does wholesale rock?</label>
+<label class="required mod-large">Does wholesale rock?</label>
 <input type="text" value="yes"/>
 ```html
-<label class="required">Does wholesale rock?</label>
+<label class="required mod-large">Does wholesale rock?</label>
 <input type="text" value="yes"/>
 ```
 
