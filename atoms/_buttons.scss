@@ -19,12 +19,17 @@ $button-shadows: (
   disabled: none
 ) !default;
 
+/**
+ * Includes css for the general button styling
+ */
 @mixin button-base() {
   font-family: $base-font-family;
   -webkit-font-smoothing: antialiased;
-  line-height: 1;
+  font-weight: bold;
+  text-transform: uppercase;
   text-decoration: none;
   text-align: center;
+  line-height: 1rem;
   user-select: none;
   border: 1px solid transparent;
   border-radius: $button-border-radius;
@@ -38,6 +43,11 @@ $button-shadows: (
   @include transition(all .2s);
 }
 
+/**
+ * Includes colors and shadows for buttons
+ * @param color $background
+ * @param color $foreground
+ */
 @mixin button-style($background, $foreground) {
   background-color: $background;
   color: $foreground;
@@ -53,23 +63,74 @@ $button-shadows: (
   }
 }
 
-@mixin button-small() {
+/**
+ * Includes css to make a button small
+ */
+@mixin button-size-small() {
   font-size: map-get($button-sizes, small);
+  line-height: map-get($button-sizes, small);
 }
 
-@mixin button-medium() {
+/**
+ * Includes css to make a button medium
+ */
+@mixin button-size-medium() {
   font-size: map-get($button-sizes, medium);
+  line-height: map-get($button-sizes, medium);
 }
 
-@mixin button-large() {
+/**
+ * Includes css to make a button large
+ */
+@mixin button-size-large() {
   font-size: map-get($button-sizes, large);
+  line-height: map-get($button-sizes, large);
 }
 
+/**
+ * Includes css for a button in disabled state
+ * @param color $color
+ * @param color $background
+ */
 @mixin button-disabled($color, $background) {
   cursor: not-allowed;
   color: $color;
   background-color: $background;
   box-shadow: map-get($button-shadows, disabled);
+}
+
+/**
+ * Includes css for a button of type toggle
+ */
+@mixin button-type-toggle() {
+  @include button-style($secondary-color, $asphalt);
+  &:active,
+  &.is-active {
+    box-shadow: $paper-shadow-1;
+    color: $primary-color;
+  }
+  &:disabled,
+  &.is-disabled {
+    color: $ghost;
+    cursor: not-allowed;
+  }
+}
+
+/**
+ * Includes css for a button of type flat
+ */
+@mixin button-type-flat() {
+  @include button-style(transparent, $primary-color);
+  box-shadow: none;
+  &:hover,
+  &.is-hovered {
+    box-shadow: $paper-shadow-2;
+    background-color: $catkin;
+  }
+  &:active,
+  &.is-active {
+    box-shadow: none;
+  }
 }
 
 @if $export-button-css {
@@ -80,12 +141,12 @@ $button-shadows: (
   input[type="submit"] {
     @include button-base;
     @include button-style($button-background, $button-color);
-    @include button-medium;
+    @include button-size-medium;
     &.mod-large {
-      @include button-large;
+      @include button-size-large;
     }
     &.mod-small {
-      @include button-small;
+      @include button-size-small;
     }
     &:disabled, &.is-disabled {
       @include button-disabled($button-color-disabled, $button-background-disabled);
@@ -94,29 +155,10 @@ $button-shadows: (
       @include button-style($secondary-color, $asphalt);
     }
     &.mod-toggle {
-      @include button-style($secondary-color, $asphalt);
-      &:active,
-      &.is-active {
-        box-shadow: map-get($button-shadows, hover);
-      }
-      &:disabled,
-      &.is-disabled {
-        color: $asphalt;
-        cursor: not-allowed;
-      }
+      @include button-type-toggle;
     }
     &.mod-flat {
-      @include button-style(transparent, $primary-color);
-      box-shadow: none;
-      &:hover,
-      &.is-hovered {
-        box-shadow: $paper-shadow-2;
-        background-color: $catkin;
-      }
-      &:active,
-      &.is-active {
-        box-shadow: none;
-      }
+      @include button-type-flat;
     }
     &.mod-collapse {
       padding: 0;
