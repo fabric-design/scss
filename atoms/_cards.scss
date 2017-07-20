@@ -1,22 +1,26 @@
 $include-card-css: true !default;
+$card-title-size: 1.125rem !default;
+$card-spacing: 0 0 $space-m 0 !default;
 $card-background-color: $white !default;
 $card-box-shadow: $paper-shadow-2 !default;
-$card-padding: $space-xl !default;
+$card-padding: $space-l !default;
 
-@mixin card($background-color, $shadow, $padding) {
+@mixin card($background-color, $shadow, $padding, $spacing) {
   background-color: $background-color;
   box-shadow: $shadow;
   padding: $padding;
+  margin: $spacing;
   border-radius: $base-border-radius;
   border-top: 1px solid $earl-gray;
 }
 
 @if $include-card-css {
   .card {
-    @include card($card-background-color, $card-box-shadow, $card-padding);
+    @include card($card-background-color, $card-box-shadow, $card-padding, $card-spacing);
     .card-title {
       margin: 0 0 $card-padding 0;
       font-weight: 200;
+      font-size: $card-title-size;
     }
     .card-actions {
       margin: $space-m 0 0 0;

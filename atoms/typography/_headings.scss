@@ -1,8 +1,8 @@
 $include-heading-css: true !default;
 $heading-font-family: 'acumin-pro-semi-condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
 $heading-color: $fjord !default;
-$heading-font-size-small: 1rem !default;
-$heading-font-size-large: 2rem !default;
+$heading-font-size-small: 1.125rem !default; // 24px
+$heading-font-size-large: 2rem !default; // 32px
 $heading-line-height-small: 2rem !default; // 32px
 $heading-line-height-large: 2rem !default; // 32px
 
@@ -14,7 +14,6 @@ $heading-line-height-large: 2rem !default; // 32px
   h5,
   h6 {
     font-family: $heading-font-family;
-    font-weight: 300;
     margin: 0;
     color: $heading-color;
   }
@@ -22,10 +21,12 @@ $heading-line-height-large: 2rem !default; // 32px
   h2 {
     font-size: $heading-font-size-large;
     line-height: $heading-line-height-large;
+    font-weight: 300;
   }
   // Small heading
   h4 {
     font-size: $heading-font-size-small;
     line-height: $heading-line-height-small;
+    font-weight: 400;
   }
 }
