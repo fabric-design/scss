@@ -1,9 +1,9 @@
 $export-button-css: true !default;
 
 $button-color: $white !default;
-$button-color-disabled: $arctica !default;
-$button-background: $heaven !default;
-$button-background-disabled: $sail !default;
+$button-color-disabled: schema-color(1) !default;
+$button-background: schema-color(3) !default;
+$button-background-disabled: schema-color(2) !default;
 $button-shadow-color: $miroschka !default;
 $button-border-radius: $base-border-radius !default;
 $button-padding: 0.5em 1em !default;
@@ -46,11 +46,13 @@ $button-shadows: (
 /**
  * Includes colors and shadows for buttons
  * @param color $background
- * @param color $foreground
+ * @param color $color
+ * @param color $disabled-background
+ * @param color $disabled-color
  */
-@mixin button-style($background, $foreground) {
+@mixin button-style($background, $color, $disabled-background: transparent, $disabled-color: transparent) {
   background-color: $background;
-  color: $foreground;
+  color: $color;
   box-shadow: map-get($button-shadows, normal);
   &:hover,
   &.is-hovered {
@@ -60,6 +62,13 @@ $button-shadows: (
   &.is-active {
     background-color: darken($background, 2%);
     box-shadow: map-get($button-shadows, active);
+  }
+  &:disabled,
+  &.is-disabled {
+    cursor: not-allowed;
+    color: $disabled-color;
+    background-color: $disabled-background;
+    box-shadow: map-get($button-shadows, disabled);
   }
 }
 
@@ -88,31 +97,14 @@ $button-shadows: (
 }
 
 /**
- * Includes css for a button in disabled state
- * @param color $color
- * @param color $background
- */
-@mixin button-disabled($color, $background) {
-  cursor: not-allowed;
-  color: $color;
-  background-color: $background;
-  box-shadow: map-get($button-shadows, disabled);
-}
-
-/**
  * Includes css for a button of type toggle
  */
 @mixin button-type-toggle() {
-  @include button-style($secondary-color, $asphalt);
+  @include button-style($secondary-color, $asphalt, transparent, $ghost);
   &:active,
   &.is-active {
     box-shadow: $paper-shadow-1;
     color: $primary-color;
-  }
-  &:disabled,
-  &.is-disabled {
-    color: $ghost;
-    cursor: not-allowed;
   }
 }
 
@@ -120,7 +112,7 @@ $button-shadows: (
  * Includes css for a button of type flat
  */
 @mixin button-type-flat() {
-  @include button-style(transparent, $primary-color);
+  @include button-style(transparent, $primary-color, $catkin, $ghost);
   box-shadow: none;
   &:hover,
   &.is-hovered {
@@ -130,6 +122,7 @@ $button-shadows: (
   &:active,
   &.is-active {
     box-shadow: none;
+    background-color: $catkin;
   }
 }
 
@@ -140,7 +133,7 @@ $button-shadows: (
   input[type="button"],
   input[type="submit"] {
     @include button-base;
-    @include button-style($button-background, $button-color);
+    @include button-style($button-background, $button-color, $button-background-disabled, $button-color-disabled);
     @include button-size-medium;
     &.mod-large {
       @include button-size-large;
@@ -148,11 +141,8 @@ $button-shadows: (
     &.mod-small {
       @include button-size-small;
     }
-    &:disabled, &.is-disabled {
-      @include button-disabled($button-color-disabled, $button-background-disabled);
-    }
     &.mod-secondary {
-      @include button-style($secondary-color, $asphalt);
+      @include button-style($secondary-color, $asphalt, $silver, $ghost);
     }
     &.mod-toggle {
       @include button-type-toggle;
@@ -168,6 +158,7 @@ $button-shadows: (
     font-weight: normal;
     display: inline-block;
     vertical-align: middle;
+    overflow: visible;
     input[type="file"] {
       display: none;
     }
