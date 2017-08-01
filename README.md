@@ -46,7 +46,7 @@ If you want to use the whole SCSS library you can just import the index SCSS fil
 
 ### Contributing
 
-Our Zalando Wholesale Styleguide is in active development and we welcome any contributions and feedback. See our [Contributing.md](Contributing.md) for detailed information on how to contribute.
+Our Zalando Wholesale Styleguide is in active development and we welcome any contributions and feedback. See our [CONTRIBUTING.md](CONTRIBUTING.md) for detailed information on how to contribute.
 
 ### LICENSE
 
