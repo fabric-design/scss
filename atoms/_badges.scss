@@ -1,36 +1,76 @@
 $include-badge-css: true !default;
-$badge-color: $heaven !default;
+$badge-color: $deep-blue !default;
 $badge-background-color: $arctica !default;
+$badge-border-color: $heaven !default;
+$badge-red-color: $mojo !default;
+$badge-red-background-color: $pippin !default;
+$badge-red-border-color: $flamingo !default;
+$badge-gray-color: $white !default;
+$badge-gray-background-color: $french-gray !default;
+$badge-gray-border-color: $french-gray !default;
 $badge-font-size: $font-size-small !default;
+$badge-line-height: $base-font-size !default;
 
 /**
  * Includes css for a badge without icon
- * $font-size Size value for font size
- * $color Color value for the font
- * $background-color Color for background
  */
-@mixin badge($font-size, $color, $background-color) {
-  background-color: $background-color;
+@mixin badge() {
   // Percent refer to width and height of element which leads to an ellipse in most cases (width > height)
   // Therefore we use fixed length values which will leads the browser to use a square for curve calculation
   border-radius: 9999px;
-  color: $color;
   display: inline-block;
-  font-size: $font-size;
-  line-height: 1;
-  padding: $space-xxs $space-s;
-  margin-right: $space-xxs;
+  font-size: $badge-font-size;
+  line-height: $badge-font-size;
+  padding: 0 $space-xs rem(3px); // 2px to center text with acumin pro
+  border: 1px solid transparent;
+}
+
+/**_
+ * Includes css to colorize a badge
+ * @param $color Color value for the font
+ * @param $background-color Color for background
+ * @param $border-color Optional color for border
+ */
+@mixin badge-color($color, $background-color, $border-color) {
+  color: $color;
+  background-color: $background-color;
+  @if $border-color {
+    border-color: $border-color;
+  }
+  @else {
+    border-color: $background-color;
+  }
 }
 
 @if $include-badge-css {
   .badge {
-    @include badge($badge-font-size, $badge-color, $badge-background-color);
+    @include badge();
+    @include badge-color($badge-color, $badge-background-color, $badge-border-color);
+    &.mod-gray {
+      @include badge-color($badge-gray-color, $badge-gray-background-color, $badge-gray-border-color);
+    }
+    &.mod-red {
+      @include badge-color($badge-red-color, $badge-red-background-color, $badge-red-border-color);
+    }
     .icon,
     [class^="icon-"],
     [class*=" icon"] {
       // Fix some spacings and sizes
       margin: rem(-1px -4px 0 0);
       cursor: pointer;
+    }
+  }
+  .badge-group {
+    .badge {
+      &:not(:first-child) {
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+      }
+      &:not(:last-child) {
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+        margin-right: 1px;
+      }
     }
   }
 }

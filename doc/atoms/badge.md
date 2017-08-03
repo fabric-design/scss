@@ -3,34 +3,41 @@
 ## Default Badge
 We have default filter badge:
 
-<span class="badge">
-	<span>ID: something</span>
-	<span class="icon-cross"></span>
-</span>
+<span class="badge">ID: something</span>
 ```html
 <span class="badge">
 	<span>ID: something</span>
-	<span class="icon-cross"></span>
 </span>
 ```
 
 ## Change color of badge
-To change color of text and background color of badge in your scss file you need to use badge mixin.
-Firstly, you need to add color of text and then color of background:
+Per default the badges got the schema colors 3 as font color and 1 as background color.
+With the modifier classes `.mod-red` or `.mod-gray` you can change the badge to be gray or red.
+If you want to colorize you're badge different you have to create a new class using the 
+`badge-color($font-color, $background-color, $border-color)` mixin. The default color for the border
+is the passed background color.
 
-<span class="badge" style="color: #FF6900; background-color: #FFF6C4">
-	<span>ID: something</span>
-	<span class="icon-cross"></span>
+<span class="badge mod-gray">Grey badge</span>
+<span class="badge mod-red">Red badge</span>
+<span class="badge" style="color: #FFF6C4; background-color: #FF6900; border-color: #FF6900">
+	Yellow badge
 </span>
 ```scss
-.badge {
-  @include badge(14px, $zalando-orange, $egg-white)
+.badge.mod-yellow {
+  @include badge-color($egg-white, $zalando-orange)
 }
 ```
 
-Of course, you can create your own class:
-```scss
-.badge-yellow {
-  @include badge($grandis, $west-side)
-}
+## Grouping badges
+If you want to display multiple badges together you can use a badge group which
+reduces the spacing between the badges.
+
+<div class="badge-group">
+	<span class="badge">Something</span><span class="badge">Else</span>
+</div>
+```html
+<div class="badge-group">
+	<span class="badge mod-gray">Something</span>
+	<span class="badge mod-red">Else</span>
+</div>
 ```
