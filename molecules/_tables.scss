@@ -54,7 +54,7 @@ table {
     tr {
       th {
         padding: 0 $space-xl 0 $space-m;
-        line-height: $space-xl;
+        line-height: $space-l;
         white-space: nowrap;
         position: relative;
         text-align: left;
@@ -114,7 +114,7 @@ table {
     }
     td {
       padding: 0 $space-xl 0 $space-m;
-      line-height: $space-xl;
+      line-height: $space-l;
     }
     tr.pagination-row td {
       @include inset-spacing-stretch(l);
