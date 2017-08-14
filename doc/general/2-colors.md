@@ -1,4 +1,52 @@
 # Colors
+
+## Colors in General
+GUIs (Graphical User Interfaces) present their features and functions visually. Color is used sparingly to draw attention to important elements and those that we want the user to take action on.
+
+![Colors in general](/img/colors1.png)
+
+
+## System Colors
+Fabric design system differs between the primary **Color Palettes** (system colors) and **Scheme Colors**.
+
+The system colors (pure red, yellow, green and grays) are separated from other palettes, to provide a way to impart visual continuity, communicate status information, give feedback in response to user actions and help people visualize data. The easier it is to use your product and quickly scan information, the less mistakes your users might make.
+
+**PIC PLACEHOLDER**
+
+## System Grays
+One of the biggest aims is to provide a basis, which guides user through interfaces without any visual distractions. Fabric presents its workspace in system grays - best conditions to reach maximum attention with little color accents, which allows guiding users easily and fast through complex data architectures.
+
+<label>Light gray</label>
+<ul class="color-list">
+    <li style="background-color: #FFFFFF"><span class="text">$white: #FFFFFF</span></li>
+    <li style="background-color: #FAFBFC"><span class="text">$athens-gray: #FAFBFC</span></li>
+    <li style="background-color: #F5F6F9"><span class="text">$catkin: #F5F6F9</span></li>
+    <li style="background-color: #F0F1F6"><span class="text">$silver: #F0F1F6</span></li>
+    <li style="background-color: #E9EAEF"><span class="text">$earl-gray: #E9EAEF</span></li>
+    <li style="background-color: #E1E2E8"><span class="text">$mischka: #E1E2E8</span></li>
+</ul>
+<label>Gray</label>
+<ul class="color-list">
+    <li style="background-color: #D5D7DE"><span class="text">$miroschka: #D5D7DE</span></li>
+    <li style="background-color: #CBCDD5"><span class="text">$ghost: #CBCDD5</span></li>
+    <li style="background-color: #BDBFC7"><span class="text">$french-gray: #BDBFC7</span></li>
+    <li style="background-color: #ACADB5"><span class="text">$bombay: #ACADB5</span></li>
+    <li style="background-color: #9B9BA3"><span class="text">$santas-gray: #9B9BA3</span></li>
+    <li style="background-color: #8B8A91"><span class="text">$jumbo: #8B8A91</span></li>
+</ul>
+<label>Dark gray</label>
+<ul class="color-list">
+    <li style="background-color: #7a7980"><span class="text">$heron: #7a7980</span></li>
+    <li style="background-color: #626166"><span class="text">$asphalt: #626166</span></li>
+    <li style="background-color: #454547"><span class="text">$abbey: #454547</span></li>
+    <li style="background-color: #272829"><span class="text">$shark: #272829</span></li>
+    <li style="background-color: #000000"><span class="text">$black: #000000</span></li>
+</ul>
+
+## Color Schemes
+Applying color to a design project has a lot to do with balance and the more colors you use, the more complicated it is to achieve balance. Therefore fabric uses color sparingly to draw attention to important elements and those that we want the user to take action on.
+Most of the application is gray, pops of color catch a user’s eye.
+
 <label>Green</label>
 <ul class="color-list">
     <li style="background-color: #C9FFD1"><span class="text">$snowy-mint: #C9FFD1</span></li>
@@ -121,29 +169,8 @@
     <li style="background-color: #891B40"><span class="text">$raspberry: #891B40</span></li>
     <li style="background-color: #6D1534"><span class="text">$brambleberry: #6D1534</span></li>
 </ul>
-<label>Light gray</label>
-<ul class="color-list">
-    <li style="background-color: #FFFFFF"><span class="text">$white: #FFFFFF</span></li>
-    <li style="background-color: #FAFBFC"><span class="text">$athens-gray: #FAFBFC</span></li>
-    <li style="background-color: #F5F6F9"><span class="text">$catkin: #F5F6F9</span></li>
-    <li style="background-color: #F0F1F6"><span class="text">$silver: #F0F1F6</span></li>
-    <li style="background-color: #E9EAEF"><span class="text">$earl-gray: #E9EAEF</span></li>
-    <li style="background-color: #E1E2E8"><span class="text">$mischka: #E1E2E8</span></li>
-</ul>
-<label>Gray</label>
-<ul class="color-list">
-    <li style="background-color: #D5D7DE"><span class="text">$miroschka: #D5D7DE</span></li>
-    <li style="background-color: #CBCDD5"><span class="text">$ghost: #CBCDD5</span></li>
-    <li style="background-color: #BDBFC7"><span class="text">$french-gray: #BDBFC7</span></li>
-    <li style="background-color: #ACADB5"><span class="text">$bombay: #ACADB5</span></li>
-    <li style="background-color: #9B9BA3"><span class="text">$santas-gray: #9B9BA3</span></li>
-    <li style="background-color: #8B8A91"><span class="text">$jumbo: #8B8A91</span></li>
-</ul>
-<label>Dark gray</label>
-<ul class="color-list">
-    <li style="background-color: #7a7980"><span class="text">$heron: #7a7980</span></li>
-    <li style="background-color: #626166"><span class="text">$asphalt: #626166</span></li>
-    <li style="background-color: #454547"><span class="text">$abbey: #454547</span></li>
-    <li style="background-color: #272829"><span class="text">$shark: #272829</span></li>
-    <li style="background-color: #000000"><span class="text">$black: #000000</span></li>
-</ul>
+
+## How to use Scheme Colors
+Each scheme palette owns 6 shades of a specific color. To offer a well balanced user interface, each color of the scheme is assigned to a specific function.
+
+**PIC PLACEHOLDER**
