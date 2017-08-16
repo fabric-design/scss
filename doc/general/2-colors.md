@@ -11,32 +11,59 @@ Fabric design system differs between the primary **Color Palettes** (system colo
 
 The system colors (pure red, yellow, green and grays) are separated from other palettes, to provide a way to impart visual continuity, communicate status information, give feedback in response to user actions and help people visualize data. The easier it is to use your product and quickly scan information, the less mistakes your users might make.
 
-**PIC PLACEHOLDER**
+![Colors in general](/img/checkmart.svg)
+<label>Success</label>
+<ul class="color-list">
+    <li style="background-color: #C9FFD1"><span class="text">$snowy-mint: #C9FFD1</span></li>
+    <li style="background-color: #A0EBA6"><span class="text">$madang: #A0EBA6</span></li>
+    <li style="background-color: #1EB234"><span class="text">$forest-green: #1EB234</span></li>
+    <li style="background-color: #188F2A"><span class="text">$kohpayam: #188F2A</span></li>
+</ul>
+![Colors in general](/img/forbidden-swtone.svg)
+<label>Error</label>
+<ul class="color-list">
+    <li style="background-color: #FFDDDB"><span class="text">$pippin: #FFDDDB</span></li>
+    <li style="background-color: #FA9585"><span class="text">$geraldine: #FA9585</span></li>
+    <li style="background-color: #F44F41"><span class="text">$flamingo: #F44F41</span></li>
+    <li style="background-color: #C74236"><span class="text">$mojo: #C74236</span></li>
+</ul>
+![Colors in general](/img/attention.svg)
+<label>Attention</label>
+<ul class="color-list">
+    <li style="background-color: #FFFFCF"><span class="text">$bulb: #FFFFCF</span></li>
+    <li style="background-color: #FFFC3B"><span class="text">$summer: #FFFC3B</span></li>
+    <li style="background-color: #FFEA00"><span class="text">$biddy: #FFEA00</span></li>
+    <li style="background-color: #FCC500"><span class="text">$gold: #FCC500</span></li>
+</ul>
+
 
 ## System Grays
 One of the biggest aims is to provide a basis, which guides user through interfaces without any visual distractions. Fabric presents its workspace in system grays - best conditions to reach maximum attention with little color accents, which allows guiding users easily and fast through complex data architectures.
 
-<label>Light gray</label>
+
+<label>Lightest grays</label>
 <ul class="color-list">
-    <li style="background-color: #FFFFFF"><span class="text">$white: #FFFFFF</span></li>
     <li style="background-color: #FAFBFC"><span class="text">$athens-gray: #FAFBFC</span></li>
     <li style="background-color: #F5F6F9"><span class="text">$catkin: #F5F6F9</span></li>
     <li style="background-color: #F0F1F6"><span class="text">$silver: #F0F1F6</span></li>
     <li style="background-color: #E9EAEF"><span class="text">$earl-gray: #E9EAEF</span></li>
-    <li style="background-color: #E1E2E8"><span class="text">$mischka: #E1E2E8</span></li>
 </ul>
-<label>Gray</label>
+<label>Light grays</label>
 <ul class="color-list">
+    <li style="background-color: #E1E2E8"><span class="text">$mischka: #E1E2E8</span></li>
     <li style="background-color: #D5D7DE"><span class="text">$miroschka: #D5D7DE</span></li>
     <li style="background-color: #CBCDD5"><span class="text">$ghost: #CBCDD5</span></li>
     <li style="background-color: #BDBFC7"><span class="text">$french-gray: #BDBFC7</span></li>
+</ul>
+<label>Medium Grays</label>
+<ul class="color-list">
     <li style="background-color: #ACADB5"><span class="text">$bombay: #ACADB5</span></li>
     <li style="background-color: #9B9BA3"><span class="text">$santas-gray: #9B9BA3</span></li>
     <li style="background-color: #8B8A91"><span class="text">$jumbo: #8B8A91</span></li>
-</ul>
-<label>Dark gray</label>
-<ul class="color-list">
     <li style="background-color: #7a7980"><span class="text">$heron: #7a7980</span></li>
+</ul>
+<label>Dark grays</label>
+<ul class="color-list">
     <li style="background-color: #626166"><span class="text">$asphalt: #626166</span></li>
     <li style="background-color: #454547"><span class="text">$abbey: #454547</span></li>
     <li style="background-color: #272829"><span class="text">$shark: #272829</span></li>
@@ -47,20 +74,6 @@ One of the biggest aims is to provide a basis, which guides user through interfa
 Applying color to a design project has a lot to do with balance and the more colors you use, the more complicated it is to achieve balance. Therefore fabric uses color sparingly to draw attention to important elements and those that we want the user to take action on.
 Most of the application is gray, pops of color catch a user’s eye.
 
-<label>Green</label>
-<ul class="color-list">
-    <li style="background-color: #C9FFD1"><span class="text">$snowy-mint: #C9FFD1</span></li>
-    <li style="background-color: #A0EBA6"><span class="text">$madang: #A0EBA6</span></li>
-    <li style="background-color: #1EB234"><span class="text">$forest-green: #1EB234</span></li>
-    <li style="background-color: #188F2A"><span class="text">$kohpayam: #188F2A</span></li>
-</ul>
-<label>Red</label>
-<ul class="color-list">
-    <li style="background-color: #FFDDDB"><span class="text">$pippin: #FFDDDB</span></li>
-    <li style="background-color: #FA9585"><span class="text">$geraldine: #FA9585</span></li>
-    <li style="background-color: #F44F41"><span class="text">$flamingo: #F44F41</span></li>
-    <li style="background-color: #C74236"><span class="text">$mojo: #C74236</span></li>
-</ul>
 <label>Orange</label>
 <ul class="color-list">
     <li style="background-color: #FFF6C4"><span class="text">$egg-white: #FFF6C4</span></li>
@@ -70,15 +83,6 @@ Most of the application is gray, pops of color catch a user’s eye.
     <li style="background-color: #D24400"><span class="text">$tiger: #D24400</span></li>
     <li style="background-color: #B63800"><span class="text">$rust: #B63800</span></li>
 </ul>
-<label>Blue</label>
-<ul class="color-list">
-    <li style="background-color: #DEF5FE"><span class="text">$arctica: #DEF5FE</span></li>
-    <li style="background-color: #B0D6FB"><span class="text">$sail: #B0D6FB</span></li>
-    <li style="background-color: #00ABF2"><span class="text">$heaven: #00ABF2</span></li>
-    <li style="background-color: #008DC9"><span class="text">$liverleaf: #008DC9</span></li>
-    <li style="background-color: #007DB3"><span class="text">$deep-blue: #007DB3</span></li>
-    <li style="background-color: #006B99"><span class="text">$bahama-blue: #006B99</span></li>
-</ul>
 <label>Grey-Blue</label>
 <ul class="color-list">
     <li style="background-color: #EAF0FD"><span class="text">$selago: #EAF0FD</span></li>
@@ -87,6 +91,15 @@ Most of the application is gray, pops of color catch a user’s eye.
     <li style="background-color: #7687AB"><span class="text">$wild-blue: #7687AB</span></li>
     <li style="background-color: #5D6B88"><span class="text">$lynch: #5D6B88</span></li>
     <li style="background-color: #4A556C"><span class="text">$fjord: #4A556C</span></li>
+</ul>
+<label>Blue</label>
+<ul class="color-list">
+    <li style="background-color: #DEF5FE"><span class="text">$arctica: #DEF5FE</span></li>
+    <li style="background-color: #B0D6FB"><span class="text">$sail: #B0D6FB</span></li>
+    <li style="background-color: #00ABF2"><span class="text">$heaven: #00ABF2</span></li>
+    <li style="background-color: #008DC9"><span class="text">$liverleaf: #008DC9</span></li>
+    <li style="background-color: #007DB3"><span class="text">$deep-blue: #007DB3</span></li>
+    <li style="background-color: #006B99"><span class="text">$bahama-blue: #006B99</span></li>
 </ul>
 <label>Warm-Blue</label>
 <ul class="color-list">

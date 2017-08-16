@@ -8,10 +8,10 @@ Although Fabric was created to support our enterprise products, it can be for ev
 Fabric DS is **Open-source**.
 
 Fabric Design System includes:
-* **Principles** that helps you create clear, aesthetic and usable UI;
-* List of **UI elements** with description, how to use it;
-* **Sketch Library**;
-* Resources for Dev Teams, including **SCSS** and **Components Library**.
+* - **Principles** that helps you create clear, aesthetic and usable UI;
+* - List of **UI elements** with description, how to use it;
+* - **Sketch Library**;
+* - Resources for Dev Teams, including **SCSS** and **Components Library**.
 
 ## How can I use it?
 Although it is up to you, how you want to use Fabric DS, based on our experience and industry best practices, we prepared following procedure:

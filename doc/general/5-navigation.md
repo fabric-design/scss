@@ -4,7 +4,7 @@ Navigation structure and used elements highly depend on system **Information Arc
 ![Example](/img/navigation1.svg)
 
 
-## Context links
+## Context Links
 The most natural way to move through the system is a system of well placed context links that leads to proper place.
 
 ![Example](/img/navigation2.svg)
@@ -31,4 +31,4 @@ Layers are very efficient in showing detailed data or advanced actions without l
 
 ![Example](/img/navigation6.png)
 
-More details in [Overlays Documentaion](linkneeded)
+More details in [Overlays](../#/general/7-overlays)

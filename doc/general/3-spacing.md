@@ -8,31 +8,33 @@ let the elements breathe. To do so, we need to separate enough whitespace
 between elements. It creates focus points for our users and leading their
 eyes to go through elements.
 
+To learn more about spacing and the way how we are using it, read: [Eight Shapes 'Space In Design System'](https://medium.com/eightshapes-llc/space-in-design-systems-188bcbae0d62)
+
 To enable an easy and accurate handling with spacings, we’re following a simple space naming convention scaled like t-shirt sizes from XXS to XXL.
 
-<div id="rectangle" style="width:40px; height:4px; background-color:#F5412A"></div>
-XXS
-<div id="rectangle" style="width:1px; height:8px; background-color:#FFF"></div>
-<div id="rectangle" style="width:80px; height:8px; background-color:#ED1561"></div>
-XS
-<div id="rectangle" style="width:1px; height:8px; background-color:#FFF"></div>
-<div id="rectangle" style="width:120px; height:12px; background-color:#9D1DB1"></div>
-S
-<div id="rectangle" style="width:1px; height:8px; background-color:#FFF"></div>
-<div id="rectangle" style="width:160px; height:16px; background-color:#6735BA"></div>
-M
-<div id="rectangle" style="width:1px; height:8px; background-color:#FFF"></div>
-<div id="rectangle" style="width:240px; height:24px; background-color:#3E4EB8"></div>
-L
-<div id="rectangle" style="width:1px; height:8px; background-color:#FFF"></div>
-<div id="rectangle" style="width:320px; height:32px; background-color:#549ECC"></div>
-XL
-<div id="rectangle" style="width:1px; height:8px; background-color:#FFF"></div>
-<div id="rectangle" style="width:480px; height:48px; background-color:#1F7D74"></div>
-XXL
-<div id="rectangle" style="width:1px; height:8px; background-color:#FFF"></div>
-<div id="rectangle" style="width:640px; height:64px; background-color:#00CC4D"></div>
-XXXL
+<div style="width:40px; height:4px; background-color:#F5412A"></div>
+XXS, $space-xxs: 0.25rem
+<div style="width:1px; height:8px; background-color:#FFF"></div>
+<div style="width:80px; height:8px; background-color:#ED1561"></div>
+XS, $space-xs: 0.5rem
+<div  style="width:1px; height:8px; background-color:#FFF"></div>
+<div  style="width:120px; height:12px; background-color:#9D1DB1"></div>
+S, $space-s: 0.75rem
+<div  style="width:1px; height:8px; background-color:#FFF"></div>
+<div  style="width:160px; height:16px; background-color:#6735BA"></div>
+M, $space-m: 1rem
+<div  style="width:1px; height:8px; background-color:#FFF"></div>
+<div  style="width:240px; height:24px; background-color:#3E4EB8"></div>
+L, $space-l: 1.5rem
+<div  style="width:1px; height:8px; background-color:#FFF"></div>
+<div  style="width:320px; height:32px; background-color:#549ECC"></div>
+XL, $space-xl: 2rem
+<div  style="width:1px; height:8px; background-color:#FFF"></div>
+<div  style="width:480px; height:48px; background-color:#1F7D74"></div>
+XXL, $space-xxl: 3rem
+<div  style="width:1px; height:8px; background-color:#FFF"></div>
+<div  style="width:640px; height:64px; background-color:#00CC4D"></div>
+XXXL, $space-xxl: 4rem
 
 
 ## Grid
@@ -56,26 +58,7 @@ Designer should also remember that on smaller screens. He needs to:
 1440 screen, 24 col, 0,5rem margin, 1rem gutter
 ![Grid](/img/spacing5.svg)
 
-### The Square Inset
-An inset offers indents content on all four sides like the matte of the framed photo on a wall. It’s use is widespread, across many components at varying sizes.
-**PIC PLACEHOLDER**
+## Spatial Concept
+Using insets, stacks and inlines will help to organise layouts in a harmonious way.
 
-### The Squish Inset
-A squished inset reduces space top and bottom.
-**PIC PLACEHOLDER**
-
-### The Stretch Inset
-Stretches the insets of elements vertically. E.g. text fields and other form elements.
-**PIC PLACEHOLDER**
-
-### Space Stack
-Help us to separate enough white space, while stacking elements vertically.
-**PIC PLACEHOLDER**
-
-### Space Inline
-Help us to separate enough white space, while stacking elements vertically.
-**PIC PLACEHOLDER**
-
-### Spatial Concept
-Using insets, stacks and inlines will help to organize layouts in a harmonious way.
-**PIC PLACEHOLDER**
+![Grid](/img/spatial-concept.svg)
