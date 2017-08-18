@@ -186,4 +186,4 @@ Most of the application is gray, pops of color catch a user’s eye.
 ## How to use Scheme Colors
 Each scheme palette owns 6 shades of a specific color. To offer a well balanced user interface, each color of the scheme is assigned to a specific function.
 
-**PIC PLACEHOLDER**
+![Color Theme](/img/colors2.png)
