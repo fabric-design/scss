@@ -27,22 +27,22 @@ $switch-knob-color-disabled-checked: $madang !default;
   $left-alignment: $track-width / 4;
   // Additionally to the general top alignment of the :after container we have to adjust the height to position the
   // knob centered on the track.
-  $knob-top-alignment: $top-alignment + (($knob-size - $track-height) / 2);
-
+  $knob-top-alignment: (($knob-size - $track-height) / 2);
   display: inline-block;
   vertical-align: middle;
   position: relative;
   outline: none;
-  width: $track-width / 2; // Make real control smaller to don't overflow behind overlays
-  height: $track-height / 2;
   margin-left: $left-alignment; // Align real control centered behind layers above
   cursor: pointer;
   &:before {
+    top: $knob-top-alignment;
+    left: 0rem;
     content: '';
+    position: absolute;
     display: block;
     width: $track-width;
     height: $track-height;
-    margin: (-$top-alignment) 0 0 (-$left-alignment);
+    margin: 0 0 0 (-$left-alignment);
     border-radius: $track-height;
     box-sizing: border-box;
     transition: background .1s linear;
@@ -50,7 +50,7 @@ $switch-knob-color-disabled-checked: $madang !default;
   &:after {
     content: '';
     position: absolute;
-    top: -$knob-top-alignment;
+    top: 0;
     left: -$left-alignment;
     width: $knob-size;
     height: $knob-size;
@@ -76,23 +76,32 @@ $switch-knob-color-disabled-checked: $madang !default;
 
 @if $include-switch-css {
   input[type=checkbox].mod-switch {
-    @include switch-toggle($switch-track-width, $switch-track-height, $switch-knob-size, $switch-knob-shadow);
-    @include switch-color($switch-track-color, $switch-knob-color);
+    display: none;
+    & + label {
+      overflow: visible;
+      padding-left: 2rem;
+      @include switch-toggle($switch-track-width, $switch-track-height, $switch-knob-size, $switch-knob-shadow);
+      @include switch-color($switch-track-color, $switch-knob-color);
+    }
     &:checked,
     &.is-checked {
-      @include switch-color($switch-track-color-checked, $switch-knob-color-checked);
-      &:after {
-        transform: translate3d($switch-track-width - $switch-knob-size, 0, 0);
+      & + label {
+        @include switch-color($switch-track-color-checked, $switch-knob-color-checked);
+        &:after {
+          transform: translate3d($switch-track-width - $switch-knob-size, 0, 0);
+        }
       }
     }
     &:disabled,
     &.is-disabled {
-      @include switch-color($switch-track-color-disabled, $switch-knob-color-disabled);
-      &:after {
-        box-shadow: none;
+      & + label {
+        @include switch-color($switch-track-color-disabled, $switch-knob-color-disabled);
+        &:after {
+          box-shadow: none;
+        }
       }
       &:checked,
-      &.is-checked {
+      &.is-checked + label {
         @include switch-color($switch-track-color-disabled-checked, $switch-knob-color-disabled-checked);
       }
     }
