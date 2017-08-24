@@ -3,7 +3,7 @@
 ## Colors in General
 GUIs (Graphical User Interfaces) present their features and functions visually. Color is used sparingly to draw attention to important elements and those that we want the user to take action on.
 
-![Colors in general](/src/style/assets/colors1.png)
+![Colors in general](src/style/assets/colors1.png)
 
 
 ## System Colors
@@ -11,7 +11,7 @@ Fabric design system differs between the primary **Color Palettes** (system colo
 
 The system colors (pure red, yellow, green and grays) are separated from other palettes, to provide a way to impart visual continuity, communicate status information, give feedback in response to user actions and help people visualize data. The easier it is to use your product and quickly scan information, the less mistakes your users might make.
 
-![Colors in general](/src/style/assets/checkmart.svg)
+![Colors in general](src/style/assets/checkmart.svg)
 <label>Success</label>
 <ul class="color-list">
     <li style="background-color: #C9FFD1"><span class="text">$snowy-mint: #C9FFD1</span></li>
@@ -19,7 +19,7 @@ The system colors (pure red, yellow, green and grays) are separated from other p
     <li style="background-color: #1EB234"><span class="text">$forest-green: #1EB234</span></li>
     <li style="background-color: #188F2A"><span class="text">$kohpayam: #188F2A</span></li>
 </ul>
-![Colors in general](/src/style/assets/forbidden-swtone.svg)
+![Colors in general](src/style/assets/forbidden-swtone.svg)
 <label>Error</label>
 <ul class="color-list">
     <li style="background-color: #FFDDDB"><span class="text">$pippin: #FFDDDB</span></li>
@@ -27,7 +27,7 @@ The system colors (pure red, yellow, green and grays) are separated from other p
     <li style="background-color: #F44F41"><span class="text">$flamingo: #F44F41</span></li>
     <li style="background-color: #C74236"><span class="text">$mojo: #C74236</span></li>
 </ul>
-![Colors in general](/src/style/assets/attention.svg)
+![Colors in general](src/style/assets/attention.svg)
 <label>Attention</label>
 <ul class="color-list">
     <li style="background-color: #FFFFCF"><span class="text">$bulb: #FFFFCF</span></li>
@@ -186,4 +186,4 @@ Most of the application is gray, pops of color catch a user’s eye.
 ## How to use Scheme Colors
 Each scheme palette owns 6 shades of a specific color. To offer a well balanced user interface, each color of the scheme is assigned to a specific function.
 
-![Color Theme](/src/style/assets/colors2.png)
+![Color Theme](src/style/assets/colors2.png)
