@@ -16,7 +16,7 @@ Fabric Design System includes:
 ## How can I use it?
 Although it is up to you, how you want to use Fabric DS, based on our experience and industry best practices, we prepared following procedure:
 
-![How use Fabric](/src/style/assets/intro1.svg)
+![How use Fabric](src/style/assets/intro1.svg)
 
 
 ##Resources
