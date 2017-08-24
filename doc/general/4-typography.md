@@ -13,4 +13,4 @@ Typographic hierarchy is created by:
 
 Most commonly these methods are used in combination with each other. Fabric uses the color **“fiord”** for its titles and labels to arise a slight differentiation from other values.
 
-![Example](/img/typography1.png)
+![Example](/src/style/assets/typography1.png)
