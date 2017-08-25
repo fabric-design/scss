@@ -1,123 +1,129 @@
-$table-border-color: $earl-gray;
-$table-header-background-color: $catkin;
-$table-header-color: $asphalt;
-$table-header-border-color: $mischka;
-$table-header-row-border-bottom-color: $athens-gray;
-$table-header-row-border-top-color: $catkin;
-$table-body-color: $shark;
-$table-row-even: $white;
-$table-row-odd: $catkin;
-$table-row-hover-color: $sail;
-$table-row-border-color: darken($catkin, 5%);
+$include-table-css: true !default;
+$table-border-color: $silver !default;
+$table-header-background-color: $white !default;
+$table-header-color: $asphalt !default;
+$table-header-border-color: $primary-color !default;
+$table-header-row-border-bottom-color: $athens-gray !default;
+$table-header-row-border-top-color: $catkin !default;
+$table-body-color: $shark !default;
+$table-row-background-color: $white !default;
+$table-row-hover-background-color: $silver !default;
+$table-row-active-background-color: $arctica !default;
+$table-row-border-color: $silver !default;
+$table-row-line-height: $space-xxl !default;
 
-.sort {
+@mixin table-sort() {
   position: relative;
   width: rem(10px);
-  .icon-asc,
-  .icon-desc {
-    vertical-align: middle;
-    opacity: .4;
-    position: absolute;
-    cursor: pointer;
-    &.icon-desc {
-      top: $base-font-size;
-    }
-    &.icon-asc {
-      top: 0;
-    }
-    &:hover {
-      opacity: 1;
-    }
+  display: inline-block;
+  vertical-align: top;
+  .sort-arrow {
+    visibility: hidden;
+    transition: transform .2s linear;
+    vertical-align: baseline;
   }
-  &.asc .icon-asc {
-    opacity: 1;
+  &.asc .sort-arrow {
+    visibility: visible;
+    transform: rotate(180deg);
   }
-  &.desc .icon-desc {
-    opacity: 1;
+  &.desc .sort-arrow {
+    visibility: visible;
+    transform: rotate(0deg);
   }
 }
 
-.table-actions {
-  margin: rem(20px 0 11px);
+@mixin table-filter() {
+  display: inline-block;
+  vertical-align: top;
+  .dropdown-trigger,
+  .flatpickr-input {
+    color: inherit;
+  }
+  &.is-active .dropdown-trigger,
+  &.is-active .flatpickr-input {
+    color: $primary-color;
+  }
 }
 
-table {
-  width: 100%;
-  border: 1px solid $table-border-color;
-  border-radius: 2px;
-  border-collapse: collapse;
-  line-height: $base-font-size;
-  thead {
-    border-bottom: 1px solid $table-header-border-color;
-    background-color: $table-header-background-color;
-    color: $table-header-color;
-    tr {
-      th {
-        padding: 0 $space-xl 0 $space-m;
-        line-height: $space-xl;
-        white-space: nowrap;
-        position: relative;
-        text-align: left;
-        border-bottom: 1px solid $table-header-border-color;
-        label {
-          display: inline-block;
-          vertical-align: top;
-          margin: 0;
-        }
-        .sort {
-          display: inline-block;
-          vertical-align: top;
-        }
-        .filter {
-          position: absolute;
-          right: $space-xs;
-          top: rem(-2px);
-          .dropdown-trigger,
-          .flatpickr-input {
-            color: inherit;
-          }
-          &.is-active .dropdown-trigger,
-          &.is-active .flatpickr-input {
-            color: $primary-color;
-          }
-        }
-      }
-      th:not(:last-child) {
-        border-right: 1px solid $table-row-border-color;
-      }
-      th:first-child {
-        border-top-left-radius: 2px;
-      }
-      th:last-child {
-        border-top-right-radius: 2px;
-      }
-    }
-    tr:not(:first-child) {
-      th {
-        padding: rem(5px 4px);
-      }
-    }
+@if $include-table-css {
+  .table-actions {
+    margin: rem(20px 0 11px);
   }
-  tbody {
-    color: $asphalt;
-    font-size: rem(15px);
-    tr:nth-of-type(even) td {
-      background-color: $table-row-odd;
-      border-bottom: 1px solid $table-row-border-color;
+
+  table {
+    width: 100%;
+    border: 1px solid $table-border-color;
+    border-radius: 2px;
+    border-collapse: collapse;
+    line-height: $table-row-line-height;
+    box-shadow: $paper-shadow-2;
+    thead {
+      border-bottom: 2px solid $table-header-border-color;
+      background-color: $table-header-background-color;
+      color: $table-header-color;
+      tr {
+        th {
+          padding: 0 $space-xl 0 $space-m;
+          line-height: $space-xl;
+          white-space: nowrap;
+          position: relative;
+          text-align: left;
+          border-bottom: 1px solid $table-header-border-color;
+          label {
+            display: inline-block;
+            vertical-align: top;
+            margin: 0;
+            overflow: visible;
+            .text {
+              display: inline-block;
+              vertical-align: top;
+              max-width: 90%;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+            .filter {
+              @include table-filter();
+            }
+            .sort {
+              @include table-sort();
+            }
+          }
+        }
+        th:first-child {
+          border-top-left-radius: 2px;
+        }
+        th:last-child {
+          border-top-right-radius: 2px;
+        }
+      }
+      tr:not(:first-child) {
+        th {
+          padding: rem(5px 4px);
+        }
+      }
     }
-    tr:nth-of-type(odd) td,
-    tr.pagination-row td {
-      background-color: $table-row-even;
-    }
-    tr:nth-last-child(2) td {
-      border-bottom: 1px solid $table-row-border-color;
-    }
-    td {
-      padding: 0 $space-xl 0 $space-m;
-      line-height: $space-xl;
-    }
-    tr.pagination-row td {
-      @include inset-spacing-stretch(l);
+    tbody {
+      color: $asphalt;
+      font-size: rem(15px);
+      tr {
+        td {
+          background-color: $table-row-background-color;
+          border-bottom: 1px solid $table-row-border-color;
+          padding: 0 $space-m;
+          line-height: $table-row-line-height;
+          transition: background-color .1s linear;
+        }
+        &:hover td {
+          background-color: $table-row-hover-background-color;
+        }
+        &.is-active td {
+          background-color: $table-row-active-background-color;
+        }
+      }
+      tr.pagination-row td {
+        padding: $space-m;
+        background-color: $table-row-background-color;
+      }
     }
   }
 }
