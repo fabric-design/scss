@@ -1,37 +1,54 @@
 # Buttons
 
-## Button Styles
-We have five button styles. Primary, secondary, toggle, flat and icon buttons. 
-Giving your primary, secondary and tertiary action buttons the proper visuel weight facilitates user flow.
-Without proper visual weight, you can cause the user to make mistakes.
+## Button Hierarchy
+**Primary Buttons**
 
-It is importatnt that the primary button have the strongest visual weight and identifies the primary action in a set of buttons.
+Button type used to emphasize the most common/most important action.
 
-<button>Primary Button</button>
+<button>Save</button>
 ```html
-<button>Primary button</button> 
+<button>Save</button>
 ```
 
-A **secondary button** isn't as import as a primary one, so it shouldn't call as much attention. This button could be used for actions such as Cancel, Abort, Reset or Go back. 
+![Grid](src/style/assets/butt-ex1.svg)
+<p> Use it to make default action more visible. </p>
 
-<button class="mod-secondary">Secondary Button</button>
+![Grid](src/style/assets/butt-ex2.svg)
+<p>Instead of using multiple Primary Buttons, try to show alternative actions in a subtle form (like Secondary Buttons)<p>
+
+**Secondary Buttons**
+
+Used for most user interactions. In contrast to Primary Button, it can be used many times on one screen.
+
+<button class="mod-secondary">Cancel</button>
 ```html
-<button class="mod-secondary">Secondary Button</button>
+<button class="mod-secondary">cancel</button>
 ```
 
-**Toggle buttons** allow single choice to be selected or deselected
+![Grid](src/style/assets/butt-ex1.svg)
+<p>You can combine Secondary Buttons with one Primary Button which emphasize the most important or common user action.<p>
 
-<button class="mod-secondary mod-toggle">Toggle Button</button>
+![Grid](src/style/assets/butt-ex3.svg)
+<p>When you can point out default action from alternatives - use Primary Button to emphatize it from the rest.<p>
+
+**Flat buttons**
+
+Used for alternative interactions. Can be used to create clean visual priority.
+
+<button class="mod-flat">show details</button>
 ```html
-<button class="mod-secondary mod-toggle">Toggle Button</button>
+<button class="mod-flat">show details</button>
 ```
 
-**Flat buttons** looks like a normal anchor but on click they become the look of an button for a short time.
+**Toggle buttons**
 
-<button class="mod-flat">Flat button</button>
+Allow single choice to be selected or deselected
+
+<button class="mod-secondary mod-toggle">show difference</button>
 ```html
-<button class="mod-flat">Flat button</button>
+<button class="mod-secondary mod-toggle">show difference<</button>
 ```
+
 
 A button could also just contain an **icon**
 
@@ -67,14 +84,47 @@ Buttons can have different states which can be represented using classes.
 ```
 
 ## Button sizes
-All of our buttons can be small, normal or large. For normal buttons just do nothing and for small or large buttons add a modifier class.
+<button>Normal button</button>
+
+Most common button. Used when there is no reason to use Small or Large button.
+```html
+<button>Normal button</button>
+```
 
 <button class="mod-large">Large button</button>
-<button>Normal button</button>
-<button class="mod-small">Small button</button>
+
+Used on visually simple screens to emphasize default screen action.
 ```html
 <button class="mod-large">Large button</button>
-<button>Normal button</button>
+```
+
+<button class="mod-small">Small button</button>
+
+Used inside other elements (ex. Tables) or on complex, visually crowded screens.
+```html
 <button class="mod-small">Small button</button>
 ```
 
+##Button Placement
+![Grid](src/style/assets/buttons1.jpg)
+
+### Decision buttons
+Decision finalise decision about screen or element (button examples: Save, Cancel, Send, Show Details)
+
+Placed on right bottom side of related content.
+
+If there is more than one option available do not use more than one Primary Button (you can use none).
+
+![Grid](src/style/assets/butt-ex4.jpg)
+![Grid](src/style/assets/butt-ex5.jpg)
+<p>Always place Primary Action on the right side of buttons group.</p>
+
+### Modification buttons
+Used to enable possibility to modify an element (button example: Edit).
+
+Placed in the on the right, over related element.
+
+### View buttons
+Used to edit the way in which content is shown (exchange data output).
+
+Placed in the on the left, over related area. Do not use Primary Buttons as View Buttons.
