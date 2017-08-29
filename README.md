@@ -1,4 +1,8 @@
-# Wholesale-Design-System
+<p align="center">
+<img src="./fabric-logo.png"  />
+</p>
+
+# Zalando Fabric Scss
 
 [![CircleCI](https://circleci.com/gh/wholesale-design-system/scss.svg?style=svg)](https://circleci.com/gh/wholesale-design-system/scss)
 [![Styleguide](https://img.shields.io/github/issues/wholesale-design-system/scss.svg)](https://github.com/wholesale-design-system/components/issues)
@@ -6,7 +10,7 @@
 
 ## Motivation
 
-At Zalando Wholesale we are developing a lot of web applications from small to mid-complex. As we are developing them in different cross-functional teams we wanted to guarantee the same look and feel in all of our applications independent from people and their development background. For guaranteeing same UI across applications and development teams we are developing a component-based Styleguide which provides a SCSS library and (P)React based components which can be all used independently.
+At Zalando Retail Operations we are developing a lot of web applications from small to mid-complex. As we are developing them in different cross-functional teams we wanted to guarantee the same look and feel in all of our applications independent from people and their development background. For guaranteeing same UI across applications and development teams we are developing a component-based Styleguide which provides a SCSS library and (P)React based components which can be all used independently.
 
 This repository contains our scss styles. 
 
@@ -46,7 +50,7 @@ If you want to use the whole SCSS library you can just import the index SCSS fil
 
 ### Contributing
 
-Our Zalando Wholesale Styleguide is in active development and we welcome any contributions and feedback. See our [CONTRIBUTING.md](CONTRIBUTING.md) for detailed information on how to contribute.
+Our Zalando Retail Operations Styleguide is in active development and we welcome any contributions and feedback. See our [CONTRIBUTING.md](CONTRIBUTING.md) for detailed information on how to contribute.
 
 ### LICENSE
 
