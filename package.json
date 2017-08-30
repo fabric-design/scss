@@ -1,8 +1,8 @@
 {
-  "name": "wholesale-styleguide-scss",
+  "name": "fabric-scss",
   "version": "0.0.1",
   "description": "",
-  "homepage": "https://d1fhpltsebm6no.cloudfront.net/",
+  "homepage": "https://fabric-design.github.io/styleguide/#/general/1-intro",
   "main": "README.md",
   "scripts": {
     "prestart": "npm install"
@@ -19,7 +19,7 @@
   "licenses": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wholesale-design-system/scss.git"
+    "url": "https://github.com/fabric-design/scss.git"
   },
   "engines": {
     "node": ">=0.10.0",
