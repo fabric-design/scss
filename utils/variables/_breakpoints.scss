@@ -1,5 +1,5 @@
 $small-up: "screen" !default; // 0 - 640px
-$medium-up: "screen and (min-width: 40.0625em)" !default; // 641px - 1024px
+$medium-up: "screen and (min-width: 48em)" !default; // 768px - 1024px
 $large-up: "screen and (min-width: 64.0625em)" !default; // 1025px - 1440px
 $xlarge-up: "screen and (min-width: 90.0625em)" !default; // Bigger than mac's 2880px with 2 dpi = 1441px
 

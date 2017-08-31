@@ -66,7 +66,6 @@ $dropdown-background-color-accent: $earl-gray !default;
     color: lighten($font-color, 30%);
   }
   &.is-active {
-    font-weight: bold;
     color: $active-color;
     &:after {
       content: map-get($icons, ok);
