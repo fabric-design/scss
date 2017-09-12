@@ -4,9 +4,9 @@
 
 # Zalando Fabric Scss
 
-[![CircleCI](https://circleci.com/gh/wholesale-design-system/scss.svg?style=svg)](https://circleci.com/gh/wholesale-design-system/scss)
-[![Styleguide](https://img.shields.io/github/issues/wholesale-design-system/scss.svg)](https://github.com/wholesale-design-system/components/issues)
-[![GitHub contributors](https://img.shields.io/github/contributors/wholesale-design-system/scss.svg)]()
+[![CircleCI](https://circleci.com/gh/fabric-design/scss.svg?style=svg)](https://circleci.com/gh/fabric-design/scss)
+[![Styleguide](https://img.shields.io/github/issues/fabric-design/scss.svg)](https://github.com/fabric-design/components/issues)
+[![GitHub contributors](https://img.shields.io/github/contributors/fabric-design/scss.svg)]()
 
 ## Motivation
 
@@ -25,7 +25,7 @@ Therefore we have a clear folder structure:
 - `Atoms` - styles to the basic building blocks of our design. Basically all HTML Tags such as form, label, button, icons.
 - `Molecules` - Molecules are groups of atoms combined together to create smallest compunds of our Design. Based on molecules further complex compositions can be created. Molecules can be dropdowns , tooltips or pagination elements.
 - `Organisms` - Organisms are combined from a group of molecules and form a complex, still distinct part of an interface, e.g. a navigation header with a logo, links and a search field. 
-- `doc` - General documentation of our styleguide (in Markdown). They are later consumed by the [styleguide](https://github.com/wholesale-design-system/styleguide) and displayed in the associated styleguide web application.
+- `doc` - General documentation of our styleguide (in Markdown). They are later consumed by the [styleguide](https://github.com/fabric-design/styleguide) and displayed in the associated styleguide web application.
 - `utils`- utility functions for our SCSS library like variables, grid settings or other helper mixins.
 
 #### Linting
@@ -42,11 +42,11 @@ It runs styleint with the SCSS ruleset and breaks for any given linting error.
 
 You can install the package via
 
-`npm install git+ssh://github.bus.zalan.do/WholesaleDesignSystem/Styleguide-SCSS.git --save`
+`npm i -D git+https://github.com/fabric-design/scss.git`
 
 If you want to use the whole SCSS library you can just import the index SCSS file 
 
-`@import "node_modules/wholesale-styleguide-scss/index"`
+`@import "node_modules/fabric-scss/index"`
 
 ### Contributing
 
