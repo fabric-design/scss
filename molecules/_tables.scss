@@ -35,6 +35,7 @@ $table-row-line-height: $space-xxl !default;
 @mixin table-filter() {
   display: inline-block;
   vertical-align: top;
+  text-transform: initial;
   .dropdown-trigger,
   .flatpickr-input {
     color: inherit;
@@ -63,7 +64,7 @@ $table-row-line-height: $space-xxl !default;
       color: $table-header-color;
       tr {
         th {
-          padding: 0 $space-xl 0 $space-m;
+          padding: 0 $space-m;
           line-height: $space-xl;
           white-space: nowrap;
           position: relative;
@@ -74,17 +75,17 @@ $table-row-line-height: $space-xxl !default;
             vertical-align: top;
             margin: 0;
             overflow: visible;
-            .text {
+            > .text {
               display: inline-block;
               vertical-align: top;
               max-width: 90%;
               overflow: hidden;
               text-overflow: ellipsis;
             }
-            .filter {
+            > .filter {
               @include table-filter();
             }
-            .sort {
+            > .sort {
               @include table-sort();
             }
           }
@@ -119,6 +120,11 @@ $table-row-line-height: $space-xxl !default;
         &.is-active td {
           background-color: $table-row-active-background-color;
         }
+      }
+      tr.empty-row td,
+      tr.loader-row td {
+        text-align: center;
+        background-color: $table-row-background-color;
       }
       tr.pagination-row td {
         padding: $space-m;
