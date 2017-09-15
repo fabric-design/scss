@@ -36,8 +36,7 @@
     <li><span class="icon-circle icon24"></span><span class="text">.icon-circle</span></li>
 </ul>
 ## Icon sizes
-Our icons are in general displayed in one of 4 sizes. Those can be 16x16, 24x24, 32x32 or 48x48 pixels.
-To achieve this simply add one of the following classes to your icon: icon16, icon24, icon32 or icon48
+Icons can displayed in one of 4 sizes: 16x16, 24x24, 32x32 or 48x48 pixels. Just add one of the following classes to your icon: `icon16`, `icon24`, `icon32` or `icon48`.
 
 <span class="icon-lightbulb icon48"></span>
 <span class="icon-lightbulb icon32"></span>

@@ -3,15 +3,14 @@
 ## Colors in General
 GUIs (Graphical User Interfaces) present their features and functions visually. Color is used sparingly to draw attention to important elements and those that we want the user to take action on.
 
-![Colors in general](/img/colors1.png)
-
+![Colors in general](src/style/assets/colors1.png)
 
 ## System Colors
 Fabric design system differs between the primary **Color Palettes** (system colors) and **Scheme Colors**.
 
-The system colors (pure red, yellow, green and grays) are separated from other palettes, to provide a way to impart visual continuity, communicate status information, give feedback in response to user actions and help people visualize data. The easier it is to use your product and quickly scan information, the less mistakes your users might make.
+The system colors (red, yellow, green and grays) are separated from other palettes, to provide a way to impart visual continuity, communicate status information and give feedback. Proper color usage will make your GUI easier to scan for information and reduce users errors.
 
-![Colors in general](/img/checkmart.svg)
+![Success](src/style/assets/checkmart.svg)
 <label>Success</label>
 <ul class="color-list">
     <li style="background-color: #C9FFD1"><span class="text">$snowy-mint: #C9FFD1</span></li>
@@ -19,7 +18,7 @@ The system colors (pure red, yellow, green and grays) are separated from other p
     <li style="background-color: #1EB234"><span class="text">$forest-green: #1EB234</span></li>
     <li style="background-color: #188F2A"><span class="text">$kohpayam: #188F2A</span></li>
 </ul>
-![Colors in general](/img/forbidden-swtone.svg)
+![Error](src/style/assets/forbidden-swtone.svg)
 <label>Error</label>
 <ul class="color-list">
     <li style="background-color: #FFDDDB"><span class="text">$pippin: #FFDDDB</span></li>
@@ -27,7 +26,7 @@ The system colors (pure red, yellow, green and grays) are separated from other p
     <li style="background-color: #F44F41"><span class="text">$flamingo: #F44F41</span></li>
     <li style="background-color: #C74236"><span class="text">$mojo: #C74236</span></li>
 </ul>
-![Colors in general](/img/attention.svg)
+![Attention](src/style/assets/attention.svg)
 <label>Attention</label>
 <ul class="color-list">
     <li style="background-color: #FFFFCF"><span class="text">$bulb: #FFFFCF</span></li>
@@ -37,7 +36,7 @@ The system colors (pure red, yellow, green and grays) are separated from other p
 </ul>
 
 
-## System Grays
+## 16 Shades of Gray
 One of the biggest aims is to provide a basis, which guides user through interfaces without any visual distractions. Fabric presents its workspace in system grays - best conditions to reach maximum attention with little color accents, which allows guiding users easily and fast through complex data architectures.
 
 
@@ -184,6 +183,40 @@ Most of the application is gray, pops of color catch a user’s eye.
 </ul>
 
 ## How to use Scheme Colors
-Each scheme palette owns 6 shades of a specific color. To offer a well balanced user interface, each color of the scheme is assigned to a specific function.
+Each scheme palette owns six shades of a specific color. To offer a well balanced user interface, each color of the scheme is assigned to a specific function.
 
-![Color Theme](/img/colors2.png)
+![Color Theme](src/style/assets/colors2.png)
+
+## Visualization Color
+When choosing visualization colors try to stick with base colors and use additional only when it is needed. But remember that base colors can have additional meanings (ex. green - good, red - bad). Proper color choice may enrich your chart, wrong use can be misleading.
+
+<label>Base Colors</label>
+<ul class="color-list">
+    <li style="background-color: #B0D6FB"><span class="text">Neutral</span></li>
+    <li style="background-color: #FA9585"><span class="text">Error/problem</span></li>
+    <li style="background-color: #A0EBA6"><span class="text">Finished/on track</span></li>
+    <li style="background-color: #FFD77E"><span class="text">Caution</span></li>
+
+</ul>
+<label>Additional Colors</label>
+<ul class="color-list">
+    <li style="background-color: #D0B0DB"><span class="text">Violet: #D0B0DB</span></li>
+    <li style="background-color: #C4AEA0"><span class="text">Brown: #C4AEA0</span></li>
+    <li style="background-color: #B0EFE5"><span class="text">Turquise: #B0EFE5</span></li>
+    <li style="background-color: #FFCAE0"><span class="text">Lila: #FFCAE0</span></li>
+</ul>
+
+
+<label>Disabled states</label>
+<ul class="color-list">
+    <li style="background-color: #DEF5FE"><span class="text"></span></li>
+    <li style="background-color: #FFDDDB"><span class="text"></span></li>
+    <li style="background-color: #C9FFD1"><span class="text"></span></li>
+    <li style="background-color: #FFEEC4"><span class="text"></span></li>        
+</ul>
+<ul class="color-list">
+    <li style="background-color: #D0B0DB"><span class="text"></span></li>
+    <li style="background-color: #C4AEA0"><span class="text"></span></li>
+    <li style="background-color: #B0EFE5"><span class="text"></span></li>
+    <li style="background-color: #FFCAE0"><span class="text"></span></li>
+</ul>

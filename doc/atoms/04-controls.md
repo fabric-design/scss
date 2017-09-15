@@ -1,6 +1,14 @@
 # Controls
 
 ## Checkboxes
+**Checkboxes** are used to select multiple elements from list.
+
+<input type="checkbox" id="vote" name="vote" checked />
+<label for="vote">Premium Article</label>
+```html
+<input type="checkbox" id="vote" name="vote" checked />
+<label for="vote">Premium Article</label>
+```
 ![Default](src/style/assets/con-ex1.jpg)
 <p>Checkboxes in Fabric allow users to select multiple elements from list, table or form.</p>
 
@@ -11,18 +19,22 @@
 <p>For on-off alternatives - use <b>Switch</b> instead.</p>
 
 ![Default](src/style/assets/con-ex4.jpg)
-<p>If available space or element's amount does not allow you to show options naturally - use <b>Dropdown</b> instead.</p>
+<p>If available space does not allow you to show options naturally - use <b>Dropdown</b> instead.</p>
 
-**Checkboxes** consists of an label and an input element. Important is that the label is placed directly after the input element.
-
-<input type="checkbox" id="vote" name="vote" checked />
-<label for="vote">Premium Article</label>
-```html
-<input type="checkbox" id="vote" name="vote" checked />
-<label for="vote">Premium Article</label>
-```
 
 ## Radio Buttons
+**Radio Buttons** are used to select only elements from list.
+
+<input type="radio" name="action" value="premium" id="premium" checked/>
+<label for="premium">Premium Article</label>
+<input type="radio" name="action" value="regular" id="regular"/>
+<label for="regular">Regular Article</label>
+```html
+<input type="radio" name="action" value="premium" id="premium" checked/>
+<label for="premium">Premium Article</label>
+<input type="radio" name="action" value="regular" id="regular"/>
+<label for="regular">Regular Article</label>
+```
 ![Default](src/style/assets/con-ex5.jpg)
 <p>Radio Buttons in Fabric allow users to select one elements from list, table or form.</p>
 
@@ -33,30 +45,10 @@
 <p>For on-off alternatives - use <b>Switch</b> instead.</p>
 
 ![Default](src/style/assets/con-ex8.jpg)
-<p>If available space or element's amount does not allow you to show options naturally - use <b>Dropdown</b> instead.</p>
-
-
-**Radio Buttons**  markup looks similar to checkboxes except that you specify the type as 'radio' and that you add a name to create a radio group.
-
-<input type="radio" name="action" value="premium" id="premium" checked/>
-<label for="premium">Premium Article</label>
-<input type="radio" name="action" value="regular" id="regular"/>
-<label for="regular">Regular Article</label>
-```html
-<input type="radio" name="action" value="premium" id="premium" checked/>
-<label for="premium">Premium Article</label>
-<input type="radio" name="action" value="regular" id="regular"/>
-<label for="regular">Regular Article</label>
-```
+<p>If available space does not allow you to show options naturally - use <b>Dropdown</b> instead.</p>
 
 ## Switches
-![Default](src/style/assets/con-ex9.jpg)
-<p>Switches in Fabric are used for on-off choice.</p>
-
-![Default](src/style/assets/con-ex10.jpg)
-<p>If choice can not be naturally shown as on-off alternative - use <b>Checkboxes</b> or <b>Radio Buttons</b>.</p>
-
-**Switches** requires the input to be from type *checkbox* and to have the class *.mod-switch*.
+**Switches** are used to select to enable or disable specific option. They require the input to be from type *checkbox* and to have the class *.mod-switch*.
 
 <input type="checkbox" class="mod-switch" id="switch"/>
 <label for="switch">Save changes automatically</label>
@@ -64,6 +56,11 @@
 <input type="checkbox" class="mod-switch" id="switch"/>
 <label for="switch">Save changes automatically<</label>
 ```
+![Default](src/style/assets/con-ex9.jpg)
+<p>Switches in Fabric are used for on-off choice.</p>
+
+![Default](src/style/assets/con-ex10.jpg)
+<p>If choice can not be naturally shown as on-off alternative - use <b>Checkboxes</b> or <b>Radio Buttons</b>.</p>
 
 ## Disabled Controls
 ![Default](src/style/assets/con-ex11.jpg)
@@ -72,10 +69,11 @@
 ![Default](src/style/assets/con-ex12.jpg)
 <p>If there is no clear way to enable element - hide it.</p>
 
-
-## Revers Order
+## Reverse Order
+Although default labels are placed on the right side of the control element, sometimes they can also be placed on the left.
+<!---
 **Reverse order** of input and label, so the label is on the right side of the toggle, can be done by wrapping the toggle and label with the class *.mod-toggle-reverse*.
-
+-->
 <div class="mod-toggle-reverse">
 	<input type="checkbox" class="mod-switch" id="switch2"/>
 	<label for="switch2">Off/On</label>

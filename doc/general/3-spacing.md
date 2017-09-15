@@ -1,12 +1,10 @@
 # Space
 
 ## General Spacing
-Proper spacing helps to understand information with ease. Without enough white space, all your content areas break down and blend together into a large amorphous structure.
+Proper spacing helps to understand information with ease. Without enough white space, all your content areas break down and blend together.
 
-It’s important that when you’re putting together a design layout, that you
-let the elements breathe. To do so, we need to separate enough whitespace
-between elements. It creates focus points for our users and leading their
-eyes to go through elements.
+It’s important that when you’re putting together a design layout, that you let the elements breathe. To do so, we need to separate enough whitespace
+between elements. It creates focus points for our users and leading their eyes to go through elements.
 
 To learn more about spacing and the way how we are using it, read: [Eight Shapes 'Space In Design System'](https://medium.com/eightshapes-llc/space-in-design-systems-188bcbae0d62)
 
@@ -36,29 +34,28 @@ XXL, $space-xxl: 3rem
 <div  style="width:640px; height:64px; background-color:#00CC4D"></div>
 XXXL, $space-xxl: 4rem
 
-
 ## Grid
 Design System is using 24 column grid.
 
-![Grid](/img/spacing1.svg)
+![Grid](src/style/assets/spacing1.svg)
 
 Gutter (column padding) width is 0.5 rem (8 px) which means that distance between columns is 1 rem. Column size depends on screen size.
 
-![Grid](/img/spacing2.svg)
+![Grid](src/style/assets/spacing2.svg)
 
 During screen design Designer needs to decide how many columns is needed for content area.
 
-![Grid](/img/spacing3.svg)
+![Grid](src/style/assets/spacing3.svg)
 
 Designer should also remember that on smaller screens. He needs to:
 
-![Grid](/img/spacing4.svg)
+![Grid](src/style/assets/spacing4.svg)
 
 ## Layout
 1440 screen, 24 col, 0,5rem margin, 1rem gutter
-![Grid](/img/spacing5.svg)
+![Grid](src/style/assets/spacing5.svg)
 
 ## Spatial Concept
 Using insets, stacks and inlines will help to organise layouts in a harmonious way.
 
-![Grid](/img/spatial-concept.svg)
+![Grid](src/style/assets/spatial-concept.svg)
