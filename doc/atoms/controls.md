@@ -71,18 +71,3 @@
 
 ![Default](src/style/assets/con-ex12.jpg)
 <p>If there is no clear way to enable element - hide it.</p>
-
-
-## Revers Order
-**Reverse order** of input and label, so the label is on the right side of the toggle, can be done by wrapping the toggle and label with the class *.mod-toggle-reverse*.
-
-<div class="mod-toggle-reverse">
-	<input type="checkbox" class="mod-switch" id="switch2"/>
-	<label for="switch2">Off/On</label>
-</div>
-```html
-<div class="mod-toggle-reverse">
-	<input type="checkbox" class="mod-switch" id="switch2"/>
-	<label for="switch2">Off/On</label>
-</div>
-```
