@@ -33,6 +33,11 @@ $radio-group-border-radius: $button-border-radius !default;
           color: $radio-group-button-active-color;
           box-shadow: $paper-shadow-1;
         }
+        // Hide toggle base
+        &:after,
+        &:before {
+          display: none;
+        }
       }
       &:checked + label,
       &.is-checked + label,

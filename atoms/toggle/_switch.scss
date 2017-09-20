@@ -20,11 +20,6 @@ $switch-knob-color-disabled-checked: $madang !default;
  * @param $knob-shadow The box shadow of the knob element
  */
 @mixin switch-toggle($track-width, $track-height, $knob-size, $knob-shadow) {
-  // We made the real input 1/2 of switch size and align it vertical and horizontal centered to don't overflow behind the layers
-  // This causes the :before and :after containers to have a wrong positioning which will be 1/4 from top and left
-  // We calculate here the negative margin to adjust the position to the correct one
-  $top-alignment: $track-height / 4;
-  $left-alignment: $track-width / 4;
   // Additionally to the general top alignment of the :after container we have to adjust the height to position the
   // knob centered on the track.
   $knob-top-alignment: (($knob-size - $track-height) / 2);
@@ -32,17 +27,17 @@ $switch-knob-color-disabled-checked: $madang !default;
   vertical-align: middle;
   position: relative;
   outline: none;
-  margin-left: $left-alignment; // Align real control centered behind layers above
   cursor: pointer;
+  margin-right: $space-xs + $track-width;
   &:before {
-    top: $knob-top-alignment;
-    left: 0rem;
+    top: 50%;
+    right: -($space-xs + $track-width);
+    margin-top: -($track-height / 2);
     content: '';
     position: absolute;
     display: block;
     width: $track-width;
     height: $track-height;
-    margin: 0 0 0 (-$left-alignment);
     border-radius: $track-height;
     box-sizing: border-box;
     transition: background .1s linear;
@@ -50,8 +45,9 @@ $switch-knob-color-disabled-checked: $madang !default;
   &:after {
     content: '';
     position: absolute;
-    top: 0;
-    left: -$left-alignment;
+    top: 50%;
+    right: -($knob-size + $space-xs);
+    margin-top: -($knob-size / 2);
     width: $knob-size;
     height: $knob-size;
     box-shadow: $knob-shadow;
@@ -79,7 +75,6 @@ $switch-knob-color-disabled-checked: $madang !default;
     display: none;
     & + label {
       overflow: visible;
-      padding-left: 2rem;
       @include switch-toggle($switch-track-width, $switch-track-height, $switch-knob-size, $switch-knob-shadow);
       @include switch-color($switch-track-color, $switch-knob-color);
     }
