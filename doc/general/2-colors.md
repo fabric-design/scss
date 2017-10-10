@@ -4,11 +4,16 @@
 GUIs (Graphical User Interfaces) present their features and functions visually. Color is used sparingly to draw attention to important elements and those that we want the user to take action on.
 
 ![Colors in general](src/style/assets/colors1.png)
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 
 ## System Colors
 Fabric design system differs between the primary **Color Palettes** (system colors) and **Scheme Colors**.
 
 The system colors (red, yellow, green and grays) are separated from other palettes, to provide a way to impart visual continuity, communicate status information and give feedback. Proper color usage will make your GUI easier to scan for information and reduce users errors.
+
 
 ![Success](src/style/assets/checkmart.svg)
 <label>Success</label>
@@ -18,6 +23,7 @@ The system colors (red, yellow, green and grays) are separated from other palett
     <li style="background-color: #1EB234"><span class="text">$forest-green: #1EB234</span></li>
     <li style="background-color: #188F2A"><span class="text">$kohpayam: #188F2A</span></li>
 </ul>
+
 ![Error](src/style/assets/forbidden-swtone.svg)
 <label>Error</label>
 <ul class="color-list">
@@ -26,6 +32,7 @@ The system colors (red, yellow, green and grays) are separated from other palett
     <li style="background-color: #F44F41"><span class="text">$flamingo: #F44F41</span></li>
     <li style="background-color: #C74236"><span class="text">$mojo: #C74236</span></li>
 </ul>
+
 ![Attention](src/style/assets/attention.svg)
 <label>Attention</label>
 <ul class="color-list">
@@ -205,6 +212,7 @@ When choosing visualization colors try to stick with base colors and use additio
     <li style="background-color: #B0EFE5"><span class="text">Turquise: #B0EFE5</span></li>
     <li style="background-color: #FFCAE0"><span class="text">Lila: #FFCAE0</span></li>
 </ul>
+
 
 
 <label>Disabled states</label>

@@ -18,7 +18,6 @@ Default layer solution to show element details without hiding screen information
 Should be used ONLY for task stopping events (like critical errors).
 
 ![Example](src/style/assets/over-ex6.svg)
-<p>Use it for crucial decisions that interfere user workflow.</p>
 
 ![Example](src/style/assets/over-ex7.svg)
 <p>Use it for crucial information that break standard user workflow.</p>

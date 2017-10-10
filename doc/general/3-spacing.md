@@ -32,7 +32,7 @@ XL, $space-xl: 2rem
 XXL, $space-xxl: 3rem
 <div  style="width:1px; height:8px; background-color:#FFF"></div>
 <div  style="width:640px; height:64px; background-color:#00CC4D"></div>
-XXXL, $space-xxl: 4rem
+XXXL, $space-xxxl: 4rem
 
 ## Grid
 Design System is using 24 column grid.
