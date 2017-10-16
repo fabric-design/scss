@@ -23,12 +23,6 @@ $label-disabled-color: $polo-blue !default;
     &.mod-xxlarge {
       line-height: $space-xxl;
     }
-    &.is-clickable {
-      cursor: pointer;
-      &:hover {
-        color: $anchor-hover-color;
-      }
-    }
   }
   *:disabled + label,
   .is-disabled + label,

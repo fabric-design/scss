@@ -37,20 +37,7 @@ test:
     - gulp lint-sass
 
 deployment:
-  release:
-    branch: master
-    commands:
-      - gulp bump-version changelog
-      - git add package.json doc
-      - git commit -m "Bumped version to $(jq -r .version package.json) [skip ci]"
-      - git tag -f -a $(jq -r .version package.json) -m "Automatic release via CircleCI"
-      - git push origin $CIRCLE_BRANCH
-      - gulp release --branch="${CIRCLE_BRANCH}"
-      - au build:
-          pwd: styleguide
-      - au publish --commit ${CIRCLE_SHA1} --repo "${CIRCLE_PROJECT_REPONAME}/${CIRCLE_BRANCH}" --target "${TARGET}":
-          pwd: styleguide
-  styleguide:
+  master:
     branch: /.*/
     commands:
       - au build:

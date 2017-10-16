@@ -15,17 +15,15 @@ $radio-disabled-border-color: $miroschka !default;
  * @param $disabled-icon-color Color of check mark icon when radio is disabled
  */
 @mixin radio-toggle($size, $border-radius, $icon-color, $disabled-icon-color) {
-  + label:after {
+  &:after {
     content: '';
     background-color: $icon-color;
-    border-radius: $border-radius;
     width: $size / 2;
     height: $size / 2;
-    margin-top: -($size / 4);
-    left: $size / 4; // The icon got half of the size so the other half / 2 is aligning to center
+    border-radius: $border-radius;
   }
-  &:disabled + label:after,
-  &.is-disabled + label:after {
+  &:disabled:after,
+  &.is-disabled:after {
     background-color: $disabled-icon-color;
   }
 }

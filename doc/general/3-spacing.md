@@ -1,12 +1,10 @@
 # Space
 
 ## General Spacing
-Proper spacing helps to understand information with ease. Without enough white space, all your content areas break down and blend together into a large amorphous structure.
+Proper spacing helps to understand information with ease. Without enough white space, all your content areas break down and blend together.
 
-It’s important that when you’re putting together a design layout, that you
-let the elements breathe. To do so, we need to separate enough whitespace
-between elements. It creates focus points for our users and leading their
-eyes to go through elements.
+It’s important that when you’re putting together a design layout, that you let the elements breathe. To do so, we need to separate enough whitespace
+between elements. It creates focus points for our users and leading their eyes to go through elements.
 
 To learn more about spacing and the way how we are using it, read: [Eight Shapes 'Space In Design System'](https://medium.com/eightshapes-llc/space-in-design-systems-188bcbae0d62)
 
@@ -35,7 +33,6 @@ XXL, $space-xxl: 3rem
 <div  style="width:1px; height:8px; background-color:#FFF"></div>
 <div  style="width:640px; height:64px; background-color:#00CC4D"></div>
 XXXL, $space-xxxl: 4rem
-
 
 ## Grid
 Design System is using 24 column grid.

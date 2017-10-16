@@ -31,16 +31,11 @@ $schema: 'blue' !default;
 }
 
 $primary-color: schema-color(3);
-
 $button-color-disabled: schema-color(1) !default;
 $button-background: $primary-color !default;
 $button-background-disabled: schema-color(2) !default;
-
 $badge-color: $primary-color !default;
 $badge-background-color: schema-color(1) !default;
-
 $anchor-color: schema-color(3) !default;
 $anchor-hover-color: schema-color(5) !default;
 $anchor-disabled-color: schema-color(2) !default;
-
-$table-row-active-background-color: schema-color(1) !default;

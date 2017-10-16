@@ -20,24 +20,29 @@ $switch-knob-color-disabled-checked: $madang !default;
  * @param $knob-shadow The box shadow of the knob element
  */
 @mixin switch-toggle($track-width, $track-height, $knob-size, $knob-shadow) {
+  // We made the real input 1/2 of switch size and align it vertical and horizontal centered to don't overflow behind the layers
+  // This causes the :before and :after containers to have a wrong positioning which will be 1/4 from top and left
+  // We calculate here the negative margin to adjust the position to the correct one
+  $top-alignment: $track-height / 4;
+  $left-alignment: $track-width / 4;
   // Additionally to the general top alignment of the :after container we have to adjust the height to position the
   // knob centered on the track.
-  $knob-top-alignment: (($knob-size - $track-height) / 2);
+  $knob-top-alignment: $top-alignment + (($knob-size - $track-height) / 2);
+
   display: inline-block;
   vertical-align: middle;
   position: relative;
   outline: none;
+  width: $track-width / 2; // Make real control smaller to don't overflow behind overlays
+  height: $track-height / 2;
+  margin-left: $left-alignment; // Align real control centered behind layers above
   cursor: pointer;
-  margin-right: $space-xs + $track-width;
   &:before {
-    top: 50%;
-    right: -($space-xs + $track-width);
-    margin-top: -($track-height / 2);
     content: '';
-    position: absolute;
     display: block;
     width: $track-width;
     height: $track-height;
+    margin: (-$top-alignment) 0 0 (-$left-alignment);
     border-radius: $track-height;
     box-sizing: border-box;
     transition: background .1s linear;
@@ -45,9 +50,8 @@ $switch-knob-color-disabled-checked: $madang !default;
   &:after {
     content: '';
     position: absolute;
-    top: 50%;
-    right: -($knob-size + $space-xs);
-    margin-top: -($knob-size / 2);
+    top: -$knob-top-alignment;
+    left: -$left-alignment;
     width: $knob-size;
     height: $knob-size;
     box-shadow: $knob-shadow;
@@ -72,31 +76,23 @@ $switch-knob-color-disabled-checked: $madang !default;
 
 @if $include-switch-css {
   input[type=checkbox].mod-switch {
-    display: none;
-    & + label {
-      overflow: visible;
-      @include switch-toggle($switch-track-width, $switch-track-height, $switch-knob-size, $switch-knob-shadow);
-      @include switch-color($switch-track-color, $switch-knob-color);
-    }
+    @include switch-toggle($switch-track-width, $switch-track-height, $switch-knob-size, $switch-knob-shadow);
+    @include switch-color($switch-track-color, $switch-knob-color);
     &:checked,
     &.is-checked {
-      & + label {
-        @include switch-color($switch-track-color-checked, $switch-knob-color-checked);
-        &:after {
-          transform: translate3d($switch-track-width - $switch-knob-size, 0, 0);
-        }
+      @include switch-color($switch-track-color-checked, $switch-knob-color-checked);
+      &:after {
+        transform: translate3d($switch-track-width - $switch-knob-size, 0, 0);
       }
     }
     &:disabled,
     &.is-disabled {
-      & + label {
-        @include switch-color($switch-track-color-disabled, $switch-knob-color-disabled);
-        &:after {
-          box-shadow: none;
-        }
+      @include switch-color($switch-track-color-disabled, $switch-knob-color-disabled);
+      &:after {
+        box-shadow: none;
       }
       &:checked,
-      &.is-checked + label {
+      &.is-checked {
         @include switch-color($switch-track-color-disabled-checked, $switch-knob-color-disabled-checked);
       }
     }

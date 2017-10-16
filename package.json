@@ -1,8 +1,8 @@
 {
-  "name": "fabric-scss",
-  "version": "1.0.2",
+  "name": "wholesale-styleguide-scss",
+  "version": "0.0.1",
   "description": "",
-  "homepage": "https://fabric-design.github.io/styleguide/#/general/1-intro",
+  "homepage": "https://d1fhpltsebm6no.cloudfront.net/",
   "main": "README.md",
   "scripts": {
     "prestart": "npm install"
@@ -19,7 +19,7 @@
   "licenses": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/fabric-design/scss.git"
+    "url": "https://github.com/wholesale-design-system/scss.git"
   },
   "engines": {
     "node": ">=0.10.0",
@@ -29,13 +29,9 @@
     "registry": "npm"
   },
   "devDependencies": {
-    "conventional-github-releaser": "^1.1.12",
     "gulp": "github:gulpjs/gulp#4.0",
-    "gulp-bump": "^2.7.0",
-    "gulp-conventional-changelog": "^1.1.4",
     "gulp-sass": "^2.3.1",
     "gulp-stylelint": "^3.9.0",
-    "run-sequence": "^2.1.0",
     "stylelint": "^7.9.0",
     "stylelint-config-sass-guidelines": "^2.0.0",
     "stylelint-scss": "^1.4.3"

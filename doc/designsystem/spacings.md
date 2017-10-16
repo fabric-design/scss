@@ -12,8 +12,7 @@ $space-m: 1rem; // 16px
 $space-default: $space-m;
 $space-l: 1.5rem; // 24px
 $space-xl: 2rem; // 32px
-$space-xxl: 3rem; // 48px
-$space-xxxl: 4rem; // 64px
+$space-xxl: 4rem; // 64px
 ```
 
 ## Inset

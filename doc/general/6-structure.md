@@ -27,7 +27,7 @@ Don’t:
 
 
 ## Sheet
-<div class="card" style="width:700px; height:600px;"></div>
+<div style="width:700px; height:600px; background-color:white ;box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.26);"></div>
 
 Basic view component. Every view need to be built by Sheet or Tile(s). Sheet can be sliced into smaller pieces through grid.
 
@@ -37,15 +37,15 @@ Don’t:
 
 
 ## Tile
-<div class="card" style="width:300px; height:300px;"></div>
+<div style="width:300px; height:300px; background-color:white ;box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.26);"></div>
 
-<div class="card" style="width:700px; height:300px;"></div>
+<div style="width:700px; height:300px; background-color:white ;box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.26);"></div>
 
 Alternative main view component. Every view need to be built by Sheet or Tile(s). Number of used tiles depends on needs. Tiles can be merged into bigger tiles. Standard tile width is 6 grid columns (minimum 3 grid columns)
 
 
 ## Side Panels
-<div class="card" style="width:250px; height:700px;"></div>
+<div style="width:250px; height:700px; background-color:white ;box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.26);"></div>
 
 ### Left Panel
 Should be used only when it is reasonable need for menu or fixed filters panel.

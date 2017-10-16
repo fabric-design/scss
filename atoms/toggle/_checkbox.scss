@@ -14,13 +14,12 @@ $checkbox-disabled-border-color: $miroschka !default;
  * @param $disabled-icon-color Color of check mark icon when checkbox is disabled
  */
 @mixin checkbox-toggle($size, $icon-color, $disabled-icon-color) {
-  + label:after {
+  &:after {
     @include icon(checkmark-checkbox, $size, $icon-color);
-    margin-top: -($size / 2);
-    left: 0;
+    margin: ($size / -4) 0 0 ($size / -4);
   }
-  &:disabled + label:after,
-  &.is-disabled + label:after {
+  &:disabled:after,
+  &.is-disabled:after {
     color: $disabled-icon-color;
   }
 }

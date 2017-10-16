@@ -1,11 +1,9 @@
 # Start with Fabric
 
 ## What is it?
-Fabric Design System was created by **Zalando SE**.
+Fabric is **Open-source** Design System created by **Zalando SE**.
 
-Although Fabric was created to support our enterprise products, it can be for every digital product if it will be considered as suitable.
-
-Fabric DS is **Open-source**.
+Although Fabric was created to support enterprise products, it can be used for other types of digital product as well.
 
 Fabric Design System includes:
 * - **Principles** that helps you create clear, aesthetic and usable UI;
@@ -14,7 +12,7 @@ Fabric Design System includes:
 * - Resources for Dev Teams, including **SCSS** and **Components Library**.
 
 ## How can I use it?
-Although it is up to you, how you want to use Fabric DS, based on our experience and industry best practices, we prepared following procedure:
+It is up to you, how you want to use Fabric Design system. Based on our experience and best practices, we would recommend:
 
 ![How use Fabric](src/style/assets/intro1.svg)
 
