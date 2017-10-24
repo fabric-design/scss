@@ -316,3 +316,128 @@ to be displayed when the label text is long.
 </thead>
 ```
 
+## Flat tables on cards
+To have a more lean design we don't want additional shadows on cards and dialogs.
+In case you have a table on those elements just add the `mod-flat` class to the table.
+
+<table class="mod-flat">
+    <thead>
+        <tr>
+            <th>
+                <label class="mod-xxlarge">Name</label>
+            </th>
+            <th>
+                <label class="mod-xxlarge is-clickable" click.delegate="sortDirection = ({undefined: 'asc', 'asc': 'desc', 'desc': undefined})[sortDirection]">
+                    <span class="text">Type</span>
+                    <ws-dropdown class="filter" type="icon" icon="icon-filter" items.bind="['Type 1','Type 2']"></ws-dropdown>
+                    <span class="sort ${sortDirection}"><span class="sort-arrow icon-sort-down"></span></span>
+                </label>
+            </th>
+            <th>
+                <label class="mod-xxlarge">Owner</label>
+            </th>
+            <th>
+                <label class="mod-xxlarge">Team</label>
+            </th>
+            <th>
+                <label class="mod-xxlarge">Price</label>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Topic name 10</td>
+            <td>Bug</td>
+            <td>Selina Kyle</td>
+            <td>Tooling</td>
+            <td>4.500,00</td>
+        </tr>
+        <tr>
+            <td>Topic name 9</td>
+            <td>Refactoring</td>
+            <td>Pamela Isley</td>
+            <td>Tooling</td>
+            <td>3.239,00</td>
+        </tr>
+        <tr>
+            <td>Topic name 8</td>
+            <td>Work package</td>
+            <td>Solomon Grundy</td>
+            <td>Tooling</td>
+            <td>46,80</td>
+        </tr>
+        <tr>
+            <td>Topic name 7</td>
+            <td>Improvement</td>
+            <td>Betty Kane</td>
+            <td>Tooling</td>
+            <td>123,00</td>
+        </tr>
+        <tr>
+            <td>Topic name 6</td>
+            <td>Project</td>
+            <td>Bruce Banner</td>
+            <td>Tooling</td>
+            <td>10.899,00</td>
+        </tr>
+        <tr>
+            <td>Topic name 5</td>
+            <td>Big feature</td>
+            <td>Ra’s Al Ghul</td>
+            <td>Tooling</td>
+            <td>567,00</td>
+        </tr>
+        <tr>
+            <td>Topic name 4</td>
+            <td>Milestone</td>
+            <td>Bruce Wayne</td>
+            <td>Tooling</td>
+            <td>23,50</td>
+        </tr>
+        <tr>
+            <td>Topic name 3</td>
+            <td>A/B Test</td>
+            <td>Steven Rogers</td>
+            <td>Tooling</td>
+            <td>890,00</td>
+        </tr>
+        <tr>
+            <td>Topic name 2</td>
+            <td>Feature</td>
+            <td>Curtis Newton</td>
+            <td>Tooling</td>
+            <td>99,00</td>
+        </tr>
+        <tr>
+            <td>Topic name 1</td>
+            <td>Improvement</td>
+            <td>Edward Nygma</td>
+            <td>Tooling</td>
+            <td>12.500,00</td>
+        </tr>
+        <tr class="pagination-row">
+            <td colspan="5">
+                <div class="pagination">
+                    <span class="current">1-10</span>
+                    <span class="separator">of</span>
+                    <span class="total">23</span>
+                    <a href="#">
+                        <span class="icon-left icon16"></span>
+                    </a>
+                    <a href="#">
+                        <span class="icon-right icon16"></span>
+                    </a>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+```html
+<table class="mod-flat">
+  <thead>
+  </thead>
+  <body>
+  </body>
+</table>
+```

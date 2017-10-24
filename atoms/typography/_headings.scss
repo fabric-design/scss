@@ -1,5 +1,5 @@
 $include-heading-css: true !default;
-$heading-font-family: 'acumin-pro-semi-condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+$heading-font-family: $base-font-family !default;
 $heading-color: $fjord !default;
 $heading-font-size-small: 1.125rem !default; // 24px
 $heading-font-size-large: 2rem !default; // 32px

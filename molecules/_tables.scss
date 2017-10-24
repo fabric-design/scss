@@ -58,8 +58,11 @@ $table-row-line-height: $space-xxl !default;
     border-collapse: collapse;
     line-height: $table-row-line-height;
     box-shadow: $paper-shadow-2;
+    &.mod-flat {
+      box-shadow: none;
+      border-color: transparent;
+    }
     thead {
-      border-bottom: 2px solid $table-header-border-color;
       background-color: $table-header-background-color;
       color: $table-header-color;
       tr {
@@ -130,6 +133,9 @@ $table-row-line-height: $space-xxl !default;
         padding: $space-m;
         background-color: $table-row-background-color;
       }
+    }
+    .number-column {
+      text-align: right;
     }
   }
 }
