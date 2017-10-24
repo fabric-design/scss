@@ -1,15 +1,13 @@
 $include-badge-css: true !default;
-$badge-color: $deep-blue !default;
-$badge-background-color: $arctica !default;
-$badge-border-color: $heaven !default;
-$badge-red-color: $mojo !default;
-$badge-red-background-color: $pippin !default;
-$badge-red-border-color: $flamingo !default;
-$badge-gray-color: $white !default;
-$badge-gray-background-color: $french-gray !default;
-$badge-gray-border-color: $french-gray !default;
+$badge-color: $white !default;
+$badge-background-color: $french-gray !default;
+$badge-red-color: $white !default;
+$badge-red-background-color: $geraldine !default;
+$badge-blue-color: $white !default;
+$badge-blue-background-color: $heaven !default;
 $badge-font-size: $font-size-small !default;
-$badge-line-height: $base-font-size !default;
+$badge-line-height: $space-l !default;
+$badge-small-line-height: $space-m !default;
 
 /**
  * Includes css for a badge without icon
@@ -20,37 +18,32 @@ $badge-line-height: $base-font-size !default;
   border-radius: 9999px;
   display: inline-block;
   font-size: $badge-font-size;
-  line-height: $badge-font-size;
-  padding: 0 $space-xs rem(3px); // 2px to center text with acumin pro
-  border: 1px solid transparent;
+  line-height: $badge-line-height;
+  padding: 0 $space-xs;
 }
 
 /**_
  * Includes css to colorize a badge
  * @param $color Color value for the font
  * @param $background-color Color for background
- * @param $border-color Optional color for border
  */
-@mixin badge-color($color, $background-color, $border-color) {
+@mixin badge-color($color, $background-color) {
   color: $color;
   background-color: $background-color;
-  @if $border-color {
-    border-color: $border-color;
-  }
-  @else {
-    border-color: $background-color;
-  }
 }
 
 @if $include-badge-css {
   .badge {
     @include badge();
-    @include badge-color($badge-color, $badge-background-color, $badge-border-color);
-    &.mod-gray {
-      @include badge-color($badge-gray-color, $badge-gray-background-color, $badge-gray-border-color);
+    @include badge-color($badge-color, $badge-background-color);
+    &.mod-blue {
+      @include badge-color($badge-blue-color, $badge-blue-background-color);
     }
     &.mod-red {
-      @include badge-color($badge-red-color, $badge-red-background-color, $badge-red-border-color);
+      @include badge-color($badge-red-color, $badge-red-background-color);
+    }
+    &.mod-small {
+      line-height: $badge-small-line-height;
     }
     .icon,
     [class^="icon-"],
