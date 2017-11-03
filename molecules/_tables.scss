@@ -12,20 +12,28 @@ $table-row-active-background-color: $arctica !default;
 $table-row-border-color: $silver !default;
 $table-row-line-height: $space-xxl !default;
 
+// Can we refactor this one, with clear direct class names instead of much depth.
+// As stylelint throws an error on different levels, e.g. too much depth in scss or more then 3 compound selectors
+// Maybe it is not possible (optional)
+
+/* stylelint-disable selector-max-compound-selectors, max-nesting-depth */
 @mixin table-sort() {
   position: relative;
   width: rem(10px);
   display: inline-block;
   vertical-align: top;
+
   .sort-arrow {
     visibility: hidden;
-    transition: transform .2s linear;
+    transition: transform 0.2s linear;
     vertical-align: baseline;
   }
+
   &.asc .sort-arrow {
     visibility: visible;
     transform: rotate(180deg);
   }
+
   &.desc .sort-arrow {
     visibility: visible;
     transform: rotate(0deg);
@@ -36,10 +44,12 @@ $table-row-line-height: $space-xxl !default;
   display: inline-block;
   vertical-align: top;
   text-transform: initial;
+
   .dropdown-trigger,
   .flatpickr-input {
     color: inherit;
   }
+
   &.is-active .dropdown-trigger,
   &.is-active .flatpickr-input {
     color: $primary-color;
@@ -58,13 +68,16 @@ $table-row-line-height: $space-xxl !default;
     border-collapse: collapse;
     line-height: $table-row-line-height;
     box-shadow: $paper-shadow-2;
+
     &.mod-flat {
       box-shadow: none;
       border-color: transparent;
     }
+
     thead {
       background-color: $table-header-background-color;
       color: $table-header-color;
+
       tr {
         th {
           padding: 0 $space-m;
@@ -73,11 +86,13 @@ $table-row-line-height: $space-xxl !default;
           position: relative;
           text-align: left;
           border-bottom: 1px solid $table-header-border-color;
+
           label {
             display: inline-block;
             vertical-align: top;
             margin: 0;
             overflow: visible;
+
             > .text {
               display: inline-block;
               vertical-align: top;
@@ -85,57 +100,70 @@ $table-row-line-height: $space-xxl !default;
               overflow: hidden;
               text-overflow: ellipsis;
             }
+
             > .filter {
               @include table-filter();
             }
+
             > .sort {
               @include table-sort();
             }
           }
         }
+
         th:first-child {
           border-top-left-radius: 2px;
         }
+
         th:last-child {
           border-top-right-radius: 2px;
         }
       }
+
       tr:not(:first-child) {
         th {
           padding: rem(5px 4px);
         }
       }
     }
+
     tbody {
       color: $asphalt;
       font-size: rem(15px);
+
       tr {
         td {
           background-color: $table-row-background-color;
           border-bottom: 1px solid $table-row-border-color;
           padding: 0 $space-m;
           line-height: $table-row-line-height;
-          transition: background-color .1s linear;
+          transition: background-color 0.1s linear;
         }
+
         &:hover td {
           background-color: $table-row-hover-background-color;
         }
+
         &.is-active td {
           background-color: $table-row-active-background-color;
         }
       }
+
       tr.empty-row td,
       tr.loader-row td {
         text-align: center;
         background-color: $table-row-background-color;
       }
+
       tr.pagination-row td {
         padding: $space-m;
         background-color: $table-row-background-color;
       }
     }
+
     .number-column {
       text-align: right;
     }
   }
 }
+/* stylelint-enable */

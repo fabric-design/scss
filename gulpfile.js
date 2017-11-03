@@ -8,6 +8,7 @@ const bump = require('gulp-bump');
 const argv = require('yargs').argv;
 const validBumpTypes = 'major|minor|patch|prerelease'.split('|');
 const bumpType = (argv.bump || 'patch').toLowerCase();
+const stylelintFormatter = require('stylelint-formatter-pretty');
 
 if (validBumpTypes.indexOf(bumpType) === -1) {
   throw new Error('Unrecognized bump "' + bumpType + '".');
@@ -86,12 +87,12 @@ gulp.task('release', callback => {
 });
 
 gulp.task('lint-sass', function() {
-  return gulp.src(['./*.scss', './custom/*.scss', './components/*.scss', './components/**/*.scss'])
-    .pipe(gulpStylelint({
-      reporters: [
-        {formatter: 'string', console: true}
-      ]
-    }));
+	return gulp.src(['./*.scss', './*/*.scss', '!./utils/*.scss'])
+	.pipe(gulpStylelint({
+		reporters: [
+			{formatter: stylelintFormatter, console: true, fix: true}
+    ]
+	}));
 });
 
 // This is only used to validate the code is able to compile

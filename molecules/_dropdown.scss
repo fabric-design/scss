@@ -1,14 +1,18 @@
 $export-dropdown-css: true !default;
 $dropdown-width: rem(200px) !default;
 $dropdown-shadow: map-get($elevation-shadows, raised) !default;
-$dropdown-arrow-shadow-color: rgba(0, 0, 0, .16) !default; // $elevation2 color 1
+$dropdown-arrow-shadow-color: rgba(0, 0, 0, 0.16) !default; // $elevation2 color 1
 $dropdown-font-color: $base-font-color !default;
 $dropdown-font-family: $base-font-family !default;
 $dropdown-color-active: $heaven !default;
 $dropdown-separator-color: $earl-gray !default;
 $dropdown-background-color: $white !default;
 $dropdown-background-color-accent: $earl-gray !default;
+// Can we refactor this one, with clear direct class names instead of much depth.
+// As stylelint throws an error on different levels, e.g. too much depth in scss or more then 3 compound selectors
+// Maybe it is not possible (optional)
 
+/* stylelint-disable selector-max-compound-selectors, max-nesting-depth */
 @mixin dropdown-container($width, $background-color, $shadow) {
   position: absolute;
   top: 100%;
@@ -20,10 +24,11 @@ $dropdown-background-color-accent: $earl-gray !default;
   background-color: $background-color;
   border-radius: 2px;
   box-shadow: $shadow;
-  transition: height .25s ease;
+  transition: height 0.25s ease;
   will-change: height;
   overflow: hidden;
   z-index: 3;
+
   &.left {
     right: auto;
     left: 0;
@@ -58,16 +63,20 @@ $dropdown-background-color-accent: $earl-gray !default;
   overflow: hidden;
   text-overflow: ellipsis;
   font-weight: normal;
+
   &:hover,
   &.is-focused {
     background-color: $accent-bg-color;
   }
+
   &.is-disabled {
     color: lighten($font-color, 30%);
   }
+
   &.is-active {
     color: $active-color;
-    &:after {
+
+    &::after {
       content: map-get($icons, ok);
       @include icon-base();
       font-size: rem(16px);
@@ -107,117 +116,146 @@ $dropdown-background-color-accent: $earl-gray !default;
   .dropdown {
     position: relative;
     display: block;
+
     .dropdown-container {
       @include dropdown-container($dropdown-width, $dropdown-background-color, $dropdown-shadow);
+
       &.mod-wide {
         width: 100%;
       }
+
       &.right + .dropdown-arrow {
         right: rem(20px);
         left: auto;
       }
+
       .dropdown-root-menu {
         right: 0;
         left: auto;
       }
+
       &.mod-open {
         display: block;
+
         + .dropdown-arrow {
           display: block;
         }
       }
     }
+
     .dropdown-trigger {
       cursor: pointer;
+
       &.is-disabled {
         cursor: not-allowed;
       }
     }
+
     .dropdown-menu {
       @include dropdown();
+
       &.mod-menu-open,
       &.mod-sub-open {
         left: 0;
       }
+
       &.mod-sub-open > .dropdown-item > .text {
         opacity: 0;
         z-index: -1;
       }
     }
+
     .dropdown-item {
       .text {
         @include dropdown-item(
-                $dropdown-font-color,
-                $dropdown-font-family,
-                $dropdown-color-active,
-                $dropdown-background-color-accent
+          $dropdown-font-color,
+          $dropdown-font-family,
+          $dropdown-color-active,
+          $dropdown-background-color-accent
         );
+
         .icon {
           width: $space-m;
           margin-right: $space-s;
         }
       }
-      &.has-children > .text:after {
+
+      &.has-children > .text::after {
         @include icon(right);
         line-height: inherit;
         position: absolute;
         right: 1rem;
       }
     }
+
     .dropdown-child-menu {
       .dropdown-item:not(.dropdown-parent-item) > .text {
         padding-left: $space-m + $space-m + $space-s; // Container + Icon + Icon space
       }
+
       .dropdown-parent-item + .dropdown-item-separator {
         margin: $space-xs (-$space-m);
       }
     }
+
     .dropdown-item-separator {
       @include dropdown-item-separator($dropdown-separator-color);
     }
+
     .dropdown-submit {
       @include dropdown-submit($dropdown-separator-color);
     }
+
     .dropdown-input {
       padding-bottom: $space-s;
+
       input[type=text] {
         width: 100%;
         height: $space-xl; // Line height of dropdown-item
       }
+
       ~ .dropdown-item > .text {
         padding-left: $space-m + $space-s;
       }
+
       + .dropdown-submit {
         padding-top: 0; // Only use spacing of input
       }
     }
+
     .dropdown-arrow {
       @include dropdown-arrow($dropdown-background-color, $dropdown-arrow-shadow-color);
     }
+
     .dropdown-container.animate-close {
-      animation: closeContainer .2s ease-in-out forwards;
+      animation: closeContainer 0.2s ease-in-out forwards;
     }
+
     .dropdown-menu.animate-in > .dropdown-item > .text {
-      animation: dropDownIn .3s cubic-bezier(.53, 1.49, 1, .87) .0s forwards;
+      animation: dropDownIn 0.3s cubic-bezier(0.53, 1.49, 1, 0.87) 0s forwards;
     }
+
     .dropdown-menu.animate-out > .dropdown-item > .text {
-      animation: dropDownOut .3s cubic-bezier(.32, .97, .71, .95) .05s forwards;
+      animation: dropDownOut 0.3s cubic-bezier(0.32, 0.97, 0.71, 0.95) 0.05s forwards;
     }
+
     .dropdown-menu.animate-sub-in > .dropdown-item > .text,
     .dropdown-menu.animate-sub-in > .dropdown-item-separator {
-      animation: dropDownSubIn .3s cubic-bezier(.53, 1.49, 1, .87) .0s forwards;
+      animation: dropDownSubIn 0.3s cubic-bezier(0.53, 1.49, 1, 0.87) 0s forwards;
     }
+
     .dropdown-menu.animate-sub-out > .dropdown-item > .text,
     .dropdown-menu.animate-sub-out > .dropdown-item-separator {
-      animation: dropDownSubOut .3s cubic-bezier(.32, .97, .71, .95) .05s forwards;
+      animation: dropDownSubOut 0.3s cubic-bezier(0.32, 0.97, 0.71, 0.95) 0.05s forwards;
     }
+
     .dropdown-menu.animate-in,
     .dropdown-menu.animate-out,
     .dropdown-menu.animate-sub-in,
     .dropdown-menu.animate-sub-out {
       @for $i from 1 through 20 {
         > .dropdown-item:nth-child(#{$i}) > .text {
-          animation-delay: #{$i * .035s};
+          animation-delay: #{$i * 0.035s};
         }
       }
     }
@@ -232,15 +270,15 @@ $dropdown-background-color-accent: $earl-gray !default;
   // 0.4s linear
   @keyframes dropDownOut {
     0% {
-      -webkit-transform: translate3d(0, 0, 0);
       transform: translate3d(0, 0, 0);
       opacity: 1;
     }
+
     70% {
       opacity: 0;
     }
+
     100% {
-      -webkit-transform: translate3d(-100%, 0, 0);
       transform: translate3d(-100%, 0, 0);
     }
   }
@@ -248,12 +286,11 @@ $dropdown-background-color-accent: $earl-gray !default;
   // 0.4s linear
   @keyframes dropDownIn {
     0% {
-      -webkit-transform: translate3d(-100%, 0, 0);
       transform: translate3d(-100%, 0, 0);
       opacity: 0;
     }
+
     100% {
-      -webkit-transform: translate3d(0%, 0, 0);
       transform: translate3d(0%, 0, 0);
       opacity: 1;
     }
@@ -262,15 +299,15 @@ $dropdown-background-color-accent: $earl-gray !default;
   // 0.4s linear
   @keyframes dropDownSubOut {
     0% {
-      -webkit-transform: translate3d(0, 0, 0);
       transform: translate3d(0, 0, 0);
       opacity: 1;
     }
+
     70% {
       opacity: 0;
     }
+
     100% {
-      -webkit-transform: translate3d(100%, 0, 0);
       transform: translate3d(100%, 0, 0);
     }
   }
@@ -278,14 +315,15 @@ $dropdown-background-color-accent: $earl-gray !default;
   // 0.3s ease-in-out
   @keyframes dropDownSubIn {
     0% {
-      -webkit-transform: translate3d(0, 0, 0);
       transform: translate3d(0, 0, 0);
       opacity: 0;
     }
+
     100% {
-      -webkit-transform: translate3d(-100%, 0, 0);
       transform: translate3d(-100%, 0, 0);
       opacity: 1;
     }
   }
 }
+/* stylelint-enable */
+

@@ -27,7 +27,7 @@ $schema: 'blue' !default;
   @if length(map-get($schemas, $schema-name)) < $number {
     @error 'Schema #{$schema-name} has no color #{$number}';
   }
-  @return nth(map-get($schemas, $schema-name), $number)
+  @return nth(map-get($schemas, $schema-name), $number);
 }
 
 $primary-color: schema-color(3);

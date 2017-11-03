@@ -5,62 +5,74 @@ $radio-group-button-active-color: $white !default;
 $radio-group-button-active-background-color: $primary-color !default;
 $radio-group-button-disabled-color: $ghost !default;
 $radio-group-border-radius: $button-border-radius !default;
+// Can we refactor this one, with clear direct class names instead of much depth.
+// As stylelint throws an error on different levels, e.g. too much depth in scss or more then 3 compound selectors
+// Maybe it is not possible (optional)
 
+/* stylelint-disable selector-max-compound-selectors, max-nesting-depth */
 @if $include-radio-group-css {
   .radio-group {
     display: inline-block;
     vertical-align: middle;
     font-size: 0;
-    border-radius: $button-border-radius;
     box-shadow: map-get($button-shadows, normal);
+    
     * {
-      font-size: $base-font-size;
-    }
-    input[type=radio] {
-      display: none;
-      + label {
-        @include button-base;
-        @include button-size-medium;
-        @include button-style($radio-group-button-background-color, $radio-group-button-color);
-        border-radius: 0;
-        margin: 0;
-        box-shadow: none;
-        &:first-of-type {
-          border-top-left-radius: $radio-group-border-radius;
-          border-bottom-left-radius: $radio-group-border-radius;
+      input[type=radio] {
+        display: none;
+
+        + label {
+          @include button-base;
+          @include button-size-medium;
+          @include button-style($radio-group-button-background-color, $radio-group-button-color);
+          border-radius: 0;
+          margin: 0;
+          box-shadow: none;
+
+          &:first-of-type {
+            border-top-left-radius: $radio-group-border-radius;
+            border-bottom-left-radius: $radio-group-border-radius;
+          }
+
+          &:last-of-type {
+            border-top-right-radius: $radio-group-border-radius;
+            border-bottom-right-radius: $radio-group-border-radius;
+          }
+
+          &:hover {
+            color: $primary-color;
+            box-shadow: none;
+          }
+          // Hide toggle base
+          &::after,
+          &::before {
+            display: none;
+          }
         }
-        &:last-of-type {
-          border-top-right-radius: $radio-group-border-radius;
-          border-bottom-right-radius: $radio-group-border-radius;
-        }
-        &:hover {
-          color: $primary-color;
+
+        &:checked + label,
+        &.is-checked + label,
+        &.is-active + label {
+          color: $radio-group-button-active-color;
+          background-color: $radio-group-button-active-background-color;
           box-shadow: none;
         }
-        // Hide toggle base
-        &:after,
-        &:before {
-          display: none;
+
+        &:disabled + label,
+        &.is-disabled + label {
+          color: $radio-group-button-disabled-color;
+          cursor: not-allowed;
         }
       }
-      &:checked + label,
-      &.is-checked + label,
-      &.is-active + label {
-        color: $radio-group-button-active-color;
-        background-color: $radio-group-button-active-background-color;
-        box-shadow: none;
+
+      &.mod-small input[type=radio] + label {
+        @include button-size-small;
       }
-      &:disabled + label,
-      &.is-disabled + label {
-        color: $radio-group-button-disabled-color;
-        cursor: not-allowed;
+
+      &.mod-large input[type=radio] + label {
+        @include button-size-large;
       }
-    }
-    &.mod-small input[type=radio] + label {
-      @include button-size-small;
-    }
-    &.mod-large input[type=radio] + label {
-      @include button-size-large;
     }
   }
 }
+/* stylelint-enable */
