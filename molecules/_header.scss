@@ -1,3 +1,4 @@
+$include-ws-header-scss: true !default;
 $header-height: $space-xl !default;
 $header-color: $white !default;
 $header-background-color: schema-color(5) !default;
@@ -78,66 +79,68 @@ $header-border-color: schema-color(4) !default;
   }
 }
 
-.ws-header {
-  font-size: rem(13px);
-  .level-1 {
-    @include level-1;
-    .application-name {
-      padding: 0 $space-m;
-      margin-right: $space-xl;
-      text-transform: uppercase;
-      display: inline-block;
-    }
-    .application-logo {
-      margin: 0;
-      height: 16px;
-      display: inline-block;
-      vertical-align: sub;
-      margin-right: $space-xs;
-      font-size: 0;
-      img {
-        width: inherit;
-        height: inherit;
-      }
-    }
-    .main-menu {
-      @include main-menu;
-    }
-    .menu-controls {
-      display: inline-block;
-      float: right;
-      border-left: 1px solid $header-border-color;
-      .locale {
+@if $include-ws-header-css {
+  .ws-header {
+    font-size: rem(13px);
+    .level-1 {
+      @include level-1;
+      .application-name {
+        padding: 0 $space-m;
+        margin-right: $space-xl;
+        text-transform: uppercase;
         display: inline-block;
-        margin-right: 5px;
       }
-      .icon {
-        vertical-align: middle;
+      .application-logo {
+        margin: 0;
+        height: 16px;
+        display: inline-block;
+        vertical-align: sub;
+        margin-right: $space-xs;
+        font-size: 0;
+        img {
+          width: inherit;
+          height: inherit;
+        }
+      }
+      .main-menu {
+        @include main-menu;
+      }
+      .menu-controls {
+        display: inline-block;
+        float: right;
+        border-left: 1px solid $header-border-color;
+        .locale {
+          display: inline-block;
+          margin-right: 5px;
+        }
+        .icon {
+          vertical-align: middle;
+        }
       }
     }
-  }
-  .level-2 {
-    @include level-2;
-    .main-sub-menu {
-      @include main-sub-menu;
+    .level-2 {
+      @include level-2;
+      .main-sub-menu {
+        @include main-sub-menu;
+      }
     }
-  }
-  li:not(.dropdown-item) {
-    display: inline-block;
-    text-transform: uppercase;
-    transition: all .2s linear;
-    &:hover,
-    &.is-hovered {
-      background-color: $header-accent-background-color;
+    li:not(.dropdown-item) {
+      display: inline-block;
+      text-transform: uppercase;
+      transition: all .2s linear;
+      &:hover,
+      &.is-hovered {
+        background-color: $header-accent-background-color;
+      }
+      a,
+      .dropdown-trigger {
+        display: block;
+        cursor: pointer;
+        padding: 0 $space-m;
+      }
     }
-    a,
-    .dropdown-trigger {
-      display: block;
-      cursor: pointer;
-      padding: 0 $space-m;
+    a {
+      color: inherit;
     }
-  }
-  a {
-    color: inherit;
   }
 }
