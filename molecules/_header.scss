@@ -5,6 +5,8 @@ $header-background-color: schema-color(5) !default;
 $header-accent-background-color: schema-color(6) !default;
 $header-border-color: schema-color(4) !default;
 
+// Talk: Discuss possibility to simplfy depth and selector complexity
+/* stylelint-disable selector-max-compound-selectors, max-nesting-depth */
 @mixin level-1() {
   background-color: $header-background-color;
   color: $header-color;
@@ -24,9 +26,10 @@ $header-border-color: schema-color(4) !default;
   height: $header-height * 2;
   line-height: $header-height * 2;
   transform: translate3d(0, -100%, 0);
-  transition: transform .15s linear;
+  transition: transform 0.15s linear;
   overflow: hidden;
   box-shadow: $paper-shadow-3;
+
   &.is-active {
     transform: translate3d(0, 0, 0);
   }
@@ -34,6 +37,7 @@ $header-border-color: schema-color(4) !default;
 
 @mixin main-menu() {
   display: inline-block;
+
   li {
     @include list-item;
   }
@@ -43,28 +47,32 @@ $header-border-color: schema-color(4) !default;
   padding-left: $space-xxl;
   height: 0;
   visibility: hidden;
+
   li {
     display: inline-block;
     opacity: 0;
-    transition: transform .1s linear;
+    transition: transform 0.1s linear;
     transform: translate3d(150px, 0, 0);
     color: $ghost;
     @include list-item;
+
     &:hover {
       color: $white;
     }
   }
+
   &.is-active {
     height: auto;
     visibility: visible;
+
     li {
       opacity: 1;
       transform: translate3d(0, 0, 0);
-      transition: transform .25s cubic-bezier(0, 0.87, 0.37, 0.99), opacity .25s linear;
+      transition: transform 0.25s cubic-bezier(0, 0.87, 0.37, 0.99), opacity 0.25s linear;
     }
     @for $i from 1 through 10 {
       li:nth-child(#{$i}) {
-        transition-delay: $i * .05s + .075s;
+        transition-delay: $i * 0.05s + 0.075s;
       }
     }
   }
@@ -73,6 +81,7 @@ $header-border-color: schema-color(4) !default;
 @mixin list-item() {
   font-weight: bold;
   color: $miroschka;
+
   &.is-current {
     background-color: $header-accent-background-color;
     color: $white;
@@ -82,14 +91,17 @@ $header-border-color: schema-color(4) !default;
 @if $include-ws-header-css {
   .ws-header {
     font-size: rem(13px);
+
     .level-1 {
       @include level-1;
+
       .application-name {
         padding: 0 $space-m;
         margin-right: $space-xl;
         text-transform: uppercase;
         display: inline-block;
       }
+
       .application-logo {
         margin: 0;
         height: 16px;
@@ -97,41 +109,51 @@ $header-border-color: schema-color(4) !default;
         vertical-align: sub;
         margin-right: $space-xs;
         font-size: 0;
+
         img {
           width: inherit;
           height: inherit;
         }
       }
+
       .main-menu {
         @include main-menu;
       }
+
       .menu-controls {
         display: inline-block;
         float: right;
         border-left: 1px solid $header-border-color;
+
         .locale {
           display: inline-block;
           margin-right: 5px;
         }
+
         .icon {
           vertical-align: middle;
         }
       }
     }
+
     .level-2 {
       @include level-2;
+
       .main-sub-menu {
         @include main-sub-menu;
       }
     }
+
     li:not(.dropdown-item) {
       display: inline-block;
       text-transform: uppercase;
-      transition: all .2s linear;
+      transition: all 0.2s linear;
+
       &:hover,
       &.is-hovered {
         background-color: $header-accent-background-color;
       }
+
       a,
       .dropdown-trigger {
         display: block;
@@ -139,6 +161,7 @@ $header-border-color: schema-color(4) !default;
         padding: 0 $space-m;
       }
     }
+
     a {
       color: inherit;
     }
