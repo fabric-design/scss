@@ -88,6 +88,9 @@ $dropdown-background-color-accent: $earl-gray !default;
   margin: 0 (-$space-m); // Span dropdown spacing for border and bg color
   padding: $space-s $space-m 0 $space-m;
   text-align: right;
+  .dropdown-submit-button {
+    margin-left: 10px;
+  }
 }
 
 @mixin dropdown-arrow($container-background-color, $container-shadow-color) {
