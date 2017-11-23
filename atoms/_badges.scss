@@ -15,7 +15,6 @@ $badge-small-line-height: $space-m !default;
 @mixin badge() {
   // Percent refer to width and height of element which leads to an ellipse in most cases (width > height)
   // Therefore we use fixed length values which will leads the browser to use a square for curve calculation
-  border: 1px solid transparent;
   border-radius: 9999px;
   display: inline-block;
   font-size: $badge-font-size;
@@ -52,7 +51,7 @@ $badge-small-line-height: $space-m !default;
 
     .icon,
     [class^='icon-'],
-    [class*='icon'] {
+    [class*=' icon'] {
       cursor: pointer;
       // Fix some spacings and sizes
       margin: rem(-1px -4px 0 0);
