@@ -5,7 +5,9 @@
   "homepage": "https://fabric-design.github.io/styleguide/#/general/1-intro",
   "main": "README.md",
   "scripts": {
-    "prestart": "npm install"
+    "prestart": "npm install",
+    "lint": "gulp lint-sass",
+    "test": "gulp"
   },
   "keywords": [
     "toolkit",
@@ -34,16 +36,25 @@
     "gulp-bump": "^2.7.0",
     "gulp-conventional-changelog": "^1.1.4",
     "gulp-sass": "^2.3.1",
-    "gulp-stylelint": "^3.9.0",
+    "gulp-stylelint": "5.0.0",
     "run-sequence": "^2.1.0",
-    "stylelint": "^7.9.0",
-    "stylelint-config-sass-guidelines": "^2.0.0",
-    "stylelint-scss": "^1.4.3"
+    "stylelint": "8.2.0",
+    "stylelint-config-sass-guidelines": "3.1.0",
+    "stylelint-formatter-pretty": "1.0.3",
+    "stylelint-scss": "2.1.0",
+    "yargs": "10.0.3"
   },
   "stylelint": {
     "extends": "stylelint-config-sass-guidelines",
     "plugins": [
       "stylelint-scss"
-    ]
+    ],
+    "rules": {
+      "max-nesting-depth": 2,
+      "order/properties-alphabetical-order": null,      
+      "selector-no-qualifying-type":[true, {
+        "ignore": ["attribute", "class"]
+      }]
+    }
   }
 }

@@ -28,37 +28,43 @@ $badge-small-line-height: $space-m !default;
  * @param $background-color Color for background
  */
 @mixin badge-color($color, $background-color) {
-  color: $color;
   background-color: $background-color;
+  color: $color;  
 }
 
 @if $include-badge-css {
   .badge {
     @include badge();
     @include badge-color($badge-color, $badge-background-color);
+
     &.mod-blue {
       @include badge-color($badge-blue-color, $badge-blue-background-color);
     }
+
     &.mod-red {
       @include badge-color($badge-red-color, $badge-red-background-color);
     }
+
     &.mod-small {
       line-height: $badge-small-line-height;
     }
+
     .icon,
-    [class^="icon-"],
-    [class*=" icon"] {
+    [class^='icon-'],
+    [class*=' icon'] {
+      cursor: pointer;
       // Fix some spacings and sizes
       margin: rem(-1px -4px 0 0);
-      cursor: pointer;
     }
   }
-  .badge-group {
+
+  .badge-group {    
     .badge {
       &:not(:first-child) {
         border-bottom-left-radius: 0;
         border-top-left-radius: 0;
       }
+
       &:not(:last-child) {
         border-bottom-right-radius: 0;
         border-top-right-radius: 0;

@@ -40,7 +40,7 @@ $button-shadows: (
   white-space: nowrap;
   outline: none;
   @include appearance(none);
-  @include transition(all .2s);
+  @include transition(all 0.2s);
 }
 
 /**
@@ -54,15 +54,18 @@ $button-shadows: (
   background-color: $background;
   color: $color;
   box-shadow: map-get($button-shadows, normal);
+
   &:hover,
   &.is-hovered {
     box-shadow: map-get($button-shadows, hover);
   }
+
   &:active,
   &.is-active {
     background-color: darken($background, 2%);
     box-shadow: map-get($button-shadows, active);
   }
+
   &:disabled,
   &.is-disabled {
     cursor: not-allowed;
@@ -101,6 +104,7 @@ $button-shadows: (
  */
 @mixin button-type-toggle() {
   @include button-style($secondary-color, $asphalt, transparent, $ghost);
+
   &:active,
   &.is-active {
     box-shadow: $paper-shadow-1;
@@ -114,11 +118,13 @@ $button-shadows: (
 @mixin button-type-flat() {
   @include button-style(transparent, $primary-color, $catkin, $ghost);
   box-shadow: none;
+
   &:hover,
   &.is-hovered {
     box-shadow: $paper-shadow-2;
     background-color: $catkin;
   }
+
   &:active,
   &.is-active {
     box-shadow: none;
@@ -129,37 +135,45 @@ $button-shadows: (
 @if $export-button-css {
   .button,
   button,
-  input[type="reset"],
-  input[type="button"],
-  input[type="submit"] {
+  input[type='reset'],
+  input[type='button'],
+  input[type='submit'] {
     @include button-base;
     @include button-style($button-background, $button-color, $button-background-disabled, $button-color-disabled);
     @include button-size-medium;
+
     &.mod-large {
       @include button-size-large;
     }
+
     &.mod-small {
       @include button-size-small;
     }
+
     &.mod-secondary {
       @include button-style($secondary-color, $asphalt, $silver, $ghost);
     }
+
     &.mod-toggle {
       @include button-type-toggle;
     }
+
     &.mod-flat {
       @include button-type-flat;
     }
+
     &.mod-collapse {
       padding: 0;
     }
   }
+
   .file-button {
     font-weight: normal;
     display: inline-block;
     vertical-align: middle;
     overflow: visible;
-    input[type="file"] {
+
+    input[type='file'] {
       display: none;
     }
   }

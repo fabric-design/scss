@@ -33,3 +33,8 @@ node_modules
 
 # Demo
 /demo/index.css
+
+
+# ignore package-lock , lock files
+package-lock.json
+*.lock

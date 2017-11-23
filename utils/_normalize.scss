@@ -1,5 +1,7 @@
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
-*, *:before, *:after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -11,8 +13,10 @@
 
 html {
   font-family: sans-serif; /* 1 */
+  /* stylelint-disable property-no-vendor-prefix */
   -ms-text-size-adjust: 100%; /* 2 */
   -webkit-text-size-adjust: 100%; /* 2 */
+  /* stylelint-enable */
 }
 
 /**
@@ -95,8 +99,8 @@ a {
 
 ul {
   margin: 0;
+  list-style: none;  
   padding: 0;
-  list-style: none;
 }
 
 /**
@@ -113,7 +117,7 @@ a:hover {
 
 /**
  * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
- */
+ **/
 
 abbr[title] {
   border-bottom: 1px dotted;
