@@ -1,35 +1,44 @@
 $export-form-css: true !default;
-$input-text-color: $asphalt !default;
-$input-background-color: $white !default;
-$input-border-color: $french-gray !default;
-$input-shadow-color: lighten($input-border-color, 15%) !default;
+$input-text-color: $heron !default;
+$input-placeholder-color: $ghost !default;
+$input-background-color: transparent !default;
+$input-border-color: $mischka !default;
+$input-shadow-color: transparent !default;
 $input-focused-border-color: $primary-color !default;
-$input-focused-shadow-color: lighten($input-focused-border-color, 40%) !default;
+$input-focused-shadow-color: $input-focused-border-color !default;
 $input-disabled-background-color: $catkin !default;
 
-@mixin input-box($bg-color, $border-color, $shadow-color, $focus-border-color, $focus-shadow-color, $disabled-color) {
-  padding: rem(8px);
-  border: 1px solid $border-color;
-  box-shadow: inset 0 1px 3px 0 $shadow-color;
-  box-sizing: border-box;
-  outline: none;
+@mixin input-box($text-color, $bg-color, $border-color, $shadow-color, $focus-border-color, $focus-shadow-color, $disabled-color) {
+  border: none;
+  border-bottom: 1px solid $border-color;
+  color: $text-color;
   background-color: $bg-color;
-  height: rem(34px);
-  font-weight: normal;
+  line-height: $space-xl;
+  box-shadow: 0 0 0 $shadow-color;
+  outline: none;
+  width: 100%;
   transition: border-color 0.15s linear, box-shadow 0.15s linear;
 
   &:focus {
     border-color: $focus-border-color;
-    box-shadow: inset 0 1px 3px 0 $focus-shadow-color;
+    box-shadow: 0 1px 0 0 $focus-shadow-color;
   }
 
   &:disabled {
     background-color: $disabled-color;
   }
+
+  &::-webkit-input-placeholder {
+    color: $input-placeholder-color;
+  }
+  &::-moz-input-placeholder {
+    color: $input-placeholder-color;
+  }
 }
 
 @mixin default-input {
   @include input-box(
+    $text-color: $input-text-color,
     $bg-color: $input-background-color,
     $border-color: $input-border-color,
     $shadow-color: $input-shadow-color,
@@ -52,7 +61,7 @@ $input-disabled-background-color: $catkin !default;
   textarea {
     display: block;
     font-family: $base-font-family;
-    font-size: $base-font-size;
+    font-size: $font-size-small;
   }
 
   label {
@@ -76,6 +85,7 @@ $input-disabled-background-color: $catkin !default;
   select,
   textarea {
     @include input-box(
+      $text-color: $input-text-color,
       $bg-color: $input-background-color,
       $border-color: $input-border-color,
       $shadow-color: $input-shadow-color,
@@ -89,9 +99,14 @@ $input-disabled-background-color: $catkin !default;
     position: relative;
 
     .icon {
+      color: $input-placeholder-color;
       position: absolute;
-      top: 10px;
-      right: 8px;
+      right: 0;
+      top: 50%;
+      margin-top: -8px;
+      &.icon24 {
+        margin-top: -12px;
+      }
     }
   }
 
@@ -113,16 +128,11 @@ $input-disabled-background-color: $catkin !default;
     padding-top: 0;
     padding-bottom: 0;
     width: auto;
+    height: $space-xl;
   }
 
   .select-box {
-    padding: rem(8px 20px 8px 8px);
-    border: 1px solid $input-border-color;
-    box-sizing: border-box;
-    background-color: $input-background-color;
-    height: rem(34px);
-    line-height: rem(17px);
-    font-weight: normal;
+    @include default-input;
     position: relative;
     display: block;
     cursor: pointer;
