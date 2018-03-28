@@ -158,7 +158,7 @@ $input-disabled-background-color: $catkin !default;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    height: $space-xl;
+    min-height: $space-xl;
 
     &::after {
       content: '';
