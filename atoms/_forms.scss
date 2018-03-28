@@ -9,7 +9,7 @@ $input-focused-shadow-color: $input-focused-border-color !default;
 $input-disabled-background-color: $catkin !default;
 
 @mixin input-box($text-color, $bg-color, $border-color, $shadow-color, $focus-border-color, $focus-shadow-color, $disabled-color) {
-  border: none;
+  border: 0;
   border-bottom: 1px solid $border-color;
   color: $text-color;
   background-color: $bg-color;
@@ -29,10 +29,12 @@ $input-disabled-background-color: $catkin !default;
     background-color: $disabled-color;
   }
 
+  // stylelint-disable-next-line
   &::-webkit-input-placeholder {
     color: $input-placeholder-color;
   }
-  &::-moz-input-placeholder {
+
+  &::placeholder {
     color: $input-placeholder-color;
   }
 }
@@ -98,6 +100,7 @@ $input-disabled-background-color: $catkin !default;
 
   .input-wrapper {
     position: relative;
+
     input:not([type]),
     input[type=text],
     input[type=url],
@@ -111,11 +114,13 @@ $input-disabled-background-color: $catkin !default;
       padding-right: $space-m;
       overflow: hidden;
     }
+
     .icon {
       position: absolute;
       right: 0;
       top: 50%;
       margin-top: -8px;
+
       &.icon24 {
         margin-top: -12px;
       }
