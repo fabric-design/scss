@@ -1,7 +1,7 @@
 $export-form-css: true !default;
-$input-text-color: $heron !default;
-$input-placeholder-color: $ghost !default;
-$input-background-color: transparent !default;
+$input-text-color: $bombay !default;
+$input-placeholder-color: $bombay !default;
+$input-background-color: $white !default;
 $input-border-color: $mischka !default;
 $input-shadow-color: transparent !default;
 $input-focused-border-color: $primary-color !default;
@@ -15,13 +15,14 @@ $input-disabled-background-color: $catkin !default;
   background-color: $bg-color;
   line-height: $space-xl;
   box-shadow: 0 0 0 $shadow-color;
+  padding-left: $space-xs;
   outline: none;
   width: 100%;
   transition: border-color 0.15s linear, box-shadow 0.15s linear;
 
   &:focus {
     border-color: $focus-border-color;
-    box-shadow: 0 1px 0 0 $focus-shadow-color;
+    box-shadow: 0 2px 0 -1px $focus-shadow-color; // 2 + -1 works better for small screens
   }
 
   &:disabled {
@@ -97,9 +98,20 @@ $input-disabled-background-color: $catkin !default;
 
   .input-wrapper {
     position: relative;
-
+    input:not([type]),
+    input[type=text],
+    input[type=url],
+    input[type=password],
+    input[type=tel],
+    input[type=number],
+    input[type=color],
+    input[type=email],
+    select,
+    textarea {
+      padding-right: $space-m;
+      overflow: hidden;
+    }
     .icon {
-      color: $input-placeholder-color;
       position: absolute;
       right: 0;
       top: 50%;
@@ -141,6 +153,7 @@ $input-disabled-background-color: $catkin !default;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    height: $space-xl;
 
     &::after {
       content: '';

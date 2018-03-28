@@ -30,6 +30,12 @@ $heading-line-height-large: 2rem !default; // 32px
     line-height: $heading-line-height-large;
     font-weight: 300;
   }
+  // Medium
+  h3 {
+    font-size: $space-l;
+    line-height: $heading-line-height-large;
+    font-weight: 500;
+  }
   // Small heading
   h4 {
     font-size: $heading-font-size-small;
