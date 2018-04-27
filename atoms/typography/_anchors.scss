@@ -10,7 +10,6 @@ $anchor-disabled-color: $sail !default;
     transition: color 0.1s linear;
 
     &:active,
-    &:focus,
     &:hover {
       color: $anchor-hover-color;
     }
