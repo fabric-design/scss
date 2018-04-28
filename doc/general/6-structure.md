@@ -29,7 +29,7 @@ Don’t:
 ## Sheet
 <div class="card" style="width:700px; height:600px;"></div>
 
-Basic view component. Every view need to be built by Sheet or Tile(s). Sheet can be sliced into smaller pieces through grid.
+Basic view component. Every view needs to be built from Sheet or Tile(s). Sheet can be sliced into smaller pieces through grid.
 
 Don’t:
 - - use too many sheets in one screen (usually one, three is maximum);
@@ -41,7 +41,7 @@ Don’t:
 
 <div class="card" style="width:700px; height:300px;"></div>
 
-Alternative main view component. Every view need to be built by Sheet or Tile(s). Number of used tiles depends on needs. Tiles can be merged into bigger tiles. Standard tile width is 6 grid columns (minimum 3 grid columns)
+Alternative main view component. Every view needs to be built from Sheet or Tile(s). Number of used tiles depends on needs. Tiles can be merged into bigger tiles. Standard tile width is 6 grid columns (minimum 3 grid columns)
 
 
 ## Side Panels
