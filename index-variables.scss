@@ -4,6 +4,7 @@ $include-grid-css: false;
 
 // atoms
 $include-icon-css: false;
+$use-embedded-font: true;
 $include-badge-css: false;
 $include-button-css: false;
 $include-card-css: false;
@@ -28,4 +29,4 @@ $include-tooltip-css: false;
 // organisms
 $include-navigation-css: false;
 
-@import 'index.scss';
+@import 'index';

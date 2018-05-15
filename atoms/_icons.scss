@@ -46,14 +46,12 @@ $icons: (
 @if not $use-embedded-font {
   @font-face {
     font-family: $icon-font-name;
-    /*
     src: url('#{$icon-font-path}fontello.eot?26021420');
     src: url('#{$icon-font-path}fontello.eot?26021420#iefix') format('embedded-opentype'),
       url('#{$icon-font-path}fontello.woff2?26021420') format('woff2'),
       url('#{$icon-font-path}fontello.woff?26021420') format('woff'),
       url('#{$icon-font-path}fontello.ttf?26021420') format('truetype'),
       url('#{$icon-font-path}fontello.svg?26021420#fontello') format('svg');
-    */
     font-weight: normal;
     font-style: normal;
   }
