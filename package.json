@@ -1,6 +1,6 @@
 {
   "name": "fabric-scss",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "",
   "homepage": "https://fabric-design.github.io/styleguide/#/general/1-intro",
   "main": "README.md",
@@ -32,6 +32,7 @@
   },
   "devDependencies": {
     "conventional-github-releaser": "^1.1.12",
+    "del": "^3.0.0",
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-bump": "^2.7.0",
     "gulp-conventional-changelog": "^1.1.4",
@@ -51,10 +52,16 @@
     ],
     "rules": {
       "max-nesting-depth": 2,
-      "order/properties-alphabetical-order": null,      
-      "selector-no-qualifying-type":[true, {
-        "ignore": ["attribute", "class"]
-      }]
+      "order/properties-alphabetical-order": null,
+      "selector-no-qualifying-type": [
+        true,
+        {
+          "ignore": [
+            "attribute",
+            "class"
+          ]
+        }
+      ]
     }
   }
 }
