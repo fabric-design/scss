@@ -1,3 +1,13 @@
+<a name="1.0.9"></a>
+## [1.0.9](https://github.com/fabric-design/scss/compare/1.0.8...1.0.9) (2018-05-16)
+
+
+### Bug Fixes
+
+* **build:** Fixed circle ci build ([#104](https://github.com/fabric-design/scss/issues/104)) ([8d5f7db](https://github.com/fabric-design/scss/commit/8d5f7db))
+
+
+
 <a name="1.0.8"></a>
 ## [1.0.8](https://github.com/fabric-design/scss/compare/1.0.7...1.0.8) (2018-05-16)
 
