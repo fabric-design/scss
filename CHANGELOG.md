@@ -1,3 +1,13 @@
+<a name="1.0.7"></a>
+## [1.0.7](https://github.com/fabric-design/scss/compare/1.0.6...1.0.7) (2018-03-28)
+
+
+### Bug Fixes
+
+* **header:** wrong variable name with scss instead of css was in the file ([#97](https://github.com/fabric-design/scss/issues/97)) ([298724f](https://github.com/fabric-design/scss/commit/298724f))
+
+
+
 <a name="1.0.6"></a>
 ## [1.0.6](https://github.com/fabric-design/scss/compare/1.0.5...1.0.6) (2017-11-23)
 
