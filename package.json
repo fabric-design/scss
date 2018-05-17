@@ -4,31 +4,11 @@
   "description": "",
   "homepage": "https://fabric-design.github.io/styleguide/#/general/1-intro",
   "main": "README.md",
-  "scripts": {
-    "prestart": "npm install",
-    "lint": "gulp lint-sass",
-    "test": "gulp"
+  "author": {
+    "name": "Zalando Wholesale"
   },
-  "keywords": [
-    "toolkit",
-    "styleguide",
-    "framework",
-    "scaffold",
-    "patterns",
-    "library"
-  ],
-  "author": "Zalando Wholesale",
-  "licenses": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fabric-design/scss.git"
-  },
-  "engines": {
-    "node": ">=0.10.0",
-    "npm": ">=2.0.0"
-  },
-  "jspm": {
-    "registry": "npm"
+  "bugs": {
+    "url": "https://github.com/fabric-design/scss/issues"
   },
   "devDependencies": {
     "conventional-github-releaser": "^1.1.12",
@@ -44,6 +24,32 @@
     "stylelint-formatter-pretty": "1.0.3",
     "stylelint-scss": "2.1.0",
     "yargs": "10.0.3"
+  },
+  "engines": {
+    "node": ">=0.10.0",
+    "npm": ">=2.0.0"
+  },
+  "jspm": {
+    "registry": "npm"
+  },
+  "keywords": [
+    "toolkit",
+    "styleguide",
+    "framework",
+    "scaffold",
+    "patterns",
+    "library"
+  ],
+  "licenses": "MIT",
+  "main": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabric-design/scss.git"
+  },
+  "scripts": {
+    "lint": "gulp lint-sass",
+    "prestart": "npm install",
+    "test": "gulp"
   },
   "stylelint": {
     "extends": "stylelint-config-sass-guidelines",

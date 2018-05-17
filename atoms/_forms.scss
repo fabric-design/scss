@@ -1,4 +1,4 @@
-$export-form-css: true !default;
+$include-form-css: true !default;
 $input-text-color: $asphalt !default;
 $input-background-color: $white !default;
 $input-border-color: $french-gray !default;
@@ -39,7 +39,7 @@ $input-disabled-background-color: $catkin !default;
   );
 }
 
-@if $export-form-css {
+@if $include-form-css {
   fieldset {
     background-color: $catkin;
     border: $base-border;

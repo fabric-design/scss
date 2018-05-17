@@ -1,0 +1,33 @@
+// utils
+$include-normalize-css: false;
+$include-grid-css: false;
+
+// atoms
+$include-icon-css: false;
+$use-embedded-font: true;
+$include-badge-css: false;
+$include-button-css: false;
+$include-card-css: false;
+$include-form-css: false;
+
+$include-toggle-base-css: false;
+$include-checkbox-css: false;
+$include-radio-css: false;
+$include-switch-css: false;
+$include-anchor-css: false;
+$include-typography-css: false;
+$include-heading-css: false;
+$include-label-css: false;
+$include-spacing-css: false;
+
+// molecules
+$include-dropdown-css: false;
+$include-pagination-css: false;
+$include-radio-group-css: false;
+$include-table-css: false;
+$include-tooltip-css: false;
+
+// organisms
+$include-navigation-css: false;
+
+@import 'index';
