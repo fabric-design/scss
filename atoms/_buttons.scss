@@ -1,4 +1,4 @@
-$export-button-css: true !default;
+$include-button-css: true !default;
 
 $button-color: $white !default;
 $button-color-disabled: schema-color(1) !default;
@@ -132,7 +132,7 @@ $button-shadows: (
   }
 }
 
-@if $export-button-css {
+@if $include-button-css {
   .button,
   button,
   input[type='reset'],
