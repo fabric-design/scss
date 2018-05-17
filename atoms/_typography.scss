@@ -1,27 +1,31 @@
+$include-typography-css: true !default;
+
 @import 'typography/headings';
 @import 'typography/labels';
 @import 'typography/anchors';
 
-body {
-  color: $base-font-color;
-  font-family: $base-font-family;
-  font-size: $base-font-size;
-  font-feature-settings: 'kern', 'liga', 'tnum';
-  font-variant-numeric: tabular-nums;
-  -webkit-font-smoothing: antialiased;
-  line-height: $base-line-height;
-}
+@if $include-typography-css {
+  body {
+    color: $base-font-color;
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    font-feature-settings: 'kern', 'liga', 'tnum';
+    font-variant-numeric: tabular-nums;
+    -webkit-font-smoothing: antialiased;
+    line-height: $base-line-height;
+  }
 
-p {
-  color: $base-font-color;
-  font-family: $base-font-family;
-  font-size: $base-font-size;
-  line-height: $base-line-height;
-  margin: 0 0 $space-s;
-}
+  p {
+    color: $base-font-color;
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    margin: 0 0 $space-s;
+  }
 
-img,
-picture {
-  margin: 0;
-  max-width: 100%;
+  img,
+  picture {
+    margin: 0;
+    max-width: 100%;
+  }
 }
