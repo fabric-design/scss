@@ -1,3 +1,8 @@
+<a name="1.0.11"></a>
+## [1.0.11](https://github.com/fabric-design/scss/compare/1.0.10...1.0.11) (2018-05-18)
+
+
+
 <a name="1.0.10"></a>
 ## [1.0.10](https://github.com/fabric-design/scss/compare/1.0.9...1.0.10) (2018-05-17)
 
