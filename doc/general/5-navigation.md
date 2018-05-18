@@ -31,4 +31,4 @@ Layers are very efficient in showing detailed data or advanced actions without l
 
 ![Example](src/style/assets/navigation6.png)
 
-More details in [Overlays](../#/general/7-overlays)
+More details in [Overlays](./#/general/7-overlays)
