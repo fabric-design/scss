@@ -1,4 +1,4 @@
-$export-dropdown-css: true !default;
+$include-dropdown-css: true !default;
 $dropdown-width: rem(200px) !default;
 $dropdown-shadow: map-get($elevation-shadows, raised) !default;
 $dropdown-arrow-shadow-color: rgba(0, 0, 0, 0.16) !default; // $elevation2 color 1
@@ -112,7 +112,7 @@ $dropdown-background-color-accent: $earl-gray !default;
   box-shadow: -1px -1px 1px lighten($container-shadow-color, 45%);
 }
 
-@if $export-dropdown-css {
+@if $include-dropdown-css {
   .dropdown {
     position: relative;
     display: block;
