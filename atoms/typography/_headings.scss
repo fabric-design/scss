@@ -1,10 +1,12 @@
 $include-heading-css: true !default;
 $heading-font-family: $base-font-family !default;
 $heading-color: $fjord !default;
-$heading-font-size-small: 1.125rem !default; // 24px
-$heading-font-size-large: 2rem !default; // 32px
-$heading-line-height-small: 2rem !default; // 32px
-$heading-line-height-large: 2rem !default; // 32px
+$heading-4-font-size: $space-l !default; // 24px
+$heading-4-line-height: $space-xl !default; // 32px
+$heading-3-font-size: $space-l !default; // 24 px
+$heading-3-line-height: $space-xl !default; // 32px
+$heading-2-font-size: $space-xl !default; // 32px
+$heading-2-line-height: $space-xl !default; // 32px
 
 @if $include-heading-css {
   h1,
@@ -26,20 +28,20 @@ $heading-line-height-large: 2rem !default; // 32px
   }
   // Large heading
   h2 {
-    font-size: $heading-font-size-large;
-    line-height: $heading-line-height-large;
+    font-size: $heading-2-font-size;
+    line-height: $heading-2-line-height;
     font-weight: 300;
   }
   // Medium
   h3 {
-    font-size: $space-l;
-    line-height: $heading-line-height-large;
+    font-size: $heading-3-font-size;
+    line-height: $heading-3-line-height;
     font-weight: 500;
   }
   // Small heading
   h4 {
-    font-size: $heading-font-size-small;
-    line-height: $heading-line-height-small;
+    font-size: $heading-4-font-size;
+    line-height: $heading-4-line-height;
     font-weight: 400;
   }
 }
