@@ -1,3 +1,23 @@
+<a name="1.0.12"></a>
+## [1.0.12](https://github.com/fabric-design/scss/compare/1.0.11...1.0.12) (2018-06-18)
+
+
+### Bug Fixes
+
+* **forms:** Added min height to fake select boxes ([0fad13a](https://github.com/fabric-design/scss/commit/0fad13a))
+* **forms:** Improved style of form elements ([90b5388](https://github.com/fabric-design/scss/commit/90b5388))
+* **heading:** Improved variable naming ([09a2535](https://github.com/fabric-design/scss/commit/09a2535))
+* **linter:** Fixed linter errors ([528654c](https://github.com/fabric-design/scss/commit/528654c))
+
+
+### Features
+
+* **badge:** Implemented new badge style ([21faf78](https://github.com/fabric-design/scss/commit/21faf78))
+* **form:** Implemented new input style ([2bdee8a](https://github.com/fabric-design/scss/commit/2bdee8a))
+* **icons:** Added new sort arrow ([8eb14c1](https://github.com/fabric-design/scss/commit/8eb14c1))
+
+
+
 <a name="1.0.11"></a>
 ## [1.0.11](https://github.com/fabric-design/scss/compare/1.0.10...1.0.11) (2018-05-18)
 
