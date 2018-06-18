@@ -1,10 +1,10 @@
 $include-badge-css: true !default;
-$badge-color: $white !default;
-$badge-background-color: $french-gray !default;
-$badge-red-color: $white !default;
-$badge-red-background-color: $geraldine !default;
-$badge-blue-color: $white !default;
-$badge-blue-background-color: $heaven !default;
+$badge-color: $jumbo !default;
+$badge-border-color: $jumbo !default;
+$badge-red-color: $geraldine !default;
+$badge-red-border-color: $geraldine !default;
+$badge-blue-color: $heaven !default;
+$badge-blue-border-color: $heaven !default;
 $badge-font-size: $font-size-small !default;
 $badge-line-height: $space-l !default;
 $badge-small-line-height: $space-m !default;
@@ -25,24 +25,25 @@ $badge-small-line-height: $space-m !default;
 /**_
  * Includes css to colorize a badge
  * @param $color Color value for the font
- * @param $background-color Color for background
+ * @param $border-color-color Color for border
  */
-@mixin badge-color($color, $background-color) {
-  background-color: $background-color;
-  color: $color;  
+@mixin badge-color($color, $border-color) {
+  color: $color;
+  border: 1px solid $border-color;
+  border-radius: 4rem;
 }
 
 @if $include-badge-css {
   .badge {
     @include badge();
-    @include badge-color($badge-color, $badge-background-color);
+    @include badge-color($badge-color, $badge-border-color);
 
     &.mod-blue {
-      @include badge-color($badge-blue-color, $badge-blue-background-color);
+      @include badge-color($badge-blue-color, $badge-blue-border-color);
     }
 
     &.mod-red {
-      @include badge-color($badge-red-color, $badge-red-background-color);
+      @include badge-color($badge-red-color, $badge-red-border-color);
     }
 
     &.mod-small {
@@ -58,7 +59,7 @@ $badge-small-line-height: $space-m !default;
     }
   }
 
-  .badge-group {    
+  .badge-group {
     .badge {
       &:not(:first-child) {
         border-bottom-left-radius: 0;

@@ -1,18 +1,19 @@
-$base-spacing: $space-m; // 16px
+$base-spacing: $space-m !default; // 16px
 
 $primary-color: $heaven !default;
 $secondary-color: $earl-gray !default;
 
-$base-font-family: 'acumin-pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$base-font-size: 1rem; // 16px
-$base-line-height: 1.5rem; // 24px
-$base-font-color: $abbey;
+$base-font-family: 'objektiv-mk1', 'acumin-pro', 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+$base-font-size: 1rem !default; // 16px
+$base-line-height: 1.5rem !default; // 24px
+$base-font-color: $abbey !default;
 
 // @todo is there a border color we always use?
-$base-border-color: $black;
-$base-border: 1px solid $base-border-color;
-$base-border-radius: 3px;
+$base-border-color: $black !default;
+$base-border: 1px solid $base-border-color !default;
+$base-border-radius: 3px !default;
 
 // @todo typo variables like font size, line height, and so on has to be defined and reimplemented
-$font-size-small: 0.8125rem; // 13px
-$font-size-large: 1.5rem; // 24px
+$font-size-tiny: 0.6875rem !default; // 11px
+$font-size-small: 0.8125rem !default; // 13px
+$font-size-large: 1.5rem !default; // 24px
