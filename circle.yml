@@ -35,6 +35,7 @@ compile:
 test:
   override:
     - gulp lint-sass
+    - gulp build:dist
 
 deployment:
   release:

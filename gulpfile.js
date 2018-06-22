@@ -107,11 +107,11 @@ gulp.task('default', () => gulp.parallel('sass', 'lint-sass'));
 gulp.task('build:sass', () => 
   gulp.src('./index.scss')
   .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-  .pipe(gulp.dest('./dist'))
+  .pipe(gulp.dest('./build'))
 );
 
 gulp.task('clean:dist', () => 
-  del(['dist/**'])
+  del(['build/**'])
 );
 
 gulp.task('build:dist', gulp.series('clean:dist', 'lint-sass', 'build:sass'));
