@@ -1,3 +1,20 @@
+<a name="1.0.13"></a>
+## [1.0.13](https://github.com/fabric-design/scss/compare/1.0.12...1.0.13) (2018-06-22)
+
+
+### Bug Fixes
+
+* **bug:** CircleCI should test also build for each PR ([dd800aa](https://github.com/fabric-design/scss/commit/dd800aa))
+* **ci:** sadly I forgot to change the deployment path ([443b451](https://github.com/fabric-design/scss/commit/443b451))
+* **ci:** we need to put it into test ([edf52f3](https://github.com/fabric-design/scss/commit/edf52f3))
+
+
+### Features
+
+* **dist:** release scss distributable in the repository ([3fd298c](https://github.com/fabric-design/scss/commit/3fd298c))
+
+
+
 <a name="1.0.12"></a>
 ## [1.0.12](https://github.com/fabric-design/scss/compare/1.0.11...1.0.12) (2018-06-18)
 
