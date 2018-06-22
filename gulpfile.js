@@ -114,4 +114,4 @@ gulp.task('clean:dist', () =>
   del(['dist/**'])
 );
 
-gulp.task('build:dist', gulp.series('clean:dist', 'build:sass'));
+gulp.task('build:dist', gulp.series('clean:dist', 'lint-sass', 'build:sass'));
