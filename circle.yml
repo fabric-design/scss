@@ -43,7 +43,7 @@ deployment:
     commands:
       - gulp bump-version changelog
       - gulp build:dist
-      - git add package.json doc dist CHANGELOG.md
+      - git add package.json doc build CHANGELOG.md
       - git commit -m "Bumped version to $(jq -r .version package.json) [skip ci]"
       - git tag -f -a $(jq -r .version package.json) -m "Automatic release via CircleCI"
       - git push origin $CIRCLE_BRANCH
