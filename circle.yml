@@ -36,6 +36,10 @@ test:
   override:
     - gulp lint-sass
 
+build:
+  override:
+    - gulp build:dist
+
 deployment:
   release:
     branch: master
