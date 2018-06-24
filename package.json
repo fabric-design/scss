@@ -40,8 +40,7 @@
     "patterns",
     "library"
   ],
-  "licenses": "MIT",
-  "main": "README.md",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fabric-design/scss.git"

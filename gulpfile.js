@@ -102,7 +102,7 @@ gulp.task('sass', () =>
     .pipe(sass().on('error', sass.logError))
 );
 
-gulp.task('default', () => gulp.parallel('sass', 'lint-sass'));
+gulp.task('default', gulp.parallel('sass', 'lint-sass'));
 
 gulp.task('build:sass', () => 
   gulp.src('./index.scss')
