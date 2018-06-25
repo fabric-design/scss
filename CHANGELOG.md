@@ -1,3 +1,14 @@
+<a name="1.0.14"></a>
+## [1.0.14](https://github.com/fabric-design/scss/compare/1.0.13...1.0.14) (2018-06-25)
+
+
+### Bug Fixes
+
+* **bug:** adding ws-header to default for distributable ([68b8d04](https://github.com/fabric-design/scss/commit/68b8d04))
+* **header:** update header.scss to be consistent with component style ([34d69e8](https://github.com/fabric-design/scss/commit/34d69e8))
+
+
+
 <a name="1.0.13"></a>
 ## [1.0.13](https://github.com/fabric-design/scss/compare/1.0.12...1.0.13) (2018-06-22)
 
