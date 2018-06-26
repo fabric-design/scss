@@ -1,3 +1,13 @@
+<a name="1.0.15"></a>
+## [1.0.15](https://github.com/fabric-design/scss/compare/1.0.14...1.0.15) (2018-06-26)
+
+
+### Bug Fixes
+
+* **header:** the dropdown for lang change css classes were in the wrong order and create a conflict ([c5eb48b](https://github.com/fabric-design/scss/commit/c5eb48b))
+
+
+
 <a name="1.0.14"></a>
 ## [1.0.14](https://github.com/fabric-design/scss/compare/1.0.13...1.0.14) (2018-06-25)
 
