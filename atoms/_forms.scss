@@ -53,7 +53,6 @@ $input-disabled-background-color: $catkin !default;
 
 @if $include-form-css {
   .form {
-
     fieldset {
       background-color: $catkin;
       border: $base-border;
