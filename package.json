@@ -1,11 +1,11 @@
 {
   "name": "fabric-scss",
-  "version": "1.0.15",
-  "description": "",
+  "version": "2.0.1",
+  "description": "Retail Core scss library",
   "homepage": "https://fabric-design.github.io/styleguide/#/general/1-intro",
   "main": "README.md",
   "author": {
-    "name": "Zalando Wholesale"
+    "name": "Zalando Retail Core"
   },
   "bugs": {
     "url": "https://github.com/fabric-design/scss/issues"
