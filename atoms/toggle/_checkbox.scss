@@ -27,7 +27,7 @@ $checkbox-disabled-border-color: $miroschka !default;
 
 @if $include-checkbox-css {
   // Simple checkbox styles
-  input[type=checkbox]:not(.mod-switch) {
+  .checkbox:not(.mod-switch) {
     @include toggle-base(
         $checkbox-size,
         $checkbox-background-color,

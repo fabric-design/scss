@@ -71,7 +71,7 @@ $switch-knob-color-disabled-checked: $madang !default;
 }
 
 @if $include-switch-css {
-  input[type=checkbox].mod-switch {
+  .checkbox.mod-switch {
     display: none;
     & + label {
       overflow: visible;

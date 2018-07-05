@@ -133,11 +133,7 @@ $button-shadows: (
 }
 
 @if $include-button-css {
-  .button,
-  button,
-  input[type='reset'],
-  input[type='button'],
-  input[type='submit'] {
+  .button {
     @include button-base;
     @include button-style($button-background, $button-color, $button-background-disabled, $button-color-disabled);
     @include button-size-medium;
