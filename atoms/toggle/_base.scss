@@ -49,8 +49,8 @@ $include-toggle-base-css: true !default;
 
 
 @if $include-toggle-base-css {
-  input[type=checkbox],
-  input[type=radio] {
+  .checkbox,
+  .radio {
     & + label {
       display: inline-block;
       vertical-align: middle;

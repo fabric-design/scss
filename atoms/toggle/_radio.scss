@@ -31,7 +31,7 @@ $radio-disabled-border-color: $miroschka !default;
 }
 
 @if $include-radio-css {
-  input[type=radio] {
+  .radio {
     @include toggle-base(
         $radio-size,
         $radio-background-color,

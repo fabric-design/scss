@@ -52,54 +52,31 @@ $input-disabled-background-color: $catkin !default;
 }
 
 @if $include-form-css {
-  fieldset {
-    background-color: $catkin;
-    border: $base-border;
-    margin: 0 0 $space-s;
-    padding: $base-spacing;
-  }
-
-  input,
-  select,
-  textarea {
-    display: block;
-    font-family: $base-font-family;
-    font-size: $font-size-small;
-  }
-
-  label {
-    &.required::after {
-      content: '*';
+  .form {
+    fieldset {
+      background-color: $catkin;
+      border: $base-border;
+      margin: 0 0 $space-s;
+      padding: $base-spacing;
     }
 
-    abbr {
-      display: none;
+    input,
+    select,
+    textarea {
+      display: block;
+      font-family: $base-font-family;
+      font-size: $font-size-small;
     }
-  }
 
-  input:not([type]),
-  input[type=text],
-  input[type=url],
-  input[type=password],
-  input[type=tel],
-  input[type=number],
-  input[type=color],
-  input[type=email],
-  select,
-  textarea {
-    @include input-box(
-      $text-color: $input-text-color,
-      $bg-color: $input-background-color,
-      $border-color: $input-border-color,
-      $shadow-color: $input-shadow-color,
-      $focus-border-color: $input-focused-border-color,
-      $focus-shadow-color: $input-focused-shadow-color,
-      $disabled-color: $input-disabled-background-color
-    );
-  }
+    label {
+      &.required::after {
+        content: '*';
+      }
 
-  .input-wrapper {
-    position: relative;
+      abbr {
+        display: none;
+      }
+    }
 
     input:not([type]),
     input[type=text],
@@ -111,68 +88,93 @@ $input-disabled-background-color: $catkin !default;
     input[type=email],
     select,
     textarea {
-      padding-right: $space-m;
-      overflow: hidden;
+      @include input-box(
+        $text-color: $input-text-color,
+        $bg-color: $input-background-color,
+        $border-color: $input-border-color,
+        $shadow-color: $input-shadow-color,
+        $focus-border-color: $input-focused-border-color,
+        $focus-shadow-color: $input-focused-shadow-color,
+        $disabled-color: $input-disabled-background-color
+      );
     }
 
-    .icon {
-      position: absolute;
-      right: 0;
-      top: 50%;
-      margin-top: -8px;
+    .input-wrapper {
+      position: relative;
 
-      &.icon24 {
-        margin-top: -12px;
+      input:not([type]),
+      input[type=text],
+      input[type=url],
+      input[type=password],
+      input[type=tel],
+      input[type=number],
+      input[type=color],
+      input[type=email],
+      select,
+      textarea {
+        padding-right: $space-m;
+        overflow: hidden;
+      }
+
+      .icon {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        margin-top: -8px;
+
+        &.icon24 {
+          margin-top: -12px;
+        }
       }
     }
-  }
 
-  textarea {
-    resize: vertical;
-  }
-
-  input[type='search'] {
-    appearance: none;
-  }
-
-  input[type='file'] {
-    padding-bottom: $space-s;
-    width: 100%;
-  }
-
-  select {
-    max-width: 100%;
-    padding-top: 0;
-    padding-bottom: 0;
-    width: auto;
-    height: $space-xl;
-  }
-
-  .select-box {
-    @include default-input;
-    position: relative;
-    display: block;
-    cursor: pointer;
-    -webkit-user-select: none; /* stylelint-disable-line */
-    user-select: none;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    min-height: $space-xl;
-
-    &::after {
-      content: '';
-      position: absolute;
-      right: rem(7px);
-      top: 50%;
-      margin-top: rem(-2px);
-      border: 4px solid rgba(0, 0, 0, 0);
-      border-top-color: $input-border-color;
+    textarea {
+      resize: vertical;
     }
 
-    &.is-disabled {
-      background-color: $input-disabled-background-color;
-      cursor: not-allowed;
+    input[type='search'] {
+      appearance: none;
+    }
+
+    input[type='file'] {
+      padding-bottom: $space-s;
+      width: 100%;
+    }
+
+    select {
+      max-width: 100%;
+      padding-top: 0;
+      padding-bottom: 0;
+      width: auto;
+      height: $space-xl;
+    }
+
+    .select-box {
+      @include default-input;
+      position: relative;
+      display: block;
+      cursor: pointer;
+      -webkit-user-select: none; /* stylelint-disable-line */
+      user-select: none;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      min-height: $space-xl;
+
+      &::after {
+        content: '';
+        position: absolute;
+        right: rem(7px);
+        top: 50%;
+        margin-top: rem(-2px);
+        border: 4px solid rgba(0, 0, 0, 0);
+        border-top-color: $input-border-color;
+      }
+
+      &.is-disabled {
+        background-color: $input-disabled-background-color;
+        cursor: not-allowed;
+      }
     }
   }
 }
