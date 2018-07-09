@@ -53,7 +53,7 @@ deployment:
       - au publish --commit ${CIRCLE_SHA1} --repo "${CIRCLE_PROJECT_REPONAME}/${CIRCLE_BRANCH}" --target "${TARGET}":
           pwd: styleguide
   releasev2:
-    branch: /v2-master/
+    branch: v2-master
     commands:
       - gulp bump-version changelog
       - gulp build:dist
