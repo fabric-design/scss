@@ -52,14 +52,7 @@ deployment:
           pwd: styleguide
       - au publish --commit ${CIRCLE_SHA1} --repo "${CIRCLE_PROJECT_REPONAME}/${CIRCLE_BRANCH}" --target "${TARGET}":
           pwd: styleguide
-  styleguide:
-    branch: /.*/
-    commands:
-      - au build:
-          pwd: styleguide
-      - au publish --commit ${CIRCLE_SHA1} --repo "${CIRCLE_PROJECT_REPONAME}/${CIRCLE_BRANCH}" --target "${TARGET}":
-          pwd: styleguide
-  versiontwo:
+  releasev2:
     branch: v2-master
     commands:
       - gulp bump-version changelog
@@ -69,6 +62,15 @@ deployment:
       - git tag -f -a $(jq -r .version package.json) -m "Automatic release via CircleCI"
       - git push origin $CIRCLE_BRANCH
       - gulp release --branch="${CIRCLE_BRANCH}"
+      - au build:
+          pwd: styleguide
+  styleguide:
+    branches:
+      only: 
+        - /.*/
+      ignore: 
+        - /v2-master/
+    commands:
       - au build:
           pwd: styleguide
       - au publish --commit ${CIRCLE_SHA1} --repo "${CIRCLE_PROJECT_REPONAME}/${CIRCLE_BRANCH}" --target "${TARGET}":
