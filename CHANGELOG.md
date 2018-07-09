@@ -1,3 +1,20 @@
+<a name="2.0.2"></a>
+## [2.0.2](https://github.com/fabric-design/scss/compare/1.0.15...2.0.2) (2018-07-09)
+
+
+### Bug Fixes
+
+* **ci:** fixing ci for v2 branch ([c1b6e1f](https://github.com/fabric-design/scss/commit/c1b6e1f))
+* **ci:** update ci branch name ([44e0e8f](https://github.com/fabric-design/scss/commit/44e0e8f))
+* **version:** bumping the version to v2 ([323fa73](https://github.com/fabric-design/scss/commit/323fa73))
+
+
+### Features
+
+* **atoms:** changing DOM tag stylings to be class based ([739b833](https://github.com/fabric-design/scss/commit/739b833))
+
+
+
 <a name="1.0.15"></a>
 ## [1.0.15](https://github.com/fabric-design/scss/compare/1.0.14...1.0.15) (2018-06-26)
 
