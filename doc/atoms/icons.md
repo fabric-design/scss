@@ -34,6 +34,14 @@
     <li><span class="icon-lightbulb icon24"></span><span class="text">.icon-lightbulb</span></li>
     <li><span class="icon-checkmark-circle icon24"></span><span class="text">.icon-checkmark-circle</span></li>
     <li><span class="icon-circle icon24"></span><span class="text">.icon-circle</span></li>
+    <li><span class="icon-discount icon24"></span><span class="text">.icon-discount</span></li>
+    <li><span class="icon-delivery-window icon24"></span><span class="text">.icon-delivery-window</span></li>
+    <li><span class="icon-order-document icon24"></span><span class="text">.icon-order-document</span></li>
+    <li><span class="icon-questionmark icon24"></span><span class="text">.icon-questionmark</span></li>
+    <li><span class="icon-zeos icon24"></span><span class="text">.icon-zeos</span></li>
+    <li><span class="icon-warehouse icon24"></span><span class="text">.icon-warehouse</span></li>
+    <li><span class="icon-close-order icon24"></span><span class="text">.icon-close-order</span></li>
+    <li><span class="icon-dot-menu icon24"></span><span class="text">.icon-dot-menu</span></li>
 </ul>
 ## Icon sizes
 Our icons are in general displayed in one of 4 sizes. Those can be 16x16, 24x24, 32x32 or 48x48 pixels.
