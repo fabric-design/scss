@@ -133,6 +133,24 @@ $header-border-color: schema-color(4) !default;
         .icon {
           vertical-align: middle;
         }
+
+        li:not(.dropdown-item) {
+          display: inline-block;
+          text-transform: uppercase;
+          transition: all 0.2s linear;
+    
+          &:hover,
+          &.is-hovered {
+            background-color: $header-accent-background-color;
+          }
+    
+          a,
+          .dropdown-trigger {
+            display: block;
+            cursor: pointer;
+            padding: 0 $space-m;
+          }
+        }
       }
     }
 
@@ -144,26 +162,12 @@ $header-border-color: schema-color(4) !default;
       }
     }
 
-    li:not(.dropdown-item) {
-      display: inline-block;
-      text-transform: uppercase;
-      transition: all 0.2s linear;
-
-      &:hover,
-      &.is-hovered {
-        background-color: $header-accent-background-color;
-      }
-
-      a,
-      .dropdown-trigger {
-        display: block;
-        cursor: pointer;
-        padding: 0 $space-m;
-      }
-    }
-
     a {
       color: inherit;
+
+      &:focus {
+        color: $white;
+      }
     }
   }
 }

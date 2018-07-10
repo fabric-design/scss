@@ -1,37 +1,18 @@
 {
   "name": "fabric-scss",
-  "version": "1.0.7",
+  "version": "1.0.17",
   "description": "",
   "homepage": "https://fabric-design.github.io/styleguide/#/general/1-intro",
   "main": "README.md",
-  "scripts": {
-    "prestart": "npm install",
-    "lint": "gulp lint-sass",
-    "test": "gulp"
+  "author": {
+    "name": "Zalando Wholesale"
   },
-  "keywords": [
-    "toolkit",
-    "styleguide",
-    "framework",
-    "scaffold",
-    "patterns",
-    "library"
-  ],
-  "author": "Zalando Wholesale",
-  "licenses": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fabric-design/scss.git"
-  },
-  "engines": {
-    "node": ">=0.10.0",
-    "npm": ">=2.0.0"
-  },
-  "jspm": {
-    "registry": "npm"
+  "bugs": {
+    "url": "https://github.com/fabric-design/scss/issues"
   },
   "devDependencies": {
     "conventional-github-releaser": "^1.1.12",
+    "del": "^3.0.0",
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-bump": "^2.7.0",
     "gulp-conventional-changelog": "^1.1.4",
@@ -44,6 +25,31 @@
     "stylelint-scss": "2.1.0",
     "yargs": "10.0.3"
   },
+  "engines": {
+    "node": ">=0.10.0",
+    "npm": ">=2.0.0"
+  },
+  "jspm": {
+    "registry": "npm"
+  },
+  "keywords": [
+    "toolkit",
+    "styleguide",
+    "framework",
+    "scaffold",
+    "patterns",
+    "library"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabric-design/scss.git"
+  },
+  "scripts": {
+    "lint": "gulp lint-sass",
+    "prestart": "npm install",
+    "test": "gulp"
+  },
   "stylelint": {
     "extends": "stylelint-config-sass-guidelines",
     "plugins": [
@@ -51,10 +57,16 @@
     ],
     "rules": {
       "max-nesting-depth": 2,
-      "order/properties-alphabetical-order": null,      
-      "selector-no-qualifying-type":[true, {
-        "ignore": ["attribute", "class"]
-      }]
+      "order/properties-alphabetical-order": null,
+      "selector-no-qualifying-type": [
+        true,
+        {
+          "ignore": [
+            "attribute",
+            "class"
+          ]
+        }
+      ]
     }
   }
 }

@@ -1,4 +1,4 @@
-$export-dropdown-css: true !default;
+$include-dropdown-css: true !default;
 $dropdown-width: rem(200px) !default;
 $dropdown-shadow: map-get($elevation-shadows, raised) !default;
 $dropdown-arrow-shadow-color: rgba(0, 0, 0, 0.16) !default; // $elevation2 color 1
@@ -18,7 +18,7 @@ $dropdown-background-color-accent: $earl-gray !default;
   top: 100%;
   right: 0;
   width: $width;
-  margin-top: $space-xs;
+  margin-top: $space-s;
   height: 0;
   display: none;
   background-color: $background-color;
@@ -104,7 +104,7 @@ $dropdown-background-color-accent: $earl-gray !default;
   position: absolute;
   width: rem(10px);
   height: rem(10px);
-  bottom: rem(-13px);
+  bottom: rem(-17px);
   left: rem(20px);
   background: linear-gradient(-45deg, rgba($container-background-color, 0) 50%, $container-background-color 50%);
   transform: rotate(45deg);
@@ -112,7 +112,7 @@ $dropdown-background-color-accent: $earl-gray !default;
   box-shadow: -1px -1px 1px lighten($container-shadow-color, 45%);
 }
 
-@if $export-dropdown-css {
+@if $include-dropdown-css {
   .dropdown {
     position: relative;
     display: block;

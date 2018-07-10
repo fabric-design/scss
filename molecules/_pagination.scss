@@ -1,30 +1,34 @@
-.pagination {
-  float: right;
-  font-size: rem(14px);
-  line-height: rem(14px);
+$include-pagination-css: true !default;
 
-  .current {
-    color: $primary-color;
-  }
+@if $include-pagination-css {
+  .pagination {
+    float: right;
+    font-size: rem(14px);
+    line-height: rem(14px);
 
-  .separator {
-    margin: 0 2px;
-  }
-
-  .separator,
-  .total {
-    color: $miroschka;
-  }
-
-  .total {
-    margin-right: 20px;
-  }
-
-  a {
-    color: $asphalt;
-
-    &:hover {
+    .current {
       color: $primary-color;
+    }
+
+    .separator {
+      margin: 0 2px;
+    }
+
+    .separator,
+    .total {
+      color: $miroschka;
+    }
+
+    .total {
+      margin-right: 20px;
+    }
+
+    a {
+      color: $asphalt;
+
+      &:hover {
+        color: $primary-color;
+      }
     }
   }
 }

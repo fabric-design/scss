@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const sass = require('gulp-sass');
 const gulpStylelint = require('gulp-stylelint');
 const runSequence = require('run-sequence');
+const del = require('del');
 const conventionalChangelog = require('gulp-conventional-changelog');
 const conventionalGitHubReleaser = require('conventional-github-releaser');
 const bump = require('gulp-bump');
@@ -101,4 +102,21 @@ gulp.task('sass', () =>
     .pipe(sass().on('error', sass.logError))
 );
 
-gulp.task('default', () => gulp.parallel('sass', 'lint-sass'));
+gulp.task('default', gulp.parallel('sass', 'lint-sass'));
+
+gulp.task('build:sass', () => 
+  gulp.src('./index.scss')
+  .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+  .pipe(gulp.dest('./build'))
+);
+
+gulp.task('copy:fonts', () => {
+  return gulp.src('./fonts/*')
+  .pipe(gulp.dest('build/fonts/'))
+});
+
+gulp.task('clean:dist', () => 
+  del(['build/**'])
+);
+
+gulp.task('build:dist', gulp.series('clean:dist', 'lint-sass', 'copy:fonts','build:sass'));

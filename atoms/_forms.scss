@@ -1,35 +1,47 @@
-$export-form-css: true !default;
-$input-text-color: $asphalt !default;
+$include-form-css: true !default;
+$input-text-color: $bombay !default;
+$input-placeholder-color: $bombay !default;
 $input-background-color: $white !default;
-$input-border-color: $french-gray !default;
-$input-shadow-color: lighten($input-border-color, 15%) !default;
+$input-border-color: $mischka !default;
+$input-shadow-color: transparent !default;
 $input-focused-border-color: $primary-color !default;
-$input-focused-shadow-color: lighten($input-focused-border-color, 40%) !default;
+$input-focused-shadow-color: $input-focused-border-color !default;
 $input-disabled-background-color: $catkin !default;
 
-@mixin input-box($bg-color, $border-color, $shadow-color, $focus-border-color, $focus-shadow-color, $disabled-color) {
-  padding: rem(8px);
-  border: 1px solid $border-color;
-  box-shadow: inset 0 1px 3px 0 $shadow-color;
-  box-sizing: border-box;
-  outline: none;
+@mixin input-box($text-color, $bg-color, $border-color, $shadow-color, $focus-border-color, $focus-shadow-color, $disabled-color) {
+  border: 0;
+  border-bottom: 1px solid $border-color;
+  color: $text-color;
   background-color: $bg-color;
-  height: rem(34px);
-  font-weight: normal;
+  line-height: $space-xl;
+  box-shadow: 0 0 0 $shadow-color;
+  padding-left: $space-xs;
+  outline: none;
+  width: 100%;
   transition: border-color 0.15s linear, box-shadow 0.15s linear;
 
   &:focus {
     border-color: $focus-border-color;
-    box-shadow: inset 0 1px 3px 0 $focus-shadow-color;
+    box-shadow: 0 2px 0 -1px $focus-shadow-color; // 2 + -1 works better for small screens
   }
 
   &:disabled {
     background-color: $disabled-color;
   }
+
+  // stylelint-disable-next-line
+  &::-webkit-input-placeholder {
+    color: $input-placeholder-color;
+  }
+
+  &::placeholder {
+    color: $input-placeholder-color;
+  }
 }
 
 @mixin default-input {
   @include input-box(
+    $text-color: $input-text-color,
     $bg-color: $input-background-color,
     $border-color: $input-border-color,
     $shadow-color: $input-shadow-color,
@@ -39,7 +51,7 @@ $input-disabled-background-color: $catkin !default;
   );
 }
 
-@if $export-form-css {
+@if $include-form-css {
   fieldset {
     background-color: $catkin;
     border: $base-border;
@@ -52,7 +64,7 @@ $input-disabled-background-color: $catkin !default;
   textarea {
     display: block;
     font-family: $base-font-family;
-    font-size: $base-font-size;
+    font-size: $font-size-small;
   }
 
   label {
@@ -76,6 +88,7 @@ $input-disabled-background-color: $catkin !default;
   select,
   textarea {
     @include input-box(
+      $text-color: $input-text-color,
       $bg-color: $input-background-color,
       $border-color: $input-border-color,
       $shadow-color: $input-shadow-color,
@@ -88,10 +101,29 @@ $input-disabled-background-color: $catkin !default;
   .input-wrapper {
     position: relative;
 
+    input:not([type]),
+    input[type=text],
+    input[type=url],
+    input[type=password],
+    input[type=tel],
+    input[type=number],
+    input[type=color],
+    input[type=email],
+    select,
+    textarea {
+      padding-right: $space-m;
+      overflow: hidden;
+    }
+
     .icon {
       position: absolute;
-      top: 10px;
-      right: 8px;
+      right: 0;
+      top: 50%;
+      margin-top: -8px;
+
+      &.icon24 {
+        margin-top: -12px;
+      }
     }
   }
 
@@ -113,16 +145,11 @@ $input-disabled-background-color: $catkin !default;
     padding-top: 0;
     padding-bottom: 0;
     width: auto;
+    height: $space-xl;
   }
 
   .select-box {
-    padding: rem(8px 20px 8px 8px);
-    border: 1px solid $input-border-color;
-    box-sizing: border-box;
-    background-color: $input-background-color;
-    height: rem(34px);
-    line-height: rem(17px);
-    font-weight: normal;
+    @include default-input;
     position: relative;
     display: block;
     cursor: pointer;
@@ -131,6 +158,7 @@ $input-disabled-background-color: $catkin !default;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    min-height: $space-xl;
 
     &::after {
       content: '';

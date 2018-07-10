@@ -35,13 +35,15 @@ compile:
 test:
   override:
     - gulp lint-sass
+    - gulp build:dist
 
 deployment:
   release:
     branch: master
     commands:
       - gulp bump-version changelog
-      - git add package.json doc CHANGELOG.md
+      - gulp build:dist
+      - git add package.json doc build CHANGELOG.md
       - git commit -m "Bumped version to $(jq -r .version package.json) [skip ci]"
       - git tag -f -a $(jq -r .version package.json) -m "Automatic release via CircleCI"
       - git push origin $CIRCLE_BRANCH

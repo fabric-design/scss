@@ -39,11 +39,11 @@ Used for general system feedback.
 
 ![Example](src/style/assets/feedback2.jpg)
 
-For more info, check [Notifications](../#/components/notification).
+For more info, check [Notifications](./#/components/02-notifications).
 
 ### Modal Window
 Used when system feedback breaks user activity and using a system can’t be continued without getting an info or making a decision.
 
 ![Example](src/style/assets/feedback3.jpg)
 
-For more info, check [Overlays](../#/general/7-overlays).
+For more info, check [Overlays](./#/styleguide/general/7-overlays).

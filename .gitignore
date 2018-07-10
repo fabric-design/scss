@@ -38,3 +38,9 @@ node_modules
 # ignore package-lock , lock files
 package-lock.json
 *.lock
+
+# dist folder
+dist/
+
+.DS_Store
+
