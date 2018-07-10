@@ -1,3 +1,13 @@
+<a name="1.0.17"></a>
+## [1.0.17](https://github.com/fabric-design/scss/compare/1.0.16...1.0.17) (2018-07-10)
+
+
+### Features
+
+* **icons:** Add icons needed for the po frontend. ([#116](https://github.com/fabric-design/scss/issues/116)) ([698ee50](https://github.com/fabric-design/scss/commit/698ee50))
+
+
+
 <a name="1.0.16"></a>
 ## [1.0.16](https://github.com/fabric-design/scss/compare/1.0.15...1.0.16) (2018-07-02)
 
