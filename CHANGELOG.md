@@ -1,3 +1,13 @@
+<a name="1.0.20"></a>
+## [1.0.20](https://github.com/fabric-design/scss/compare/1.0.18...1.0.20) (2018-07-11)
+
+
+### Features
+
+* **icon:** Update embedded icons to contain web-reorder icon ([#118](https://github.com/fabric-design/scss/issues/118)) ([816c912](https://github.com/fabric-design/scss/commit/816c912))
+
+
+
 <a name="1.0.18"></a>
 ## [1.0.18](https://github.com/fabric-design/scss/compare/1.0.17...1.0.18) (2018-07-11)
 
