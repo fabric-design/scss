@@ -119,18 +119,14 @@ $icons: (
     }
   }
 
-  .icon,
-  [class^='icon-'],
-  [class*=' icon-'] {
+  .icon {
     line-height: 1rem;
     display: inline-block;
     vertical-align: middle;
     color: $icon-color;
   }
 
-  .icon::before,
-  [class^='icon-']::before,
-  [class*=' icon-']::before {
+  .icon::before {
     @include icon-base;
   }
 
