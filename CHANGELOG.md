@@ -1,6 +1,11 @@
 <a name="2.0.2"></a>
 ## [2.0.2](https://github.com/fabric-design/scss/compare/1.0.15...2.0.2) (2018-07-09)
 
+<a name="1.0.18"></a>
+## [1.0.18](https://github.com/fabric-design/scss/compare/1.0.17...1.0.18) (2018-07-11)
+
+<a name="1.0.17"></a>
+## [1.0.17](https://github.com/fabric-design/scss/compare/1.0.16...1.0.17) (2018-07-10)
 
 ### Bug Fixes
 
@@ -9,9 +14,17 @@
 * **version:** bumping the version to v2 ([323fa73](https://github.com/fabric-design/scss/commit/323fa73))
 
 
+
 ### Features
 
+* **icons:** Add icons needed for the po frontend. ([#116](https://github.com/fabric-design/scss/issues/116)) ([698ee50](https://github.com/fabric-design/scss/commit/698ee50))
+
+
+<a name="1.0.16"></a>
+## [1.0.16](https://github.com/fabric-design/scss/compare/1.0.15...1.0.16) (2018-07-02)
+
 * **atoms:** changing DOM tag stylings to be class based ([739b833](https://github.com/fabric-design/scss/commit/739b833))
+
 
 
 

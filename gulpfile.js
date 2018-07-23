@@ -110,8 +110,13 @@ gulp.task('build:sass', () =>
   .pipe(gulp.dest('./build'))
 );
 
+gulp.task('copy:fonts', () => {
+  return gulp.src('./fonts/*')
+  .pipe(gulp.dest('build/fonts/'))
+});
+
 gulp.task('clean:dist', () => 
   del(['build/**'])
 );
 
-gulp.task('build:dist', gulp.series('clean:dist', 'lint-sass', 'build:sass'));
+gulp.task('build:dist', gulp.series('clean:dist', 'lint-sass', 'copy:fonts','build:sass'));
