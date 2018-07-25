@@ -1,3 +1,13 @@
+<a name="1.0.21"></a>
+## [1.0.21](https://github.com/fabric-design/scss/compare/1.0.20...1.0.21) (2018-07-25)
+
+
+### Features
+
+* **form:** Added styles for an invalid input ([#121](https://github.com/fabric-design/scss/issues/121)) ([5bca6fa](https://github.com/fabric-design/scss/commit/5bca6fa))
+
+
+
 <a name="1.0.20"></a>
 ## [1.0.20](https://github.com/fabric-design/scss/compare/1.0.18...1.0.20) (2018-07-11)
 
