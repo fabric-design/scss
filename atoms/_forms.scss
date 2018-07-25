@@ -4,8 +4,10 @@ $input-placeholder-color: $bombay !default;
 $input-background-color: $white !default;
 $input-border-color: $mischka !default;
 $input-shadow-color: transparent !default;
+$input-shadow-size: 0 0 0 !default;
 $input-focused-border-color: $primary-color !default;
 $input-focused-shadow-color: $input-focused-border-color !default;
+$input-focused-shadow-size: 0 2px 0 -1px !default; // 2 + -1 works better for small screens
 $input-disabled-background-color: $catkin !default;
 
 @mixin input-box($text-color, $bg-color, $border-color, $shadow-color, $focus-border-color, $focus-shadow-color, $disabled-color) {
@@ -14,7 +16,7 @@ $input-disabled-background-color: $catkin !default;
   color: $text-color;
   background-color: $bg-color;
   line-height: $space-xl;
-  box-shadow: 0 0 0 $shadow-color;
+  box-shadow: $input-shadow-size $shadow-color;
   padding-left: $space-xs;
   outline: none;
   width: 100%;
@@ -22,7 +24,7 @@ $input-disabled-background-color: $catkin !default;
 
   &:focus {
     border-color: $focus-border-color;
-    box-shadow: 0 2px 0 -1px $focus-shadow-color; // 2 + -1 works better for small screens
+    box-shadow: $input-focused-shadow-size $focus-shadow-color; // 2 + -1 works better for small screens
   }
 
   &:disabled {
@@ -36,6 +38,11 @@ $input-disabled-background-color: $catkin !default;
 
   &::placeholder {
     color: $input-placeholder-color;
+  }
+
+  &.is-invalid {
+    box-shadow: $input-focused-shadow-size $error-color;
+    border-color: $error-color;
   }
 }
 
@@ -120,10 +127,15 @@ $input-disabled-background-color: $catkin !default;
       right: 0;
       top: 50%;
       margin-top: -8px;
+      pointer-events: none;
 
       &.icon24 {
         margin-top: -12px;
       }
+    }
+
+    input.is-invalid + .icon {
+      color: $error-color;
     }
   }
 
