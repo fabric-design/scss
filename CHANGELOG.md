@@ -1,3 +1,13 @@
+<a name="1.0.22"></a>
+## [1.0.22](https://github.com/fabric-design/scss/compare/1.0.21...1.0.22) (2018-09-17)
+
+
+### Features
+
+* **icons:** Added Trash bin icon ([#123](https://github.com/fabric-design/scss/issues/123)) ([fbe75a9](https://github.com/fabric-design/scss/commit/fbe75a9))
+
+
+
 <a name="1.0.21"></a>
 ## [1.0.21](https://github.com/fabric-design/scss/compare/1.0.20...1.0.21) (2018-07-25)
 
