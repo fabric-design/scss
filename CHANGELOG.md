@@ -1,3 +1,28 @@
+<a name="1.0.21"></a>
+## [1.0.21](https://github.com/fabric-design/scss/compare/1.0.20...1.0.21) (2018-07-25)
+
+
+### Features
+
+* **form:** Added styles for an invalid input ([#121](https://github.com/fabric-design/scss/issues/121)) ([5bca6fa](https://github.com/fabric-design/scss/commit/5bca6fa))
+
+
+
+<a name="1.0.20"></a>
+## [1.0.20](https://github.com/fabric-design/scss/compare/1.0.18...1.0.20) (2018-07-11)
+
+
+### Features
+
+* **icon:** Update embedded icons to contain web-reorder icon ([#118](https://github.com/fabric-design/scss/issues/118)) ([816c912](https://github.com/fabric-design/scss/commit/816c912))
+
+
+
+<a name="1.0.18"></a>
+## [1.0.18](https://github.com/fabric-design/scss/compare/1.0.17...1.0.18) (2018-07-11)
+
+
+
 <a name="1.0.17"></a>
 ## [1.0.17](https://github.com/fabric-design/scss/compare/1.0.16...1.0.17) (2018-07-10)
 
