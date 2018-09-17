@@ -41,6 +41,7 @@
     <li><span class="icon-zeos icon24"></span><span class="text">.icon-zeos</span></li>
     <li><span class="icon-warehouse icon24"></span><span class="text">.icon-warehouse</span></li>
     <li><span class="icon-close-order icon24"></span><span class="text">.icon-close-order</span></li>
+    <li><span class="icon-trash-bin icon24"></span><span class="text">.icon-trash-bin</span></li>
     <li><span class="icon-dot-menu icon24"></span><span class="text">.icon-dot-menu</span></li>
 </ul>
 ## Icon sizes
