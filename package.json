@@ -13,7 +13,7 @@
   "devDependencies": {
     "conventional-github-releaser": "^1.1.12",
     "del": "^3.0.0",
-    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp": "4.0.0",
     "gulp-bump": "^2.7.0",
     "gulp-conventional-changelog": "^1.1.4",
     "gulp-sass": "^2.3.1",
